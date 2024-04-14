@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "I6u00Df3heMmVWKDa2JNuiqrvLAJusXAUgc4RZdIGJg=",
+  "Source": "winery_backend",
+  "BasePath": "_content/winery_backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
