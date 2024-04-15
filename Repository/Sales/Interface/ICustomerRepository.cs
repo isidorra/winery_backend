@@ -6,4 +6,5 @@ public interface ICustomerRepository {
     bool Save();
     bool Create(Customer customer);
 
+
 }

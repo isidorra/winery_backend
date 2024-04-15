@@ -19,7 +19,6 @@ public class DataContext : DbContext{
             new City { Id = 2, Name = "Los Angeles" }
         );
 
-        // Seed customers
         modelBuilder.Entity<Customer>().HasData(
             new Customer
             {
@@ -59,7 +58,39 @@ public class DataContext : DbContext{
                 CityId = 2, // Reference to Los Angeles
                 Zip = "90001"
             }
-            // Add more customers as needed
         );
+
+        modelBuilder.Entity<Employee>().HasData(
+            new Employee
+            {
+                Id = 1,
+                Firstname = "Pera",
+                Lastname = "Peric",
+                Email = "pera.peric@example.com",
+                Username = "peraperic",
+                Password = "hashedpassword",
+                PhoneNumber = "1234567890",
+                BirthDate = new DateTime(1990, 5, 15),
+                Gender = Gender.MALE,
+                Role = Role.DRIVER,
+                ProfilePhoto = "somepath"
+            },
+            new Employee
+            {
+                Id = 2,
+                Firstname = "Imenko",
+                Lastname = "Prezimenic",
+                Email = "imenko@example.com",
+                Username = "imenko",
+                Password = "hashedpassword", 
+                PhoneNumber = "9876543210",
+                BirthDate = new DateTime(1992, 8, 20),
+                Gender = Gender.MALE,
+                Role = Role.ADMINISTRATOR,
+                ProfilePhoto = "somepath"
+            }
+        );
+
+        
     }
 }

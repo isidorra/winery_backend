@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240415171556_InitialCreate")]
+    [Migration("20240415185407_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -190,6 +190,36 @@ namespace winery_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "pera.peric@example.com",
+                            Firstname = "Pera",
+                            Gender = 1,
+                            Lastname = "Peric",
+                            Password = "hashedpassword",
+                            PhoneNumber = "1234567890",
+                            ProfilePhoto = "somepath",
+                            Role = 7,
+                            Username = "peraperic"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "imenko@example.com",
+                            Firstname = "Imenko",
+                            Gender = 1,
+                            Lastname = "Prezimenic",
+                            Password = "hashedpassword",
+                            PhoneNumber = "9876543210",
+                            ProfilePhoto = "somepath",
+                            Role = 0,
+                            Username = "imenko"
+                        });
                 });
 #pragma warning restore 612, 618
         }

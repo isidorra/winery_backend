@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 public class CustomerRepository : ICustomerRepository
 {
     private readonly DataContext _context;
@@ -38,7 +40,5 @@ public class CustomerRepository : ICustomerRepository
         return saved > 0 ? true : false;
     }
 
-
-
-
+    
 }

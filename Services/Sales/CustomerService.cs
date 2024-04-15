@@ -1,9 +1,11 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-public class CustomerService : ICustomerService {
+public class CustomerService : ICustomerService
+{
     private readonly ICustomerRepository _customerRepository;
-    public CustomerService(ICustomerRepository customerRepository) {
+    public CustomerService(ICustomerRepository customerRepository)
+    {
         _customerRepository = customerRepository;
     }
 
@@ -36,5 +38,26 @@ public class CustomerService : ICustomerService {
     public bool Create(Customer customer)
     {
         return _customerRepository.Create(customer);
+    }
+
+    public Customer Authenticate(string? username, string? password)
+    {
+        var user = _customerRepository.GetByUsername(username);
+
+        if (user == null || !VerifyPasswordHash(password, user.Password))
+        {
+            return null;
+        }
+
+        // Authentication successful, return the user
+        return user;
+
+
+    }
+
+    // Helper method to verify the password hash
+    private bool VerifyPasswordHash(string password, string hashedPassword)
+    {
+        return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
     }
 }
