@@ -7,5 +7,4 @@ public interface ICustomerService {
     bool Exists(int id);
     bool Save();
     bool Create(Customer customer);
-    Customer Authenticate(string? username, string? password);
 }

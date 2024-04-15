@@ -9,7 +9,6 @@ public class CustomerService : ICustomerService
         _customerRepository = customerRepository;
     }
 
-
     public bool Exists(int id)
     {
         return _customerRepository.Exists(id);
@@ -40,24 +39,4 @@ public class CustomerService : ICustomerService
         return _customerRepository.Create(customer);
     }
 
-    public Customer Authenticate(string? username, string? password)
-    {
-        var user = _customerRepository.GetByUsername(username);
-
-        if (user == null || !VerifyPasswordHash(password, user.Password))
-        {
-            return null;
-        }
-
-        // Authentication successful, return the user
-        return user;
-
-
-    }
-
-    // Helper method to verify the password hash
-    private bool VerifyPasswordHash(string password, string hashedPassword)
-    {
-        return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-    }
 }
