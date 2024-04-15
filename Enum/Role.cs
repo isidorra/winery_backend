@@ -1,0 +1,13 @@
+public enum Role {
+    ADMINISTRATOR = 0,
+    SALES_MANAGER = 1,
+    MARKETING_MANAGER = 2,
+    LOGISTICIAN = 3,
+    WAREHOUSEMAN = 4,
+    OWNER = 5,
+    TECHNOLOGIST = 6,
+    DRIVER = 7,
+    TOUR_GUIDE = 8,
+    CUSTOMER = 9
+
+}

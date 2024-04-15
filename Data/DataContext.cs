@@ -1,0 +1,65 @@
+using Microsoft.EntityFrameworkCore;
+
+public class DataContext : DbContext{
+
+    public DataContext(DbContextOptions<DataContext> options) : base(options) {
+
+    }
+
+    public DbSet<Customer> Customers {get;set;}
+    public DbSet<Employee> Employees {get;set;}
+   
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<City>().HasData(
+            new City { Id = 1, Name = "New York" },
+            new City { Id = 2, Name = "Los Angeles" }
+        );
+
+        // Seed customers
+        modelBuilder.Entity<Customer>().HasData(
+            new Customer
+            {
+                Id = 1,
+                Firstname = "John",
+                Lastname = "Doe",
+                Email = "john.doe@example.com",
+                Username = "johndoe",
+                Password = "hashedpassword", // Replace with hashed password
+                PhoneNumber = "1234567890",
+                BirthDate = new DateTime(1990, 5, 15),
+                Gender = Gender.MALE,
+                Role = Role.CUSTOMER,
+                Street = "123 Main St",
+                Number = "101",
+                Floor = null,
+                Door = null,
+                CityId = 1, // Reference to New York
+                Zip = "10001"
+            },
+            new Customer
+            {
+                Id = 2,
+                Firstname = "Jane",
+                Lastname = "Doe",
+                Email = "jane.doe@example.com",
+                Username = "janedoe",
+                Password = "hashedpassword", // Replace with hashed password
+                PhoneNumber = "9876543210",
+                BirthDate = new DateTime(1992, 8, 20),
+                Gender = Gender.FEMALE,
+                Role = Role.CUSTOMER,
+                Street = "456 Elm St",
+                Number = "202",
+                Floor = 2,
+                Door = 3,
+                CityId = 2, // Reference to Los Angeles
+                Zip = "90001"
+            }
+            // Add more customers as needed
+        );
+    }
+}
