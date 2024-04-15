@@ -45,7 +45,7 @@ public class CustomerController : Controller
 
     private string HashPassword(string? password)
     {
-        string salt = BCrypt.Net.BCrypt.GenerateSalt();
+        string salt = BCrypt.Net.BCrypt.GenerateSalt(10);
 
         // Hash the password using the salt
         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, salt);
@@ -92,7 +92,7 @@ public class CustomerController : Controller
     };
 
         // Create symmetric security key
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-secret-key"));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123456789098765432123456uhbvsdebhhbrffruignwiugnbrwuiwhnriufniugvwhnruignwurighnwigvuwrhugirnhgiuwnriwiurwnhiughwpiu9348"));
 
         // Create signing credentials using the key
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

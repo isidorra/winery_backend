@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240415151804_InitialCreate")]
+    [Migration("20240415171556_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
