@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 public interface ICustomerRepository {
     ICollection<Customer> GetAll();
     Customer GetById(int id);
@@ -6,5 +8,5 @@ public interface ICustomerRepository {
     bool Save();
     bool Create(Customer customer);
 
-
+    bool UsernameExist(string username);
 }

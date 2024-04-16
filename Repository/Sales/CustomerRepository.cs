@@ -22,7 +22,7 @@ public class CustomerRepository : ICustomerRepository
 
     public Customer GetByUsername(string username)
     {
-        return _context.Customers.Where(c => c.Username == username).FirstOrDefault();
+        return _context.Customers.Where(c => c.Username.Equals(username)).FirstOrDefault();
     }
 
     public bool Exists(int id)
@@ -40,5 +40,9 @@ public class CustomerRepository : ICustomerRepository
         return saved > 0 ? true : false;
     }
 
-    
+    public bool UsernameExist(string username)
+    {
+        return _context.Customers.Any(c => c.Username.Equals(username));
+    }
+
 }

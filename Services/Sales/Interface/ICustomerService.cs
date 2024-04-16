@@ -7,4 +7,14 @@ public interface ICustomerService {
     bool Exists(int id);
     bool Save();
     bool Create(Customer customer);
+
+    bool AreFieldsFilled(Customer customer);
+
+    bool UsernameExist(string username);
+
+    bool IsValidEmail(string email);
+
+    bool IsValidAge(DateTime? birthDate);
+
+    Customer Authenticate(string? username, string? password);
 }
