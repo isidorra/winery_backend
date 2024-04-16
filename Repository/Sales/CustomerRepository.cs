@@ -45,4 +45,9 @@ public class CustomerRepository : ICustomerRepository
         return _context.Customers.Any(c => c.Username.Equals(username));
     }
 
+    public bool PhoneNumberExist(string phoneNumber)
+    {
+        return _context.Customers.Any(c => c.PhoneNumber.Equals(phoneNumber));
+    }
+
 }

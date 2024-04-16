@@ -12,7 +12,19 @@ public interface ICustomerService {
 
     bool UsernameExist(string username);
 
+    bool SufficientUsernameLenght(string username);
+
+    bool SufficientFirstnameLenght(string firstname);
+
+    bool SufficientLastnameLenght(string lastname);
+
     bool IsValidEmail(string email);
+
+    bool IsValidPhoneNumber(string phoneNumber);
+
+    bool PhoneNumberExist(string phoneNumber);
+
+    bool IsDigitsOnly(string phoneNumber);
 
     bool IsValidAge(DateTime? birthDate);
 

@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +19,24 @@
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,59 +54,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Models\\Customer.cs",
-              "RelativeToolTip": "Models\\Customer.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAuwBQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:22:33.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\CustomerRepository.cs",
               "RelativeToolTip": "Repository\\Sales\\CustomerRepository.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAIwBwAAAAFAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAcwDEAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:36:16.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "ICustomerService.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\Interface\\ICustomerService.cs",
               "RelativeDocumentMoniker": "Services\\Sales\\Interface\\ICustomerService.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\Interface\\ICustomerService.cs",
               "RelativeToolTip": "Services\\Sales\\Interface\\ICustomerService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:18:20.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\CustomerService.cs",
               "RelativeDocumentMoniker": "Services\\Sales\\CustomerService.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\CustomerService.cs",
               "RelativeToolTip": "Services\\Sales\\CustomerService.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAuwE0AAAAEAAAA",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAQwAwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:17:29.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\Interface\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Sales\\Interface\\ICustomerRepository.cs",
@@ -123,65 +106,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Controllers\\Auth\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\Auth\\AuthController.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Controllers\\Auth\\AuthController.cs",
               "RelativeToolTip": "Controllers\\Auth\\AuthController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowBgAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAiwCcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:12:04.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "IEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\IEmployeeService.cs",
               "RelativeDocumentMoniker": "Services\\IEmployeeService.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\IEmployeeService.cs",
               "RelativeToolTip": "Services\\IEmployeeService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAQwB4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:07:38.926Z"
+              "WhenOpened": "2024-04-15T23:07:38.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "Services\\EmployeeService.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\EmployeeService.cs",
               "RelativeToolTip": "Services\\EmployeeService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwAgAAAAeAAAA",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAuwEEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:07:25.521Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "IEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\IEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IEmployeeRepository.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\IEmployeeRepository.cs",
               "RelativeToolTip": "Repository\\IEmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:04:09.087Z"
+              "WhenOpened": "2024-04-15T23:04:09.087Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
               "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\EmployeeRepository.cs",
               "RelativeToolTip": "Repository\\EmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABMAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAowAkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:03:09.134Z"
+              "WhenOpened": "2024-04-15T23:03:09.134Z",
+              "EditorCaption": ""
             }
           ]
         }

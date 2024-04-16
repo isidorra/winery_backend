@@ -44,49 +44,89 @@ public class CustomerService : ICustomerService
         {
             return false;
         }
-        // ogranicenje za duzinu, najmanje
         if (UsernameExist(customer.Username))
         {
-            System.Diagnostics.Debug.WriteLine("eeeeeee");
             return false;
         }
-        else if(!customer.Firstname.All(char.IsLetter))
+        else if (!SufficientUsernameLenght(customer.Username))
         {
-            System.Diagnostics.Debug.WriteLine("ddddddd");
+            return false;
+        }
+        else if (!SufficientFirstnameLenght(customer.Firstname))
+        {
+            return false;
+        }
+        else if (!customer.Firstname.All(char.IsLetter))
+        {
+            return false;
+        }
+        else if (!SufficientLastnameLenght(customer.Lastname))
+        {
             return false;
         }
         else if (!customer.Lastname.All(char.IsLetter))
         {
-            System.Diagnostics.Debug.WriteLine("ccccccc");
             return false;
         }
         else if (!IsValidEmail(customer.Email))
         {
-            System.Diagnostics.Debug.WriteLine("bbbbbb");
             return false;
         }
-        // za lozinku treba videti ono sa ponavljanjem da li samo na frontend-u
-        // za broj telefona treba videti kako to da se ogranici
-        else if (!IsValidAge(customer.BirthDate)) // NIJE URADJENO
+        else if (!IsValidPhoneNumber(customer.PhoneNumber))
         {
             return false;
         }
-        // za pol ce biti radio buttons, pa ce moci samo to da izabere, nema potrebe za proverom
+        else if (!IsValidAge(customer.BirthDate))
+        {
+            return false;
+        }
+
         return _customerRepository.Create(customer);
     }
 
     public bool AreFieldsFilled(Customer customer)
     {
-        /*if(customer.Username.Equals("") || customer.Firstname.Equals("") || customer.Lastname.Equals("") || customer.Email.Equals("") || customer.Password.Equals("") || customer.Gender
+        if(string.IsNullOrWhiteSpace(customer.Username) || string.IsNullOrWhiteSpace(customer.Firstname) || string.IsNullOrWhiteSpace(customer.Lastname) || string.IsNullOrWhiteSpace(customer.Email) || string.IsNullOrWhiteSpace(customer.Password) || string.IsNullOrWhiteSpace(customer.PhoneNumber) || !customer.BirthDate.HasValue)
         {
             return false;
-        }*/
-        return false;
+        }
+
+        return true;
     }
 
     public bool UsernameExist(string username)
     {
         return _customerRepository.UsernameExist(username) || _employeeService.UsernameExist(username);
+    }
+
+    public bool SufficientUsernameLenght(string username)
+    {
+        if (username.Length <= 4)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public bool SufficientFirstnameLenght(string firstname)
+    {
+        if (firstname.Length <= 1)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public bool SufficientLastnameLenght(string lastname)
+    {
+        if (lastname.Length <= 2)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public bool IsValidEmail(string email)
@@ -95,10 +135,48 @@ public class CustomerService : ICustomerService
         return Regex.IsMatch(email, pattern);
     }
 
+    public bool IsValidPhoneNumber(string phoneNumber)
+    {
+        if(!PhoneNumberExist(phoneNumber))
+        {
+            if (phoneNumber.Length == 9 || phoneNumber.Length == 10)
+            {
+                if (IsDigitsOnly(phoneNumber))
+                {
+                    if (phoneNumber.StartsWith("060") || phoneNumber.StartsWith("061") || phoneNumber.StartsWith("062") || phoneNumber.StartsWith("063") || phoneNumber.StartsWith("064") || phoneNumber.StartsWith("065") || phoneNumber.StartsWith("066") || phoneNumber.StartsWith("067") || phoneNumber.StartsWith("068") || phoneNumber.StartsWith("069"))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+    public bool PhoneNumberExist(string phoneNumber)
+    {
+        return _customerRepository.PhoneNumberExist(phoneNumber) || _employeeService.PhoneNumberExist(phoneNumber);
+    }
+
+    public bool IsDigitsOnly(string phoneNumber)
+    {
+        foreach (char c in phoneNumber)
+        {
+            if (c < '0' || c > '9')
+                return false;
+        }
+
+        return true;
+    }
+
     public bool IsValidAge(DateTime? birthDate)
     {
-        return true;
-        // return birthDate.AddYears(18) <= DateTime.Now;
+        DateTime date = birthDate.Value;
+
+        return date.AddYears(18) <= DateTime.Now;
     }
 
 

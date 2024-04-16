@@ -38,15 +38,18 @@ public class AuthController : Controller {
         var token = _authService.GenerateJwtToken(customer);
 
         return Ok(new { Token = token });
-
     }
 
     [HttpPost("login")]
     public IActionResult Login(LoginDto loginDto)
     {
+        if(string.IsNullOrWhiteSpace(loginDto.Username) || string.IsNullOrWhiteSpace(loginDto.Password))
+        {
+            return BadRequest(ModelState);
+        }
+
         Customer customer = _customerService.Authenticate(loginDto.Username, loginDto.Password);
         Employee employee = _employeeService.Authenticate(loginDto.Username, loginDto.Password);
-
 
         // GLOBALNI TOKEN TREBA NAPRAVITI NEKAKO, DA BI SE MOGLE PROVERITI ROLE, I DA BI SE POSLE MOGAO UNISTITI TOKEN KADA SE IZLOGUJE
         /*globalToken = _authService.GenerateJwtTokenObject(customer);
@@ -71,7 +74,6 @@ public class AuthController : Controller {
 
         // Unauthorized if authentication fails
         return Unauthorized();
-
     }
 
     [HttpPost("employeeRegister")]
@@ -84,7 +86,10 @@ public class AuthController : Controller {
 
         Employee employee = new Employee(registerEmployeeDto, hashedPassword);
 
-        _employeeService.CreateEmployee(employee);
+        if (!_employeeService.CreateEmployee(employee))
+        {
+            return BadRequest(ModelState);
+        }
 
         var token = _authService.GenerateJwtToken(employee);
 

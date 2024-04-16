@@ -9,5 +9,7 @@
         bool Save();
 
         bool UsernameExist(string username);
+
+        bool PhoneNumberExist(string phoneNumber);
     }
 }

@@ -31,5 +31,10 @@
         {
             return _context.Employees.Any(c => c.Username.Equals(username));
         }
+
+        public bool PhoneNumberExist(string phoneNumber)
+        {
+            return _context.Employees.Any(c => c.PhoneNumber.Equals(phoneNumber));
+        }
     }
 }

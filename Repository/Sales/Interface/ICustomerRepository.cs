@@ -9,4 +9,6 @@ public interface ICustomerRepository {
     bool Create(Customer customer);
 
     bool UsernameExist(string username);
+
+    bool PhoneNumberExist(string phoneNumber);
 }
