@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\controllers\\sales\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\sales\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Services\\Sales\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Sales\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Services\\Sales\\CustomerService.cs",
-              "RelativeToolTip": "Services\\Sales\\CustomerService.cs",
-              "ViewState": "AQIAAPIAAAAAAAAAAAAmwP4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:45:03.959Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -45,22 +32,35 @@
               "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
               "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
               "RelativeToolTip": "Repository\\Sales\\CustomerRepository.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAIwEYAAAAFAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAADQAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:44:08.426Z",
+              "WhenOpened": "2024-04-17T14:16:20.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\Sales\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Sales\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\Sales\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\Sales\\CustomerController.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAowF0AAAAAAAAA",
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repository\\EmployeeRepository.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAwwDkAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:41:52.82Z",
+              "WhenOpened": "2024-04-17T14:15:37.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T13:54:32.822Z",
               "EditorCaption": ""
             }
           ]

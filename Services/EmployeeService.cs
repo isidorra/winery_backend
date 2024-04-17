@@ -178,5 +178,44 @@ namespace winery_backend.Services
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
 
+        public void Update(EditEmployeeDto editEmployeeDto, int employeeId)
+        {
+            try
+            {
+                Employee employee = _employeeRepository.GetById(employeeId);
+                if (!string.IsNullOrEmpty(editEmployeeDto.Firstname))
+                {
+                    employee.Firstname = editEmployeeDto.Firstname;
+                }
+                if (!string.IsNullOrEmpty(editEmployeeDto.Lastname))
+                {
+                    employee.Lastname = editEmployeeDto.Lastname;
+                }
+                if (!string.IsNullOrEmpty(editEmployeeDto.Email))
+                {
+                    employee.Email = editEmployeeDto.Email;
+                }
+                if (!string.IsNullOrEmpty(editEmployeeDto.Username))
+                {
+                    employee.Username = editEmployeeDto.Username;
+                }
+                if (!string.IsNullOrEmpty(editEmployeeDto.Password))
+                {
+                    employee.Password = editEmployeeDto.Password;
+                }
+                if (!string.IsNullOrEmpty(editEmployeeDto.ProfilePhoto))
+                {
+                    employee.PhoneNumber = editEmployeeDto.ProfilePhoto;
+                }
+
+                _employeeRepository.Update(employee);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while trying to edit employee", ex);
+            }
+
+        }
+
     }
 }

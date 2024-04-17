@@ -14,7 +14,10 @@
         {
             return _context.Employees.Where(c => c.Username.Equals(username)).FirstOrDefault();
         }
-
+        public Employee GetById(int id)
+        {
+            return _context.Employees.Where(c => c.Id == id).FirstOrDefault();
+        }
         public bool Create(Employee employee)
         {
             _context.Add(employee);
@@ -35,6 +38,26 @@
         public bool PhoneNumberExist(string phoneNumber)
         {
             return _context.Employees.Any(c => c.PhoneNumber.Equals(phoneNumber));
+        }
+
+        public void Update(Employee employee)
+        {
+            var editedEmployee = _context.Employees.FirstOrDefault(c => c.Id == employee.Id);
+            if (editedEmployee == null)
+            {
+                throw new ArgumentException("Employee not found");
+            }
+
+            try
+            {
+                _context.Update(employee);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while trying to edit employee", ex);
+            }
+
         }
     }
 }

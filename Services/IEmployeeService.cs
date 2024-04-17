@@ -29,5 +29,6 @@ namespace winery_backend.Services
         bool UsernameExist(string username);
 
         bool PhoneNumberExist(string username);
+        void Update(EditEmployeeDto editEmployeeDto, int emoloyeeId);
     }
 }
