@@ -1,42 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\",
+  "WorkspaceRootPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\interface\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\controllers\\sales\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\sales\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:services\\sales\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,127 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\CustomerRepository.cs",
-              "RelativeToolTip": "Repository\\Sales\\CustomerRepository.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAcwDEAAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:36:16.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ICustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\Interface\\ICustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Sales\\Interface\\ICustomerService.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\Interface\\ICustomerService.cs",
-              "RelativeToolTip": "Services\\Sales\\Interface\\ICustomerService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:18:20.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Sales\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\Sales\\CustomerService.cs",
-              "RelativeToolTip": "Services\\Sales\\CustomerService.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAAAQwAwAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:17:29.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\Interface\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Sales\\Interface\\ICustomerRepository.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\Sales\\Interface\\ICustomerRepository.cs",
-              "RelativeToolTip": "Repository\\Sales\\Interface\\ICustomerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:49:57.988Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Controllers\\Auth\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Auth\\AuthController.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Controllers\\Auth\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\Auth\\AuthController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAiwCcAAAApAAAA",
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Services\\Sales\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\Sales\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Services\\Sales\\CustomerService.cs",
+              "RelativeToolTip": "Services\\Sales\\CustomerService.cs",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAmwP4AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:12:04.753Z",
+              "WhenOpened": "2024-04-17T13:45:03.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IEmployeeService.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\IEmployeeService.cs",
-              "RelativeDocumentMoniker": "Services\\IEmployeeService.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\IEmployeeService.cs",
-              "RelativeToolTip": "Services\\IEmployeeService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAQwB4AAAAvAAAA",
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
+              "RelativeToolTip": "Repository\\Sales\\CustomerRepository.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAIwEYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:07:38.926Z",
+              "WhenOpened": "2024-04-17T13:44:08.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EmployeeService.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\EmployeeService.cs",
-              "RelativeDocumentMoniker": "Services\\EmployeeService.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Services\\EmployeeService.cs",
-              "RelativeToolTip": "Services\\EmployeeService.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAuwEEAAAAJAAAA",
+              "DocumentIndex": 1,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\Sales\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Sales\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\Sales\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\Sales\\CustomerController.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAowF0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:07:25.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IEmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\IEmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\IEmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\IEmployeeRepository.cs",
-              "RelativeToolTip": "Repository\\IEmployeeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:04:09.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Repository\\EmployeeRepository.cs",
-              "RelativeToolTip": "Repository\\EmployeeRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowAkAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:03:09.134Z",
+              "WhenOpened": "2024-04-17T13:41:52.82Z",
               "EditorCaption": ""
             }
           ]

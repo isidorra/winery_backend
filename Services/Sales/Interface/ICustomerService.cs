@@ -29,4 +29,5 @@ public interface ICustomerService {
     bool IsValidAge(DateTime? birthDate);
 
     Customer Authenticate(string? username, string? password);
+    void Update(EditCustomerDto editedCustomer, int customerId);
 }

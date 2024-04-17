@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 
 [Route("api/customers")]
@@ -40,10 +42,52 @@ public class CustomerController : Controller
         return Ok(customer);
     }
 
-   
-    
+    [HttpGet("view/customer")]
+    [Authorize]
+    public IActionResult View()
 
-   
+    {
+        var customerId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (customerId == null)
+        {
+            return Unauthorized();
+        }
+
+        Customer customer = _customerService.GetById(int.Parse(customerId));
+
+        return View(customer);
+    }
+
+    [HttpPost("edit/customer")]
+    public IActionResult Edit(EditCustomerDto editCustomerDto)
+    {
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var customerId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (customerId == null)
+        {
+            return Unauthorized();
+        }
+
+        try
+        {
+            _customerService.Update(editCustomerDto, int.Parse(customerId));
+            return Ok("Successful edit");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Error : {ex.Message}");
+        }
+
+
+    }
+
+
+
 
 
 

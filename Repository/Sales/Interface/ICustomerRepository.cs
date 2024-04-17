@@ -11,4 +11,5 @@ public interface ICustomerRepository {
     bool UsernameExist(string username);
 
     bool PhoneNumberExist(string phoneNumber);
+    void Update(Customer customer);
 }

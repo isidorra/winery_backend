@@ -50,4 +50,23 @@ public class CustomerRepository : ICustomerRepository
         return _context.Customers.Any(c => c.PhoneNumber.Equals(phoneNumber));
     }
 
+    public void Update(Customer customer)
+    {
+        var editedCustomer = _context.Customers.FirstOrDefault(c => c.Id == customer.Id);
+        if (editedCustomer == null)
+        {
+            throw new ArgumentException("Customer not found");
+        }
+
+        try
+        {
+            _context.Update(customer);
+            _context.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error while trying to edit customer", ex);
+        }
+
+    }
 }

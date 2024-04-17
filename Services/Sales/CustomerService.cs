@@ -198,4 +198,67 @@ public class CustomerService : ICustomerService
         return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
     }
 
+    public void Update(EditCustomerDto editCustomerDto, int customerId)
+    {
+        try
+        {
+            Customer customer = _customerRepository.GetById(customerId);
+            if (!string.IsNullOrEmpty(editCustomerDto.FirstName))
+            {
+                customer.Firstname = editCustomerDto.FirstName;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.LastName))
+            {
+                customer.Lastname = editCustomerDto.LastName;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Email))
+            {
+                customer.Email = editCustomerDto.Email;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Username))
+            {
+                customer.Username = editCustomerDto.Username;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Password))
+            {
+                customer.Password = editCustomerDto.Password;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Street))
+            {
+                customer.Street = editCustomerDto.Street;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Number))
+            {
+                customer.Number = editCustomerDto.Number;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Floor))
+            {
+                customer.Floor = int.Parse(editCustomerDto.Floor);
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.Door))
+            {
+                customer.Door = int.Parse(editCustomerDto.Door);
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.City))
+            {
+                customer.CityId = int.Parse(editCustomerDto.City);
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.ZipCode))
+            {
+                customer.Zip = editCustomerDto.ZipCode;
+            }
+            if (!string.IsNullOrEmpty(editCustomerDto.PhoneNumber))
+            {
+                customer.PhoneNumber = editCustomerDto.PhoneNumber;
+            }
+
+            _customerRepository.Update(customer);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error while trying to edit customer", ex);
+        }
+
+    }
+
 }
