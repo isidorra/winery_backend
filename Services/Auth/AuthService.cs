@@ -16,11 +16,13 @@ public class AuthService : IAuthService
     {
         var claims = new List<Claim>
         {
-            new Claim("username", user.Username),
+            // new Claim("username", user.Username),
         
-            // Custom claim for role
-            new Claim("role", user.Role.ToString())
-           
+            // // Custom claim for role
+            // new Claim("role", user.Role.ToString())
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.Username),
+
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123456789098765432123456uhbvsdebhhbrffruignwiugnbrwuiwhnriufniugvwhnruignwurighnwigvuwrhugirnhgiuwnriwiurwnhiughwpiu9348"));
@@ -67,5 +69,5 @@ public class AuthService : IAuthService
         return hashedPassword;
     }
 
-    
+
 }
