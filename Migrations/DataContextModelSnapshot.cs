@@ -216,6 +216,20 @@ namespace winery_backend.Migrations
                             ProfilePhoto = "somepath",
                             Role = 0,
                             Username = "imenko"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin@admin.com",
+                            Firstname = "Admin",
+                            Gender = 1,
+                            Lastname = "Adminovic",
+                            Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS",
+                            PhoneNumber = "061111111",
+                            ProfilePhoto = "somepath",
+                            Role = 0,
+                            Username = "admin123"
                         });
                 });
 #pragma warning restore 612, 618

@@ -5,14 +5,16 @@ using winery_backend.Services;
 
 [Route("/api")]
 [ApiController]
-public class AuthController : Controller {
+public class AuthController : Controller
+{
     private readonly IAuthService _authService;
     private readonly ICustomerService _customerService;
     private readonly IEmployeeService _employeeService;
 
     public JwtSecurityToken globalToken = null;
 
-    public AuthController(IAuthService authService, ICustomerService customerService, IEmployeeService employeeService) {
+    public AuthController(IAuthService authService, ICustomerService customerService, IEmployeeService employeeService)
+    {
         _authService = authService;
         _customerService = customerService;
         _employeeService = employeeService;
@@ -35,15 +37,14 @@ public class AuthController : Controller {
             return BadRequest(ModelState);
         }
 
-        var token = _authService.GenerateJwtToken(customer);
 
-        return Ok(new { Token = token });
+        return Ok(new { Username = customer.Username, Role = customer.Role });
     }
 
     [HttpPost("login")]
     public IActionResult Login(LoginDto loginDto)
     {
-        if(string.IsNullOrWhiteSpace(loginDto.Username) || string.IsNullOrWhiteSpace(loginDto.Password))
+        if (string.IsNullOrWhiteSpace(loginDto.Username) || string.IsNullOrWhiteSpace(loginDto.Password))
         {
             return BadRequest(ModelState);
         }
@@ -51,25 +52,15 @@ public class AuthController : Controller {
         Customer customer = _customerService.Authenticate(loginDto.Username, loginDto.Password);
         Employee employee = _employeeService.Authenticate(loginDto.Username, loginDto.Password);
 
-        // GLOBALNI TOKEN TREBA NAPRAVITI NEKAKO, DA BI SE MOGLE PROVERITI ROLE, I DA BI SE POSLE MOGAO UNISTITI TOKEN KADA SE IZLOGUJE
-        /*globalToken = _authService.GenerateJwtTokenObject(customer);
-        Console.WriteLine(globalToken.ToString());*/
+
 
         if (customer != null)
         {
-            // Generate JWT token
-            var token = _authService.GenerateJwtToken(customer);
-
-            // Return token
-            return Ok(new { Token = token });
+            return Ok(new { Username = customer.Username, Role = customer.Role });
         }
         else if (employee != null)
         {
-            // Generate JWT token
-            var token = _authService.GenerateJwtToken(employee);
-
-            // Return token
-            return Ok(new { Token = token });
+            return Ok(new { Username = employee.Username, Role = employee.Role });
         }
 
         // Unauthorized if authentication fails
@@ -91,13 +82,7 @@ public class AuthController : Controller {
             return BadRequest(ModelState);
         }
 
-        var token = _authService.GenerateJwtToken(employee);
-
-        return Ok(new { Token = token });
-
-        // FALI: provera da li je administrator onaj koji hoce da ih registruje
-        // KOMENTAR: pitanje je da li to i treba, jer ce on na frontend-u biti ulogovan kao administrator, niko drugi nece ni moci da dodje do ovog dela osim njega
-        /*if(globalToken.Equals(Role.ADMINISTRATOR))*/
+        return Ok("Successfully created employee.");
 
     }
 

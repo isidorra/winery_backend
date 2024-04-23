@@ -4,6 +4,7 @@ namespace winery_backend.Services
 {
     public interface IEmployeeService
     {
+        ICollection<Employee> GetAll();
         Employee Authenticate(string? username, string? password);
 
         Employee GetByUsername(string username);

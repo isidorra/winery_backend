@@ -215,10 +215,6 @@ public class CustomerService : ICustomerService
             {
                 customer.Email = editCustomerDto.Email;
             }
-            if (!string.IsNullOrEmpty(editCustomerDto.Username))
-            {
-                customer.Username = editCustomerDto.Username;
-            }
             if (!string.IsNullOrEmpty(editCustomerDto.Password))
             {
                 customer.Password = editCustomerDto.Password;

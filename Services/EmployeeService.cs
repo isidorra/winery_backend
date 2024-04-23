@@ -195,17 +195,13 @@ namespace winery_backend.Services
                 {
                     employee.Email = editEmployeeDto.Email;
                 }
-                if (!string.IsNullOrEmpty(editEmployeeDto.Username))
-                {
-                    employee.Username = editEmployeeDto.Username;
-                }
                 if (!string.IsNullOrEmpty(editEmployeeDto.Password))
                 {
                     employee.Password = editEmployeeDto.Password;
                 }
                 if (!string.IsNullOrEmpty(editEmployeeDto.ProfilePhoto))
                 {
-                    employee.PhoneNumber = editEmployeeDto.ProfilePhoto;
+                    employee.ProfilePhoto = editEmployeeDto.ProfilePhoto;
                 }
 
                 _employeeRepository.Update(employee);
@@ -217,5 +213,9 @@ namespace winery_backend.Services
 
         }
 
+        public ICollection<Employee> GetAll()
+        {
+            return _employeeRepository.GetAll();
+        }
     }
 }

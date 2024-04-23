@@ -10,6 +10,11 @@
             _context = context;
         }
 
+        public ICollection<Employee> GetAll()
+        {
+            return _context.Employees.OrderBy(c => c.Id).ToList();
+        }
+
         public Employee GetByUsername(string username)
         {
             return _context.Employees.Where(c => c.Username.Equals(username)).FirstOrDefault();

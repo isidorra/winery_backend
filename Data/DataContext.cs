@@ -88,6 +88,20 @@ public class DataContext : DbContext{
                 Gender = Gender.MALE,
                 Role = Role.ADMINISTRATOR,
                 ProfilePhoto = "somepath"
+            },
+            new Employee
+            {
+                Id = 3,
+                Firstname = "Admin",
+                Lastname = "Adminovic",
+                Email = "admin@admin.com",
+                Username = "admin123",
+                Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", 
+                PhoneNumber = "061111111",
+                BirthDate = new DateTime(1982, 8, 20),
+                Gender = Gender.MALE,
+                Role = Role.ADMINISTRATOR,
+                ProfilePhoto = "somepath"
             }
         );
 

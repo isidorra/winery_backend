@@ -26,13 +26,28 @@ public class CustomerController : Controller
         return Ok(customers);
     }
 
+
+    [HttpGet("username")]
+    public IActionResult GetByUsername(string username) {
+        if(_customerService.GetByUsername(username) == null)
+            return BadRequest("Customer does not exist");
+        var customer = _customerService.GetByUsername(username);
+
+        // if (!ModelState.IsValid)
+        //     return BadRequest(ModelState);
+
+        return Ok(customer);
+    }
+
+
+
     [HttpGet("{userId}")]
     public IActionResult GetById(int userId)
     {
 
         if (!_customerService.Exists(userId))
         {
-            return BadRequest("Customer do not exist");
+            return BadRequest("Customer does not exist");
         }
         var customer = _customerService.GetById(userId);
 
@@ -41,6 +56,8 @@ public class CustomerController : Controller
 
         return Ok(customer);
     }
+
+
 
     [HttpGet("view/customer")]
     [Authorize]
@@ -58,24 +75,22 @@ public class CustomerController : Controller
         return View(customer);
     }
 
-    [HttpPost("edit/customer")]
-    public IActionResult Edit(EditCustomerDto editCustomerDto)
+
+
+    [HttpPost("edit/customer/username")]
+    public IActionResult Edit(EditCustomerDto editCustomerDto, string username)
     {
 
         if (!ModelState.IsValid)
-        {
             return BadRequest(ModelState);
-        }
 
-        var customerId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (customerId == null)
-        {
+        var customer = _customerService.GetByUsername(username);
+        if (customer == null)
             return Unauthorized();
-        }
-
+        Console.WriteLine("USERNAME: ", username);
         try
         {
-            _customerService.Update(editCustomerDto, int.Parse(customerId));
+            _customerService.Update(editCustomerDto, customer.Id);
             return Ok("Successful edit");
         }
         catch (Exception ex)

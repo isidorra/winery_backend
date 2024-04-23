@@ -13,8 +13,29 @@ public class EmployeeController : Controller
     { 
         _employeeService = employeeService;
     }
+
+    [HttpGet]
+    public IActionResult GetAll() {
+        var employees = _employeeService.GetAll();
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        return Ok(employees);
+    }
+
+    [HttpGet("username")]
+    public IActionResult GetByUsername(string username) {
+        if(_employeeService.GetByUsername(username) == null)
+            return BadRequest("Customer does not exist");
+        var employee = _employeeService.GetByUsername(username);
+
+        // if (!ModelState.IsValid)
+        //     return BadRequest(ModelState);
+
+        return Ok(employee);
+    }
+
     [HttpGet("view/employee")]
-    [Authorize]
     public IActionResult View()
     {
         var employeeId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -28,24 +49,19 @@ public class EmployeeController : Controller
         return View(employee);
     }
 
-    [HttpPost("edit/employee")]
-    [Authorize]
-    public IActionResult Edit(EditEmployeeDto editEmployeeDto)
+    [HttpPost("edit/employee/username")]
+    public IActionResult Edit(EditEmployeeDto editEmployeeDto, string username)
     {
         if (!ModelState.IsValid)
-        {
             return BadRequest(ModelState);
-        }
 
-        var employeeId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (employeeId == null)
-        {
+        var employee = _employeeService.GetByUsername(username);
+        if (employee == null)
             return Unauthorized();
-        }
 
         try
         {
-            _employeeService.Update(editEmployeeDto, int.Parse(employeeId));
+            _employeeService.Update(editEmployeeDto, employee.Id);
             return Ok("Successful edit");
         }
         catch (Exception ex)
