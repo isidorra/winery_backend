@@ -1,22 +1,39 @@
 using Microsoft.EntityFrameworkCore;
 
-public class DataContext : DbContext{
+public class DataContext : DbContext
+{
 
-    public DataContext(DbContextOptions<DataContext> options) : base(options) {
+    public DataContext(DbContextOptions<DataContext> options) : base(options)
+    {
 
     }
 
-    public DbSet<Customer> Customers {get;set;}
-    public DbSet<Employee> Employees {get;set;}
-   
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<City> Cities { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<City>().HasData(
-            new City { Id = 1, Name = "New York" },
-            new City { Id = 2, Name = "Los Angeles" }
+            new City { Id = 1, Name = "Belgrade", Zip = "11000" },
+            new City { Id = 2, Name = "Novi Sad", Zip = "21000" },
+            new City { Id = 3, Name = "Niš", Zip = "18000" },
+            new City { Id = 4, Name = "Kragujevac", Zip = "34000" },
+            new City { Id = 5, Name = "Subotica", Zip = "24000" },
+            new City { Id = 6, Name = "Zrenjanin", Zip = "23000" },
+            new City { Id = 7, Name = "Pančevo", Zip = "26000" },
+            new City { Id = 8, Name = "Čačak", Zip = "32000" },
+            new City { Id = 9, Name = "Kraljevo", Zip = "36000" },
+            new City { Id = 10, Name = "Smederevo", Zip = "11300" },
+            new City { Id = 11, Name = "Leskovac", Zip = "16000" },
+            new City { Id = 12, Name = "Valjevo", Zip = "14000" },
+            new City { Id = 13, Name = "Užice", Zip = "31000" },
+            new City { Id = 14, Name = "Šabac", Zip = "15000" },
+            new City { Id = 15, Name = "Novi Pazar", Zip = "36300" },
+            new City { Id = 16, Name = "Negotin", Zip = "19300" }
         );
 
         modelBuilder.Entity<Customer>().HasData(
@@ -37,7 +54,6 @@ public class DataContext : DbContext{
                 Floor = null,
                 Door = null,
                 CityId = 1, // Reference to New York
-                Zip = "10001"
             },
             new Customer
             {
@@ -46,17 +62,16 @@ public class DataContext : DbContext{
                 Lastname = "Doe",
                 Email = "jane.doe@example.com",
                 Username = "janedoe",
-                Password = "hashedpassword", // Replace with hashed password
+                Password = "hashedpassword",
                 PhoneNumber = "9876543210",
                 BirthDate = new DateTime(1992, 8, 20),
                 Gender = Gender.FEMALE,
                 Role = Role.CUSTOMER,
                 Street = "456 Elm St",
                 Number = "202",
-                Floor = 2,
-                Door = 3,
-                CityId = 2, // Reference to Los Angeles
-                Zip = "90001"
+                Floor = "2",
+                Door = "3",
+                CityId = 2, 
             }
         );
 
@@ -82,7 +97,7 @@ public class DataContext : DbContext{
                 Lastname = "Prezimenic",
                 Email = "imenko@example.com",
                 Username = "imenko",
-                Password = "hashedpassword", 
+                Password = "hashedpassword",
                 PhoneNumber = "9876543210",
                 BirthDate = new DateTime(1992, 8, 20),
                 Gender = Gender.MALE,
@@ -96,7 +111,7 @@ public class DataContext : DbContext{
                 Lastname = "Adminovic",
                 Email = "admin@admin.com",
                 Username = "admin123",
-                Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", 
+                Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS",
                 PhoneNumber = "061111111",
                 BirthDate = new DateTime(1982, 8, 20),
                 Gender = Gender.MALE,
@@ -105,6 +120,6 @@ public class DataContext : DbContext{
             }
         );
 
-        
+
     }
 }

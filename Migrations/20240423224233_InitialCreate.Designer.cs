@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240423081905_InitialCreate")]
+    [Migration("20240423224233_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -36,20 +36,110 @@ namespace winery_backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Zip")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
-                    b.ToTable("City");
+                    b.ToTable("Cities");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Name = "New York"
+                            Name = "Belgrade",
+                            Zip = "11000"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Los Angeles"
+                            Name = "Novi Sad",
+                            Zip = "21000"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Niš",
+                            Zip = "18000"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Kragujevac",
+                            Zip = "34000"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Subotica",
+                            Zip = "24000"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Zrenjanin",
+                            Zip = "23000"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Pančevo",
+                            Zip = "26000"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Čačak",
+                            Zip = "32000"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Kraljevo",
+                            Zip = "36000"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Smederevo",
+                            Zip = "11300"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Leskovac",
+                            Zip = "16000"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Valjevo",
+                            Zip = "14000"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Užice",
+                            Zip = "31000"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Šabac",
+                            Zip = "15000"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Novi Pazar",
+                            Zip = "36300"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Negotin",
+                            Zip = "19300"
                         });
                 });
 
@@ -64,11 +154,11 @@ namespace winery_backend.Migrations
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("CityId")
+                    b.Property<int?>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Door")
-                        .HasColumnType("int");
+                    b.Property<string>("Door")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
@@ -76,8 +166,8 @@ namespace winery_backend.Migrations
                     b.Property<string>("Firstname")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Floor")
-                        .HasColumnType("int");
+                    b.Property<string>("Floor")
+                        .HasColumnType("longtext");
 
                     b.Property<int?>("Gender")
                         .HasColumnType("int");
@@ -103,10 +193,9 @@ namespace winery_backend.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Zip")
-                        .HasColumnType("longtext");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
 
                     b.ToTable("Customers");
 
@@ -125,18 +214,17 @@ namespace winery_backend.Migrations
                             PhoneNumber = "1234567890",
                             Role = 9,
                             Street = "123 Main St",
-                            Username = "johndoe",
-                            Zip = "10001"
+                            Username = "johndoe"
                         },
                         new
                         {
                             Id = 2,
                             BirthDate = new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CityId = 2,
-                            Door = 3,
+                            Door = "3",
                             Email = "jane.doe@example.com",
                             Firstname = "Jane",
-                            Floor = 2,
+                            Floor = "2",
                             Gender = 0,
                             Lastname = "Doe",
                             Number = "202",
@@ -144,8 +232,7 @@ namespace winery_backend.Migrations
                             PhoneNumber = "9876543210",
                             Role = 9,
                             Street = "456 Elm St",
-                            Username = "janedoe",
-                            Zip = "90001"
+                            Username = "janedoe"
                         });
                 });
 
@@ -234,6 +321,15 @@ namespace winery_backend.Migrations
                             Role = 0,
                             Username = "admin123"
                         });
+                });
+
+            modelBuilder.Entity("Customer", b =>
+                {
+                    b.HasOne("City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId");
+
+                    b.Navigation("City");
                 });
 #pragma warning restore 612, 618
         }

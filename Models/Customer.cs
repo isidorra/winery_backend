@@ -2,22 +2,24 @@ public class Customer : User
 {
     public string? Street { get; set; }
     public string? Number { get; set; }
-    public int? Floor { get; set; }
-    public int? Door { get; set; }
-    public int CityId { get; set; }
-    public String? Zip {get;set;}
+    public string? Floor { get; set; }
+    public string? Door { get; set; }
+    public int? CityId { get; set; }
+    
+    // Navigation property
+    public City City { get; set; }
 
     public Customer() { }
 
-    public Customer(string? street, string? number, int? floor, int? door, int cityId, string? zip)
+    public Customer(string firstname, string lastname, string email, string username, string password, Gender gender, Role role, string phoneNumber, DateTime birthDate, string? street, string? number, string? floor, string? door, int? cityId)
     {
         Street = street;
         Number = number;
         Floor = floor;
         Door = door;
         CityId = cityId;
-        Zip = zip;
     }
+    
 
     public Customer(RegisterCustomerDto registerCustomerDto, string hashedPassword)
     {

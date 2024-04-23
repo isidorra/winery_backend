@@ -103,19 +103,15 @@ public class CustomerService : ICustomerService
             }
             if (!string.IsNullOrEmpty(editCustomerDto.Floor))
             {
-                customer.Floor = int.Parse(editCustomerDto.Floor);
+                customer.Floor = editCustomerDto.Floor;
             }
             if (!string.IsNullOrEmpty(editCustomerDto.Door))
             {
-                customer.Door = int.Parse(editCustomerDto.Door);
+                customer.Door = editCustomerDto.Door;
             }
-            if (!string.IsNullOrEmpty(editCustomerDto.City))
+            if (editCustomerDto.City != null)
             {
-                customer.CityId = int.Parse(editCustomerDto.City);
-            }
-            if (!string.IsNullOrEmpty(editCustomerDto.ZipCode))
-            {
-                customer.Zip = editCustomerDto.ZipCode;
+                customer.CityId = editCustomerDto.City;
             }
             if (!string.IsNullOrEmpty(editCustomerDto.PhoneNumber))
             {
