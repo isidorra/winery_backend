@@ -1,7 +1,4 @@
-﻿using winery_backend.Repository;
-
-namespace winery_backend.Services
-{
+﻿
     public interface IEmployeeService
     {
         Employee Authenticate(string? username, string? password);
@@ -31,4 +28,4 @@ namespace winery_backend.Services
         bool PhoneNumberExist(string username);
         void Update(EditEmployeeDto editEmployeeDto, int emoloyeeId);
     }
-}
+

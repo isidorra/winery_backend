@@ -1,5 +1,4 @@
-﻿namespace winery_backend.Repository
-{
+﻿
     public interface IEmployeeRepository
     {
         Employee GetByUsername(string username);
@@ -14,4 +13,3 @@
         bool PhoneNumberExist(string phoneNumber);
         void Update(Employee employee);
     }
-}

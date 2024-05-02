@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using winery_backend.Repository;
-using winery_backend.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

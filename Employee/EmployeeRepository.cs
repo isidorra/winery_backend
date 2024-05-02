@@ -1,5 +1,4 @@
-﻿namespace winery_backend.Repository
-{
+﻿
     public class EmployeeRepository : IEmployeeRepository
     {
 
@@ -60,4 +59,3 @@
 
         }
     }
-}

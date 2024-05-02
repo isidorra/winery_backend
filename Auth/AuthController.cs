@@ -1,7 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
-using winery_backend.Services;
 
 [Route("/api")]
 [ApiController]

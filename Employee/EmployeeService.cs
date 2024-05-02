@@ -1,8 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-using winery_backend.Repository;
 
-namespace winery_backend.Services
-{
     public class EmployeeService : IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -218,4 +215,3 @@ namespace winery_backend.Services
         }
 
     }
-}
