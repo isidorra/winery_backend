@@ -25,7 +25,42 @@
         }
         public bool Create(Employee employee)
         {
-            _context.Add(employee);
+            switch(employee.Role)
+            {
+                case Role.ADMINISTRATOR:
+                    _context.Administrators.Add(new Administrator(employee));
+                    break;
+                case Role.OWNER:
+                    _context.Owners.Add(new Owner(employee));
+                    break;
+                case Role.DRIVER: 
+                    _context.VanDrivers.Add(new VanDriver(employee));
+                    break;
+                case Role.LOGISTICIAN:
+                    _context.Logisticians.Add(new Logistician(employee));
+                    break;
+                case Role.MARKETING_MANAGER:
+                    _context.MarketingManagers.Add(new MarketingManager(employee));
+                    break;
+                case Role.WAREHOUSEMAN:
+                    _context.Warehousemen.Add(new Warehouseman(employee));
+                    break;
+                case Role.SALES_MANAGER:
+                    _context.SalesManagers.Add(new SalesManager(employee));
+                    break;
+                case Role.TECHNOLOGIST:
+                    _context.Technologists.Add(new Technologist(employee));
+                    break;
+                case Role.TOUR_GUIDE:
+                    _context.TourGuides.Add(new TourGuide(employee));
+                    break;
+                default:
+                    Console.WriteLine("----------------");
+                    break;
+
+                
+            }
+            //_context.Employees.Add(employee);
             return Save();
         }
 

@@ -39,7 +39,7 @@ namespace winery_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cities");
+                    b.ToTable("Cities", (string)null);
 
                     b.HasData(
                         new
@@ -194,7 +194,7 @@ namespace winery_backend.Migrations
 
                     b.HasIndex("CityId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
 
                     b.HasData(
                         new
@@ -273,7 +273,9 @@ namespace winery_backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
+
+                    b.UseTptMappingStrategy();
 
                     b.HasData(
                         new
@@ -320,6 +322,72 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Administrator", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("Administrators", (string)null);
+                });
+
+            modelBuilder.Entity("Logistician", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("Logisticians", (string)null);
+                });
+
+            modelBuilder.Entity("MarketingManager", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("MarketingManagers", (string)null);
+                });
+
+            modelBuilder.Entity("Owner", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("Owners", (string)null);
+                });
+
+            modelBuilder.Entity("SalesManager", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("SalesManagers", (string)null);
+                });
+
+            modelBuilder.Entity("Technologist", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("Technologists", (string)null);
+                });
+
+            modelBuilder.Entity("TourGuide", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("TourGuides", (string)null);
+                });
+
+            modelBuilder.Entity("VanDriver", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.Property<string>("SomethingForTest")
+                        .HasColumnType("longtext");
+
+                    b.ToTable("VanDrivers", (string)null);
+                });
+
+            modelBuilder.Entity("Warehouseman", b =>
+                {
+                    b.HasBaseType("Employee");
+
+                    b.ToTable("Warehousemen", (string)null);
+                });
+
             modelBuilder.Entity("Customer", b =>
                 {
                     b.HasOne("City", "City")
@@ -327,6 +395,87 @@ namespace winery_backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("Administrator", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("Administrator", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Logistician", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("Logistician", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MarketingManager", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("MarketingManager", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Owner", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("Owner", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("SalesManager", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("SalesManager", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Technologist", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("Technologist", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TourGuide", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("TourGuide", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("VanDriver", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("VanDriver", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Warehouseman", b =>
+                {
+                    b.HasOne("Employee", null)
+                        .WithOne()
+                        .HasForeignKey("Warehouseman", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -10,12 +10,36 @@ public class DataContext : DbContext
 
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Employee> Employees { get; set; }
+    public DbSet<Administrator> Administrators { get; set; }
+    public DbSet<Owner> Owners { get; set; }
+    public DbSet<Logistician> Logisticians { get; set; }
+    public DbSet<MarketingManager> MarketingManagers { get; set; }
+    public DbSet<SalesManager> SalesManagers { get; set; }
+    public DbSet<Technologist> Technologists { get; set; }
+    public DbSet<TourGuide> TourGuides { get; set; }
+    public DbSet<VanDriver> VanDrivers { get; set; }
+    public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<City>().ToTable("Cities");
+        modelBuilder.Entity<Customer>().ToTable("Customers");
+        modelBuilder.Entity<Employee>().ToTable("Employees");
+        modelBuilder.Entity<Owner>().ToTable("Owners");
+        modelBuilder.Entity<Administrator>().ToTable("Administrators");
+        modelBuilder.Entity<Logistician>().ToTable("Logisticians");
+        modelBuilder.Entity<MarketingManager>().ToTable("MarketingManagers");
+        modelBuilder.Entity<SalesManager>().ToTable("SalesManagers");
+        modelBuilder.Entity<Technologist>().ToTable("Technologists");
+        modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
+        modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
+        modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
+
+
+
 
         modelBuilder.Entity<City>().HasData(
             new City { Id = 1, Name = "Belgrade", Zip = "11000" },
@@ -35,6 +59,7 @@ public class DataContext : DbContext
             new City { Id = 15, Name = "Novi Pazar", Zip = "36300" },
             new City { Id = 16, Name = "Negotin", Zip = "19300" }
         );
+        
 
         modelBuilder.Entity<Customer>().HasData(
             new Customer
@@ -71,10 +96,10 @@ public class DataContext : DbContext
                 Number = "202",
                 Floor = "2",
                 Door = "3",
-                CityId = 2, 
+                CityId = 2,
             }
         );
-
+        
         modelBuilder.Entity<Employee>().HasData(
             new Employee
             {
@@ -119,7 +144,24 @@ public class DataContext : DbContext
                 ProfilePhoto = "somepath"
             }
         );
+        
+        // modelBuilder.Entity<Owner>().HasData(
+        //     new Owner(new Employee // Instantiate Employee object
+        //     {
+        //         Id = -1,
+        //         Firstname = "Perko",
+        //         Lastname = "Peric",
+        //         Email = "perko.peric@example.com",
+        //         Username = "perkoperic",
+        //         Password = "hashedpassword",
+        //         PhoneNumber = "543123967",
+        //         BirthDate = new DateTime(1990, 5, 15),
+        //         Gender = Gender.MALE,
+        //         Role = Role.OWNER,
+        //         ProfilePhoto = "somepath"
+        //     })
+        // );
 
-
+        // 
     }
 }
