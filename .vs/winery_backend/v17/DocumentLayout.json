@@ -79,8 +79,7 @@
               "RelativeToolTip": "Employee\\EmployeeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:18:43.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:18:43.988Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Employee\\EmployeeService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:17:57.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:17:57.365Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Employee\\Interface\\IEmployeeRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:17:42.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:17:42.756Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Employee\\EmployeeRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:17:07.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:17:07.226Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Employee\\Interface\\IEmployeeService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:16:19.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:16:19.381Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Customer\\CustomerService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:16:07.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:16:07.7Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Auth\\AuthController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:06:14.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:06:14.79Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "Customer\\Interface\\ICustomerService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:15:58.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:15:58.268Z"
             },
             {
               "$type": "Document",
@@ -183,21 +175,19 @@
               "RelativeToolTip": "Employee\\Employee.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T11:15:42.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:15:42.998Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "winery_backend",
+              "Title": "winery_backend.csproj",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\winery_backend.csproj",
               "RelativeDocumentMoniker": "winery_backend.csproj",
               "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\winery_backend.csproj",
               "RelativeToolTip": "winery_backend.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-02T11:08:21.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T11:08:21.502Z"
             }
           ]
         }
