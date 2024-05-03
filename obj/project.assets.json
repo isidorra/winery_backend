@@ -5367,24 +5367,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/isidorastanculovic/.nuget/packages/": {}
+    "C:\\Users\\Antonela\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/isidorastanculovic/Desktop/winery_backend/winery_backend.csproj",
+      "projectUniqueName": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\Inženjerstvo informacionih sistema\\Projekat\\Backend\\winery_backend.csproj",
       "projectName": "winery_backend",
-      "projectPath": "/Users/isidorastanculovic/Desktop/winery_backend/winery_backend.csproj",
-      "packagesPath": "/Users/isidorastanculovic/.nuget/packages/",
-      "outputPath": "/Users/isidorastanculovic/Desktop/winery_backend/obj/",
+      "projectPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\Inženjerstvo informacionih sistema\\Projekat\\Backend\\winery_backend.csproj",
+      "packagesPath": "C:\\Users\\Antonela\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\Inženjerstvo informacionih sistema\\Projekat\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/isidorastanculovic/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Antonela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5470,7 +5472,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
