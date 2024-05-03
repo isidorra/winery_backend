@@ -45,12 +45,20 @@ public class ProductController : Controller {
         return Ok(products);
     }
 
-    [HttpPost("search")]
-public IActionResult Search([FromBody] string keyword) {
-    if (string.IsNullOrEmpty(keyword))
-        return BadRequest("Search keyword is required.");
-    
-    var products = _productService.Search(keyword);
-    return Ok(products);
-}
+    // [HttpGet("search")]
+    // public IActionResult Search([FromBody] string keyword) {
+    //     if (string.IsNullOrEmpty(keyword))
+    //         return BadRequest("Search keyword is required.");
+        
+    //     var products = _productService.Search(keyword);
+    //     return Ok(products);
+    // }
+    [HttpGet("search")]
+    public IActionResult Search(string keyword) {
+        if (string.IsNullOrEmpty(keyword))
+            return BadRequest("Search keyword is required.");
+        
+        var products = _productService.Search(keyword);
+        return Ok(products);
+    }
 }
