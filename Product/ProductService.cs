@@ -16,8 +16,18 @@ public class ProductService : IProductService
         return _productRepository.GetAll();
     }
 
+    public ICollection<Product> GetByCategoryId(int categoryId)
+    {
+        return _productRepository.GetByCategoryId(categoryId);
+    }
+
     public Product GetById(int id)
     {
         return _productRepository.GetById(id);
+    }
+
+    public ICollection<Product> Search(string keyword)
+    {
+        return _productRepository.Search(keyword);
     }
 }

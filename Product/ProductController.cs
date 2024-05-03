@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 public class ProductController : Controller {
 
     private readonly IProductService _productService;
+    private readonly IProductCategoryService _productCategoryService;
 
-    public ProductController(IProductService productService) {
+    public ProductController(IProductService productService, IProductCategoryService productCategoryService) {
         _productService = productService;
+        _productCategoryService = productCategoryService;
     }
 
     [HttpGet]
@@ -31,4 +33,24 @@ public class ProductController : Controller {
         var product = _productService.GetById(id);
         return Ok(product);
     }
+    [HttpGet("category")]
+    public IActionResult GetByCategoryId(int categoryId) {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        if(!_productCategoryService.Exists(categoryId))
+            return BadRequest("Category does not exist.");
+
+        var products = _productService.GetByCategoryId(categoryId);
+        return Ok(products);
+    }
+
+    [HttpPost("search")]
+public IActionResult Search([FromBody] string keyword) {
+    if (string.IsNullOrEmpty(keyword))
+        return BadRequest("Search keyword is required.");
+    
+    var products = _productService.Search(keyword);
+    return Ok(products);
+}
 }

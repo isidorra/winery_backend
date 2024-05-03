@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 public class ProductRepository : IProductRepository
 {
     private readonly DataContext _context;
@@ -16,8 +18,23 @@ public class ProductRepository : IProductRepository
         return _context.Products.OrderBy(p => p.Id).ToList();
     }
 
+    public ICollection<Product> GetByCategoryId(int categoryId)
+    {
+        return _context.Products.Where(p => p.ProductCategoryId == categoryId).ToList();
+    }
+
     public Product GetById(int id)
     {
         return _context.Products.Where(p => p.Id == id).FirstOrDefault();
+    }
+
+    public ICollection<Product> Search(string keyword) {
+        
+        var products = _context.Products.Where(p=> 
+            EF.Functions.Like(p.Name, $"%{keyword}%") || 
+            EF.Functions.Like(p.Description, $"%{keyword}%") || 
+            EF.Functions.Like(p.ProductCategory.Name, $"%{keyword}%"));
+
+        return products.ToList();
     }
 }
