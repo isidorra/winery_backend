@@ -7,7 +7,7 @@ public class DataContext : DbContext
     {
 
     }
-
+    //------------USERS----------------------------------------------------------
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Administrator> Administrators { get; set; }
@@ -20,7 +20,10 @@ public class DataContext : DbContext
     public DbSet<VanDriver> VanDrivers { get; set; }
     public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
-
+    //-----------PRODUCTS----------------------------------------------------------
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Pricing> Pricing { get; set; }
+    public DbSet<ProductCategory> ProductCategories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -37,6 +40,9 @@ public class DataContext : DbContext
         modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
+        modelBuilder.Entity<Product>().ToTable("Products");
+        modelBuilder.Entity<Pricing>().ToTable("Pricing");
+        modelBuilder.Entity<ProductCategory>().ToTable("ProductCategories");
 
 
 
@@ -59,7 +65,7 @@ public class DataContext : DbContext
             new City { Id = 15, Name = "Novi Pazar", Zip = "36300" },
             new City { Id = 16, Name = "Negotin", Zip = "19300" }
         );
-        
+
 
         modelBuilder.Entity<Customer>().HasData(
             new Customer
@@ -99,7 +105,7 @@ public class DataContext : DbContext
                 CityId = 2,
             }
         );
-        
+
         modelBuilder.Entity<Employee>().HasData(
             new Employee
             {
@@ -144,24 +150,76 @@ public class DataContext : DbContext
                 ProfilePhoto = "somepath"
             }
         );
-        
-        // modelBuilder.Entity<Owner>().HasData(
-        //     new Owner(new Employee // Instantiate Employee object
-        //     {
-        //         Id = -1,
-        //         Firstname = "Perko",
-        //         Lastname = "Peric",
-        //         Email = "perko.peric@example.com",
-        //         Username = "perkoperic",
-        //         Password = "hashedpassword",
-        //         PhoneNumber = "543123967",
-        //         BirthDate = new DateTime(1990, 5, 15),
-        //         Gender = Gender.MALE,
-        //         Role = Role.OWNER,
-        //         ProfilePhoto = "somepath"
-        //     })
-        // );
 
-        // 
+        modelBuilder.Entity<ProductCategory>().HasData(
+            new ProductCategory
+            {
+                Id = 1,
+                Name = "Red"
+            },
+            new ProductCategory
+            {
+                Id = 2,
+                Name = "White"
+            },
+            new ProductCategory
+            {
+                Id = 3,
+                Name = "Rose"
+            }
+        );
+        modelBuilder.Entity<Pricing>().HasData(
+            new Pricing
+            {
+                Id = 1,
+                Price = 99.99
+            },
+            new Pricing
+            {
+                Id = 2,
+                Price = 235.99
+            },
+            new Pricing
+            {
+                Id = 3,
+                Price = 132.99
+            }
+        );
+        modelBuilder.Entity<Product>().HasData(
+            new Product
+            {
+                Id = 1,
+                Name = "Scarlet Elixir Red Wine",
+                Description = "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.",
+                Photo = "wine1.png",
+                Quantity = 35,
+                IsApproved = true,
+                PricingId = 1,
+                ProductCategoryId = 1
+            },
+            new Product
+            {
+                Id = 2,
+                Name = "Moonlit Symphony White Wine",
+                Description = "Experience the enchanting allure of Moonlit Symphony White Wine. Delicately crafted from sun-kissed grapes, this refreshing white wine captivates with its crisp acidity and vibrant fruit flavors. With hints of citrus, green apple, and tropical notes, each sip evokes a sense of serenity and sophistication. Whether enjoyed on a warm summer evening or paired with your favorite seafood dish, Moonlit Symphony is sure to elevate any occasion.",
+                Photo = "wine2.png",
+                Quantity = 55,
+                IsApproved = true,
+                PricingId = 2,
+                ProductCategoryId = 2
+            },
+            new Product
+            {
+                Id = 3,
+                Name = "Blush Blossom Rosé Wine",
+                Description = "Transport your senses to a blooming garden with Blush Blossom Rosé Wine. Crafted from select grapes kissed by the gentle rays of the sun, this elegant rosé captivates with its delicate pink hue and enchanting aromas of fresh strawberries and rose petals. With a balanced acidity and subtle sweetness, each sip unfolds like a bouquet of spring flowers. Whether enjoyed with light salads, creamy cheeses, or simply on its own, Blush Blossom is a celebration of life's beautiful moments.",
+                Photo = "wine3.png",
+                Quantity = 25,
+                IsApproved = true,
+                PricingId = 3,
+                ProductCategoryId = 3
+            }
+        );
+
     }
 }
