@@ -37,4 +37,21 @@ public class ProductRepository : IProductRepository
 
         return products.ToList();
     }
+
+    public void Update(Product product)
+    {
+        var editedProduct = _context.Products.FirstOrDefault(p => p.Id == product.Id);
+            if (editedProduct == null)
+                throw new ArgumentException("Product not found");
+
+            try
+            {
+                _context.Update(product);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while trying to edit product", ex);
+            }
+    }
 }

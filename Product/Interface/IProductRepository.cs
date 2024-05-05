@@ -4,4 +4,5 @@ public interface IProductRepository {
     ICollection<Product> GetByCategoryId(int categoryId);
     bool Exists(int id);
     ICollection<Product> Search(string keyword);
+    public void Update(Product product);
 }

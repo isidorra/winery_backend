@@ -352,6 +352,11 @@ namespace winery_backend.Migrations
                         {
                             Id = 3,
                             Price = 132.99000000000001
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Price = 0.0
                         });
                 });
 
@@ -425,6 +430,39 @@ namespace winery_backend.Migrations
                             PricingId = 3,
                             ProductCategoryId = 3,
                             Quantity = 25
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.",
+                            IsApproved = false,
+                            Name = "Golden Harvest Chardonnay",
+                            Photo = "wine3.png",
+                            PricingId = 4,
+                            ProductCategoryId = 2,
+                            Quantity = 40
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.",
+                            IsApproved = true,
+                            Name = "Midnight Noir Cabernet Sauvignon",
+                            Photo = "wine3.png",
+                            PricingId = 3,
+                            ProductCategoryId = 1,
+                            Quantity = 30
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.",
+                            IsApproved = false,
+                            Name = "Sunrise Serenade Sauvignon Blanc",
+                            Photo = "wine3.png",
+                            PricingId = 4,
+                            ProductCategoryId = 2,
+                            Quantity = 50
                         });
                 });
 

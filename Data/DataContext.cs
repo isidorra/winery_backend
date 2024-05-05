@@ -183,6 +183,11 @@ public class DataContext : DbContext
             {
                 Id = 3,
                 Price = 132.99
+            },
+            new Pricing 
+            {
+                Id = 4,
+                Price = 0
             }
         );
         modelBuilder.Entity<Product>().HasData(
@@ -218,7 +223,41 @@ public class DataContext : DbContext
                 IsApproved = true,
                 PricingId = 3,
                 ProductCategoryId = 3
+            },
+            new Product
+            {
+                Id = 4,
+                Name = "Golden Harvest Chardonnay",
+                Description = "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.",
+                Photo = "wine3.png",
+                Quantity = 40,
+                IsApproved = false,
+                PricingId = 4,
+                ProductCategoryId = 2
+            },
+            new Product
+            {
+                Id = 5,
+                Name = "Midnight Noir Cabernet Sauvignon",
+                Description = "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.",
+                Photo = "wine3.png",
+                Quantity = 30,
+                IsApproved = true,
+                PricingId = 3,
+                ProductCategoryId = 1
+            },
+            new Product
+            {
+                Id = 6,
+                Name = "Sunrise Serenade Sauvignon Blanc",
+                Description = "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.",
+                Photo = "wine3.png",
+                Quantity = 50,
+                IsApproved = false,
+                PricingId = 4,
+                ProductCategoryId = 2
             }
+
         );
 
     }
