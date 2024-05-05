@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("winery_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+175ea0b5ac21a3acf49bd53fcdb24b7792bcf548")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8771c0811143101de5024b3af1dbfaa1a02161c")]
 [assembly: System.Reflection.AssemblyProductAttribute("winery_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("winery_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

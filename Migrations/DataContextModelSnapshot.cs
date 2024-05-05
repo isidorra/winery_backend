@@ -233,6 +233,29 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Discount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Percentage")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Percentage = 20.0
+                        });
+                });
+
             modelBuilder.Entity("Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -330,10 +353,15 @@ namespace winery_backend.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double>("Price")
+                    b.Property<int?>("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Price")
                         .HasColumnType("double");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DiscountId");
 
                     b.ToTable("Pricing", (string)null);
 
@@ -341,6 +369,7 @@ namespace winery_backend.Migrations
                         new
                         {
                             Id = 1,
+                            DiscountId = 1,
                             Price = 99.989999999999995
                         },
                         new
@@ -573,6 +602,15 @@ namespace winery_backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("Pricing", b =>
+                {
+                    b.HasOne("Discount", "Discount")
+                        .WithMany()
+                        .HasForeignKey("DiscountId");
+
+                    b.Navigation("Discount");
                 });
 
             modelBuilder.Entity("Product", b =>

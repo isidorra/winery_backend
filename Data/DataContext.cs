@@ -24,6 +24,7 @@ public class DataContext : DbContext
     public DbSet<Product> Products { get; set; }
     public DbSet<Pricing> Pricing { get; set; }
     public DbSet<ProductCategory> ProductCategories { get; set; }
+    public DbSet<Discount> Discounts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -43,6 +44,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<Pricing>().ToTable("Pricing");
         modelBuilder.Entity<ProductCategory>().ToTable("ProductCategories");
+        modelBuilder.Entity<Discount>().ToTable("Discounts");
 
 
 
@@ -168,11 +170,20 @@ public class DataContext : DbContext
                 Name = "Rose"
             }
         );
+
+        modelBuilder.Entity<Discount>().HasData(
+            new Discount
+            {
+                Id = 1,
+                Percentage = 20
+            }
+        );
         modelBuilder.Entity<Pricing>().HasData(
             new Pricing
             {
                 Id = 1,
-                Price = 99.99
+                Price = 99.99,
+                DiscountId = 1
             },
             new Pricing
             {
@@ -184,10 +195,10 @@ public class DataContext : DbContext
                 Id = 3,
                 Price = 132.99
             },
-            new Pricing 
+            new Pricing
             {
                 Id = 4,
-                Price = 0
+                Price = 72
             }
         );
         modelBuilder.Entity<Product>().HasData(

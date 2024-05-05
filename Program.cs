@@ -58,6 +58,8 @@ builder.Services.AddScoped<IPricingRepository, PricingRepository>();
 builder.Services.AddScoped<IPricingService, PricingService>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
 builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
+builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();

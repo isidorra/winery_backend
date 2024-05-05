@@ -35,6 +35,20 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Discounts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Percentage = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Discounts", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -61,20 +75,6 @@ namespace winery_backend.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Pricing",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Price = table.Column<double>(type: "double", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pricing", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -131,6 +131,26 @@ namespace winery_backend.Migrations
                         name: "FK_Customers_Cities_CityId",
                         column: x => x.CityId,
                         principalTable: "Cities",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Pricing",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Price = table.Column<double>(type: "double", nullable: true),
+                    DiscountId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pricing", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pricing_Discounts_DiscountId",
+                        column: x => x.DiscountId,
+                        principalTable: "Discounts",
                         principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -356,6 +376,11 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Discounts",
+                columns: new[] { "Id", "Percentage" },
+                values: new object[] { 1, 20.0 });
+
+            migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "Id", "BirthDate", "Email", "Firstname", "Gender", "Lastname", "Password", "PhoneNumber", "ProfilePhoto", "Role", "Username" },
                 values: new object[,]
@@ -367,13 +392,12 @@ namespace winery_backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "Pricing",
-                columns: new[] { "Id", "Price" },
+                columns: new[] { "Id", "DiscountId", "Price" },
                 values: new object[,]
                 {
-                    { 1, 99.989999999999995 },
-                    { 2, 235.99000000000001 },
-                    { 3, 132.99000000000001 },
-                    { 4, 0.0 }
+                    { 2, null, 235.99000000000001 },
+                    { 3, null, 132.99000000000001 },
+                    { 4, null, 0.0 }
                 });
 
             migrationBuilder.InsertData(
@@ -396,22 +420,32 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Pricing",
+                columns: new[] { "Id", "DiscountId", "Price" },
+                values: new object[] { 1, 1, 99.989999999999995 });
+
+            migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Description", "IsApproved", "Name", "Photo", "PricingId", "ProductCategoryId", "Quantity" },
                 values: new object[,]
                 {
-                    { 1, "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.", true, "Scarlet Elixir Red Wine", "wine1.png", 1, 1, 35 },
                     { 2, "Experience the enchanting allure of Moonlit Symphony White Wine. Delicately crafted from sun-kissed grapes, this refreshing white wine captivates with its crisp acidity and vibrant fruit flavors. With hints of citrus, green apple, and tropical notes, each sip evokes a sense of serenity and sophistication. Whether enjoyed on a warm summer evening or paired with your favorite seafood dish, Moonlit Symphony is sure to elevate any occasion.", true, "Moonlit Symphony White Wine", "wine2.png", 2, 2, 55 },
                     { 3, "Transport your senses to a blooming garden with Blush Blossom Rosé Wine. Crafted from select grapes kissed by the gentle rays of the sun, this elegant rosé captivates with its delicate pink hue and enchanting aromas of fresh strawberries and rose petals. With a balanced acidity and subtle sweetness, each sip unfolds like a bouquet of spring flowers. Whether enjoyed with light salads, creamy cheeses, or simply on its own, Blush Blossom is a celebration of life's beautiful moments.", true, "Blush Blossom Rosé Wine", "wine3.png", 3, 3, 25 },
                     { 4, "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.", false, "Golden Harvest Chardonnay", "wine3.png", 4, 2, 40 },
                     { 5, "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.", true, "Midnight Noir Cabernet Sauvignon", "wine3.png", 3, 1, 30 },
-                    { 6, "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.", false, "Sunrise Serenade Sauvignon Blanc", "wine3.png", 4, 2, 50 }
+                    { 6, "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.", false, "Sunrise Serenade Sauvignon Blanc", "wine3.png", 4, 2, 50 },
+                    { 1, "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.", true, "Scarlet Elixir Red Wine", "wine1.png", 1, 1, 35 }
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pricing_DiscountId",
+                table: "Pricing",
+                column: "DiscountId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_PricingId",
@@ -471,6 +505,9 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Discounts");
         }
     }
 }
