@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using winery_backend.Activity;
+using winery_backend.Vineyard;
 
 public class DataContext : DbContext
 {
@@ -20,6 +22,8 @@ public class DataContext : DbContext
     public DbSet<VanDriver> VanDrivers { get; set; }
     public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
+    public DbSet<Activity> Activities { get; set; }
+    public DbSet<Parcel> Parcels { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
