@@ -1,4 +1,6 @@
-﻿using winery_backend.Activity.Interface;
+﻿using System.Collections.Generic;
+using winery_backend.Activity.Dto;
+using winery_backend.Activity.Interface;
 using winery_backend.Vineyard;
 
 namespace winery_backend.Activity
@@ -27,5 +29,22 @@ namespace winery_backend.Activity
             return _activityRepository.GetByParcelId(parcelId);
         }
 
+        public bool ScheduleWatering(WateringDto wateringDto)
+        {
+            ICollection<Activity> allActivities = _activityRepository.GetAll();
+            foreach (Activity activity in allActivities)
+            {
+                if (wateringDto.startDate >= activity.StartDate && wateringDto.startDate <= activity.EndDate)
+                {
+                    return false;
+                }
+            }
+
+            long longAmount;
+            long.TryParse(wateringDto.amount, out longAmount);
+            Watering newWatering = new Watering(wateringDto.startDate, int.Parse(wateringDto.parcelId), longAmount);
+            return _activityRepository.Create(newWatering);
+
+        }
     }
 }

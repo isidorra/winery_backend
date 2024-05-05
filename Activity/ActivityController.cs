@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using winery_backend.Activity.Dto;
 using winery_backend.Activity.Interface;
 using winery_backend.Vineyard.Interface;
 
@@ -35,12 +36,12 @@ namespace winery_backend.Activity
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             return Ok(amount);
-
         }
 
         [HttpPost("add/watering")]
-        public IActionResult AddWatering(Activity activity) 
+        public IActionResult AddWatering(WateringDto wateringDto)
         {
+            _activityService.ScheduleWatering(wateringDto);
             return null;
         }
     }
