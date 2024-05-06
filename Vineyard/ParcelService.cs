@@ -1,4 +1,5 @@
-﻿using winery_backend.Vineyard.Interface;
+﻿using System.Collections.ObjectModel;
+using winery_backend.Vineyard.Interface;
 
 namespace winery_backend.Vineyard
 {
@@ -16,6 +17,23 @@ namespace winery_backend.Vineyard
             return _parcelRepository.GetAll();
         }
 
+        public ICollection<Parcel> GetByGrape(string grape)
+        {
+            ICollection<Parcel> allParcels = _parcelRepository.GetAll();
+            ICollection<Parcel> fillteredParcels = new Collection<Parcel>();
+
+            foreach (Parcel parcel in allParcels)
+            {
+                if (parcel.Grape.Name.Equals(grape))
+                {
+                    fillteredParcels.Add(parcel);
+                }
+            }
+
+            return fillteredParcels;
+
+        }
+
         public Parcel GetById(int id)
         {
             return _parcelRepository.GetById(id);
@@ -26,6 +44,7 @@ namespace winery_backend.Vineyard
             Parcel parcel = GetById(parcelId);
             return parcel.RecommendedWateringAmount();
         }
+
     }
 
 }

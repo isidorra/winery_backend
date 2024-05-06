@@ -8,5 +8,6 @@ namespace winery_backend.Activity.Interface
         ICollection<Activity> GetByParcelId(int parcelId);
         Activity GetById(int id);
         bool ScheduleWatering(WateringDto wateringDto);
+        bool ScheduleHarvesting(HarvestingDto harvestingDto);
     }
 }

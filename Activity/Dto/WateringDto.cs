@@ -4,9 +4,9 @@
     {
         public string parcelId { get; set; }
         public DateTime startDate { get; set; }
-        public string amount { get; set; }
+        public long amount { get; set; }
 
-        public WateringDto(string parcelId, DateTime startDate, string amount)
+        public WateringDto(string parcelId, DateTime startDate, long amount)
         {
             this.parcelId = parcelId;
             this.startDate = startDate;

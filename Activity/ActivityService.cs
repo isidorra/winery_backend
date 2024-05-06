@@ -29,6 +29,21 @@ namespace winery_backend.Activity
             return _activityRepository.GetByParcelId(parcelId);
         }
 
+        public bool ScheduleHarvesting(HarvestingDto harvestingDto)
+        {
+            ICollection<Activity> allActivities = _activityRepository.GetAll();
+            foreach (Activity activity in allActivities)
+            {
+                if (harvestingDto.startDate >= activity.StartDate && harvestingDto.startDate <= activity.EndDate)
+                {
+                    return false;
+                }
+            }
+
+            Harvesting newHarvesting = new Harvesting(harvestingDto.startDate, harvestingDto.parcelId, harvestingDto.amount);
+            return _activityRepository.Create(newHarvesting);
+        }
+
         public bool ScheduleWatering(WateringDto wateringDto)
         {
             ICollection<Activity> allActivities = _activityRepository.GetAll();
@@ -40,9 +55,7 @@ namespace winery_backend.Activity
                 }
             }
 
-            long longAmount;
-            long.TryParse(wateringDto.amount, out longAmount);
-            Watering newWatering = new Watering(wateringDto.startDate, int.Parse(wateringDto.parcelId), longAmount);
+            Watering newWatering = new Watering(wateringDto.startDate, int.Parse(wateringDto.parcelId), wateringDto.amount);
             return _activityRepository.Create(newWatering);
 
         }
