@@ -12,6 +12,11 @@ namespace winery_backend.Activity
         public int ParcelId { get; set; }
         public Parcel Parcel { get; set; }
 
+        public Activity()
+        {
+
+        }
+
         public Activity(Guid id, DateTime startDate, DateTime endDate, bool isCompleted, ActivityType activityType, int parcelId)
         {
             Id = id;

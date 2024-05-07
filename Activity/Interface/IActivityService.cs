@@ -9,5 +9,7 @@ namespace winery_backend.Activity.Interface
         Activity GetById(int id);
         bool ScheduleWatering(WateringDto wateringDto);
         bool ScheduleHarvesting(HarvestingDto harvestingDto);
+        bool ScheduleFertilization(SupplyingDto fertilizationDto);
+        bool SchedulePesticideControl(SupplyingDto pesticideDto);
     }
 }

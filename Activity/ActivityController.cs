@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using winery_backend.Activity.Dto;
 using winery_backend.Activity.Interface;
+using winery_backend.Invetory.Dto;
 using winery_backend.Vineyard;
 using winery_backend.Vineyard.Interface;
 
@@ -83,6 +84,54 @@ namespace winery_backend.Activity
             else
             {
                 return BadRequest("Can't book harvesting of the parcel during that time");
+            }
+        }
+
+        [HttpPost("fertilization/recommendation")]
+        public IActionResult RecommendFertilizer(int parcelId)
+        {
+            Parcel parcel = _parcelService.GetById(parcelId);
+            long recommendedAmount = parcel.RecommendedFertilizerAmount();
+            Supply fertilizer = parcel.Grape.Fertilizer;
+            return Ok(new RecommendingSupplyDto(recommendedAmount, fertilizer));
+        }
+
+        [HttpPost("add/fertilization")]
+        public IActionResult AddFertilization(SupplyingDto fertilizationDto)
+        {
+            //provera da li ima dovoljno djubriva
+
+            if (_activityService.ScheduleFertilization(fertilizationDto))
+            {
+                return Ok("Successful");
+            }
+            else
+            {
+                return BadRequest("Can't book fertilization of the parcel during that time");
+            }
+        }
+
+        [HttpPost("pesticide/recommendation")]
+        public IActionResult RecommendPesticide(int parcelId)
+        {
+            Parcel parcel = _parcelService.GetById(parcelId);
+            long recommendedAmount = parcel.RecommendedPesticideAmount();
+            Supply pesticide = parcel.Grape.Pesticide;
+            return Ok(new RecommendingSupplyDto(recommendedAmount, pesticide));
+        }
+
+        [HttpPost("add/pesticide/control")]
+        public IActionResult AddPesticideControl(SupplyingDto pesticideDto)
+        {
+            //provera da li ima dovoljno pesticida
+
+            if (_activityService.SchedulePesticideControl(pesticideDto))
+            {
+                return Ok("Successful");
+            }
+            else
+            {
+                return BadRequest("Can't book fertilization of the parcel during that time");
             }
         }
 

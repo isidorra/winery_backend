@@ -10,6 +10,10 @@ namespace winery_backend.Vineyard
         public bool IsRipe { get; set; }
         public int Quality { get; set; }
         public DateTime PlantingDate { get; set; }
+        public int? FertilizerId { get; set; }
+        public Supply? Fertilizer { get; set; }
+        public int? PesticideId { get; set; }
+        public Supply? Pesticide { get; set; }
 
         public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate)
         {
@@ -20,5 +24,18 @@ namespace winery_backend.Vineyard
             Quality = quality;
             PlantingDate = plantingDate;
         }
+
+        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId)
+        {
+            Id = id;
+            Name = name;
+            Type = type;
+            IsRipe = isRipe;
+            Quality = quality;
+            PlantingDate = plantingDate;
+            FertilizerId = fertilizerId;
+            PesticideId = pesticideId;
+        }
+
     }
 }

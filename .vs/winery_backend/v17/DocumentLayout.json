@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\dto\\supplyingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\dto\\supplyingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\invetory\\supply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:invetory\\supply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\invetory\\interface\\isupplyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:invetory\\interface\\isupplyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\customer\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:customer\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\interface\\iactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\interface\\iactivityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\customer\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:customer\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\watering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\watering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\customer\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:customer\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\vineyard\\parcelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vineyard\\parcelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\vineyard\\parcel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vineyard\\parcel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\employee\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:employee\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activitytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\winery_backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -70,24 +66,103 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Data\\DataContext.cs",
               "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Data\\DataContext.cs",
               "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAIwBkAAAAZAAAA",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAAAC8AAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T20:22:40.052Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityService.cs",
+              "RelativeDocumentMoniker": "Activity\\ActivityService.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityService.cs",
+              "RelativeToolTip": "Activity\\ActivityService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T00:31:42.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SupplyingDto.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Dto\\SupplyingDto.cs",
+              "RelativeDocumentMoniker": "Activity\\Dto\\SupplyingDto.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Dto\\SupplyingDto.cs",
+              "RelativeToolTip": "Activity\\Dto\\SupplyingDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T00:29:47.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ISupplyService.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Invetory\\Interface\\ISupplyService.cs",
+              "RelativeDocumentMoniker": "Invetory\\Interface\\ISupplyService.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Invetory\\Interface\\ISupplyService.cs",
+              "RelativeToolTip": "Invetory\\Interface\\ISupplyService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T00:05:40.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Supply.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Invetory\\Supply.cs",
+              "RelativeDocumentMoniker": "Invetory\\Supply.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Invetory\\Supply.cs",
+              "RelativeToolTip": "Invetory\\Supply.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T00:04:52.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActivityType.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityType.cs",
+              "RelativeDocumentMoniker": "Activity\\ActivityType.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityType.cs",
+              "RelativeToolTip": "Activity\\ActivityType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T00:03:19.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActivityController.cs",
+              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
+              "RelativeDocumentMoniker": "Activity\\ActivityController.cs",
+              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
+              "RelativeToolTip": "Activity\\ActivityController.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAUwGcAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T23:01:50.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Customer\\CustomerController.cs",
               "RelativeDocumentMoniker": "Customer\\CustomerController.cs",
@@ -95,74 +170,11 @@
               "RelativeToolTip": "Customer\\CustomerController.cs",
               "ViewState": "AQIAADoAAAAAAAAAAAAcwD8AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T23:06:13.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T23:06:13.604Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ActivityController.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
-              "RelativeDocumentMoniker": "Activity\\ActivityController.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
-              "RelativeToolTip": "Activity\\ActivityController.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAowE8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T23:01:50.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Customer\\Customer.cs",
-              "RelativeDocumentMoniker": "Customer\\Customer.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Customer\\Customer.cs",
-              "RelativeToolTip": "Customer\\Customer.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T21:41:20.181Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Watering.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Watering.cs",
-              "RelativeDocumentMoniker": "Activity\\Watering.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Watering.cs",
-              "RelativeToolTip": "Activity\\Watering.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAClAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T22:55:25.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Customer\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Customer\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Customer\\CustomerRepository.cs",
-              "RelativeToolTip": "Customer\\CustomerRepository.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAA7wCQAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T21:43:49.039Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IActivityService.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Interface\\IActivityService.cs",
-              "RelativeDocumentMoniker": "Activity\\Interface\\IActivityService.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\Interface\\IActivityService.cs",
-              "RelativeToolTip": "Activity\\Interface\\IActivityService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T20:48:45.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ParcelRepository.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\ParcelRepository.cs",
               "RelativeDocumentMoniker": "Vineyard\\ParcelRepository.cs",
@@ -171,18 +183,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T21:08:11.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Parcel.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\Parcel.cs",
-              "RelativeDocumentMoniker": "Vineyard\\Parcel.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\Parcel.cs",
-              "RelativeToolTip": "Vineyard\\Parcel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAzwCEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T22:37:56.553Z"
             },
             {
               "$type": "Document",
@@ -199,18 +199,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "ActivityType.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityType.cs",
-              "RelativeDocumentMoniker": "Activity\\ActivityType.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityType.cs",
-              "RelativeToolTip": "Activity\\ActivityType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T22:53:26.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "winery_backend.csproj",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\winery_backend.csproj",
               "RelativeDocumentMoniker": "winery_backend.csproj",
@@ -222,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
@@ -234,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
@@ -246,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",

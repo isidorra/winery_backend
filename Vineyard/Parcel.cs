@@ -43,5 +43,29 @@ namespace winery_backend.Vineyard
             }
             
         }
+
+        public long RecommendedFertilizerAmount()
+        {
+            long coef = 1;
+
+            if (Grape.PlantingDate.AddYears(3) > DateTime.Now) //young grape 
+            {
+                coef = (long)0.7; //younger grapes need less fertilizer
+            }
+
+            return 10000*this.Size*(1/Grape.Quality)*coef; //10 000kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape
+        }
+
+        public long RecommendedPesticideAmount()
+        {
+            long coef = 1;
+
+            if (Grape.PlantingDate.AddYears(3) > DateTime.Now) //young grape 
+            {
+                coef = (long)0.7; //younger grapes need less pesticide
+            }
+
+            return 1 * this.Size * (1 / Grape.Quality) * coef; //1kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape
+        }
     }
 }

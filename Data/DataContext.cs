@@ -24,11 +24,13 @@ public class DataContext : DbContext
     public DbSet<City> Cities { get; set; }
     public DbSet<Activity> Activities { get; set; }
     public DbSet<Parcel> Parcels { get; set; }
+    public DbSet<Supply> Supplies { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Activity>().ToTable("Activities");
         modelBuilder.Entity<City>().ToTable("Cities");
         modelBuilder.Entity<Customer>().ToTable("Customers");
         modelBuilder.Entity<Employee>().ToTable("Employees");
@@ -41,6 +43,9 @@ public class DataContext : DbContext
         modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
+        modelBuilder.Entity<Activity>().ToTable("Activities");
+        modelBuilder.Entity<Parcel>().ToTable("Parcels");
+        modelBuilder.Entity<Supply>().ToTable("Supplies");
 
 
 
