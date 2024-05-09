@@ -1,4 +1,8 @@
+using winery_backend.ViewWarehouse.Models;
+
 public class Warehouseman : Employee {
+    
+    public Sector? Sector { get; set; }
     public Warehouseman() {}
     public Warehouseman (Employee employee) {
             this.Firstname = employee.Firstname;

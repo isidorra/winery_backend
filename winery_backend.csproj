@@ -22,4 +22,17 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="LogisticianViewCustomerOrder\Dto\" />
+    <Folder Include="PackingRequest\Dto\" />
+    <Folder Include="PackingRequest\Interface\" />
+    <Folder Include="TransportRequest\Dto\" />
+    <Folder Include="TransportRequest\Interface\" />
+    <Folder Include="ViewLogisticsEmployees\Dto\" />
+    <Folder Include="ViewLogisticsEmployees\Interface\" />
+    <Folder Include="ViewLogisticsEmployees\Models\" />
+    <Folder Include="ViewWarehouse\Dto\" />
+    <Folder Include="ViewWarehouse\Interface\" />
+  </ItemGroup>
+
 </Project>

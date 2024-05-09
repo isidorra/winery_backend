@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using winery_backend.LogisticianViewCustomerOrder.Models;
 
 public class DataContext : DbContext
 {
@@ -20,7 +21,9 @@ public class DataContext : DbContext
     public DbSet<VanDriver> VanDrivers { get; set; }
     public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
-
+    public DbSet<CustomerOrder> CustomerOrders { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<RealTimeOrderTrackingStatus> RealTimeOrderTrackingStatuses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -37,7 +40,33 @@ public class DataContext : DbContext
         modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
+        modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
+        modelBuilder.Entity<Product>().ToTable("Products");
+        modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
 
+        // modelBuilder.Entity<CustomerOrder>().OwnsOne(x => x.RealTimeOrderTrackingStatus);
+
+        //
+
+       /* modelBuilder.Entity<CustomerOrder>().HasData(
+            new CustomerOrder { CustomerOrderId = 1,
+                                CustomerOrderPrice = new Decimal(20.3),
+                                CustomerOrderCreationTime = new DateTime(2020, 3, 20),
+                                CustomerOrderDeliveryDeadline = new DateTime(2020, 3, 30),
+                                OrderTrackingStatusId = 1
+            }
+        );
+
+        modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
+            new RealTimeOrderTrackingStatus
+            {
+                id = 1,
+                OrderTrackingStatus = "a",
+
+            }
+        );*/
+
+        //
 
 
 

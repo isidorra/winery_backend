@@ -1,18 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\",
+  "WorkspaceRootPath": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\models\\customerorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\models\\customerorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\models\\realtimeordertrackingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\models\\realtimeordertrackingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\antonela\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:repository\\sales\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\interface\\icustomerorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\interface\\icustomerorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\repository\\customerorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\repository\\customerorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\controller\\customerordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\controller\\customerordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\service\\customerorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\service\\customerorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\interface\\icustomerorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\interface\\icustomerorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianviewcustomerorder\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianviewcustomerorder\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +50,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Service\\CustomerOrderService.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Service\\CustomerOrderService.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Service\\CustomerOrderService.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Service\\CustomerOrderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T13:59:32.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerOrderController.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Controller\\CustomerOrderController.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Controller\\CustomerOrderController.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Controller\\CustomerOrderController.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Controller\\CustomerOrderController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T13:55:18.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAADcAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T14:19:09.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Repository\\CustomerOrderRepository.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Repository\\CustomerOrderRepository.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Repository\\CustomerOrderRepository.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Repository\\CustomerOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T14:04:10.281Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Sales\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\Sales\\CustomerRepository.cs",
-              "RelativeToolTip": "Repository\\Sales\\CustomerRepository.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAADQAAAAEAAAA",
+              "Title": "ICustomerOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Interface\\ICustomerOrderRepository.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Interface\\ICustomerOrderRepository.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Interface\\ICustomerOrderRepository.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Interface\\ICustomerOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T14:16:20.013Z",
+              "WhenOpened": "2024-05-09T14:07:42.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmployeeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\EmployeeRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\EmployeeRepository.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Repository\\EmployeeRepository.cs",
-              "RelativeToolTip": "Repository\\EmployeeRepository.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAwwDkAAABIAAAA",
+              "Title": "RealTimeOrderTrackingStatus.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\RealTimeOrderTrackingStatus.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Models\\RealTimeOrderTrackingStatus.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\RealTimeOrderTrackingStatus.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Models\\RealTimeOrderTrackingStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T14:15:37.083Z",
+              "WhenOpened": "2024-05-09T14:57:18.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
+              "Title": "CustomerOrder.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\CustomerOrder.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Models\\CustomerOrder.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\CustomerOrder.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Models\\CustomerOrder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:54:32.822Z",
+              "WhenOpened": "2024-05-09T14:14:47.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ICustomerOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Interface\\ICustomerOrderService.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Interface\\ICustomerOrderService.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Interface\\ICustomerOrderService.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Interface\\ICustomerOrderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T14:01:20.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAuwDgAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T13:47:48.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "LogisticianViewCustomerOrder\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianViewCustomerOrder\\Models\\Product.cs",
+              "RelativeToolTip": "LogisticianViewCustomerOrder\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T14:57:17.561Z",
               "EditorCaption": ""
             }
           ]

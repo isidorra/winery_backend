@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using winery_backend.LogisticianViewCustomerOrder.Interface;
+using winery_backend.LogisticianViewCustomerOrder.Repository;
+using winery_backend.LogisticianViewCustomerOrder.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
 
@@ -53,6 +56,12 @@ builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICustomerOrderService, CustomerOrderService>();
+builder.Services.AddScoped<ICustomerOrderRepository, CustomerOrderRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IRealTimeOrderTrackingStatusService, RealTimeOrderTrackingStatusService>();
+builder.Services.AddScoped <IRealTimeOrderTrackingStatusRepository, RealTimeOrderTrackingStatusRepository>();
 
 var app = builder.Build();
 
