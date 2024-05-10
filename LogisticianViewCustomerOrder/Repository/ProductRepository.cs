@@ -22,5 +22,10 @@ namespace winery_backend.LogisticianViewCustomerOrder.Repository
             }
             return products;
         }
+
+        public int FindProductSectorIdByProductId(int id)
+        {
+            return _context.Products.FirstOrDefault(x => x.ProductId == id).SectorId;
+        }
     }
 }

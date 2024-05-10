@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240510135112_initial")]
+    [Migration("20240510223355_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -322,6 +322,34 @@ namespace winery_backend.Migrations
                             ProfilePhoto = "somepath",
                             Role = 0,
                             Username = "admin123"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BirthDate = new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "a@gmail.com",
+                            Firstname = "A",
+                            Gender = 1,
+                            Lastname = "A",
+                            Password = "aaaaa",
+                            PhoneNumber = "1234567890",
+                            ProfilePhoto = "slika1",
+                            Role = 4,
+                            Username = "aaaaa"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BirthDate = new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "b@gmail.com",
+                            Firstname = "B",
+                            Gender = 1,
+                            Lastname = "B",
+                            Password = "bbbbb",
+                            PhoneNumber = "1234567890",
+                            ProfilePhoto = "slika2",
+                            Role = 4,
+                            Username = "bbbbb"
                         });
                 });
 
@@ -447,7 +475,7 @@ namespace winery_backend.Migrations
                             ProductDescription = "bb",
                             ProductName = "b",
                             ProductPrice = 2000,
-                            SectorId = 1,
+                            SectorId = 2,
                             WineSort = "sorta_2"
                         });
                 });
@@ -481,6 +509,39 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("winery_backend.PackingRequest.Models.PackingRequest", b =>
+                {
+                    b.Property<int>("PackingRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PackingRequestId"));
+
+                    b.Property<int>("CustomerOrderId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PackingRequestCreationDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("PackingRequestDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("PackingRequestProductIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PackingRequestQuantities")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PackingRequestId");
+
+                    b.ToTable("PackingRequests", (string)null);
+                });
+
             modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>
                 {
                     b.Property<int>("SectorId")
@@ -495,14 +556,33 @@ namespace winery_backend.Migrations
                     b.Property<string>("SectorName")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("WarehouseId")
+                    b.Property<int>("WarehouseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WarehousemanId")
                         .HasColumnType("int");
 
                     b.HasKey("SectorId");
 
-                    b.HasIndex("WarehouseId");
+                    b.ToTable("Sectors", (string)null);
 
-                    b.ToTable("Sector");
+                    b.HasData(
+                        new
+                        {
+                            SectorId = 1,
+                            SectorImage = "slika1",
+                            SectorName = "SECTOR 1",
+                            WarehouseId = 1,
+                            WarehousemanId = 1
+                        },
+                        new
+                        {
+                            SectorId = 2,
+                            SectorImage = "slika2",
+                            SectorName = "SECTOR 2",
+                            WarehouseId = 1,
+                            WarehousemanId = 2
+                        });
                 });
 
             modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Warehouse", b =>
@@ -513,27 +593,41 @@ namespace winery_backend.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("WarehouseId"));
 
-                    b.Property<int?>("NumberOfSectors")
+                    b.Property<int>("NumberOfSectors")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NumberOfVanDrivers")
+                    b.Property<int>("NumberOfVanDrivers")
                         .HasColumnType("int");
 
-                    b.Property<int?>("NumberOfWarehouseWorkers")
+                    b.Property<int>("NumberOfWarehouseWorkers")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("WarehouseArea")
+                    b.Property<decimal>("WarehouseArea")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("WarehouseImage")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("WarehouseName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("WarehouseId");
 
-                    b.ToTable("Warehouse");
+                    b.ToTable("Warehouses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            WarehouseId = 1,
+                            NumberOfSectors = 2,
+                            NumberOfVanDrivers = 1,
+                            NumberOfWarehouseWorkers = 2,
+                            WarehouseArea = 450.23m,
+                            WarehouseImage = "slika 1",
+                            WarehouseName = "Warehouse 1"
+                        });
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -599,11 +693,6 @@ namespace winery_backend.Migrations
                 {
                     b.HasBaseType("Employee");
 
-                    b.Property<int?>("SectorId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("SectorId");
-
                     b.ToTable("Warehousemen", (string)null);
                 });
 
@@ -614,15 +703,6 @@ namespace winery_backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
-                });
-
-            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>
-                {
-                    b.HasOne("winery_backend.ViewWarehouse.Models.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId");
-
-                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -704,12 +784,6 @@ namespace winery_backend.Migrations
                         .HasForeignKey("Warehouseman", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("winery_backend.ViewWarehouse.Models.Sector", "Sector")
-                        .WithMany()
-                        .HasForeignKey("SectorId");
-
-                    b.Navigation("Sector");
                 });
 #pragma warning restore 612, 618
         }

@@ -30,7 +30,6 @@
     <Folder Include="ViewLogisticsEmployees\Interface\" />
     <Folder Include="ViewLogisticsEmployees\Models\" />
     <Folder Include="ViewWarehouse\Dto\" />
-    <Folder Include="ViewWarehouse\Interface\" />
   </ItemGroup>
 
 </Project>

@@ -21,5 +21,11 @@ namespace winery_backend.LogisticianViewCustomerOrder.Repository
         {
             return _context.CustomerOrders.First(x => x.CustomerOrderId == id);
         }
+
+        public void ChangeOrderStatus(int customerOrderId, int newStatusId)
+        {
+            _context.CustomerOrders.Where(x => x.CustomerId == customerOrderId).First().OrderTrackingStatusId = newStatusId;
+            _context.SaveChanges();
+        }
     }
 }

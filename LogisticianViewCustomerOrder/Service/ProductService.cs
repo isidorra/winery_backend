@@ -17,5 +17,10 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         {
             return _productRepository.FindProductsByCustomerOrderId(productIds);
         }
+
+        public int FindProductSectorIdByProductId(int id)
+        {
+            return _productRepository.FindProductSectorIdByProductId(id);
+        }
     }
 }

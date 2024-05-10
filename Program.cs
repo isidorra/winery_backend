@@ -8,6 +8,9 @@ using winery_backend.PackingRequest.Repository;
 using winery_backend.PackingRequest.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
+using winery_backend.ViewWarehouse.Interface;
+using winery_backend.ViewWarehouse.Repository;
+using winery_backend.ViewWarehouse.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,6 +70,10 @@ builder.Services.AddScoped<IRealTimeOrderTrackingStatusService, RealTimeOrderTra
 builder.Services.AddScoped<IRealTimeOrderTrackingStatusRepository, RealTimeOrderTrackingStatusRepository>();
 builder.Services.AddScoped<IPackingRequestService, PackingRequestService>();
 builder.Services.AddScoped<IPackingRequestRepository, PackingRequestRepository>();
+builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
 
 var app = builder.Build();
 

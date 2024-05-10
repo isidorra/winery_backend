@@ -15,5 +15,10 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         {
             return _realTimeOrderTrackingStatusRepository.FindStatusNameById(id);
         }
+
+        public int FindIdByStatusName(string newStatusName)
+        {
+            return _realTimeOrderTrackingStatusRepository.FindIdByStatusName(newStatusName);
+        }
     }
 }

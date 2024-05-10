@@ -21,5 +21,11 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         {
             return _customerOrderRepository.FindCustomerOrderById(id);
         }
+
+        public void ChangeOrderStatus(int customerOrderId, int newStatusId)
+        {
+            _customerOrderRepository.ChangeOrderStatus(customerOrderId, newStatusId);
+        }
+
     }
 }

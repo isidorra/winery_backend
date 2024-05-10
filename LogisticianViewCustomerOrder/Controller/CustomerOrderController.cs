@@ -6,6 +6,7 @@
     using winery_backend.LogisticianViewCustomerOrder.Models;
     using winery_backend.LogisticianViewCustomerOrder.Repository;
     using winery_backend.LogisticianViewCustomerOrder.Service;
+    using winery_backend.ViewWarehouse.Interface;
 
     [Route("api/logistician/customerOrders")]
     [ApiController]
@@ -15,14 +16,15 @@
         private readonly IRealTimeOrderTrackingStatusService _realTimeOrderTrackingStatusService;
         private readonly IProductService _productService;
         private readonly ICustomerService _customerService;
-        // private readonly Za Sector treba napraviti i onda dole gde je sector id da se nadje sector name
+        private readonly ISectorService _sectorService;
 
-        public CustomerOrderController(ICustomerOrderService customerOrderService, IRealTimeOrderTrackingStatusService realTimeOrderTrackingStatusService, IProductService productService, ICustomerService customerService)
+        public CustomerOrderController(ICustomerOrderService customerOrderService, IRealTimeOrderTrackingStatusService realTimeOrderTrackingStatusService, IProductService productService, ICustomerService customerService, ISectorService sectorService)
         {
             _customerOrderService = customerOrderService;
             _realTimeOrderTrackingStatusService = realTimeOrderTrackingStatusService;
             _productService = productService;
             _customerService = customerService;
+            _sectorService = sectorService;
         }
 
         [HttpGet]
@@ -40,8 +42,7 @@
                 LogisticianCustomerOrdersViewDto logisticianCustomerOrdersView = new LogisticianCustomerOrdersViewDto(customerOrder.CustomerOrderId, _realTimeOrderTrackingStatusService.FindStatusNameById(customerOrder.OrderTrackingStatusId), customerOrder.CustomerOrderDeliveryDeadline);
                 allActiveCustomerOrdersDto.Add(logisticianCustomerOrdersView);
             }
-
-            // var 
+ 
             return Ok(allActiveCustomerOrdersDto);
         }
 
@@ -65,7 +66,7 @@
 
             foreach (Product product in products)
             {
-                ProductLogisticianDto productLogisticianDto = new ProductLogisticianDto(product.ProductName, customerOrder.Quantities[i], product.SectorId.ToString());
+                ProductLogisticianDto productLogisticianDto = new ProductLogisticianDto(product.ProductName, customerOrder.Quantities[i], _sectorService.FindSectorName(product.SectorId));
                 productLogisticianDtos.Add(productLogisticianDto);
                 i = i + 1;
             }

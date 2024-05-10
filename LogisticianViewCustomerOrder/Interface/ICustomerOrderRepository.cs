@@ -6,5 +6,6 @@ namespace winery_backend.LogisticianViewCustomerOrder.Interface
     {
         List<CustomerOrder> GetAllActiveCustomerOrders();
         CustomerOrder FindCustomerOrderById(int id);
+        void ChangeOrderStatus(int customerOrderId, int newStatusId);
     }
 }

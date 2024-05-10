@@ -87,6 +87,27 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "PackingRequests",
+                columns: table => new
+                {
+                    PackingRequestId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PackingRequestDeadlineDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    PackingRequestCreationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    PackingRequestProductIds = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PackingRequestQuantities = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CustomerOrderId = table.Column<int>(type: "int", nullable: false),
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PackingRequests", x => x.PackingRequestId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -127,23 +148,42 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Warehouse",
+                name: "Sectors",
+                columns: table => new
+                {
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    SectorName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SectorImage = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    WarehouseId = table.Column<int>(type: "int", nullable: false),
+                    WarehousemanId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sectors", x => x.SectorId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Warehouses",
                 columns: table => new
                 {
                     WarehouseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    WarehouseName = table.Column<string>(type: "longtext", nullable: true)
+                    WarehouseName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    WarehouseArea = table.Column<decimal>(type: "decimal(65,30)", nullable: true),
-                    NumberOfWarehouseWorkers = table.Column<int>(type: "int", nullable: true),
-                    NumberOfVanDrivers = table.Column<int>(type: "int", nullable: true),
-                    NumberOfSectors = table.Column<int>(type: "int", nullable: true),
-                    WarehouseImage = table.Column<string>(type: "longtext", nullable: true)
+                    WarehouseArea = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    NumberOfWarehouseWorkers = table.Column<int>(type: "int", nullable: false),
+                    NumberOfVanDrivers = table.Column<int>(type: "int", nullable: false),
+                    NumberOfSectors = table.Column<int>(type: "int", nullable: false),
+                    WarehouseImage = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Warehouse", x => x.WarehouseId);
+                    table.PrimaryKey("PK_Warehouses", x => x.WarehouseId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -336,34 +376,10 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Sector",
-                columns: table => new
-                {
-                    SectorId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    SectorName = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    SectorImage = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    WarehouseId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sector", x => x.SectorId);
-                    table.ForeignKey(
-                        name: "FK_Sector_Warehouse_WarehouseId",
-                        column: x => x.WarehouseId,
-                        principalTable: "Warehouse",
-                        principalColumn: "WarehouseId");
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Warehousemen",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    SectorId = table.Column<int>(type: "int", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -374,11 +390,6 @@ namespace winery_backend.Migrations
                         principalTable: "Employees",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Warehousemen_Sector_SectorId",
-                        column: x => x.SectorId,
-                        principalTable: "Sector",
-                        principalColumn: "SectorId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -421,7 +432,9 @@ namespace winery_backend.Migrations
                 {
                     { 1, new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "pera.peric@example.com", "Pera", 1, "Peric", "hashedpassword", "1234567890", "somepath", 7, "peraperic" },
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "imenko@example.com", "Imenko", 1, "Prezimenic", "hashedpassword", "9876543210", "somepath", 0, "imenko" },
-                    { 3, new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@admin.com", "Admin", 1, "Adminovic", "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", "061111111", "somepath", 0, "admin123" }
+                    { 3, new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@admin.com", "Admin", 1, "Adminovic", "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", "061111111", "somepath", 0, "admin123" },
+                    { 11, new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "a@gmail.com", "A", 1, "A", "aaaaa", "1234567890", "slika1", 4, "aaaaa" },
+                    { 12, new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "b@gmail.com", "B", 1, "B", "bbbbb", "1234567890", "slika2", 4, "bbbbb" }
                 });
 
             migrationBuilder.InsertData(
@@ -430,7 +443,7 @@ namespace winery_backend.Migrations
                 values: new object[,]
                 {
                     { 1, 5m, 1.5m, "aaa", "aa", "a", 1000, 1, "sorta_1" },
-                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 1, "sorta_2" }
+                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 2, "sorta_2" }
                 });
 
             migrationBuilder.InsertData(
@@ -441,6 +454,20 @@ namespace winery_backend.Migrations
                     { 1, "in processing" },
                     { 2, "distributed" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Sectors",
+                columns: new[] { "SectorId", "SectorImage", "SectorName", "WarehouseId", "WarehousemanId" },
+                values: new object[,]
+                {
+                    { 1, "slika1", "SECTOR 1", 1, 1 },
+                    { 2, "slika2", "SECTOR 2", 1, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Warehouses",
+                columns: new[] { "WarehouseId", "NumberOfSectors", "NumberOfVanDrivers", "NumberOfWarehouseWorkers", "WarehouseArea", "WarehouseImage", "WarehouseName" },
+                values: new object[] { 1, 2, 1, 2, 450.23m, "slika 1", "Warehouse 1" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -455,16 +482,6 @@ namespace winery_backend.Migrations
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Sector_WarehouseId",
-                table: "Sector",
-                column: "WarehouseId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Warehousemen_SectorId",
-                table: "Warehousemen",
-                column: "SectorId");
         }
 
         /// <inheritdoc />
@@ -489,6 +506,9 @@ namespace winery_backend.Migrations
                 name: "Owners");
 
             migrationBuilder.DropTable(
+                name: "PackingRequests");
+
+            migrationBuilder.DropTable(
                 name: "Products");
 
             migrationBuilder.DropTable(
@@ -496,6 +516,9 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "SalesManagers");
+
+            migrationBuilder.DropTable(
+                name: "Sectors");
 
             migrationBuilder.DropTable(
                 name: "Technologists");
@@ -510,16 +533,13 @@ namespace winery_backend.Migrations
                 name: "Warehousemen");
 
             migrationBuilder.DropTable(
+                name: "Warehouses");
+
+            migrationBuilder.DropTable(
                 name: "Cities");
 
             migrationBuilder.DropTable(
                 name: "Employees");
-
-            migrationBuilder.DropTable(
-                name: "Sector");
-
-            migrationBuilder.DropTable(
-                name: "Warehouse");
         }
     }
 }

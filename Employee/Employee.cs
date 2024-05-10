@@ -17,4 +17,19 @@ public class Employee : User
         this.BirthDate = registerEmployeeDto.BirthDate;
         this.ProfilePhoto = registerEmployeeDto.ProfilePhoto;
     }
+
+    public Employee(int id, string firstName, string lastName, string email, string username, string password, string phoneNumber, DateTime birthDate, Gender gender, Role role, string profilePhoto)
+    {
+        this.Id = id;
+        this.Firstname=firstName;
+        this.Lastname=lastName;
+        this.Email=email;
+        this.Username=username;
+        this.Password=password;
+        this.PhoneNumber = phoneNumber;
+        this.BirthDate = birthDate;
+        this.Gender = gender;
+        this.Role = role;
+        this.ProfilePhoto = profilePhoto;
+    }
 }

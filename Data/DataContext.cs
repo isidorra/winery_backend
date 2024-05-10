@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using winery_backend.LogisticianViewCustomerOrder.Models;
+using winery_backend.PackingRequest.Models;
+using winery_backend.ViewWarehouse.Models;
 
 public class DataContext : DbContext
 {
@@ -25,6 +26,9 @@ public class DataContext : DbContext
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<RealTimeOrderTrackingStatus> RealTimeOrderTrackingStatuses { get; set; }
+    public DbSet<PackingRequest> PackingRequests { get; set; }
+    public DbSet<Sector> Sectors { get; set; }
+    public DbSet<Warehouse> Warehouses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,12 +48,15 @@ public class DataContext : DbContext
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
         modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
+        modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
+        modelBuilder.Entity<Sector>().ToTable("Sectors");
+        modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
 
         //
 
         modelBuilder.Entity<Product>().HasData(
             new Product(1, "a", "aa", "aaa", "sorta_1", new Decimal(1.5), 1000, new Decimal(5), 1),
-            new Product(2, "b", "bb", "bbb", "sorta_2", new Decimal(0.5), 2000, new Decimal(6), 1)
+            new Product(2, "b", "bb", "bbb", "sorta_2", new Decimal(0.5), 2000, new Decimal(6), 2)
         );
 
         List<int> products1 = new List<int>();
@@ -75,6 +82,33 @@ public class DataContext : DbContext
             new RealTimeOrderTrackingStatus(1, "in processing"),
             new RealTimeOrderTrackingStatus(2, "distributed")
         );
+
+        modelBuilder.Entity<Sector>().HasData(
+            new Sector(1, "SECTOR 1", "slika1", 1, 1),
+            new Sector(2, "SECTOR 2", "slika2", 1, 2)
+        );
+
+        modelBuilder.Entity<Warehouse>().HasData(
+            new Warehouse(1, "Warehouse 1", new Decimal(450.23), 2, 1, 2, "slika 1")
+        );
+
+        /*modelBuilder.Entity<Employee>().HasData(
+            new Employee(10, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
+            new Employee(11, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
+        );*/
+
+        /*modelBuilder.Entity<PackingRequest>().HasData(
+            new PackingRequest(10, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
+            new Employee(11, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
+        );
+
+                public int PackingRequestId { get; set; }
+    public DateTime PackingRequestDeadlineDate { get; set; }
+    public DateTime PackingRequestCreationDate { get; set; }
+    public List<int> PackingRequestProductIds { get; set; }
+    public List<int> PackingRequestQuantities { get; set; }
+    public int CustomerOrderId { get; set; }
+    public int SectorId { get; set; }*/
 
         //
 
@@ -181,7 +215,9 @@ public class DataContext : DbContext
                 Gender = Gender.MALE,
                 Role = Role.ADMINISTRATOR,
                 ProfilePhoto = "somepath"
-            }
+            },
+            new Employee(11, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
+            new Employee(12, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
         );
         
         // modelBuilder.Entity<Owner>().HasData(
