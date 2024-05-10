@@ -5,9 +5,6 @@
         public int SectorId { get; set; }
         public string? SectorName { get; set; }
         public string? SectorImage { get; set; }
-        public Warehouse? Warehouse { get; set; }
-
-
-
+        public int WarehouseId { get; set; }
     }
 }

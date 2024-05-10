@@ -9,8 +9,5 @@
         public int? NumberOfVanDrivers { get; set; }
         public int? NumberOfSectors { get; set; }
         public string? WarehouseImage {  get; set; }
-
-
-
     }
 }

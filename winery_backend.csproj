@@ -23,9 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LogisticianViewCustomerOrder\Dto\" />
     <Folder Include="PackingRequest\Dto\" />
-    <Folder Include="PackingRequest\Interface\" />
     <Folder Include="TransportRequest\Dto\" />
     <Folder Include="TransportRequest\Interface\" />
     <Folder Include="ViewLogisticsEmployees\Dto\" />

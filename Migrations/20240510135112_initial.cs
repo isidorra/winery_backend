@@ -35,6 +35,28 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "CustomerOrders",
+                columns: table => new
+                {
+                    CustomerOrderId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CustomerOrderPrice = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    CustomerOrderCreationTime = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CustomerOrderDeliveryDeadline = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    OrderTrackingStatusId = table.Column<int>(type: "int", nullable: false),
+                    ProductIds = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Quantities = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CustomerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerOrders", x => x.CustomerOrderId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -61,6 +83,67 @@ namespace winery_backend.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employees", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProductName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProductDescription = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Photo = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    WineSort = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PackagingSize = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    ProductPrice = table.Column<int>(type: "int", nullable: false),
+                    AlcoholPercentage = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ProductId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "RealTimeOrderTrackingStatuses",
+                columns: table => new
+                {
+                    RealTimeOrderTrackingStatusId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    OrderTrackingStatus = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RealTimeOrderTrackingStatuses", x => x.RealTimeOrderTrackingStatusId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Warehouse",
+                columns: table => new
+                {
+                    WarehouseId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    WarehouseName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    WarehouseArea = table.Column<decimal>(type: "decimal(65,30)", nullable: true),
+                    NumberOfWarehouseWorkers = table.Column<int>(type: "int", nullable: true),
+                    NumberOfVanDrivers = table.Column<int>(type: "int", nullable: true),
+                    NumberOfSectors = table.Column<int>(type: "int", nullable: true),
+                    WarehouseImage = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Warehouse", x => x.WarehouseId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -253,10 +336,34 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Sector",
+                columns: table => new
+                {
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    SectorName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SectorImage = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    WarehouseId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sector", x => x.SectorId);
+                    table.ForeignKey(
+                        name: "FK_Sector_Warehouse_WarehouseId",
+                        column: x => x.WarehouseId,
+                        principalTable: "Warehouse",
+                        principalColumn: "WarehouseId");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Warehousemen",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    SectorId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -267,6 +374,11 @@ namespace winery_backend.Migrations
                         principalTable: "Employees",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Warehousemen_Sector_SectorId",
+                        column: x => x.SectorId,
+                        principalTable: "Sector",
+                        principalColumn: "SectorId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -294,6 +406,15 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "CustomerOrders",
+                columns: new[] { "CustomerOrderId", "CustomerId", "CustomerOrderCreationTime", "CustomerOrderDeliveryDeadline", "CustomerOrderPrice", "OrderTrackingStatusId", "ProductIds", "Quantities" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2020, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 20.3m, 1, "[1,2]", "[3,2]" },
+                    { 2, 1, new DateTime(2021, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 10.5m, 2, "[2]", "[6]" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "Id", "BirthDate", "Email", "Firstname", "Gender", "Lastname", "Password", "PhoneNumber", "ProfilePhoto", "Role", "Username" },
                 values: new object[,]
@@ -301,6 +422,24 @@ namespace winery_backend.Migrations
                     { 1, new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "pera.peric@example.com", "Pera", 1, "Peric", "hashedpassword", "1234567890", "somepath", 7, "peraperic" },
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "imenko@example.com", "Imenko", 1, "Prezimenic", "hashedpassword", "9876543210", "somepath", 0, "imenko" },
                     { 3, new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@admin.com", "Admin", 1, "Adminovic", "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", "061111111", "somepath", 0, "admin123" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "ProductId", "AlcoholPercentage", "PackagingSize", "Photo", "ProductDescription", "ProductName", "ProductPrice", "SectorId", "WineSort" },
+                values: new object[,]
+                {
+                    { 1, 5m, 1.5m, "aaa", "aa", "a", 1000, 1, "sorta_1" },
+                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 1, "sorta_2" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RealTimeOrderTrackingStatuses",
+                columns: new[] { "RealTimeOrderTrackingStatusId", "OrderTrackingStatus" },
+                values: new object[,]
+                {
+                    { 1, "in processing" },
+                    { 2, "distributed" }
                 });
 
             migrationBuilder.InsertData(
@@ -316,6 +455,16 @@ namespace winery_backend.Migrations
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sector_WarehouseId",
+                table: "Sector",
+                column: "WarehouseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Warehousemen_SectorId",
+                table: "Warehousemen",
+                column: "SectorId");
         }
 
         /// <inheritdoc />
@@ -323,6 +472,9 @@ namespace winery_backend.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Administrators");
+
+            migrationBuilder.DropTable(
+                name: "CustomerOrders");
 
             migrationBuilder.DropTable(
                 name: "Customers");
@@ -335,6 +487,12 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Owners");
+
+            migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "RealTimeOrderTrackingStatuses");
 
             migrationBuilder.DropTable(
                 name: "SalesManagers");
@@ -356,6 +514,12 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Sector");
+
+            migrationBuilder.DropTable(
+                name: "Warehouse");
         }
     }
 }

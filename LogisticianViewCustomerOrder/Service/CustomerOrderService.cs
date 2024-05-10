@@ -1,4 +1,5 @@
-﻿using winery_backend.LogisticianViewCustomerOrder.Interface;
+﻿using winery_backend.LogisticianViewCustomerOrder.Dto;
+using winery_backend.LogisticianViewCustomerOrder.Interface;
 using winery_backend.LogisticianViewCustomerOrder.Models;
 
 namespace winery_backend.LogisticianViewCustomerOrder.Service
@@ -14,6 +15,11 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         public List<CustomerOrder> GetAllActiveCustomerOrders()
         {
             return _customerOrderRepository.GetAllActiveCustomerOrders();
+        }
+
+        public CustomerOrder FindCustomerOrderById(int id)
+        {
+            return _customerOrderRepository.FindCustomerOrderById(id);
         }
     }
 }

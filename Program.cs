@@ -3,6 +3,9 @@ using Microsoft.OpenApi.Models;
 using winery_backend.LogisticianViewCustomerOrder.Interface;
 using winery_backend.LogisticianViewCustomerOrder.Repository;
 using winery_backend.LogisticianViewCustomerOrder.Service;
+using winery_backend.PackingRequest.Interface;
+using winery_backend.PackingRequest.Repository;
+using winery_backend.PackingRequest.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
 
@@ -61,7 +64,9 @@ builder.Services.AddScoped<ICustomerOrderRepository, CustomerOrderRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IRealTimeOrderTrackingStatusService, RealTimeOrderTrackingStatusService>();
-builder.Services.AddScoped <IRealTimeOrderTrackingStatusRepository, RealTimeOrderTrackingStatusRepository>();
+builder.Services.AddScoped<IRealTimeOrderTrackingStatusRepository, RealTimeOrderTrackingStatusRepository>();
+builder.Services.AddScoped<IPackingRequestService, PackingRequestService>();
+builder.Services.AddScoped<IPackingRequestRepository, PackingRequestRepository>();
 
 var app = builder.Build();
 

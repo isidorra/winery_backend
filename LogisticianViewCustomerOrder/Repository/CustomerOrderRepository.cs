@@ -16,5 +16,10 @@ namespace winery_backend.LogisticianViewCustomerOrder.Repository
         {
             return _context.CustomerOrders.OrderBy(x => x.CustomerOrderDeliveryDeadline).ToList();
         }
+
+        public CustomerOrder FindCustomerOrderById(int id)
+        {
+            return _context.CustomerOrders.First(x => x.CustomerOrderId == id);
+        }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240509112548_initial")]
+    [Migration("20240510135112_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -325,6 +325,217 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.CustomerOrder", b =>
+                {
+                    b.Property<int>("CustomerOrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CustomerOrderId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CustomerOrderCreationTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("CustomerOrderDeliveryDeadline")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("CustomerOrderPrice")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("OrderTrackingStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Quantities")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("CustomerOrderId");
+
+                    b.ToTable("CustomerOrders", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerOrderId = 1,
+                            CustomerId = 1,
+                            CustomerOrderCreationTime = new DateTime(2020, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2020, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 20.3m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[1,2]",
+                            Quantities = "[3,2]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 2,
+                            CustomerId = 1,
+                            CustomerOrderCreationTime = new DateTime(2021, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2021, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 10.5m,
+                            OrderTrackingStatusId = 2,
+                            ProductIds = "[2]",
+                            Quantities = "[6]"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProductId"));
+
+                    b.Property<decimal>("AlcoholPercentage")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<decimal>("PackagingSize")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("Photo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProductDescription")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ProductPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WineSort")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            AlcoholPercentage = 5m,
+                            PackagingSize = 1.5m,
+                            Photo = "aaa",
+                            ProductDescription = "aa",
+                            ProductName = "a",
+                            ProductPrice = 1000,
+                            SectorId = 1,
+                            WineSort = "sorta_1"
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            AlcoholPercentage = 6m,
+                            PackagingSize = 0.5m,
+                            Photo = "bbb",
+                            ProductDescription = "bb",
+                            ProductName = "b",
+                            ProductPrice = 2000,
+                            SectorId = 1,
+                            WineSort = "sorta_2"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.RealTimeOrderTrackingStatus", b =>
+                {
+                    b.Property<int>("RealTimeOrderTrackingStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("RealTimeOrderTrackingStatusId"));
+
+                    b.Property<string>("OrderTrackingStatus")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("RealTimeOrderTrackingStatusId");
+
+                    b.ToTable("RealTimeOrderTrackingStatuses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 1,
+                            OrderTrackingStatus = "in processing"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 2,
+                            OrderTrackingStatus = "distributed"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>
+                {
+                    b.Property<int>("SectorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SectorId"));
+
+                    b.Property<string>("SectorImage")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SectorName")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("WarehouseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SectorId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("Sector");
+                });
+
+            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Warehouse", b =>
+                {
+                    b.Property<int>("WarehouseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("WarehouseId"));
+
+                    b.Property<int?>("NumberOfSectors")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NumberOfVanDrivers")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NumberOfWarehouseWorkers")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("WarehouseArea")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("WarehouseImage")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("WarehouseName")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("WarehouseId");
+
+                    b.ToTable("Warehouse");
+                });
+
             modelBuilder.Entity("Administrator", b =>
                 {
                     b.HasBaseType("Employee");
@@ -388,6 +599,11 @@ namespace winery_backend.Migrations
                 {
                     b.HasBaseType("Employee");
 
+                    b.Property<int?>("SectorId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("SectorId");
+
                     b.ToTable("Warehousemen", (string)null);
                 });
 
@@ -398,6 +614,15 @@ namespace winery_backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>
+                {
+                    b.HasOne("winery_backend.ViewWarehouse.Models.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId");
+
+                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -479,6 +704,12 @@ namespace winery_backend.Migrations
                         .HasForeignKey("Warehouseman", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("winery_backend.ViewWarehouse.Models.Sector", "Sector")
+                        .WithMany()
+                        .HasForeignKey("SectorId");
+
+                    b.Navigation("Sector");
                 });
 #pragma warning restore 612, 618
         }

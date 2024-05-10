@@ -2,5 +2,6 @@
 {
     public interface IRealTimeOrderTrackingStatusService
     {
+        string FindStatusNameById(int id);
     }
 }

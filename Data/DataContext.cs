@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using winery_backend.LogisticianViewCustomerOrder.Models;
 
 public class DataContext : DbContext
@@ -44,27 +45,36 @@ public class DataContext : DbContext
         modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
 
-        // modelBuilder.Entity<CustomerOrder>().OwnsOne(x => x.RealTimeOrderTrackingStatus);
-
         //
 
-       /* modelBuilder.Entity<CustomerOrder>().HasData(
-            new CustomerOrder { CustomerOrderId = 1,
-                                CustomerOrderPrice = new Decimal(20.3),
-                                CustomerOrderCreationTime = new DateTime(2020, 3, 20),
-                                CustomerOrderDeliveryDeadline = new DateTime(2020, 3, 30),
-                                OrderTrackingStatusId = 1
-            }
+        modelBuilder.Entity<Product>().HasData(
+            new Product(1, "a", "aa", "aaa", "sorta_1", new Decimal(1.5), 1000, new Decimal(5), 1),
+            new Product(2, "b", "bb", "bbb", "sorta_2", new Decimal(0.5), 2000, new Decimal(6), 1)
+        );
+
+        List<int> products1 = new List<int>();
+        products1.Add(1);
+        products1.Add(2);
+
+        List<int> quantities1 = new List<int>();
+        quantities1.Add(3);
+        quantities1.Add(2);
+
+        List<int> products2 = new List<int>();
+        products2.Add(2);
+
+        List<int> quantities2 = new List<int>();
+        quantities2.Add(6);
+
+        modelBuilder.Entity<CustomerOrder>().HasData(
+            new CustomerOrder(1, new Decimal(20.3), new DateTime(2020, 3, 20), new DateTime(2020, 3, 30), 1, products1, quantities1, 1),
+            new CustomerOrder(2, new Decimal(10.5), new DateTime(2021, 5, 22), new DateTime(2021, 6, 1), 2, products2, quantities2, 1)
         );
 
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
-            new RealTimeOrderTrackingStatus
-            {
-                id = 1,
-                OrderTrackingStatus = "a",
-
-            }
-        );*/
+            new RealTimeOrderTrackingStatus(1, "in processing"),
+            new RealTimeOrderTrackingStatus(2, "distributed")
+        );
 
         //
 
