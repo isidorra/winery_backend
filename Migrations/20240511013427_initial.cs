@@ -486,8 +486,8 @@ namespace winery_backend.Migrations
                 columns: new[] { "SectorId", "SectorImage", "SectorName", "WarehouseId", "WarehousemanId" },
                 values: new object[,]
                 {
-                    { 1, "slika1", "SECTOR 1", 1, 1 },
-                    { 2, "slika2", "SECTOR 2", 1, 2 }
+                    { 1, "slika1", "SECTOR 1", 1, 11 },
+                    { 2, "slika2", "SECTOR 2", 1, 12 }
                 });
 
             migrationBuilder.InsertData(

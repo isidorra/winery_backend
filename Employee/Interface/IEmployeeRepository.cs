@@ -16,5 +16,7 @@
         void Update(Employee employee);
         List<string> FindAllVanDriverNames();
         int FindVanDriverId(string username);
+        List<Employee> FindAllWarehouseWorkers();
+        List<Employee> FindAllVanDrivers();
     }
 }

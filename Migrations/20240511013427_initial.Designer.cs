@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240511003201_initial")]
+    [Migration("20240511013427_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -641,7 +641,7 @@ namespace winery_backend.Migrations
                             SectorImage = "slika1",
                             SectorName = "SECTOR 1",
                             WarehouseId = 1,
-                            WarehousemanId = 1
+                            WarehousemanId = 11
                         },
                         new
                         {
@@ -649,7 +649,7 @@ namespace winery_backend.Migrations
                             SectorImage = "slika2",
                             SectorName = "SECTOR 2",
                             WarehouseId = 1,
-                            WarehousemanId = 2
+                            WarehousemanId = 12
                         });
                 });
 

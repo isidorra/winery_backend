@@ -4,5 +4,6 @@
     {
         string FindSectorName(int sectorId);
         int FindSectorId(string sectorName);
+        string FindSectorNameByWarehousemanId(int warehousemanId);
     }
 }

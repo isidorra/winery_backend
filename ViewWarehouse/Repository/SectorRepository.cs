@@ -21,5 +21,10 @@ namespace winery_backend.ViewWarehouse.Repository
         {
             return _context.Sectors.First(x => x.SectorName.Equals(sectorName)).SectorId;
         }
+
+        public string FindSectorNameByWarehousemanId(int warehousemanId)
+        {
+            return _context.Sectors.First(x => x.WarehousemanId == warehousemanId).SectorName;
+        }
     }
 }

@@ -87,8 +87,8 @@ public class DataContext : DbContext
         );
 
         modelBuilder.Entity<Sector>().HasData(
-            new Sector(1, "SECTOR 1", "slika1", 1, 1),
-            new Sector(2, "SECTOR 2", "slika2", 1, 2)
+            new Sector(1, "SECTOR 1", "slika1", 1, 11),
+            new Sector(2, "SECTOR 2", "slika2", 1, 12)
         );
 
         modelBuilder.Entity<Warehouse>().HasData(

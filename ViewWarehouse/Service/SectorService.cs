@@ -43,5 +43,10 @@ namespace winery_backend.ViewWarehouse.Service
 
             return sectorIds;
         }
+
+        public string FindSectorNameByWarehousemanId(int warehousemanId)
+        {
+            return _sectorRepository.FindSectorNameByWarehousemanId(warehousemanId);
+        }
     }
 }

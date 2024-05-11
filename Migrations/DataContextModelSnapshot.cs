@@ -638,7 +638,7 @@ namespace winery_backend.Migrations
                             SectorImage = "slika1",
                             SectorName = "SECTOR 1",
                             WarehouseId = 1,
-                            WarehousemanId = 1
+                            WarehousemanId = 11
                         },
                         new
                         {
@@ -646,7 +646,7 @@ namespace winery_backend.Migrations
                             SectorImage = "slika2",
                             SectorName = "SECTOR 2",
                             WarehouseId = 1,
-                            WarehousemanId = 2
+                            WarehousemanId = 12
                         });
                 });
 

@@ -118,5 +118,33 @@
         {
             return _context.Employees.First(x => x.Username.Equals(username)).Id;
         }
+
+        public List<Employee> FindAllWarehouseWorkers()
+        {
+            List<Employee> warehouseWorkers = new List<Employee>();
+
+            foreach (var employee in _context.Employees)
+            {
+                if (employee.Role.Equals(Role.WAREHOUSEMAN))
+                {
+                    warehouseWorkers.Add(employee);
+                }
+            }
+            return warehouseWorkers;
+        }
+
+        public List<Employee> FindAllVanDrivers()
+        {
+            List<Employee> vanDrivers = new List<Employee>();
+
+            foreach (var employee in _context.Employees)
+            {
+                if (employee.Role.Equals(Role.DRIVER))
+                {
+                    vanDrivers.Add(employee);
+                }
+            }
+            return vanDrivers;
+        }
     }
 }
