@@ -8,6 +8,9 @@ using winery_backend.PackingRequest.Repository;
 using winery_backend.PackingRequest.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
+using winery_backend.TransportRequest.Interface;
+using winery_backend.TransportRequest.Repository;
+using winery_backend.TransportRequest.Service;
 using winery_backend.ViewWarehouse.Interface;
 using winery_backend.ViewWarehouse.Repository;
 using winery_backend.ViewWarehouse.Service;
@@ -74,6 +77,8 @@ builder.Services.AddScoped<ISectorService, SectorService>();
 builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IWarehouseService, WarehouseService>();
 builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
+builder.Services.AddScoped<ITransportRequestService, TransportRequestService>();
+builder.Services.AddScoped<ITransportRequestRepository, TransportRequestRepository>();
 
 var app = builder.Build();
 

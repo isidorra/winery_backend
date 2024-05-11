@@ -99,5 +99,24 @@
             }
 
         }
+
+        public List<string> FindAllVanDriverNames()
+        {
+            List<string> allVanDriverNames = new List<string>();
+
+            foreach(var employee in _context.Employees)
+            {
+                if(employee.Role.Equals(Role.DRIVER))
+                {
+                    allVanDriverNames.Add(employee.Username);
+                }
+            }
+            return allVanDriverNames;
+        }
+
+        public int FindVanDriverId(string username)
+        {
+            return _context.Employees.First(x => x.Username.Equals(username)).Id;
+        }
     }
 }

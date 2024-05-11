@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240510223355_initial")]
+    [Migration("20240511003201_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -350,6 +350,34 @@ namespace winery_backend.Migrations
                             ProfilePhoto = "slika2",
                             Role = 4,
                             Username = "bbbbb"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BirthDate = new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "c@gmail.com",
+                            Firstname = "C",
+                            Gender = 1,
+                            Lastname = "C",
+                            Password = "ccccc",
+                            PhoneNumber = "1234567890",
+                            ProfilePhoto = "slika3",
+                            Role = 7,
+                            Username = "ccccc"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BirthDate = new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "d@gmail.com",
+                            Firstname = "D",
+                            Gender = 1,
+                            Lastname = "D",
+                            Password = "ddddd",
+                            PhoneNumber = "1234567890",
+                            ProfilePhoto = "slika4",
+                            Role = 7,
+                            Username = "ddddd"
                         });
                 });
 
@@ -540,6 +568,46 @@ namespace winery_backend.Migrations
                     b.HasKey("PackingRequestId");
 
                     b.ToTable("PackingRequests", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.TransportRequest.Models.TransportRequest", b =>
+                {
+                    b.Property<int>("TransportRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TransportRequestId"));
+
+                    b.Property<string>("CustomerDeliveryAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("CustomerOrderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerUsername")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("PickUpDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("SectorIdsForPickUp")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("TransportRequestCreationDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("TransportRequestDeliveryDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("VanDriverId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TransportRequestId");
+
+                    b.ToTable("TransportRequests", (string)null);
                 });
 
             modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>

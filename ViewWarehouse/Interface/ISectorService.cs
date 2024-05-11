@@ -5,5 +5,6 @@
         List<string> FindSectorsName(List<int> requiredSectorIds);
         int FindSectorId(string sectorName);
         string FindSectorName(int sectorId);
+        List<int> FindSectorIds(List<string> sectorNames);
     }
 }

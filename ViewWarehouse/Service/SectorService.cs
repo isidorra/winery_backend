@@ -32,5 +32,16 @@ namespace winery_backend.ViewWarehouse.Service
         {
             return _sectorRepository.FindSectorName(sectorId);
         }
+
+        public List<int> FindSectorIds(List<string> sectorNames)
+        {
+            List<int> sectorIds = new List<int>();
+            foreach (string sectorName in sectorNames)
+            {
+                sectorIds.Add(_sectorRepository.FindSectorId(sectorName));
+            }
+
+            return sectorIds;
+        }
     }
 }

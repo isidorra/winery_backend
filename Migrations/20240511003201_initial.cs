@@ -167,6 +167,30 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "TransportRequests",
+                columns: table => new
+                {
+                    TransportRequestId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PickUpDeadlineDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TransportRequestCreationDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TransportRequestDeliveryDeadlineDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    SectorIdsForPickUp = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CustomerUsername = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CustomerDeliveryAddress = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CustomerOrderId = table.Column<int>(type: "int", nullable: false),
+                    VanDriverId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TransportRequests", x => x.TransportRequestId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Warehouses",
                 columns: table => new
                 {
@@ -434,7 +458,9 @@ namespace winery_backend.Migrations
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "imenko@example.com", "Imenko", 1, "Prezimenic", "hashedpassword", "9876543210", "somepath", 0, "imenko" },
                     { 3, new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@admin.com", "Admin", 1, "Adminovic", "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", "061111111", "somepath", 0, "admin123" },
                     { 11, new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "a@gmail.com", "A", 1, "A", "aaaaa", "1234567890", "slika1", 4, "aaaaa" },
-                    { 12, new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "b@gmail.com", "B", 1, "B", "bbbbb", "1234567890", "slika2", 4, "bbbbb" }
+                    { 12, new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "b@gmail.com", "B", 1, "B", "bbbbb", "1234567890", "slika2", 4, "bbbbb" },
+                    { 13, new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "c@gmail.com", "C", 1, "C", "ccccc", "1234567890", "slika3", 7, "ccccc" },
+                    { 14, new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "d@gmail.com", "D", 1, "D", "ddddd", "1234567890", "slika4", 7, "ddddd" }
                 });
 
             migrationBuilder.InsertData(
@@ -525,6 +551,9 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "TourGuides");
+
+            migrationBuilder.DropTable(
+                name: "TransportRequests");
 
             migrationBuilder.DropTable(
                 name: "VanDrivers");

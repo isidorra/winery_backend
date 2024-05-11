@@ -11,5 +11,7 @@ namespace winery_backend.Services
         bool AreFieldsFilled(Employee employee);
         bool UsernameExist(string username);
         void Update(EditEmployeeDto editEmployeeDto, int emoloyeeId);
+        List<string> FindAllVanDriverNames();
+        int FindVanDriverId(string username);
     }
 }

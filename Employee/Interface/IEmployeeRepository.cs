@@ -14,5 +14,7 @@
 
         bool PhoneNumberExist(string phoneNumber);
         void Update(Employee employee);
+        List<string> FindAllVanDriverNames();
+        int FindVanDriverId(string username);
     }
 }

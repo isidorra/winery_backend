@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using winery_backend.LogisticianViewCustomerOrder.Models;
 using winery_backend.PackingRequest.Models;
+using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
 
 public class DataContext : DbContext
@@ -29,6 +30,7 @@ public class DataContext : DbContext
     public DbSet<PackingRequest> PackingRequests { get; set; }
     public DbSet<Sector> Sectors { get; set; }
     public DbSet<Warehouse> Warehouses { get; set; }
+    public DbSet<TransportRequest> TransportRequests { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -51,6 +53,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
         modelBuilder.Entity<Sector>().ToTable("Sectors");
         modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
+        modelBuilder.Entity<TransportRequest>().ToTable("TransportRequests");
 
         //
 
@@ -96,19 +99,6 @@ public class DataContext : DbContext
             new Employee(10, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
             new Employee(11, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
         );*/
-
-        /*modelBuilder.Entity<PackingRequest>().HasData(
-            new PackingRequest(10, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
-            new Employee(11, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
-        );
-
-                public int PackingRequestId { get; set; }
-    public DateTime PackingRequestDeadlineDate { get; set; }
-    public DateTime PackingRequestCreationDate { get; set; }
-    public List<int> PackingRequestProductIds { get; set; }
-    public List<int> PackingRequestQuantities { get; set; }
-    public int CustomerOrderId { get; set; }
-    public int SectorId { get; set; }*/
 
         //
 
@@ -217,7 +207,9 @@ public class DataContext : DbContext
                 ProfilePhoto = "somepath"
             },
             new Employee(11, "A", "A", "a@gmail.com", "aaaaa", "aaaaa", "1234567890", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "slika1"),
-            new Employee(12, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2")
+            new Employee(12, "B", "B", "b@gmail.com", "bbbbb", "bbbbb", "1234567890", new DateTime(1991, 6, 21), Gender.MALE, Role.WAREHOUSEMAN, "slika2"),
+            new Employee(13, "C", "C", "c@gmail.com", "ccccc", "ccccc", "1234567890", new DateTime(1992, 7, 22), Gender.MALE, Role.DRIVER, "slika3"),
+            new Employee(14, "D", "D", "d@gmail.com", "ddddd", "ddddd", "1234567890", new DateTime(1993, 8, 23), Gender.MALE, Role.DRIVER, "slika4")
         );
         
         // modelBuilder.Entity<Owner>().HasData(
