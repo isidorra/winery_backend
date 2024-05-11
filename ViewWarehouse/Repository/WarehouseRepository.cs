@@ -1,4 +1,5 @@
 ﻿using winery_backend.ViewWarehouse.Interface;
+using winery_backend.ViewWarehouse.Models;
 
 namespace winery_backend.ViewWarehouse.Repository
 {
@@ -8,6 +9,11 @@ namespace winery_backend.ViewWarehouse.Repository
         public WarehouseRepository(DataContext context)
         {
             _context = context;
+        }
+
+        public Warehouse FindWarehouse()
+        {
+            return _context.Warehouses.First();
         }
     }
 }

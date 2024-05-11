@@ -58,8 +58,8 @@ public class DataContext : DbContext
         //
 
         modelBuilder.Entity<Product>().HasData(
-            new Product(1, "a", "aa", "aaa", "sorta_1", new Decimal(1.5), 1000, new Decimal(5), 1),
-            new Product(2, "b", "bb", "bbb", "sorta_2", new Decimal(0.5), 2000, new Decimal(6), 2)
+            new Product(1, "a", "aa", "aaa", "sorta_1", new Decimal(1.5), 1000, 100, new Decimal(5), 1),
+            new Product(2, "b", "bb", "bbb", "sorta_2", new Decimal(0.5), 2000, 50, new Decimal(6), 2)
         );
 
         List<int> products1 = new List<int>();
@@ -92,7 +92,7 @@ public class DataContext : DbContext
         );
 
         modelBuilder.Entity<Warehouse>().HasData(
-            new Warehouse(1, "Warehouse 1", new Decimal(450.23), 2, 1, 2, "slika 1")
+            new Warehouse(1, "Warehouse 1", new Decimal(450.23), "Nova lokacija 123, Novi Sad", 2, 1, 2, "slika 1")
         );
 
         /*modelBuilder.Entity<Employee>().HasData(

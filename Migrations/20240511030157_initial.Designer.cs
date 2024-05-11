@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240511013427_initial")]
+    [Migration("20240511030157_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -470,6 +470,9 @@ namespace winery_backend.Migrations
                     b.Property<int>("ProductPrice")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProductQuantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("SectorId")
                         .HasColumnType("int");
 
@@ -491,6 +494,7 @@ namespace winery_backend.Migrations
                             ProductDescription = "aa",
                             ProductName = "a",
                             ProductPrice = 1000,
+                            ProductQuantity = 100,
                             SectorId = 1,
                             WineSort = "sorta_1"
                         },
@@ -503,6 +507,7 @@ namespace winery_backend.Migrations
                             ProductDescription = "bb",
                             ProductName = "b",
                             ProductPrice = 2000,
+                            ProductQuantity = 50,
                             SectorId = 2,
                             WineSort = "sorta_2"
                         });
@@ -677,6 +682,10 @@ namespace winery_backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("WarehouseLocation")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("WarehouseName")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -694,6 +703,7 @@ namespace winery_backend.Migrations
                             NumberOfWarehouseWorkers = 2,
                             WarehouseArea = 450.23m,
                             WarehouseImage = "slika 1",
+                            WarehouseLocation = "Nova lokacija 123, Novi Sad",
                             WarehouseName = "Warehouse 1"
                         });
                 });

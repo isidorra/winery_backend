@@ -1,4 +1,5 @@
 ﻿using winery_backend.ViewWarehouse.Interface;
+using winery_backend.ViewWarehouse.Models;
 
 namespace winery_backend.ViewWarehouse.Service
 {
@@ -8,6 +9,11 @@ namespace winery_backend.ViewWarehouse.Service
         public WarehouseService(IWarehouseRepository warehouseRepository)
         {
             _warehouseRepository = warehouseRepository;
+        }
+
+        public Warehouse FindWarehouse()
+        {
+            return _warehouseRepository.FindWarehouse();
         }
     }
 }

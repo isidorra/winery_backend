@@ -27,5 +27,10 @@ namespace winery_backend.LogisticianViewCustomerOrder.Repository
         {
             return _context.Products.FirstOrDefault(x => x.ProductId == id).SectorId;
         }
+
+        public List<Product> FindProductsBySectorId(int sectorId)
+        {
+            return _context.Products.Where(x => x.SectorId == sectorId).ToList();
+        }
     }
 }

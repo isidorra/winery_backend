@@ -2,6 +2,7 @@
 using winery_backend.LogisticianViewCustomerOrder.Interface;
 using winery_backend.LogisticianViewCustomerOrder.Models;
 using winery_backend.LogisticianViewCustomerOrder.Repository;
+using winery_backend.ViewWarehouse.Models;
 
 namespace winery_backend.LogisticianViewCustomerOrder.Service
 {
@@ -21,6 +22,11 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         public int FindProductSectorIdByProductId(int id)
         {
             return _productRepository.FindProductSectorIdByProductId(id);
+        }
+
+        public List<Product> FindProductsBySectorId(int sectorId)
+        {
+            return _productRepository.FindProductsBySectorId(sectorId);
         }
     }
 }

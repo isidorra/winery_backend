@@ -6,6 +6,6 @@ namespace winery_backend.LogisticianViewCustomerOrder.Interface
     {
         List<Product> FindProductsByCustomerOrderId(List<int> productIds);
         int FindProductSectorIdByProductId(int id);
-
+        List<Product> FindProductsBySectorId(int sectorId);
     }
 }

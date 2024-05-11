@@ -11,6 +11,7 @@ namespace winery_backend.LogisticianViewCustomerOrder.Models
         public string WineSort { get; set; }
         public decimal PackagingSize { get; set; }
         public int ProductPrice { get; set; }
+        public int ProductQuantity { get; set; }
         public decimal AlcoholPercentage { get; set; }
         public int SectorId { get; set; }
 
@@ -19,7 +20,7 @@ namespace winery_backend.LogisticianViewCustomerOrder.Models
 
         }
 
-        public Product(int productId, string productName, string productDescription, string photo, string wineSort, decimal packagingSize, int productPrice, decimal alcoholPercentage, int sectorId)
+        public Product(int productId, string productName, string productDescription, string photo, string wineSort, decimal packagingSize, int productPrice, int productQuantity, decimal alcoholPercentage, int sectorId)
         {
             ProductId = productId;
             ProductName = productName;
@@ -28,6 +29,7 @@ namespace winery_backend.LogisticianViewCustomerOrder.Models
             WineSort = wineSort;
             PackagingSize = packagingSize;
             ProductPrice = productPrice;
+            ProductQuantity = productQuantity;
             AlcoholPercentage = alcoholPercentage;
             SectorId = sectorId;
         }

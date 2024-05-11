@@ -29,7 +29,6 @@
     <Folder Include="ViewLogisticsEmployees\Models\" />
     <Folder Include="ViewLogisticsEmployees\Service\" />
     <Folder Include="ViewLogisticsEmployees\Repository\" />
-    <Folder Include="ViewWarehouse\Dto\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using winery_backend.LogisticianViewCustomerOrder.Models;
 using winery_backend.PackingRequest.Interface;
 using winery_backend.ViewWarehouse.Interface;
+using winery_backend.ViewWarehouse.Models;
 
 namespace winery_backend.ViewWarehouse.Service
 {
@@ -47,6 +48,16 @@ namespace winery_backend.ViewWarehouse.Service
         public string FindSectorNameByWarehousemanId(int warehousemanId)
         {
             return _sectorRepository.FindSectorNameByWarehousemanId(warehousemanId);
+        }
+
+        public List<Sector> FindAllSectors(int warehouseId)
+        {
+            return _sectorRepository.FindAllSectors(warehouseId);
+        }
+
+        public Sector FindSectorBySectorName(string sectorName)
+        {
+            return _sectorRepository.FindSectorBySectorName(sectorName);
         }
     }
 }

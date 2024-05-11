@@ -123,6 +123,7 @@ namespace winery_backend.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     PackagingSize = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     ProductPrice = table.Column<int>(type: "int", nullable: false),
+                    ProductQuantity = table.Column<int>(type: "int", nullable: false),
                     AlcoholPercentage = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     SectorId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -199,6 +200,8 @@ namespace winery_backend.Migrations
                     WarehouseName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     WarehouseArea = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    WarehouseLocation = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     NumberOfWarehouseWorkers = table.Column<int>(type: "int", nullable: false),
                     NumberOfVanDrivers = table.Column<int>(type: "int", nullable: false),
                     NumberOfSectors = table.Column<int>(type: "int", nullable: false),
@@ -465,11 +468,11 @@ namespace winery_backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "ProductId", "AlcoholPercentage", "PackagingSize", "Photo", "ProductDescription", "ProductName", "ProductPrice", "SectorId", "WineSort" },
+                columns: new[] { "ProductId", "AlcoholPercentage", "PackagingSize", "Photo", "ProductDescription", "ProductName", "ProductPrice", "ProductQuantity", "SectorId", "WineSort" },
                 values: new object[,]
                 {
-                    { 1, 5m, 1.5m, "aaa", "aa", "a", 1000, 1, "sorta_1" },
-                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 2, "sorta_2" }
+                    { 1, 5m, 1.5m, "aaa", "aa", "a", 1000, 100, 1, "sorta_1" },
+                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 50, 2, "sorta_2" }
                 });
 
             migrationBuilder.InsertData(
@@ -492,8 +495,8 @@ namespace winery_backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "Warehouses",
-                columns: new[] { "WarehouseId", "NumberOfSectors", "NumberOfVanDrivers", "NumberOfWarehouseWorkers", "WarehouseArea", "WarehouseImage", "WarehouseName" },
-                values: new object[] { 1, 2, 1, 2, 450.23m, "slika 1", "Warehouse 1" });
+                columns: new[] { "WarehouseId", "NumberOfSectors", "NumberOfVanDrivers", "NumberOfWarehouseWorkers", "WarehouseArea", "WarehouseImage", "WarehouseLocation", "WarehouseName" },
+                values: new object[] { 1, 2, 1, 2, 450.23m, "slika 1", "Nova lokacija 123, Novi Sad", "Warehouse 1" });
 
             migrationBuilder.InsertData(
                 table: "Customers",
