@@ -448,8 +448,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "CustomerOrderId", "CustomerId", "CustomerOrderCreationTime", "CustomerOrderDeliveryDeadline", "CustomerOrderPrice", "OrderTrackingStatusId", "ProductIds", "Quantities" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2020, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2020, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 20.3m, 1, "[1,2]", "[3,2]" },
-                    { 2, 1, new DateTime(2021, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 10.5m, 2, "[2]", "[6]" }
+                    { 1, 1, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 7000m, 1, "[1,2]", "[3,2]" },
+                    { 2, 1, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 12000m, 1, "[2]", "[6]" },
+                    { 3, 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 13500m, 1, "[2,5]", "[6,1]" },
+                    { 4, 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 9000m, 1, "[2,3,5]", "[2,3,4]" },
+                    { 5, 2, new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 9000m, 2, "[2]", "[4,10]" }
                 });
 
             migrationBuilder.InsertData(
@@ -460,10 +463,27 @@ namespace winery_backend.Migrations
                     { 1, new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "pera.peric@example.com", "Pera", 1, "Peric", "hashedpassword", "1234567890", "somepath", 7, "peraperic" },
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "imenko@example.com", "Imenko", 1, "Prezimenic", "hashedpassword", "9876543210", "somepath", 0, "imenko" },
                     { 3, new DateTime(1982, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@admin.com", "Admin", 1, "Adminovic", "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS", "061111111", "somepath", 0, "admin123" },
-                    { 11, new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "a@gmail.com", "A", 1, "A", "aaaaa", "1234567890", "slika1", 4, "aaaaa" },
-                    { 12, new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "b@gmail.com", "B", 1, "B", "bbbbb", "1234567890", "slika2", 4, "bbbbb" },
-                    { 13, new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "c@gmail.com", "C", 1, "C", "ccccc", "1234567890", "slika3", 7, "ccccc" },
-                    { 14, new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "d@gmail.com", "D", 1, "D", "ddddd", "1234567890", "slika4", 7, "ddddd" }
+                    { 11, new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_1@gmail.com", "warehouseman_first_name_1", 1, "warehouseman_last_name_1", "a", "061123123", "photo_warehouseman_1.png", 4, "warehouseman_1" },
+                    { 12, new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_2@gmail.com", "warehouseman_first_name_2", 1, "warehouseman_last_name_2", "a", "062345345", "photo_warehouseman_2.png", 4, "warehouseman_2" },
+                    { 13, new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_3@gmail.com", "warehouseman_first_name_3", 0, "warehouseman_last_name_3", "a", "063456789", "photo_warehouseman_3.png", 4, "warehouseman_3" },
+                    { 14, new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_4@gmail.com", "warehouseman_first_name_4", 0, "warehouseman_last_name_4", "a", "064123123", "photo_warehouseman_4.png", 4, "warehouseman_4" },
+                    { 15, new DateTime(1994, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_5@gmail.com", "warehouseman_first_name_5", 1, "warehouseman_last_name_5", "a", "066234567", "photo_warehouseman_5.png", 4, "warehouseman_5" },
+                    { 16, new DateTime(1995, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_6@gmail.com", "warehouseman_first_name_6", 1, "warehouseman_last_name_6", "a", "063456789", "photo_warehouseman_6.png", 4, "warehouseman_6" },
+                    { 17, new DateTime(1996, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_7@gmail.com", "warehouseman_first_name_7", 0, "warehouseman_last_name_7", "a", "061456789", "photo_warehouseman_7.png", 4, "warehouseman_7" },
+                    { 18, new DateTime(1997, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified), "warehouseman_email_8@gmail.com", "warehouseman_first_name_8", 0, "warehouseman_last_name_8", "a", "069123123", "photo_warehouseman_8.png", 4, "warehouseman_8" },
+                    { 21, new DateTime(1998, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), "van_driver_email_1@gmail.com", "van_driver_first_name_1", 1, "van_driver_last_name_1", "a", "062111111", "photo_van_driver_1.png", 7, "van_driver_1" },
+                    { 22, new DateTime(1999, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "van_driver_email_2@gmail.com", "van_driver_first_name_2", 1, "van_driver_last_name_2", "a", "062222222", "photo_van_driver_2.png", 7, "van_driver_2" },
+                    { 23, new DateTime(2000, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "van_driver_email_3@gmail.com", "van_driver_first_name_3", 0, "van_driver_last_name_3", "a", "062333333", "photo_van_driver_3.png", 7, "van_driver_3" },
+                    { 24, new DateTime(2001, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "van_driver_email_4@gmail.com", "van_driver_first_name_4", 0, "van_driver_last_name_4", "a", "062444444", "photo_van_driver_4.png", 7, "van_driver_4" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PackingRequests",
+                columns: new[] { "PackingRequestId", "CustomerOrderId", "PackingRequestCreationDate", "PackingRequestDeadlineDate", "PackingRequestProductIds", "PackingRequestQuantities", "SectorId" },
+                values: new object[,]
+                {
+                    { 1, 5, new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[1]", "[4]", 1 },
+                    { 2, 5, new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[4]", "[10]", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -471,8 +491,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "ProductId", "AlcoholPercentage", "PackagingSize", "Photo", "ProductDescription", "ProductName", "ProductPrice", "ProductQuantity", "SectorId", "WineSort" },
                 values: new object[,]
                 {
-                    { 1, 5m, 1.5m, "aaa", "aa", "a", 1000, 100, 1, "sorta_1" },
-                    { 2, 6m, 0.5m, "bbb", "bb", "b", 2000, 50, 2, "sorta_2" }
+                    { 1, 5m, 1.5m, "photo_product_1.png", "nice product", "product1", 1000, 100, 1, "sort_1" },
+                    { 2, 6m, 0.5m, "photo_product_2.png", "nice product", "product2", 2000, 50, 2, "sort_2" },
+                    { 3, 3m, 1.5m, "photo_product_3.png", "nice product", "product3", 1000, 150, 2, "sort_2" },
+                    { 4, 8.5m, 1m, "photo_product_4.png", "nice product", "product4", 500, 250, 2, "sort_2" },
+                    { 5, 10m, 0.5m, "photo_product_5.png", "nice product", "product5", 1500, 150, 1, "sort_1" }
                 });
 
             migrationBuilder.InsertData(
@@ -481,7 +504,11 @@ namespace winery_backend.Migrations
                 values: new object[,]
                 {
                     { 1, "in processing" },
-                    { 2, "distributed" }
+                    { 2, "distributed" },
+                    { 3, "ready for pick up" },
+                    { 4, "picked up" },
+                    { 5, "in transport" },
+                    { 6, "delivered" }
                 });
 
             migrationBuilder.InsertData(
@@ -489,14 +516,20 @@ namespace winery_backend.Migrations
                 columns: new[] { "SectorId", "SectorImage", "SectorName", "WarehouseId", "WarehousemanId" },
                 values: new object[,]
                 {
-                    { 1, "slika1", "SECTOR 1", 1, 11 },
-                    { 2, "slika2", "SECTOR 2", 1, 12 }
+                    { 1, "photo_sector_1.png", "SECTOR 1", 1, 11 },
+                    { 2, "photo_sector_2.png", "SECTOR 2", 1, 12 },
+                    { 3, "photo_sector_3.png", "SECTOR 3", 1, 13 },
+                    { 4, "photo_sector_4.png", "SECTOR 4", 1, 14 },
+                    { 5, "photo_sector_5.png", "SECTOR 5", 1, 15 },
+                    { 6, "photo_sector_6.png", "SECTOR 6", 1, 16 },
+                    { 7, "photo_sector_7.png", "SECTOR 7", 1, 17 },
+                    { 8, "photo_sector_8.png", "SECTOR 8", 1, 18 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Warehouses",
                 columns: new[] { "WarehouseId", "NumberOfSectors", "NumberOfVanDrivers", "NumberOfWarehouseWorkers", "WarehouseArea", "WarehouseImage", "WarehouseLocation", "WarehouseName" },
-                values: new object[] { 1, 2, 1, 2, 450.23m, "slika 1", "Nova lokacija 123, Novi Sad", "Warehouse 1" });
+                values: new object[] { 1, 8, 5, 8, 5000.5m, "photo_warehouse.png", "Nova lokacija 123, Novi Sad", "Warehouse 1" });
 
             migrationBuilder.InsertData(
                 table: "Customers",

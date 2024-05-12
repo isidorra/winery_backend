@@ -5,5 +5,6 @@
         bool IsExistPackingRequestBySectorIdAndCustomerOrderId(int sectorId, int customerOrderId);
         int FindLastId();
         bool SavePackingRequest(PackingRequest.Models.PackingRequest packingRequest);
+        List<PackingRequest.Models.PackingRequest> FindPackingRequestByCustomerOrderId(int customerOrderId);
     }
 }

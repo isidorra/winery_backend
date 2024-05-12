@@ -324,57 +324,169 @@ namespace winery_backend.Migrations
                         {
                             Id = 11,
                             BirthDate = new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "a@gmail.com",
-                            Firstname = "A",
+                            Email = "warehouseman_email_1@gmail.com",
+                            Firstname = "warehouseman_first_name_1",
                             Gender = 1,
-                            Lastname = "A",
-                            Password = "aaaaa",
-                            PhoneNumber = "1234567890",
-                            ProfilePhoto = "slika1",
+                            Lastname = "warehouseman_last_name_1",
+                            Password = "a",
+                            PhoneNumber = "061123123",
+                            ProfilePhoto = "photo_warehouseman_1.png",
                             Role = 4,
-                            Username = "aaaaa"
+                            Username = "warehouseman_1"
                         },
                         new
                         {
                             Id = 12,
                             BirthDate = new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "b@gmail.com",
-                            Firstname = "B",
+                            Email = "warehouseman_email_2@gmail.com",
+                            Firstname = "warehouseman_first_name_2",
                             Gender = 1,
-                            Lastname = "B",
-                            Password = "bbbbb",
-                            PhoneNumber = "1234567890",
-                            ProfilePhoto = "slika2",
+                            Lastname = "warehouseman_last_name_2",
+                            Password = "a",
+                            PhoneNumber = "062345345",
+                            ProfilePhoto = "photo_warehouseman_2.png",
                             Role = 4,
-                            Username = "bbbbb"
+                            Username = "warehouseman_2"
                         },
                         new
                         {
                             Id = 13,
                             BirthDate = new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "c@gmail.com",
-                            Firstname = "C",
-                            Gender = 1,
-                            Lastname = "C",
-                            Password = "ccccc",
-                            PhoneNumber = "1234567890",
-                            ProfilePhoto = "slika3",
-                            Role = 7,
-                            Username = "ccccc"
+                            Email = "warehouseman_email_3@gmail.com",
+                            Firstname = "warehouseman_first_name_3",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_3",
+                            Password = "a",
+                            PhoneNumber = "063456789",
+                            ProfilePhoto = "photo_warehouseman_3.png",
+                            Role = 4,
+                            Username = "warehouseman_3"
                         },
                         new
                         {
                             Id = 14,
                             BirthDate = new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "d@gmail.com",
-                            Firstname = "D",
+                            Email = "warehouseman_email_4@gmail.com",
+                            Firstname = "warehouseman_first_name_4",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_4",
+                            Password = "a",
+                            PhoneNumber = "064123123",
+                            ProfilePhoto = "photo_warehouseman_4.png",
+                            Role = 4,
+                            Username = "warehouseman_4"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BirthDate = new DateTime(1994, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_5@gmail.com",
+                            Firstname = "warehouseman_first_name_5",
                             Gender = 1,
-                            Lastname = "D",
-                            Password = "ddddd",
-                            PhoneNumber = "1234567890",
-                            ProfilePhoto = "slika4",
+                            Lastname = "warehouseman_last_name_5",
+                            Password = "a",
+                            PhoneNumber = "066234567",
+                            ProfilePhoto = "photo_warehouseman_5.png",
+                            Role = 4,
+                            Username = "warehouseman_5"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            BirthDate = new DateTime(1995, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_6@gmail.com",
+                            Firstname = "warehouseman_first_name_6",
+                            Gender = 1,
+                            Lastname = "warehouseman_last_name_6",
+                            Password = "a",
+                            PhoneNumber = "063456789",
+                            ProfilePhoto = "photo_warehouseman_6.png",
+                            Role = 4,
+                            Username = "warehouseman_6"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BirthDate = new DateTime(1996, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_7@gmail.com",
+                            Firstname = "warehouseman_first_name_7",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_7",
+                            Password = "a",
+                            PhoneNumber = "061456789",
+                            ProfilePhoto = "photo_warehouseman_7.png",
+                            Role = 4,
+                            Username = "warehouseman_7"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BirthDate = new DateTime(1997, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_8@gmail.com",
+                            Firstname = "warehouseman_first_name_8",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_8",
+                            Password = "a",
+                            PhoneNumber = "069123123",
+                            ProfilePhoto = "photo_warehouseman_8.png",
+                            Role = 4,
+                            Username = "warehouseman_8"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            BirthDate = new DateTime(1998, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_1@gmail.com",
+                            Firstname = "van_driver_first_name_1",
+                            Gender = 1,
+                            Lastname = "van_driver_last_name_1",
+                            Password = "a",
+                            PhoneNumber = "062111111",
+                            ProfilePhoto = "photo_van_driver_1.png",
                             Role = 7,
-                            Username = "ddddd"
+                            Username = "van_driver_1"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            BirthDate = new DateTime(1999, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_2@gmail.com",
+                            Firstname = "van_driver_first_name_2",
+                            Gender = 1,
+                            Lastname = "van_driver_last_name_2",
+                            Password = "a",
+                            PhoneNumber = "062222222",
+                            ProfilePhoto = "photo_van_driver_2.png",
+                            Role = 7,
+                            Username = "van_driver_2"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            BirthDate = new DateTime(2000, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_3@gmail.com",
+                            Firstname = "van_driver_first_name_3",
+                            Gender = 0,
+                            Lastname = "van_driver_last_name_3",
+                            Password = "a",
+                            PhoneNumber = "062333333",
+                            ProfilePhoto = "photo_van_driver_3.png",
+                            Role = 7,
+                            Username = "van_driver_3"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            BirthDate = new DateTime(2001, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_4@gmail.com",
+                            Firstname = "van_driver_first_name_4",
+                            Gender = 0,
+                            Lastname = "van_driver_last_name_4",
+                            Password = "a",
+                            PhoneNumber = "062444444",
+                            ProfilePhoto = "photo_van_driver_4.png",
+                            Role = 7,
+                            Username = "van_driver_4"
                         });
                 });
 
@@ -418,9 +530,9 @@ namespace winery_backend.Migrations
                         {
                             CustomerOrderId = 1,
                             CustomerId = 1,
-                            CustomerOrderCreationTime = new DateTime(2020, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerOrderDeliveryDeadline = new DateTime(2020, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerOrderPrice = 20.3m,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 7000m,
                             OrderTrackingStatusId = 1,
                             ProductIds = "[1,2]",
                             Quantities = "[3,2]"
@@ -429,12 +541,45 @@ namespace winery_backend.Migrations
                         {
                             CustomerOrderId = 2,
                             CustomerId = 1,
-                            CustomerOrderCreationTime = new DateTime(2021, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerOrderDeliveryDeadline = new DateTime(2021, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CustomerOrderPrice = 10.5m,
-                            OrderTrackingStatusId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 12000m,
+                            OrderTrackingStatusId = 1,
                             ProductIds = "[2]",
                             Quantities = "[6]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 3,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 13500m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[2,5]",
+                            Quantities = "[6,1]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 4,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 9000m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[2,3,5]",
+                            Quantities = "[2,3,4]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 5,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 9000m,
+                            OrderTrackingStatusId = 2,
+                            ProductIds = "[2]",
+                            Quantities = "[4,10]"
                         });
                 });
 
@@ -487,26 +632,65 @@ namespace winery_backend.Migrations
                             ProductId = 1,
                             AlcoholPercentage = 5m,
                             PackagingSize = 1.5m,
-                            Photo = "aaa",
-                            ProductDescription = "aa",
-                            ProductName = "a",
+                            Photo = "photo_product_1.png",
+                            ProductDescription = "nice product",
+                            ProductName = "product1",
                             ProductPrice = 1000,
                             ProductQuantity = 100,
                             SectorId = 1,
-                            WineSort = "sorta_1"
+                            WineSort = "sort_1"
                         },
                         new
                         {
                             ProductId = 2,
                             AlcoholPercentage = 6m,
                             PackagingSize = 0.5m,
-                            Photo = "bbb",
-                            ProductDescription = "bb",
-                            ProductName = "b",
+                            Photo = "photo_product_2.png",
+                            ProductDescription = "nice product",
+                            ProductName = "product2",
                             ProductPrice = 2000,
                             ProductQuantity = 50,
                             SectorId = 2,
-                            WineSort = "sorta_2"
+                            WineSort = "sort_2"
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            AlcoholPercentage = 3m,
+                            PackagingSize = 1.5m,
+                            Photo = "photo_product_3.png",
+                            ProductDescription = "nice product",
+                            ProductName = "product3",
+                            ProductPrice = 1000,
+                            ProductQuantity = 150,
+                            SectorId = 2,
+                            WineSort = "sort_2"
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            AlcoholPercentage = 8.5m,
+                            PackagingSize = 1m,
+                            Photo = "photo_product_4.png",
+                            ProductDescription = "nice product",
+                            ProductName = "product4",
+                            ProductPrice = 500,
+                            ProductQuantity = 250,
+                            SectorId = 2,
+                            WineSort = "sort_2"
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            AlcoholPercentage = 10m,
+                            PackagingSize = 0.5m,
+                            Photo = "photo_product_5.png",
+                            ProductDescription = "nice product",
+                            ProductName = "product5",
+                            ProductPrice = 1500,
+                            ProductQuantity = 150,
+                            SectorId = 1,
+                            WineSort = "sort_1"
                         });
                 });
 
@@ -536,6 +720,26 @@ namespace winery_backend.Migrations
                         {
                             RealTimeOrderTrackingStatusId = 2,
                             OrderTrackingStatus = "distributed"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 3,
+                            OrderTrackingStatus = "ready for pick up"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 4,
+                            OrderTrackingStatus = "picked up"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 5,
+                            OrderTrackingStatus = "in transport"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 6,
+                            OrderTrackingStatus = "delivered"
                         });
                 });
 
@@ -570,6 +774,28 @@ namespace winery_backend.Migrations
                     b.HasKey("PackingRequestId");
 
                     b.ToTable("PackingRequests", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            PackingRequestId = 1,
+                            CustomerOrderId = 5,
+                            PackingRequestCreationDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestProductIds = "[1]",
+                            PackingRequestQuantities = "[4]",
+                            SectorId = 1
+                        },
+                        new
+                        {
+                            PackingRequestId = 2,
+                            CustomerOrderId = 5,
+                            PackingRequestCreationDate = new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestProductIds = "[4]",
+                            PackingRequestQuantities = "[10]",
+                            SectorId = 2
+                        });
                 });
 
             modelBuilder.Entity("winery_backend.TransportRequest.Models.TransportRequest", b =>
@@ -640,7 +866,7 @@ namespace winery_backend.Migrations
                         new
                         {
                             SectorId = 1,
-                            SectorImage = "slika1",
+                            SectorImage = "photo_sector_1.png",
                             SectorName = "SECTOR 1",
                             WarehouseId = 1,
                             WarehousemanId = 11
@@ -648,10 +874,58 @@ namespace winery_backend.Migrations
                         new
                         {
                             SectorId = 2,
-                            SectorImage = "slika2",
+                            SectorImage = "photo_sector_2.png",
                             SectorName = "SECTOR 2",
                             WarehouseId = 1,
                             WarehousemanId = 12
+                        },
+                        new
+                        {
+                            SectorId = 3,
+                            SectorImage = "photo_sector_3.png",
+                            SectorName = "SECTOR 3",
+                            WarehouseId = 1,
+                            WarehousemanId = 13
+                        },
+                        new
+                        {
+                            SectorId = 4,
+                            SectorImage = "photo_sector_4.png",
+                            SectorName = "SECTOR 4",
+                            WarehouseId = 1,
+                            WarehousemanId = 14
+                        },
+                        new
+                        {
+                            SectorId = 5,
+                            SectorImage = "photo_sector_5.png",
+                            SectorName = "SECTOR 5",
+                            WarehouseId = 1,
+                            WarehousemanId = 15
+                        },
+                        new
+                        {
+                            SectorId = 6,
+                            SectorImage = "photo_sector_6.png",
+                            SectorName = "SECTOR 6",
+                            WarehouseId = 1,
+                            WarehousemanId = 16
+                        },
+                        new
+                        {
+                            SectorId = 7,
+                            SectorImage = "photo_sector_7.png",
+                            SectorName = "SECTOR 7",
+                            WarehouseId = 1,
+                            WarehousemanId = 17
+                        },
+                        new
+                        {
+                            SectorId = 8,
+                            SectorImage = "photo_sector_8.png",
+                            SectorName = "SECTOR 8",
+                            WarehouseId = 1,
+                            WarehousemanId = 18
                         });
                 });
 
@@ -695,11 +969,11 @@ namespace winery_backend.Migrations
                         new
                         {
                             WarehouseId = 1,
-                            NumberOfSectors = 2,
-                            NumberOfVanDrivers = 1,
-                            NumberOfWarehouseWorkers = 2,
-                            WarehouseArea = 450.23m,
-                            WarehouseImage = "slika 1",
+                            NumberOfSectors = 8,
+                            NumberOfVanDrivers = 5,
+                            NumberOfWarehouseWorkers = 8,
+                            WarehouseArea = 5000.5m,
+                            WarehouseImage = "photo_warehouse.png",
                             WarehouseLocation = "Nova lokacija 123, Novi Sad",
                             WarehouseName = "Warehouse 1"
                         });

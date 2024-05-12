@@ -1,4 +1,5 @@
-﻿using winery_backend.PackingRequest.Models;
+﻿using winery_backend.LogisticianViewCustomerOrder.Models;
+using winery_backend.PackingRequest.Models;
 using winery_backend.TransportRequest.Interface;
 
 namespace winery_backend.TransportRequest.Repository
@@ -30,6 +31,27 @@ namespace winery_backend.TransportRequest.Repository
                 return 1;
             }
             return _context.TransportRequests.Max(x => x.TransportRequestId) + 1;
+        }
+
+        public void Update(int customerOrderId, int vanDriverId, DateTime pickUpPackagesDeadlineDate)
+        {
+            TransportRequest.Models.TransportRequest transportRequest = FindByCustomerOrderId(customerOrderId);
+            transportRequest.VanDriverId = vanDriverId;
+            transportRequest.PickUpDeadlineDate = pickUpPackagesDeadlineDate;
+
+            _context.TransportRequests.Update(transportRequest);
+            _context.SaveChanges();
+        }
+
+        public TransportRequest.Models.TransportRequest FindByCustomerOrderId(int customerOrderId)
+        {
+            return _context.TransportRequests.First(x => x.CustomerOrderId == customerOrderId);
+        }
+
+        public void Delete(int customerOrderId)
+        {
+            _context.TransportRequests.Remove(FindByCustomerOrderId(customerOrderId));
+            _context.SaveChanges();
         }
     }
 }

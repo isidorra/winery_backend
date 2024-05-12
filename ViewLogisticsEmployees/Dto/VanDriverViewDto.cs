@@ -1,4 +1,6 @@
-﻿namespace winery_backend.ViewLogisticsEmployees.Dto
+﻿using System.Reflection;
+
+namespace winery_backend.ViewLogisticsEmployees.Dto
 {
     public class VanDriverViewDto
     {
@@ -9,7 +11,7 @@
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime? BirthDate { get; set; }
-        public Gender? Gender { get; set; }
+        public string Gender { get; set; }
         public string ProfilePhoto { get; set; }
 
         public VanDriverViewDto()
@@ -26,7 +28,14 @@
             Password = password;
             PhoneNumber = phoneNumber;
             BirthDate = birthDate;
-            Gender = gender;
+            if (gender == 0)
+            {
+                Gender = "female";
+            }
+            else
+            {
+                Gender = "male";
+            }
             ProfilePhoto = profilePhoto;
         }
 
@@ -39,7 +48,14 @@
             Password = employee.Password;
             PhoneNumber = employee.PhoneNumber;
             BirthDate = employee.BirthDate;
-            Gender = employee.Gender;
+            if (employee.Gender == 0)
+            {
+                Gender = "female";
+            }
+            else
+            {
+                Gender = "male";
+            }
             ProfilePhoto = employee.ProfilePhoto;
         }
     }

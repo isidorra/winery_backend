@@ -41,10 +41,17 @@
         }
 
         [HttpPost("create")]
-        public IActionResult CreatePackingRequest(string sectorName, DateTime packingDeadlineDate, int customerOrderId)
+        public IActionResult CreatePackingRequest(string sectorName, DateTime packingDeadlineDate, int customerOrderId, DateTime deliveryDeadlineDate)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            Debug.WriteLine((deliveryDeadlineDate - packingDeadlineDate).TotalDays.ToString());
+
+            if((deliveryDeadlineDate - packingDeadlineDate).TotalDays < 7)
+            {
+                return BadRequest("Pakovanje mora da se zakaze najkasnije 7 dana do isporuke porudzbine");
+            }
 
             CustomerOrder customerOrder = _customerOrderService.FindCustomerOrderById(customerOrderId);
 

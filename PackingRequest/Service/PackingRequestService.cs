@@ -32,5 +32,19 @@ namespace winery_backend.PackingRequest.Service
 
             return _packingRequestRepository.SavePackingRequest(packingRequest);
         }
+
+        public List<DateTime> FindPackingRequestDeadlineDateByCustomerOrderId(int customerOrderId)
+        {
+            List<PackingRequest.Models.PackingRequest> packingRequests =  _packingRequestRepository.FindPackingRequestByCustomerOrderId(customerOrderId);
+
+            List<DateTime> dateTimes = new List<DateTime>();
+
+            foreach(var packingRequest in packingRequests)
+            {
+                dateTimes.Add(packingRequest.PackingRequestDeadlineDate);
+            }
+
+            return dateTimes;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using winery_backend.PackingRequest.Interface;
+﻿using winery_backend.LogisticianViewCustomerOrder.Models;
+using winery_backend.PackingRequest.Interface;
 using winery_backend.PackingRequest.Models;
 using winery_backend.ViewWarehouse.Models;
 
@@ -28,7 +29,7 @@ namespace winery_backend.PackingRequest.Repository
 
         public bool SavePackingRequest(PackingRequest.Models.PackingRequest packingRequest)
         {
-            if(_context.PackingRequests.Any(x => x == packingRequest))
+            if(_context.PackingRequests.Any(x => x.CustomerOrderId == packingRequest.CustomerOrderId && x.SectorId == packingRequest.SectorId))
             {
                 return false;
             }
@@ -36,6 +37,11 @@ namespace winery_backend.PackingRequest.Repository
             _context.SaveChanges();
 
             return true;
+        }
+
+        public List<PackingRequest.Models.PackingRequest> FindPackingRequestByCustomerOrderId(int customerOrderId)
+        {
+            return _context.PackingRequests.Where(x => x.CustomerOrderId == customerOrderId).ToList();
         }
     }
 }
