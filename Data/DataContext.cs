@@ -1,6 +1,11 @@
-// //using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 // using winery_backend.Activity;
 // using winery_backend.Vineyard;
+
+
+using Microsoft.EntityFrameworkCore;
+using winery_backend.Activity;
+using winery_backend.Vineyard;
 
 public class DataContext : DbContext
 {
@@ -38,7 +43,6 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Activity>().ToTable("Activities");
         modelBuilder.Entity<City>().ToTable("Cities");
         modelBuilder.Entity<Customer>().ToTable("Customers");
         modelBuilder.Entity<Employee>().ToTable("Employees");
