@@ -1,7 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using winery_backend.LogisticianViewCustomerOrder.Interface;
+using winery_backend.LogisticianViewCustomerOrder.Repository;
+using winery_backend.LogisticianViewCustomerOrder.Service;
+using winery_backend.PackingRequest.Interface;
+using winery_backend.PackingRequest.Repository;
+using winery_backend.PackingRequest.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
+using winery_backend.TransportRequest.Interface;
+using winery_backend.TransportRequest.Repository;
+using winery_backend.TransportRequest.Service;
+using winery_backend.ViewWarehouse.Interface;
+using winery_backend.ViewWarehouse.Repository;
+using winery_backend.ViewWarehouse.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,7 +64,29 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IPricingRepository, PricingRepository>();
+builder.Services.AddScoped<IPricingService, PricingService>();
+builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
+builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICustomerOrderService, CustomerOrderService>();
+builder.Services.AddScoped<ICustomerOrderRepository, CustomerOrderRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IRealTimeOrderTrackingStatusService, RealTimeOrderTrackingStatusService>();
+builder.Services.AddScoped<IRealTimeOrderTrackingStatusRepository, RealTimeOrderTrackingStatusRepository>();
+builder.Services.AddScoped<IPackingRequestService, PackingRequestService>();
+builder.Services.AddScoped<IPackingRequestRepository, PackingRequestRepository>();
+builder.Services.AddScoped<ISectorService, SectorService>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
+builder.Services.AddScoped<ITransportRequestService, TransportRequestService>();
+builder.Services.AddScoped<ITransportRequestRepository, TransportRequestRepository>();
 
 var app = builder.Build();
 

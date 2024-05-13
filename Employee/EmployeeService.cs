@@ -109,5 +109,30 @@ namespace winery_backend.Services
         {
             return _employeeRepository.GetAll();
         }
+
+        public List<string> FindAllVanDriverNames()
+        {
+            return _employeeRepository.FindAllVanDriverNames();
+        }
+
+        public int FindVanDriverId(string username)
+        {
+            return _employeeRepository.FindVanDriverId(username);
+        }
+
+        public List<Employee> FindAllWarehouseWorkers()
+        {
+            return _employeeRepository.FindAllWarehouseWorkers();
+        }
+
+        public List<Employee> FindAllVanDrivers()
+        {
+            return _employeeRepository.FindAllVanDrivers();
+        }
+
+        public Employee FindById(int id)
+        {
+            return _employeeRepository.GetById(id);
+        }
     }
 }

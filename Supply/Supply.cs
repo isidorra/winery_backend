@@ -6,6 +6,7 @@ public class Supply
         public SupplyType SupplyType { get; set; }
         public long Amount { get; set; }
         public string Manufacturer { get; set; }
+        public Supply() { }
         public Supply(int id, string name, SupplyType supplyType, long amount, string manufacturer)
         {
             Id = id;
@@ -14,5 +15,7 @@ public class Supply
             Amount = amount;
             Manufacturer = manufacturer;
         }
+
+        
     }
 
