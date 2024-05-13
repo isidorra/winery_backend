@@ -39,7 +39,7 @@ namespace winery_backend.Vineyard
             return _parcelRepository.GetById(id);
         }
 
-        public long RecommendWateringAmount(int parcelId)
+        public double RecommendWateringAmount(int parcelId)
         {
             Parcel parcel = GetById(parcelId);
             return parcel.RecommendedWateringAmount();

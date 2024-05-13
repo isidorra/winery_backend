@@ -4,6 +4,7 @@
 using Microsoft.EntityFrameworkCore;
 using winery_backend.Activity;
 using winery_backend.LogisticianViewCustomerOrder.Models;
+using winery_backend.Machine;
 using winery_backend.PackingRequest.Models;
 using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
@@ -47,6 +48,10 @@ public class DataContext : DbContext
     public DbSet<Sector> Sectors { get; set; }
     public DbSet<Warehouse> Warehouses { get; set; }
     public DbSet<TransportRequest> TransportRequests { get; set; }
+    public DbSet<Machine> Machines { get; set; }
+    public DbSet<Watering> Waterings { get; set; }
+    public DbSet<Harvesting> Harvestings { get; set; }
+    public DbSet<PesticideControl> PesticideControls { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -79,6 +84,10 @@ public class DataContext : DbContext
         modelBuilder.Entity<Sector>().ToTable("Sectors");
         modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
         modelBuilder.Entity<TransportRequest>().ToTable("TransportRequests");
+        modelBuilder.Entity<Machine>().ToTable("Machines");
+        modelBuilder.Entity<Watering>().ToTable("Waterings");
+        modelBuilder.Entity<Harvesting>().ToTable("Harvestings");
+        modelBuilder.Entity<PesticideControl>().ToTable("PesticideControls");
 
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
             new RealTimeOrderTrackingStatus(1, "in processing"),
@@ -87,6 +96,310 @@ public class DataContext : DbContext
             new RealTimeOrderTrackingStatus(4, "picked up"),
             new RealTimeOrderTrackingStatus(5, "in transport"),
             new RealTimeOrderTrackingStatus(6, "delivered")
+        );
+
+        modelBuilder.Entity<Supply>().HasData(
+            new Supply { Id = 1, Name = "Grape Fertilizer 10-10-10", SupplyType = SupplyType.Fertilizer, Amount = 256, Manufacturer = "Gomex"},
+            new Supply { Id = 2, Name = "Grape Fertilizer 72456", SupplyType = SupplyType.Fertilizer, Amount = 752, Manufacturer = "Gomex" },
+            new Supply { Id = 3, Name = "Vine Vitalizer 12-6-18", SupplyType = SupplyType.Fertilizer, Amount = 96, Manufacturer = "VinoGrow Enterprises" },
+            new Supply { Id = 4, Name = "GrapePro Nutrient Mix 16-10-14", SupplyType = SupplyType.Fertilizer, Amount = 457, Manufacturer = "Harvest AgroTech" },
+            new Supply { Id = 5, Name = "VineLife Essentials 10-12-18", SupplyType = SupplyType.Fertilizer, Amount = 18, Manufacturer = "VinoGrow Enterprises" },
+            new Supply { Id = 6, Name = "GrapeGrower's Blend 8-12-20", SupplyType = SupplyType.Fertilizer, Amount = 985, Manufacturer = "Gomex" },
+            new Supply { Id = 7, Name = "Vineyard Armor Spray", SupplyType = SupplyType.Pesticide, Amount = 182, Manufacturer = "Gomex" },
+            new Supply { Id = 8, Name = "GrapeProtect Insecticide", SupplyType = SupplyType.Pesticide, Amount = 445, Manufacturer = "VinoWarden Agrochemicals" },
+            new Supply { Id = 9, Name = "VineShield Pest Repellent", SupplyType = SupplyType.Pesticide, Amount = 32, Manufacturer = "VinoWarden Agrochemicals" },
+            new Supply { Id = 10, Name = "GrapeSafe Fungicide", SupplyType = SupplyType.Pesticide, Amount = 771, Manufacturer = "Harvest AgroTech" },
+            new Supply { Id = 11, Name = "VinePro Shield", SupplyType = SupplyType.Pesticide, Amount = 12, Manufacturer = "VinoGrow Enterprises" },
+            new Supply { Id = 12, Name = "GrapeGuardian Pest Management", SupplyType = SupplyType.Pesticide, Amount = 658, Manufacturer = "Gomex" }
+            );
+
+        modelBuilder.Entity<Grape>().HasData(
+            new Grape
+            {
+                Id = 1,
+                Name = "Merlot",
+                Type = true, // Red grape
+                IsRipe = false,
+                Quality = 85,
+                PlantingDate = new DateTime(2020, 5, 1),
+                FertilizerId = 1, // Grape Fertilizer 10-10-10
+                PesticideId = 7, // Vineyard Armor Spray
+            },
+            new Grape
+            {
+                Id = 2,
+                Name = "Chardonnay",
+                Type = false, // White grape
+                IsRipe = true,
+                Quality = 92,
+                PlantingDate = new DateTime(2019, 4, 15),
+                FertilizerId = 3, // Vine Vitalizer 12-6-18
+                PesticideId = 10, // GrapeSafe Fungicide
+            },
+            new Grape
+            {
+                Id = 3,
+                Name = "Cabernet Sauvignon",
+                Type = true, // Red grape
+                IsRipe = false,
+                Quality = 88,
+                PlantingDate = new DateTime(2018, 3, 20),
+                FertilizerId = 2, // Grape Fertilizer 72456
+                PesticideId = 8, // GrapeProtect Insecticide
+            },
+            new Grape
+            {
+                Id = 4,
+                Name = "Sauvignon Blanc",
+                Type = false, // White grape
+                IsRipe = true,
+                Quality = 90,
+                PlantingDate = new DateTime(2019, 4, 5),
+                FertilizerId = 5, // VineLife Essentials 10-12-18
+                PesticideId = 11, // VinePro Shield
+            },
+            new Grape
+            {
+                Id = 5,
+                Name = "Syrah",
+                Type = true, // Red grape
+                IsRipe = true,
+                Quality = 87,
+                PlantingDate = new DateTime(2021, 5, 10),
+                FertilizerId = 6, // GrapeGrower's Blend 8-12-20
+                PesticideId = 12, // GrapeGuardian Pest Management
+            }
+           );
+
+        modelBuilder.Entity<Parcel>().HasData(
+            new Parcel
+            {
+                Id = 1,
+                GrapeId = 1, // Id of the grape variety
+                Amount = 5000, // 5000 kg
+                Size = 2 // 2 hectares
+            },
+            new Parcel
+            {
+                Id = 2,
+                GrapeId = 2, // Id of the grape variety
+                Amount = 3000, // 3000 kg
+                Size = 1 // 1 hectare
+            },
+            new Parcel
+            {
+                Id = 3,
+                GrapeId = 3, // Id of the grape variety
+                Amount = 7000, // 7000 kg
+                Size = 3 // 3 hectares
+            },
+            new Parcel
+            {
+                Id = 4,
+                GrapeId = 4, // Id of the grape variety
+                Amount = 4500, // 4500 kg
+                Size = 1.5 // 1.5 hectares
+            },
+            new Parcel
+            {
+                Id = 5,
+                GrapeId = 5, // Id of the grape variety
+                Amount = 6000, // 6000 kg
+                Size = 2.5 // 2.5 hectares
+            },
+            new Parcel
+            {
+                Id = 6,
+                GrapeId = 1, // Id of the grape variety
+                Amount = 4000, // 4000 kg
+                Size = 2 // 2 hectares
+            },
+            new Parcel
+            {
+                Id = 7,
+                GrapeId = 2, // Id of the grape variety
+                Amount = 5500, // 5500 kg
+                Size = 2.3 // 2.3 hectares
+            }
+        );
+
+        modelBuilder.Entity<Machine>().HasData(
+            new Machine
+            {
+                Id = 1,
+                Name = "Harvesting Machine 2000",
+                Amount = 150000, // $150,000
+                MachineState = true, // Working
+                Manufacturer = "FarmTech Industries"
+            },
+            new Machine
+            {
+                Id = 2,
+                Name = "Pressing Machine XL",
+                Amount = 80000, // $80,000
+                MachineState = false, // Broken
+                Manufacturer = "WineTech Solutions"
+            },
+            new Machine
+            {
+                Id = 3,
+                Name = "Sorting Machine Pro",
+                Amount = 120000, // $120,000
+                MachineState = true, // Working
+                Manufacturer = "GrapeMaster Machinery"
+            },
+            new Machine
+            {
+                Id = 4,
+                Name = "Fermentation Tank V2",
+                Amount = 250000, // $250,000
+                MachineState = true, // Working
+                Manufacturer = "VinoTech Innovations"
+            }
+        );
+
+        modelBuilder.Entity<Watering>().HasData(
+            new Watering
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 1, 8, 0, 0), // May 1, 2024, 8:00 AM
+                EndDate = new DateTime(2024, 5, 1, 9, 0, 0), // May 1, 2024, 9:00 AM
+                IsCompleted = false,
+                ActivityType = ActivityType.Watering,
+                ParcelId = 1, // Assuming ParcelId 1 is associated with this watering activity
+                Amount = 5000 // 5000 liters of water used for watering
+            },
+            new Watering
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 5, 9, 0, 0), // May 5, 2024, 9:00 AM
+                EndDate = new DateTime(2024, 5, 5, 10, 0, 0), // May 5, 2024, 10:00 AM
+                IsCompleted = false,
+                ActivityType = ActivityType.Watering,
+                ParcelId = 2, // Assuming ParcelId 2 is associated with this watering activity
+                Amount = 7000 // 7000 liters of water used for watering
+            },
+            new Watering
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 10, 10, 30, 0), // May 10, 2024, 10:30 AM
+                EndDate = new DateTime(2024, 5, 10, 11, 30, 0), // May 10, 2024, 11:30 AM
+                IsCompleted = false,
+                ActivityType = ActivityType.Watering,
+                ParcelId = 3, // Assuming ParcelId 3 is associated with this watering activity
+                Amount = 6000 // 6000 liters of water used for watering
+            },
+            new Watering
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 15, 8, 0, 0), // May 15, 2024, 8:00 AM
+                EndDate = new DateTime(2024, 5, 15, 9, 0, 0), // May 15, 2024, 9:00 AM
+                IsCompleted = false,
+                ActivityType = ActivityType.Watering,
+                ParcelId = 4, // Assuming ParcelId 4 is associated with this watering activity
+                Amount = 5500 // 5500 liters of water used for watering
+            },
+            new Watering
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 20, 11, 0, 0), // May 20, 2024, 11:00 AM
+                EndDate = new DateTime(2024, 5, 20, 12, 0, 0), // May 20, 2024, 12:00 PM
+                IsCompleted = false,
+                ActivityType = ActivityType.Watering,
+                ParcelId = 5, // Assuming ParcelId 5 is associated with this watering activity
+                Amount = 4500 // 4500 liters of water used for watering
+            }
+        );
+
+        modelBuilder.Entity<Harvesting>().HasData(
+            new Harvesting(new DateTime(2024, 9, 15), 1, 12000) // 12,000 kg harvested on September 15, 2024, ParcelId 1
+            {
+                Id = Guid.NewGuid(),
+                IsCompleted = false,
+                ActivityType = ActivityType.Harvest
+            },
+            new Harvesting(new DateTime(2024, 9, 20), 2, 9000) // 9,000 kg harvested on September 20, 2024, ParcelId 2
+            {
+                Id = Guid.NewGuid(),
+                IsCompleted = false,
+                ActivityType = ActivityType.Harvest
+            },
+            new Harvesting(new DateTime(2024, 9, 25), 3, 15000) // 15,000 kg harvested on September 25, 2024, ParcelId 3
+            {
+                Id = Guid.NewGuid(),
+                IsCompleted = false,
+                ActivityType = ActivityType.Harvest
+            },
+            new Harvesting(new DateTime(2024, 10, 1), 4, 10500) // 10,500 kg harvested on October 1, 2024, ParcelId 4
+            {
+                Id = Guid.NewGuid(),
+                IsCompleted = false,
+                ActivityType = ActivityType.Harvest
+            },
+            new Harvesting(new DateTime(2024, 10, 5), 5, 13500) // 13,500 kg harvested on October 5, 2024, ParcelId 5
+            {
+                Id = Guid.NewGuid(),
+                IsCompleted = false,
+                ActivityType = ActivityType.Harvest
+            }
+        );
+
+        modelBuilder.Entity<PesticideControl>().HasData(
+            new PesticideControl
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 4, 5), // April 5, 2024
+                EndDate = new DateTime(2024, 4, 5).AddDays(1), // April 6, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.PesticideControl,
+                ParcelId = 1, // Assuming ParcelId 1 is associated with this pesticide control activity
+                Amount = 500, // 500 liters of pesticide used
+                PesticideId = 1 // Assuming PesticideId 1 corresponds to a specific pesticide supply
+            },
+            new PesticideControl
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 4, 20), // April 20, 2024
+                EndDate = new DateTime(2024, 4, 20).AddDays(1), // April 21, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.PesticideControl,
+                ParcelId = 2, // Assuming ParcelId 2 is associated with this pesticide control activity
+                Amount = 700, // 700 liters of pesticide used
+                PesticideId = 2 // Assuming PesticideId 2 corresponds to another pesticide supply
+            },
+            new PesticideControl
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 10), // May 10, 2024
+                EndDate = new DateTime(2024, 5, 10).AddDays(1), // May 11, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.PesticideControl,
+                ParcelId = 3, // Assuming ParcelId 3 is associated with this pesticide control activity
+                Amount = 1000, // 1000 liters of pesticide used
+                PesticideId = 3 // Assuming PesticideId 3 corresponds to another pesticide supply
+            },
+            new PesticideControl
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 25), // May 25, 2024
+                EndDate = new DateTime(2024, 5, 25).AddDays(1), // May 26, 2024
+                IsCompleted = false,
+                ActivityType = ActivityType.PesticideControl,
+                ParcelId = 4, // Assuming ParcelId 4 is associated with this pesticide control activity
+                Amount = 1200, // 1200 liters of pesticide used
+                PesticideId = 1 // Assuming PesticideId 1 corresponds to the same pesticide supply as earlier
+            },
+            new PesticideControl
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 6, 5), // June 5, 2024
+                EndDate = new DateTime(2024, 6, 5).AddDays(1), // June 6, 2024
+                IsCompleted = false,
+                ActivityType = ActivityType.PesticideControl,
+                ParcelId = 5, // Assuming ParcelId 5 is associated with this pesticide control activity
+                Amount = 1500, // 1500 liters of pesticide used
+                PesticideId = 2 // Assuming PesticideId 2 corresponds to the same pesticide supply as earlier
+            }
         );
 
         modelBuilder.Entity<Sector>().HasData(
@@ -99,6 +412,65 @@ public class DataContext : DbContext
             new Sector(7, "SECTOR 7", "photo_sector_7.png", 1, 17),
             new Sector(8, "SECTOR 8", "photo_sector_8.png", 1, 18)
         );
+
+        modelBuilder.Entity<Fertilization>().HasData(
+            new Fertilization
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 4, 1), // April 1, 2024
+                EndDate = new DateTime(2024, 4, 1).AddDays(1), // April 2, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.Fertilization,
+                ParcelId = 1, // Assuming ParcelId 1 is associated with this fertilization activity
+                Amount = 1000, // 1000 kg of fertilizer used
+                FertilizerId = 1 // Assuming FertilizerId 1 corresponds to a specific fertilizer supply
+            },
+            new Fertilization
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 4, 15), // April 15, 2024
+                EndDate = new DateTime(2024, 4, 15).AddDays(1), // April 16, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.Fertilization,
+                ParcelId = 2, // Assuming ParcelId 2 is associated with this fertilization activity
+                Amount = 800, // 800 kg of fertilizer used
+                FertilizerId = 2 // Assuming FertilizerId 2 corresponds to another fertilizer supply
+            },
+            new Fertilization
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 1), // May 1, 2024
+                EndDate = new DateTime(2024, 5, 1).AddDays(1), // May 2, 2024
+                IsCompleted = true,
+                ActivityType = ActivityType.Fertilization,
+                ParcelId = 3, // Assuming ParcelId 3 is associated with this fertilization activity
+                Amount = 1200, // 1200 kg of fertilizer used
+                FertilizerId = 3 // Assuming FertilizerId 3 corresponds to another fertilizer supply
+            },
+            new Fertilization
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 5, 15), // May 15, 2024
+                EndDate = new DateTime(2024, 5, 15).AddDays(1), // May 16, 2024
+                IsCompleted = false,
+                ActivityType = ActivityType.Fertilization,
+                ParcelId = 4, // Assuming ParcelId 4 is associated with this fertilization activity
+                Amount = 1500, // 1500 kg of fertilizer used
+                FertilizerId = 1 // Assuming FertilizerId 1 corresponds to the same fertilizer supply as earlier
+            },
+            new Fertilization
+            {
+                Id = Guid.NewGuid(),
+                StartDate = new DateTime(2024, 6, 1), // June 1, 2024
+                EndDate = new DateTime(2024, 6, 1).AddDays(1), // June 2, 2024
+                IsCompleted = false,
+                ActivityType = ActivityType.Fertilization,
+                ParcelId = 5, // Assuming ParcelId 5 is associated with this fertilization activity
+                Amount = 2000, // 2000 kg of fertilizer used
+                FertilizerId = 2 // Assuming FertilizerId 2 corresponds to the same fertilizer supply as earlier
+            }
+        );
+
 
         modelBuilder.Entity<Warehouse>().HasData(
             new Warehouse(1, "Warehouse 1", new Decimal(5000.5), "Nova lokacija 123, Novi Sad", 8, 5, 8, "photo_warehouse.png")

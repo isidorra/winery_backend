@@ -6,15 +6,16 @@ namespace winery_backend.Vineyard
     {
         public int Id { get; set; }
         public Grape Grape { get; set; }
-        public long Amount { get; set; } //in kg
-        public long Size { get; set; } //in ha
+        public int GrapeId { get; set; }
+        public double Amount { get; set; } //in kg
+        public double Size { get; set; } //in ha
 
         public Parcel()
         {
 
         }
 
-        public Parcel(int id, Grape grape, long amount, long size)
+        public Parcel(int id, Grape grape, double amount, double size)
         {
             Id = id;
             Grape = grape;
@@ -22,7 +23,7 @@ namespace winery_backend.Vineyard
             Size = size;
         }
 
-        public long RecommendedWateringAmount()
+        public double RecommendedWateringAmount()
         {
             if(DateTime.Now.Month >= 4 && DateTime.Now.Month <= 9) // it is summer
             {
@@ -49,25 +50,25 @@ namespace winery_backend.Vineyard
             
         }
 
-        public long RecommendedFertilizerAmount()
+        public double RecommendedFertilizerAmount()
         {
-            long coef = 1;
+            double coef = 1;
 
             if (Grape.PlantingDate.AddYears(3) > DateTime.Now) //young grape 
             {
-                coef = (long)0.7; //younger grapes need less fertilizer
+                coef = 0.7; //younger grapes need less fertilizer
             }
 
             return 10000*this.Size*(1/Grape.Quality)*coef; //10 000kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape
         }
 
-        public long RecommendedPesticideAmount()
+        public double RecommendedPesticideAmount()
         {
-            long coef = 1;
+            double coef = 1;
 
             if (Grape.PlantingDate.AddYears(3) > DateTime.Now) //young grape 
             {
-                coef = (long)0.7; //younger grapes need less pesticide
+                coef = 0.7; //younger grapes need less pesticide
             }
 
             return 1 * this.Size * (1 / Grape.Quality) * coef; //1kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape

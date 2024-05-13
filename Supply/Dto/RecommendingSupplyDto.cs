@@ -2,10 +2,10 @@
 {
     public class RecommendingSupplyDto
     {
-        public long amount { get; set; }
+        public double amount { get; set; }
         public Supply fertilizer { get; set; }
 
-        public RecommendingSupplyDto(long amount, Supply fertilizer)
+        public RecommendingSupplyDto(double amount, Supply fertilizer)
         {
             this.amount = amount;
             this.fertilizer = fertilizer;

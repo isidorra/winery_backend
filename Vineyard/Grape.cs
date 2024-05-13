@@ -14,6 +14,7 @@ namespace winery_backend.Vineyard
         public Supply? Fertilizer { get; set; }
         public int? PesticideId { get; set; }
         public Supply? Pesticide { get; set; }
+        public Grape() { }
 
         public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate)
         {

@@ -2,7 +2,7 @@
 
 namespace winery_backend.Activity
 {
-    public abstract class Activity
+    public class Activity
     {
         public Guid Id { get; set; }
         public DateTime StartDate { get; set; }
@@ -19,7 +19,7 @@ namespace winery_backend.Activity
 
         public Activity(Guid id, DateTime startDate, DateTime endDate, bool isCompleted, ActivityType activityType, int parcelId)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             StartDate = startDate;
             EndDate = endDate;
             IsCompleted = isCompleted;

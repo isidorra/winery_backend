@@ -17,8 +17,8 @@ namespace winery_backend.Activity
 
         public ActivityController(IActivityService activityService, IParcelService parcelService)
         {
-            this._activityService = activityService;
-            this._parcelService = parcelService;
+            _activityService = activityService;
+            _parcelService = parcelService;
         }
 
         [HttpGet]
@@ -91,7 +91,7 @@ namespace winery_backend.Activity
         public IActionResult RecommendFertilizer(int parcelId)
         {
             Parcel parcel = _parcelService.GetById(parcelId);
-            long recommendedAmount = parcel.RecommendedFertilizerAmount();
+            double recommendedAmount = parcel.RecommendedFertilizerAmount();
             Supply fertilizer = parcel.Grape.Fertilizer;
             return Ok(new RecommendingSupplyDto(recommendedAmount, fertilizer));
         }
@@ -115,7 +115,7 @@ namespace winery_backend.Activity
         public IActionResult RecommendPesticide(int parcelId)
         {
             Parcel parcel = _parcelService.GetById(parcelId);
-            long recommendedAmount = parcel.RecommendedPesticideAmount();
+            double recommendedAmount = parcel.RecommendedPesticideAmount();
             Supply pesticide = parcel.Grape.Pesticide;
             return Ok(new RecommendingSupplyDto(recommendedAmount, pesticide));
         }
