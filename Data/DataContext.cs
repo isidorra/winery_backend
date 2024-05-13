@@ -80,58 +80,6 @@ public class DataContext : DbContext
         modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
         modelBuilder.Entity<TransportRequest>().ToTable("TransportRequests");
 
-
-        // modelBuilder.Entity<Product>().HasData(
-        //     new Product(1, "product1", "nice product", "photo_product_1.png", "sort_1", new Decimal(1.5), 1000, 100, new Decimal(5), 1),
-        //     new Product(2, "product2", "nice product", "photo_product_2.png", "sort_2", new Decimal(0.5), 2000, 50, new Decimal(6), 2),
-        //     new Product(3, "product3", "nice product", "photo_product_3.png", "sort_2", new Decimal(1.5), 1000, 150, new Decimal(3), 2),
-        //     new Product(4, "product4", "nice product", "photo_product_4.png", "sort_2", new Decimal(1), 500, 250, new Decimal(8.5), 2),
-        //     new Product(5, "product5", "nice product", "photo_product_5.png", "sort_1", new Decimal(0.5), 1500, 150, new Decimal(10), 1)
-        // );
-
-        // List<int> products1 = new List<int>();
-        // products1.Add(1);
-        // products1.Add(2);
-        // List<int> quantities1 = new List<int>();
-        // quantities1.Add(3);
-        // quantities1.Add(2);
-
-        // List<int> products2 = new List<int>();
-        // products2.Add(2);
-        // List<int> quantities2 = new List<int>();
-        // quantities2.Add(6);
-
-        // List<int> products3 = new List<int>();
-        // products3.Add(2);
-        // products3.Add(5);
-        // List<int> quantities3 = new List<int>();
-        // quantities3.Add(6);
-        // quantities3.Add(1);
-
-        // List<int> products4 = new List<int>();
-        // products4.Add(2);
-        // products4.Add(3);
-        // products4.Add(5);
-        // List<int> quantities4 = new List<int>();
-        // quantities4.Add(2);
-        // quantities4.Add(3);
-        // quantities4.Add(4);
-
-        // List<int> products5 = new List<int>();
-        // products5.Add(1);
-        // products5.Add(4);
-        // List<int> quantities5 = new List<int>();
-        // quantities5.Add(4);
-        // quantities5.Add(10);
-
-        // modelBuilder.Entity<CustomerOrder>().HasData(
-        //     new CustomerOrder(1, new Decimal(7000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 28), 1, products1, quantities1, 1),
-        //     new CustomerOrder(2, new Decimal(12000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 25), 1, products2, quantities2, 1),
-        //     new CustomerOrder(3, new Decimal(13500), new DateTime(2024, 5, 16), new DateTime(2024, 6, 20), 1, products3, quantities3, 2),
-        //     new CustomerOrder(4, new Decimal(9000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 24), 1, products4, quantities4, 2),
-        //     new CustomerOrder(5, new Decimal(9000), new DateTime(2024, 5, 12), new DateTime(2024, 6, 30), 2, products2, quantities5, 2)
-        // );
-
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
             new RealTimeOrderTrackingStatus(1, "in processing"),
             new RealTimeOrderTrackingStatus(2, "distributed"),
@@ -339,6 +287,9 @@ public class DataContext : DbContext
                 Price = 72
             }
         );
+        
+
+        
         modelBuilder.Entity<Product>().HasData(
             new Product
             {
@@ -349,7 +300,10 @@ public class DataContext : DbContext
                 Quantity = 35,
                 IsApproved = true,
                 PricingId = 1,
-                ProductCategoryId = 1
+                ProductCategoryId = 1,
+                PackagingSize = new Decimal(1.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 1
             },
             new Product
             {
@@ -360,7 +314,10 @@ public class DataContext : DbContext
                 Quantity = 55,
                 IsApproved = true,
                 PricingId = 2,
-                ProductCategoryId = 2
+                ProductCategoryId = 2,
+                PackagingSize = new Decimal(2.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 2
             },
             new Product
             {
@@ -371,7 +328,10 @@ public class DataContext : DbContext
                 Quantity = 25,
                 IsApproved = true,
                 PricingId = 3,
-                ProductCategoryId = 3
+                ProductCategoryId = 3,
+                PackagingSize = new Decimal(1.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 2,
             },
             new Product
             {
@@ -382,7 +342,10 @@ public class DataContext : DbContext
                 Quantity = 40,
                 IsApproved = false,
                 PricingId = 4,
-                ProductCategoryId = 2
+                ProductCategoryId = 2,
+                PackagingSize = new Decimal(1.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 2
             },
             new Product
             {
@@ -393,7 +356,10 @@ public class DataContext : DbContext
                 Quantity = 30,
                 IsApproved = true,
                 PricingId = 3,
-                ProductCategoryId = 1
+                ProductCategoryId = 1,
+                PackagingSize = new Decimal(1.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 1
             },
             new Product
             {
@@ -404,10 +370,55 @@ public class DataContext : DbContext
                 Quantity = 50,
                 IsApproved = false,
                 PricingId = 4,
-                ProductCategoryId = 2
+                ProductCategoryId = 2,
+                PackagingSize = new Decimal(1.5),
+                AlcoholPercentage = new Decimal(5),
+                SectorId = 1
             }
 
         );
 
+        List<int> products1 = new List<int>();
+        products1.Add(1);
+        products1.Add(2);
+        List<int> quantities1 = new List<int>();
+        quantities1.Add(3);
+        quantities1.Add(2);
+
+        List<int> products2 = new List<int>();
+        products2.Add(2);
+        List<int> quantities2 = new List<int>();
+        quantities2.Add(6);
+
+        List<int> products3 = new List<int>();
+        products3.Add(2);
+        products3.Add(5);
+        List<int> quantities3 = new List<int>();
+        quantities3.Add(6);
+        quantities3.Add(1);
+
+        List<int> products4 = new List<int>();
+        products4.Add(2);
+        products4.Add(3);
+        products4.Add(5);
+        List<int> quantities4 = new List<int>();
+        quantities4.Add(2);
+        quantities4.Add(3);
+        quantities4.Add(4);
+
+        List<int> products5 = new List<int>();
+        products5.Add(1);
+        products5.Add(4);
+        List<int> quantities5 = new List<int>();
+        quantities5.Add(4);
+        quantities5.Add(10);
+
+        modelBuilder.Entity<CustomerOrder>().HasData(
+            new CustomerOrder(1, new Decimal(7000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 28), 1, products1, quantities1, 1),
+            new CustomerOrder(2, new Decimal(12000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 25), 1, products2, quantities2, 1),
+            new CustomerOrder(3, new Decimal(13500), new DateTime(2024, 5, 16), new DateTime(2024, 6, 20), 1, products3, quantities3, 2),
+            new CustomerOrder(4, new Decimal(9000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 24), 1, products4, quantities4, 2),
+            new CustomerOrder(5, new Decimal(9000), new DateTime(2024, 5, 12), new DateTime(2024, 6, 30), 2, products2, quantities5, 2)
+        );
     }
 }

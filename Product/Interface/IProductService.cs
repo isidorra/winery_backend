@@ -11,4 +11,7 @@ public interface IProductService {
     void Update(Product product);
     bool Approve(int productId);
     bool Disapprove(int productId);
+    List<Product> FindProductsByCustomerOrderId(List<int> productIds);
+    int FindProductSectorIdByProductId(int id);
+    List<Product> FindProductsBySectorId(int sectorId);
 }

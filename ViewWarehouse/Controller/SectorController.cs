@@ -34,7 +34,7 @@
 
             foreach(Product product in products)
             {
-                productLogisticianInSectorDtos.Add(new ProductLogisticianInSectorDto(product.ProductName, product.ProductQuantity));
+                productLogisticianInSectorDtos.Add(new ProductLogisticianInSectorDto(product.Name, product.Quantity));
             }
 
             SectorViewDto sectorViewDto = new SectorViewDto(sector.SectorName, sector.SectorImage, warehousemanName, productLogisticianInSectorDtos);

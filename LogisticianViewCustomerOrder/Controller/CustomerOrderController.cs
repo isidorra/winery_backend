@@ -66,7 +66,7 @@
 
             foreach (Product product in products)
             {
-                ProductLogisticianDto productLogisticianDto = new ProductLogisticianDto(product.ProductName, customerOrder.Quantities[i], _sectorService.FindSectorName(product.SectorId));
+                ProductLogisticianDto productLogisticianDto = new ProductLogisticianDto(product.Name, customerOrder.Quantities[i], _sectorService.FindSectorName(product.SectorId));
                 productLogisticianDtos.Add(productLogisticianDto);
                 i = i + 1;
             }

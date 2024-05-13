@@ -114,4 +114,18 @@ public class ProductService : IProductService
 
         
     }
+    public List<Product> FindProductsByCustomerOrderId(List<int> productIds)
+    {
+        return _productRepository.FindProductsByCustomerOrderId(productIds);
+    }
+
+    public int FindProductSectorIdByProductId(int id)
+    {
+        return _productRepository.FindProductSectorIdByProductId(id);
+    }
+
+    public List<Product> FindProductsBySectorId(int sectorId)
+    {
+        return _productRepository.FindProductsBySectorId(sectorId);
+    }
 }

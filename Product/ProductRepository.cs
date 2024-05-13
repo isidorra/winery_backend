@@ -54,4 +54,25 @@ public class ProductRepository : IProductRepository
                 throw new Exception("Error while trying to edit product", ex);
             }
     }
+    public List<Product> FindProductsByCustomerOrderId(List<int> productIds)
+        {
+            List<Product> products = new List<Product>();
+
+            foreach (var productId in productIds)
+            {
+                Product product = _context.Products.First(x => x.Id == productId);
+                products.Add(product);
+            }
+            return products;
+        }
+
+    public int FindProductSectorIdByProductId(int id)
+    {
+        return _context.Products.FirstOrDefault(x => x.Id == id).SectorId;
+    }
+
+    public List<Product> FindProductsBySectorId(int sectorId)
+    {
+        return _context.Products.Where(x => x.SectorId == sectorId).ToList();
+    }
 }
