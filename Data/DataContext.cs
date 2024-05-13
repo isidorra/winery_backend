@@ -31,6 +31,7 @@ public class DataContext : DbContext
     public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
     public DbSet<Activity> Activities { get; set; }
+    public DbSet<Fertilization> Fertilizations { get; set; }
     public DbSet<Parcel> Parcels { get; set; }
     public DbSet<Supply> Supplies { get; set; }
 
@@ -41,7 +42,6 @@ public class DataContext : DbContext
     public DbSet<Discount> Discounts { get; set; }
 
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
-    //public DbSet<Product> Products { get; set; }
     public DbSet<RealTimeOrderTrackingStatus> RealTimeOrderTrackingStatuses { get; set; }
     public DbSet<PackingRequest> PackingRequests { get; set; }
     public DbSet<Sector> Sectors { get; set; }
@@ -65,6 +65,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
         modelBuilder.Entity<Activity>().ToTable("Activities");
+        modelBuilder.Entity<Fertilization>().ToTable("Fertelizations");
         modelBuilder.Entity<Parcel>().ToTable("Parcels");
         modelBuilder.Entity<Supply>().ToTable("Supplies");
         modelBuilder.Entity<Product>().ToTable("Products");
@@ -73,7 +74,6 @@ public class DataContext : DbContext
         modelBuilder.Entity<Discount>().ToTable("Discounts");
 
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
-        //modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
         modelBuilder.Entity<Sector>().ToTable("Sectors");

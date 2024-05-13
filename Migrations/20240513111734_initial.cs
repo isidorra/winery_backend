@@ -57,6 +57,20 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Discounts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Percentage = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Discounts", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
@@ -108,28 +122,17 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "ProductCategories",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProductName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProductDescription = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Photo = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    WineSort = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    PackagingSize = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    ProductPrice = table.Column<int>(type: "int", nullable: false),
-                    ProductQuantity = table.Column<int>(type: "int", nullable: false),
-                    AlcoholPercentage = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    SectorId = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.ProductId);
+                    table.PrimaryKey("PK_ProductCategories", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -164,6 +167,25 @@ namespace winery_backend.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sectors", x => x.SectorId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Supplies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SupplyType = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<long>(type: "bigint", nullable: false),
+                    Manufacturer = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Supplies", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -252,6 +274,26 @@ namespace winery_backend.Migrations
                         name: "FK_Customers_Cities_CityId",
                         column: x => x.CityId,
                         principalTable: "Cities",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Pricing",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Price = table.Column<double>(type: "double", nullable: true),
+                    DiscountId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pricing", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pricing_Discounts_DiscountId",
+                        column: x => x.DiscountId,
+                        principalTable: "Discounts",
                         principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -420,6 +462,144 @@ namespace winery_backend.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Grape",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Type = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    IsRipe = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Quality = table.Column<int>(type: "int", nullable: false),
+                    PlantingDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    FertilizerId = table.Column<int>(type: "int", nullable: true),
+                    PesticideId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Grape", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Grape_Supplies_FertilizerId",
+                        column: x => x.FertilizerId,
+                        principalTable: "Supplies",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Grape_Supplies_PesticideId",
+                        column: x => x.PesticideId,
+                        principalTable: "Supplies",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Photo = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Quantity = table.Column<int>(type: "int", nullable: true),
+                    IsApproved = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    PricingId = table.Column<int>(type: "int", nullable: true),
+                    ProductCategoryId = table.Column<int>(type: "int", nullable: true),
+                    PackagingSize = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    AlcoholPercentage = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_Pricing_PricingId",
+                        column: x => x.PricingId,
+                        principalTable: "Pricing",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Products_ProductCategories_ProductCategoryId",
+                        column: x => x.ProductCategoryId,
+                        principalTable: "ProductCategories",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Parcels",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GrapeId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<long>(type: "bigint", nullable: false),
+                    Size = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parcels", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Parcels_Grape_GrapeId",
+                        column: x => x.GrapeId,
+                        principalTable: "Grape",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Activities",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    StartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IsCompleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ActivityType = table.Column<int>(type: "int", nullable: false),
+                    ParcelId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Activities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Activities_Parcels_ParcelId",
+                        column: x => x.ParcelId,
+                        principalTable: "Parcels",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Fertelizations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Amount = table.Column<long>(type: "bigint", nullable: false),
+                    FertilizerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Fertelizations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Fertelizations_Activities_Id",
+                        column: x => x.Id,
+                        principalTable: "Activities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Fertelizations_Supplies_FertilizerId",
+                        column: x => x.FertilizerId,
+                        principalTable: "Supplies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.InsertData(
                 table: "Cities",
                 columns: new[] { "Id", "Name", "Zip" },
@@ -456,6 +636,11 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Discounts",
+                columns: new[] { "Id", "Percentage" },
+                values: new object[] { 1, 20.0 });
+
+            migrationBuilder.InsertData(
                 table: "Employees",
                 columns: new[] { "Id", "BirthDate", "Email", "Firstname", "Gender", "Lastname", "Password", "PhoneNumber", "ProfilePhoto", "Role", "Username" },
                 values: new object[,]
@@ -487,15 +672,23 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "ProductId", "AlcoholPercentage", "PackagingSize", "Photo", "ProductDescription", "ProductName", "ProductPrice", "ProductQuantity", "SectorId", "WineSort" },
+                table: "Pricing",
+                columns: new[] { "Id", "DiscountId", "Price" },
                 values: new object[,]
                 {
-                    { 1, 5m, 1.5m, "photo_product_1.png", "nice product", "product1", 1000, 100, 1, "sort_1" },
-                    { 2, 6m, 0.5m, "photo_product_2.png", "nice product", "product2", 2000, 50, 2, "sort_2" },
-                    { 3, 3m, 1.5m, "photo_product_3.png", "nice product", "product3", 1000, 150, 2, "sort_2" },
-                    { 4, 8.5m, 1m, "photo_product_4.png", "nice product", "product4", 500, 250, 2, "sort_2" },
-                    { 5, 10m, 0.5m, "photo_product_5.png", "nice product", "product5", 1500, 150, 1, "sort_1" }
+                    { 2, null, 235.99000000000001 },
+                    { 3, null, 132.99000000000001 },
+                    { 4, null, 72.0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductCategories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Red" },
+                    { 2, "White" },
+                    { 3, "Rose" }
                 });
 
             migrationBuilder.InsertData(
@@ -540,10 +733,68 @@ namespace winery_backend.Migrations
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "3", "jane.doe@example.com", "Jane", "2", 0, "Doe", "202", "hashedpassword", "9876543210", 9, "456 Elm St", "janedoe" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Pricing",
+                columns: new[] { "Id", "DiscountId", "Price" },
+                values: new object[] { 1, 1, 99.989999999999995 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "AlcoholPercentage", "Description", "IsApproved", "Name", "PackagingSize", "Photo", "PricingId", "ProductCategoryId", "Quantity", "SectorId" },
+                values: new object[,]
+                {
+                    { 2, 5m, "Experience the enchanting allure of Moonlit Symphony White Wine. Delicately crafted from sun-kissed grapes, this refreshing white wine captivates with its crisp acidity and vibrant fruit flavors. With hints of citrus, green apple, and tropical notes, each sip evokes a sense of serenity and sophistication. Whether enjoyed on a warm summer evening or paired with your favorite seafood dish, Moonlit Symphony is sure to elevate any occasion.", true, "Moonlit Symphony White Wine", 2.5m, "wine2.png", 2, 2, 55, 2 },
+                    { 3, 5m, "Transport your senses to a blooming garden with Blush Blossom Rosé Wine. Crafted from select grapes kissed by the gentle rays of the sun, this elegant rosé captivates with its delicate pink hue and enchanting aromas of fresh strawberries and rose petals. With a balanced acidity and subtle sweetness, each sip unfolds like a bouquet of spring flowers. Whether enjoyed with light salads, creamy cheeses, or simply on its own, Blush Blossom is a celebration of life's beautiful moments.", true, "Blush Blossom Rosé Wine", 1.5m, "wine3.png", 3, 3, 25, 2 },
+                    { 4, 5m, "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.", false, "Golden Harvest Chardonnay", 1.5m, "wine3.png", 4, 2, 40, 2 },
+                    { 5, 5m, "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.", true, "Midnight Noir Cabernet Sauvignon", 1.5m, "wine3.png", 3, 1, 30, 1 },
+                    { 6, 5m, "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.", false, "Sunrise Serenade Sauvignon Blanc", 1.5m, "wine3.png", 4, 2, 50, 1 },
+                    { 1, 5m, "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.", true, "Scarlet Elixir Red Wine", 1.5m, "wine1.png", 1, 1, 35, 1 }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Activities_ParcelId",
+                table: "Activities",
+                column: "ParcelId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fertelizations_FertilizerId",
+                table: "Fertelizations",
+                column: "FertilizerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Grape_FertilizerId",
+                table: "Grape",
+                column: "FertilizerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Grape_PesticideId",
+                table: "Grape",
+                column: "PesticideId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Parcels_GrapeId",
+                table: "Parcels",
+                column: "GrapeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pricing_DiscountId",
+                table: "Pricing",
+                column: "DiscountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_PricingId",
+                table: "Products",
+                column: "PricingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductCategoryId",
+                table: "Products",
+                column: "ProductCategoryId");
         }
 
         /// <inheritdoc />
@@ -557,6 +808,9 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Fertelizations");
 
             migrationBuilder.DropTable(
                 name: "Logisticians");
@@ -604,7 +858,28 @@ namespace winery_backend.Migrations
                 name: "Cities");
 
             migrationBuilder.DropTable(
+                name: "Activities");
+
+            migrationBuilder.DropTable(
+                name: "Pricing");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategories");
+
+            migrationBuilder.DropTable(
                 name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Parcels");
+
+            migrationBuilder.DropTable(
+                name: "Discounts");
+
+            migrationBuilder.DropTable(
+                name: "Grape");
+
+            migrationBuilder.DropTable(
+                name: "Supplies");
         }
     }
 }

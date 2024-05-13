@@ -342,6 +342,174 @@ namespace winery_backend.Migrations
                             ProfilePhoto = "somepath",
                             Role = 0,
                             Username = "admin123"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BirthDate = new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_1@gmail.com",
+                            Firstname = "warehouseman_first_name_1",
+                            Gender = 1,
+                            Lastname = "warehouseman_last_name_1",
+                            Password = "a",
+                            PhoneNumber = "061123123",
+                            ProfilePhoto = "photo_warehouseman_1.png",
+                            Role = 4,
+                            Username = "warehouseman_1"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BirthDate = new DateTime(1991, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_2@gmail.com",
+                            Firstname = "warehouseman_first_name_2",
+                            Gender = 1,
+                            Lastname = "warehouseman_last_name_2",
+                            Password = "a",
+                            PhoneNumber = "062345345",
+                            ProfilePhoto = "photo_warehouseman_2.png",
+                            Role = 4,
+                            Username = "warehouseman_2"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BirthDate = new DateTime(1992, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_3@gmail.com",
+                            Firstname = "warehouseman_first_name_3",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_3",
+                            Password = "a",
+                            PhoneNumber = "063456789",
+                            ProfilePhoto = "photo_warehouseman_3.png",
+                            Role = 4,
+                            Username = "warehouseman_3"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BirthDate = new DateTime(1993, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_4@gmail.com",
+                            Firstname = "warehouseman_first_name_4",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_4",
+                            Password = "a",
+                            PhoneNumber = "064123123",
+                            ProfilePhoto = "photo_warehouseman_4.png",
+                            Role = 4,
+                            Username = "warehouseman_4"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BirthDate = new DateTime(1994, 9, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_5@gmail.com",
+                            Firstname = "warehouseman_first_name_5",
+                            Gender = 1,
+                            Lastname = "warehouseman_last_name_5",
+                            Password = "a",
+                            PhoneNumber = "066234567",
+                            ProfilePhoto = "photo_warehouseman_5.png",
+                            Role = 4,
+                            Username = "warehouseman_5"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            BirthDate = new DateTime(1995, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_6@gmail.com",
+                            Firstname = "warehouseman_first_name_6",
+                            Gender = 1,
+                            Lastname = "warehouseman_last_name_6",
+                            Password = "a",
+                            PhoneNumber = "063456789",
+                            ProfilePhoto = "photo_warehouseman_6.png",
+                            Role = 4,
+                            Username = "warehouseman_6"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BirthDate = new DateTime(1996, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_7@gmail.com",
+                            Firstname = "warehouseman_first_name_7",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_7",
+                            Password = "a",
+                            PhoneNumber = "061456789",
+                            ProfilePhoto = "photo_warehouseman_7.png",
+                            Role = 4,
+                            Username = "warehouseman_7"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BirthDate = new DateTime(1997, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "warehouseman_email_8@gmail.com",
+                            Firstname = "warehouseman_first_name_8",
+                            Gender = 0,
+                            Lastname = "warehouseman_last_name_8",
+                            Password = "a",
+                            PhoneNumber = "069123123",
+                            ProfilePhoto = "photo_warehouseman_8.png",
+                            Role = 4,
+                            Username = "warehouseman_8"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            BirthDate = new DateTime(1998, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_1@gmail.com",
+                            Firstname = "van_driver_first_name_1",
+                            Gender = 1,
+                            Lastname = "van_driver_last_name_1",
+                            Password = "a",
+                            PhoneNumber = "062111111",
+                            ProfilePhoto = "photo_van_driver_1.png",
+                            Role = 7,
+                            Username = "van_driver_1"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            BirthDate = new DateTime(1999, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_2@gmail.com",
+                            Firstname = "van_driver_first_name_2",
+                            Gender = 1,
+                            Lastname = "van_driver_last_name_2",
+                            Password = "a",
+                            PhoneNumber = "062222222",
+                            ProfilePhoto = "photo_van_driver_2.png",
+                            Role = 7,
+                            Username = "van_driver_2"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            BirthDate = new DateTime(2000, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_3@gmail.com",
+                            Firstname = "van_driver_first_name_3",
+                            Gender = 0,
+                            Lastname = "van_driver_last_name_3",
+                            Password = "a",
+                            PhoneNumber = "062333333",
+                            ProfilePhoto = "photo_van_driver_3.png",
+                            Role = 7,
+                            Username = "van_driver_3"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            BirthDate = new DateTime(2001, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "van_driver_email_4@gmail.com",
+                            Firstname = "van_driver_first_name_4",
+                            Gender = 0,
+                            Lastname = "van_driver_last_name_4",
+                            Password = "a",
+                            PhoneNumber = "062444444",
+                            ProfilePhoto = "photo_van_driver_4.png",
+                            Role = 7,
+                            Username = "van_driver_4"
                         });
                 });
 
@@ -385,7 +553,7 @@ namespace winery_backend.Migrations
                         new
                         {
                             Id = 4,
-                            Price = 0.0
+                            Price = 72.0
                         });
                 });
 
@@ -397,6 +565,9 @@ namespace winery_backend.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<decimal>("AlcoholPercentage")
+                        .HasColumnType("decimal(65,30)");
+
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
@@ -405,6 +576,9 @@ namespace winery_backend.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
+
+                    b.Property<decimal>("PackagingSize")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("Photo")
                         .HasColumnType("longtext");
@@ -416,6 +590,9 @@ namespace winery_backend.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SectorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -430,68 +607,86 @@ namespace winery_backend.Migrations
                         new
                         {
                             Id = 1,
+                            AlcoholPercentage = 5m,
                             Description = "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.",
                             IsApproved = true,
                             Name = "Scarlet Elixir Red Wine",
+                            PackagingSize = 1.5m,
                             Photo = "wine1.png",
                             PricingId = 1,
                             ProductCategoryId = 1,
-                            Quantity = 35
+                            Quantity = 35,
+                            SectorId = 1
                         },
                         new
                         {
                             Id = 2,
+                            AlcoholPercentage = 5m,
                             Description = "Experience the enchanting allure of Moonlit Symphony White Wine. Delicately crafted from sun-kissed grapes, this refreshing white wine captivates with its crisp acidity and vibrant fruit flavors. With hints of citrus, green apple, and tropical notes, each sip evokes a sense of serenity and sophistication. Whether enjoyed on a warm summer evening or paired with your favorite seafood dish, Moonlit Symphony is sure to elevate any occasion.",
                             IsApproved = true,
                             Name = "Moonlit Symphony White Wine",
+                            PackagingSize = 2.5m,
                             Photo = "wine2.png",
                             PricingId = 2,
                             ProductCategoryId = 2,
-                            Quantity = 55
+                            Quantity = 55,
+                            SectorId = 2
                         },
                         new
                         {
                             Id = 3,
+                            AlcoholPercentage = 5m,
                             Description = "Transport your senses to a blooming garden with Blush Blossom Rosé Wine. Crafted from select grapes kissed by the gentle rays of the sun, this elegant rosé captivates with its delicate pink hue and enchanting aromas of fresh strawberries and rose petals. With a balanced acidity and subtle sweetness, each sip unfolds like a bouquet of spring flowers. Whether enjoyed with light salads, creamy cheeses, or simply on its own, Blush Blossom is a celebration of life's beautiful moments.",
                             IsApproved = true,
                             Name = "Blush Blossom Rosé Wine",
+                            PackagingSize = 1.5m,
                             Photo = "wine3.png",
                             PricingId = 3,
                             ProductCategoryId = 3,
-                            Quantity = 25
+                            Quantity = 25,
+                            SectorId = 2
                         },
                         new
                         {
                             Id = 4,
+                            AlcoholPercentage = 5m,
                             Description = "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.",
                             IsApproved = false,
                             Name = "Golden Harvest Chardonnay",
+                            PackagingSize = 1.5m,
                             Photo = "wine3.png",
                             PricingId = 4,
                             ProductCategoryId = 2,
-                            Quantity = 40
+                            Quantity = 40,
+                            SectorId = 2
                         },
                         new
                         {
                             Id = 5,
+                            AlcoholPercentage = 5m,
                             Description = "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.",
                             IsApproved = true,
                             Name = "Midnight Noir Cabernet Sauvignon",
+                            PackagingSize = 1.5m,
                             Photo = "wine3.png",
                             PricingId = 3,
                             ProductCategoryId = 1,
-                            Quantity = 30
+                            Quantity = 30,
+                            SectorId = 1
                         },
                         new
                         {
                             Id = 6,
+                            AlcoholPercentage = 5m,
                             Description = "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.",
                             IsApproved = false,
                             Name = "Sunrise Serenade Sauvignon Blanc",
+                            PackagingSize = 1.5m,
                             Photo = "wine3.png",
                             PricingId = 4,
                             ProductCategoryId = 2,
-                            Quantity = 50
+                            Quantity = 50,
+                            SectorId = 1
                         });
                 });
 
@@ -527,6 +722,504 @@ namespace winery_backend.Migrations
                             Id = 3,
                             Name = "Rose"
                         });
+                });
+
+            modelBuilder.Entity("Supply", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("SupplyType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Supplies", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Activity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("ActivityType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("ParcelId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParcelId");
+
+                    b.ToTable("Activities", (string)null);
+
+                    b.UseTptMappingStrategy();
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.CustomerOrder", b =>
+                {
+                    b.Property<int>("CustomerOrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CustomerOrderId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CustomerOrderCreationTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("CustomerOrderDeliveryDeadline")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("CustomerOrderPrice")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("OrderTrackingStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Quantities")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("CustomerOrderId");
+
+                    b.ToTable("CustomerOrders", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerOrderId = 1,
+                            CustomerId = 1,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 7000m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[1,2]",
+                            Quantities = "[3,2]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 2,
+                            CustomerId = 1,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 12000m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[2]",
+                            Quantities = "[6]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 3,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 13500m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[2,5]",
+                            Quantities = "[6,1]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 4,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 9000m,
+                            OrderTrackingStatusId = 1,
+                            ProductIds = "[2,3,5]",
+                            Quantities = "[2,3,4]"
+                        },
+                        new
+                        {
+                            CustomerOrderId = 5,
+                            CustomerId = 2,
+                            CustomerOrderCreationTime = new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CustomerOrderPrice = 9000m,
+                            OrderTrackingStatusId = 2,
+                            ProductIds = "[2]",
+                            Quantities = "[4,10]"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.RealTimeOrderTrackingStatus", b =>
+                {
+                    b.Property<int>("RealTimeOrderTrackingStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("RealTimeOrderTrackingStatusId"));
+
+                    b.Property<string>("OrderTrackingStatus")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("RealTimeOrderTrackingStatusId");
+
+                    b.ToTable("RealTimeOrderTrackingStatuses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 1,
+                            OrderTrackingStatus = "in processing"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 2,
+                            OrderTrackingStatus = "distributed"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 3,
+                            OrderTrackingStatus = "ready for pick up"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 4,
+                            OrderTrackingStatus = "picked up"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 5,
+                            OrderTrackingStatus = "in transport"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 6,
+                            OrderTrackingStatus = "delivered"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.PackingRequest.Models.PackingRequest", b =>
+                {
+                    b.Property<int>("PackingRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("PackingRequestId"));
+
+                    b.Property<int>("CustomerOrderId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PackingRequestCreationDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("PackingRequestDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("PackingRequestProductIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PackingRequestQuantities")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PackingRequestId");
+
+                    b.ToTable("PackingRequests", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            PackingRequestId = 1,
+                            CustomerOrderId = 5,
+                            PackingRequestCreationDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestProductIds = "[1]",
+                            PackingRequestQuantities = "[4]",
+                            SectorId = 1
+                        },
+                        new
+                        {
+                            PackingRequestId = 2,
+                            CustomerOrderId = 5,
+                            PackingRequestCreationDate = new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PackingRequestProductIds = "[4]",
+                            PackingRequestQuantities = "[10]",
+                            SectorId = 2
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.TransportRequest.Models.TransportRequest", b =>
+                {
+                    b.Property<int>("TransportRequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TransportRequestId"));
+
+                    b.Property<string>("CustomerDeliveryAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("CustomerOrderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerUsername")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("PickUpDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("SectorIdsForPickUp")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("TransportRequestCreationDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("TransportRequestDeliveryDeadlineDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("VanDriverId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TransportRequestId");
+
+                    b.ToTable("TransportRequests", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Sector", b =>
+                {
+                    b.Property<int>("SectorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SectorId"));
+
+                    b.Property<string>("SectorImage")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SectorName")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("WarehouseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WarehousemanId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SectorId");
+
+                    b.ToTable("Sectors", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            SectorId = 1,
+                            SectorImage = "photo_sector_1.png",
+                            SectorName = "SECTOR 1",
+                            WarehouseId = 1,
+                            WarehousemanId = 11
+                        },
+                        new
+                        {
+                            SectorId = 2,
+                            SectorImage = "photo_sector_2.png",
+                            SectorName = "SECTOR 2",
+                            WarehouseId = 1,
+                            WarehousemanId = 12
+                        },
+                        new
+                        {
+                            SectorId = 3,
+                            SectorImage = "photo_sector_3.png",
+                            SectorName = "SECTOR 3",
+                            WarehouseId = 1,
+                            WarehousemanId = 13
+                        },
+                        new
+                        {
+                            SectorId = 4,
+                            SectorImage = "photo_sector_4.png",
+                            SectorName = "SECTOR 4",
+                            WarehouseId = 1,
+                            WarehousemanId = 14
+                        },
+                        new
+                        {
+                            SectorId = 5,
+                            SectorImage = "photo_sector_5.png",
+                            SectorName = "SECTOR 5",
+                            WarehouseId = 1,
+                            WarehousemanId = 15
+                        },
+                        new
+                        {
+                            SectorId = 6,
+                            SectorImage = "photo_sector_6.png",
+                            SectorName = "SECTOR 6",
+                            WarehouseId = 1,
+                            WarehousemanId = 16
+                        },
+                        new
+                        {
+                            SectorId = 7,
+                            SectorImage = "photo_sector_7.png",
+                            SectorName = "SECTOR 7",
+                            WarehouseId = 1,
+                            WarehousemanId = 17
+                        },
+                        new
+                        {
+                            SectorId = 8,
+                            SectorImage = "photo_sector_8.png",
+                            SectorName = "SECTOR 8",
+                            WarehouseId = 1,
+                            WarehousemanId = 18
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.ViewWarehouse.Models.Warehouse", b =>
+                {
+                    b.Property<int>("WarehouseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("WarehouseId"));
+
+                    b.Property<int>("NumberOfSectors")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfVanDrivers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfWarehouseWorkers")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("WarehouseArea")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("WarehouseImage")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("WarehouseLocation")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("WarehouseName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("WarehouseId");
+
+                    b.ToTable("Warehouses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            WarehouseId = 1,
+                            NumberOfSectors = 8,
+                            NumberOfVanDrivers = 5,
+                            NumberOfWarehouseWorkers = 8,
+                            WarehouseArea = 5000.5m,
+                            WarehouseImage = "photo_warehouse.png",
+                            WarehouseLocation = "Nova lokacija 123, Novi Sad",
+                            WarehouseName = "Warehouse 1"
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Grape", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("FertilizerId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsRipe")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("PesticideId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PlantingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Quality")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Type")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FertilizerId");
+
+                    b.HasIndex("PesticideId");
+
+                    b.ToTable("Grape");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Parcel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("GrapeId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrapeId");
+
+                    b.ToTable("Parcels", (string)null);
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -595,6 +1288,21 @@ namespace winery_backend.Migrations
                     b.ToTable("Warehousemen", (string)null);
                 });
 
+            modelBuilder.Entity("winery_backend.Activity.Fertilization", b =>
+                {
+                    b.HasBaseType("winery_backend.Activity.Activity");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("FertilizerId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("FertilizerId");
+
+                    b.ToTable("Fertelizations", (string)null);
+                });
+
             modelBuilder.Entity("Customer", b =>
                 {
                     b.HasOne("City", "City")
@@ -626,6 +1334,43 @@ namespace winery_backend.Migrations
                     b.Navigation("Pricing");
 
                     b.Navigation("ProductCategory");
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Activity", b =>
+                {
+                    b.HasOne("winery_backend.Vineyard.Parcel", "Parcel")
+                        .WithMany()
+                        .HasForeignKey("ParcelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Parcel");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Grape", b =>
+                {
+                    b.HasOne("Supply", "Fertilizer")
+                        .WithMany()
+                        .HasForeignKey("FertilizerId");
+
+                    b.HasOne("Supply", "Pesticide")
+                        .WithMany()
+                        .HasForeignKey("PesticideId");
+
+                    b.Navigation("Fertilizer");
+
+                    b.Navigation("Pesticide");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Parcel", b =>
+                {
+                    b.HasOne("winery_backend.Vineyard.Grape", "Grape")
+                        .WithMany()
+                        .HasForeignKey("GrapeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grape");
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -707,6 +1452,23 @@ namespace winery_backend.Migrations
                         .HasForeignKey("Warehouseman", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Fertilization", b =>
+                {
+                    b.HasOne("Supply", "Fertilizer")
+                        .WithMany()
+                        .HasForeignKey("FertilizerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("winery_backend.Activity.Activity", null)
+                        .WithOne()
+                        .HasForeignKey("winery_backend.Activity.Fertilization", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Fertilizer");
                 });
 #pragma warning restore 612, 618
         }

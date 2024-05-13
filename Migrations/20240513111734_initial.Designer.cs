@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240512154613_initial")]
+    [Migration("20240513111734_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -233,6 +233,29 @@ namespace winery_backend.Migrations
                             Role = 9,
                             Street = "456 Elm St",
                             Username = "janedoe"
+                        });
+                });
+
+            modelBuilder.Entity("Discount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Percentage")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Percentage = 20.0
                         });
                 });
 
@@ -493,6 +516,274 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Pricing", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Price")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DiscountId");
+
+                    b.ToTable("Pricing", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DiscountId = 1,
+                            Price = 99.989999999999995
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Price = 235.99000000000001
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Price = 132.99000000000001
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Price = 72.0
+                        });
+                });
+
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("AlcoholPercentage")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool?>("IsApproved")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("PackagingSize")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("PricingId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PricingId");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AlcoholPercentage = 5m,
+                            Description = "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.",
+                            IsApproved = true,
+                            Name = "Scarlet Elixir Red Wine",
+                            PackagingSize = 1.5m,
+                            Photo = "wine1.png",
+                            PricingId = 1,
+                            ProductCategoryId = 1,
+                            Quantity = 35,
+                            SectorId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AlcoholPercentage = 5m,
+                            Description = "Experience the enchanting allure of Moonlit Symphony White Wine. Delicately crafted from sun-kissed grapes, this refreshing white wine captivates with its crisp acidity and vibrant fruit flavors. With hints of citrus, green apple, and tropical notes, each sip evokes a sense of serenity and sophistication. Whether enjoyed on a warm summer evening or paired with your favorite seafood dish, Moonlit Symphony is sure to elevate any occasion.",
+                            IsApproved = true,
+                            Name = "Moonlit Symphony White Wine",
+                            PackagingSize = 2.5m,
+                            Photo = "wine2.png",
+                            PricingId = 2,
+                            ProductCategoryId = 2,
+                            Quantity = 55,
+                            SectorId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AlcoholPercentage = 5m,
+                            Description = "Transport your senses to a blooming garden with Blush Blossom Rosé Wine. Crafted from select grapes kissed by the gentle rays of the sun, this elegant rosé captivates with its delicate pink hue and enchanting aromas of fresh strawberries and rose petals. With a balanced acidity and subtle sweetness, each sip unfolds like a bouquet of spring flowers. Whether enjoyed with light salads, creamy cheeses, or simply on its own, Blush Blossom is a celebration of life's beautiful moments.",
+                            IsApproved = true,
+                            Name = "Blush Blossom Rosé Wine",
+                            PackagingSize = 1.5m,
+                            Photo = "wine3.png",
+                            PricingId = 3,
+                            ProductCategoryId = 3,
+                            Quantity = 25,
+                            SectorId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AlcoholPercentage = 5m,
+                            Description = "Embark on a journey of elegance with Golden Harvest Chardonnay. Grown in sun-drenched vineyards and carefully aged in oak barrels, this exquisite white wine dazzles with its golden hue and rich, buttery texture. With flavors of ripe peach, toasted vanilla, and a hint of caramel, each sip unfolds like a symphony of indulgence. Whether paired with creamy pastas or enjoyed on its own, Golden Harvest is a testament to the artistry of winemaking.",
+                            IsApproved = false,
+                            Name = "Golden Harvest Chardonnay",
+                            PackagingSize = 1.5m,
+                            Photo = "wine3.png",
+                            PricingId = 4,
+                            ProductCategoryId = 2,
+                            Quantity = 40,
+                            SectorId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AlcoholPercentage = 5m,
+                            Description = "Discover the allure of Midnight Noir Cabernet Sauvignon. Born from the dark, fertile soils of our vineyards, this bold red wine entices with its deep crimson color and intense aromas of blackberries and plum. With velvety tannins and a lingering finish, each sip evokes a sense of mystery and intrigue. Whether paired with hearty stews or enjoyed on its own, Midnight Noir is a tribute to the enchantment of the night.",
+                            IsApproved = true,
+                            Name = "Midnight Noir Cabernet Sauvignon",
+                            PackagingSize = 1.5m,
+                            Photo = "wine3.png",
+                            PricingId = 3,
+                            ProductCategoryId = 1,
+                            Quantity = 30,
+                            SectorId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AlcoholPercentage = 5m,
+                            Description = "Awaken your senses with Sunrise Serenade Sauvignon Blanc. Harvested in the early morning light, this crisp white wine exudes freshness and vitality. With vibrant flavors of citrus, melon, and a hint of fresh-cut grass, each sip is a symphony of brightness and clarity. Whether enjoyed with light salads or seafood dishes, Sunrise Serenade is a celebration of new beginnings.",
+                            IsApproved = false,
+                            Name = "Sunrise Serenade Sauvignon Blanc",
+                            PackagingSize = 1.5m,
+                            Photo = "wine3.png",
+                            PricingId = 4,
+                            ProductCategoryId = 2,
+                            Quantity = 50,
+                            SectorId = 1
+                        });
+                });
+
+            modelBuilder.Entity("ProductCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductCategories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Red"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "White"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Rose"
+                        });
+                });
+
+            modelBuilder.Entity("Supply", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("SupplyType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Supplies", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Activity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("ActivityType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("ParcelId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParcelId");
+
+                    b.ToTable("Activities", (string)null);
+
+                    b.UseTptMappingStrategy();
+                });
+
             modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.CustomerOrder", b =>
                 {
                     b.Property<int>("CustomerOrderId")
@@ -583,117 +874,6 @@ namespace winery_backend.Migrations
                             OrderTrackingStatusId = 2,
                             ProductIds = "[2]",
                             Quantities = "[4,10]"
-                        });
-                });
-
-            modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.Product", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ProductId"));
-
-                    b.Property<decimal>("AlcoholPercentage")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<decimal>("PackagingSize")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ProductDescription")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("ProductPrice")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductQuantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SectorId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WineSort")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ProductId");
-
-                    b.ToTable("Products", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            AlcoholPercentage = 5m,
-                            PackagingSize = 1.5m,
-                            Photo = "photo_product_1.png",
-                            ProductDescription = "nice product",
-                            ProductName = "product1",
-                            ProductPrice = 1000,
-                            ProductQuantity = 100,
-                            SectorId = 1,
-                            WineSort = "sort_1"
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            AlcoholPercentage = 6m,
-                            PackagingSize = 0.5m,
-                            Photo = "photo_product_2.png",
-                            ProductDescription = "nice product",
-                            ProductName = "product2",
-                            ProductPrice = 2000,
-                            ProductQuantity = 50,
-                            SectorId = 2,
-                            WineSort = "sort_2"
-                        },
-                        new
-                        {
-                            ProductId = 3,
-                            AlcoholPercentage = 3m,
-                            PackagingSize = 1.5m,
-                            Photo = "photo_product_3.png",
-                            ProductDescription = "nice product",
-                            ProductName = "product3",
-                            ProductPrice = 1000,
-                            ProductQuantity = 150,
-                            SectorId = 2,
-                            WineSort = "sort_2"
-                        },
-                        new
-                        {
-                            ProductId = 4,
-                            AlcoholPercentage = 8.5m,
-                            PackagingSize = 1m,
-                            Photo = "photo_product_4.png",
-                            ProductDescription = "nice product",
-                            ProductName = "product4",
-                            ProductPrice = 500,
-                            ProductQuantity = 250,
-                            SectorId = 2,
-                            WineSort = "sort_2"
-                        },
-                        new
-                        {
-                            ProductId = 5,
-                            AlcoholPercentage = 10m,
-                            PackagingSize = 0.5m,
-                            Photo = "photo_product_5.png",
-                            ProductDescription = "nice product",
-                            ProductName = "product5",
-                            ProductPrice = 1500,
-                            ProductQuantity = 150,
-                            SectorId = 1,
-                            WineSort = "sort_1"
                         });
                 });
 
@@ -982,6 +1162,69 @@ namespace winery_backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("winery_backend.Vineyard.Grape", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("FertilizerId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsRipe")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("PesticideId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PlantingDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Quality")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Type")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FertilizerId");
+
+                    b.HasIndex("PesticideId");
+
+                    b.ToTable("Grape");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Parcel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("GrapeId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("Size")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrapeId");
+
+                    b.ToTable("Parcels", (string)null);
+                });
+
             modelBuilder.Entity("Administrator", b =>
                 {
                     b.HasBaseType("Employee");
@@ -1048,6 +1291,21 @@ namespace winery_backend.Migrations
                     b.ToTable("Warehousemen", (string)null);
                 });
 
+            modelBuilder.Entity("winery_backend.Activity.Fertilization", b =>
+                {
+                    b.HasBaseType("winery_backend.Activity.Activity");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("FertilizerId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("FertilizerId");
+
+                    b.ToTable("Fertelizations", (string)null);
+                });
+
             modelBuilder.Entity("Customer", b =>
                 {
                     b.HasOne("City", "City")
@@ -1055,6 +1313,67 @@ namespace winery_backend.Migrations
                         .HasForeignKey("CityId");
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("Pricing", b =>
+                {
+                    b.HasOne("Discount", "Discount")
+                        .WithMany()
+                        .HasForeignKey("DiscountId");
+
+                    b.Navigation("Discount");
+                });
+
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.HasOne("Pricing", "Pricing")
+                        .WithMany()
+                        .HasForeignKey("PricingId");
+
+                    b.HasOne("ProductCategory", "ProductCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductCategoryId");
+
+                    b.Navigation("Pricing");
+
+                    b.Navigation("ProductCategory");
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Activity", b =>
+                {
+                    b.HasOne("winery_backend.Vineyard.Parcel", "Parcel")
+                        .WithMany()
+                        .HasForeignKey("ParcelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Parcel");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Grape", b =>
+                {
+                    b.HasOne("Supply", "Fertilizer")
+                        .WithMany()
+                        .HasForeignKey("FertilizerId");
+
+                    b.HasOne("Supply", "Pesticide")
+                        .WithMany()
+                        .HasForeignKey("PesticideId");
+
+                    b.Navigation("Fertilizer");
+
+                    b.Navigation("Pesticide");
+                });
+
+            modelBuilder.Entity("winery_backend.Vineyard.Parcel", b =>
+                {
+                    b.HasOne("winery_backend.Vineyard.Grape", "Grape")
+                        .WithMany()
+                        .HasForeignKey("GrapeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grape");
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -1136,6 +1455,23 @@ namespace winery_backend.Migrations
                         .HasForeignKey("Warehouseman", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Fertilization", b =>
+                {
+                    b.HasOne("Supply", "Fertilizer")
+                        .WithMany()
+                        .HasForeignKey("FertilizerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("winery_backend.Activity.Activity", null)
+                        .WithOne()
+                        .HasForeignKey("winery_backend.Activity.Fertilization", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Fertilizer");
                 });
 #pragma warning restore 612, 618
         }

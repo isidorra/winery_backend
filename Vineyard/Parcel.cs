@@ -9,6 +9,11 @@ namespace winery_backend.Vineyard
         public long Amount { get; set; } //in kg
         public long Size { get; set; } //in ha
 
+        public Parcel()
+        {
+
+        }
+
         public Parcel(int id, Grape grape, long amount, long size)
         {
             Id = id;
