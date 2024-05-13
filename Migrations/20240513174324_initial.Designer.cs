@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240513113253_initialcreate")]
-    partial class initialcreate
+    [Migration("20240513174324_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -784,6 +784,91 @@ namespace winery_backend.Migrations
                     b.UseTptMappingStrategy();
                 });
 
+            modelBuilder.Entity("winery_backend.Invetory.SupplyOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("Completed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("DaysUntilDelivery")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SupplierSupplyIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("SupplyOrderCreationTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SupplyOrders", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianManufacturingOrder.Models.Supplier", b =>
+                {
+                    b.Property<int>("SupplierId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SupplierId"));
+
+                    b.Property<string>("SupplierAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SupplierName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SupplierProductIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("SupplierId");
+
+                    b.ToTable("Suppliers", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.LogisticianManufacturingOrder.Models.SupplierProduct", b =>
+                {
+                    b.Property<int>("SupplierProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("SupplierProductId"));
+
+                    b.Property<int>("SupplierProductAmount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SupplierProductManufacturer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SupplierProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("SupplierProductPrice")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("SupplierProductId");
+
+                    b.ToTable("SupplierProducts", (string)null);
+                });
+
             modelBuilder.Entity("winery_backend.LogisticianViewCustomerOrder.Models.CustomerOrder", b =>
                 {
                     b.Property<int>("CustomerOrderId")
@@ -924,6 +1009,63 @@ namespace winery_backend.Migrations
                             RealTimeOrderTrackingStatusId = 6,
                             OrderTrackingStatus = "delivered"
                         });
+                });
+
+            modelBuilder.Entity("winery_backend.Machine.Machine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("MachineState")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Machines", (string)null);
+                });
+
+            modelBuilder.Entity("winery_backend.Machine.MachineOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("Completed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("DaysUntilDelivery")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("MachineOrderCreationTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SupplierMachineIds")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MachineOrders", (string)null);
                 });
 
             modelBuilder.Entity("winery_backend.PackingRequest.Models.PackingRequest", b =>

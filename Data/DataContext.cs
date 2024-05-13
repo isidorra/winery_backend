@@ -3,7 +3,10 @@
 // using winery_backend.Vineyard;
 using Microsoft.EntityFrameworkCore;
 using winery_backend.Activity;
+using winery_backend.Invetory;
+using winery_backend.LogisticianManufacturingOrder.Models;
 using winery_backend.LogisticianViewCustomerOrder.Models;
+using winery_backend.Machine;
 using winery_backend.PackingRequest.Models;
 using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
@@ -41,12 +44,21 @@ public class DataContext : DbContext
     public DbSet<ProductCategory> ProductCategories { get; set; }
     public DbSet<Discount> Discounts { get; set; }
 
+    //-----------LOGISTICS---------------------------------------------------------
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
     public DbSet<RealTimeOrderTrackingStatus> RealTimeOrderTrackingStatuses { get; set; }
     public DbSet<PackingRequest> PackingRequests { get; set; }
     public DbSet<Sector> Sectors { get; set; }
     public DbSet<Warehouse> Warehouses { get; set; }
     public DbSet<TransportRequest> TransportRequests { get; set; }
+
+    //-----------ORDERS FOR PRODUCTION---------------------------------------------------------
+
+    public DbSet<Machine> Machines { get; set; }
+    public DbSet<MachineOrder> MachineOrders { get; set; }
+    public DbSet<SupplyOrder> SupplyOrders { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
+    public DbSet<SupplierProduct> SupplierProducts { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -79,6 +91,12 @@ public class DataContext : DbContext
         modelBuilder.Entity<Sector>().ToTable("Sectors");
         modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
         modelBuilder.Entity<TransportRequest>().ToTable("TransportRequests");
+
+        modelBuilder.Entity<Machine>().ToTable("Machines");
+        modelBuilder.Entity<MachineOrder>().ToTable("MachineOrders");
+        modelBuilder.Entity<SupplyOrder>().ToTable("SupplyOrders");
+        modelBuilder.Entity<Supplier>().ToTable("Suppliers");
+        modelBuilder.Entity<SupplierProduct>().ToTable("SupplierProducts");
 
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
             new RealTimeOrderTrackingStatus(1, "in processing"),
