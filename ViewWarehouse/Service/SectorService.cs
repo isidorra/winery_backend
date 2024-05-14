@@ -59,5 +59,10 @@ namespace winery_backend.ViewWarehouse.Service
         {
             return _sectorRepository.FindSectorBySectorName(sectorName);
         }
+
+        public int FindSectorIdByWarehousemanId(int warehousemanId)
+        {
+            return _sectorRepository.FindSectorIdByWarehousemanId(warehousemanId);
+        }
     }
 }

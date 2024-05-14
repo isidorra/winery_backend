@@ -4,7 +4,7 @@
     {
         public long Amount { get; set; }
         public int PesticideId { get; set; }
-        public Supply Pesticide { get; set; }
+        public Supply.Supply Pesticide { get; set; }
 
         public PesticideControl()
         {

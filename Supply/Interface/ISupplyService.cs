@@ -2,7 +2,7 @@
 {
     public interface ISupplyService
     {
-        ICollection<Supply> GetAll();
-        Supply GetById(int id);
+        ICollection<Supply.Supply> GetAll();
+        Supply.Supply GetById(int id);
     }
 }

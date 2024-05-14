@@ -8,6 +8,7 @@ using winery_backend.LogisticianManufacturingOrder.Models;
 using winery_backend.LogisticianViewCustomerOrder.Models;
 using winery_backend.Machine;
 using winery_backend.PackingRequest.Models;
+using winery_backend.Supply;
 using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
 using winery_backend.Vineyard;
@@ -101,10 +102,11 @@ public class DataContext : DbContext
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
             new RealTimeOrderTrackingStatus(1, "in processing"),
             new RealTimeOrderTrackingStatus(2, "distributed"),
-            new RealTimeOrderTrackingStatus(3, "ready for pick up"),
-            new RealTimeOrderTrackingStatus(4, "picked up"),
-            new RealTimeOrderTrackingStatus(5, "in transport"),
-            new RealTimeOrderTrackingStatus(6, "delivered")
+            new RealTimeOrderTrackingStatus(3, "packed"),
+            new RealTimeOrderTrackingStatus(4, "ready for pick up"),
+            new RealTimeOrderTrackingStatus(5, "picked up"),
+            new RealTimeOrderTrackingStatus(6, "in transport"),
+            new RealTimeOrderTrackingStatus(7, "delivered")
         );
 
         modelBuilder.Entity<Sector>().HasData(
@@ -133,8 +135,8 @@ public class DataContext : DbContext
         qs_2.Add(10);
 
         modelBuilder.Entity<PackingRequest>().HasData(
-            new PackingRequest(1, new DateTime(2024, 2, 10), new DateTime(2024, 2, 13), p_ids_1, qs_1, 5, 1),
-            new PackingRequest(2, new DateTime(2024, 2, 10), new DateTime(2024, 5, 14), p_ids_2, qs_2, 5, 2)
+            new PackingRequest(1, new DateTime(2024, 2, 10), new DateTime(2024, 2, 13), p_ids_1, qs_1, 5, 1, false),
+            new PackingRequest(2, new DateTime(2024, 2, 10), new DateTime(2024, 5, 14), p_ids_2, qs_2, 5, 2, false)
         );
 
         //
@@ -436,7 +438,7 @@ public class DataContext : DbContext
             new CustomerOrder(2, new Decimal(12000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 25), 1, products2, quantities2, 1),
             new CustomerOrder(3, new Decimal(13500), new DateTime(2024, 5, 16), new DateTime(2024, 6, 20), 1, products3, quantities3, 2),
             new CustomerOrder(4, new Decimal(9000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 24), 1, products4, quantities4, 2),
-            new CustomerOrder(5, new Decimal(9000), new DateTime(2024, 5, 12), new DateTime(2024, 6, 30), 2, products2, quantities5, 2)
+            new CustomerOrder(5, new Decimal(9000), new DateTime(2024, 5, 12), new DateTime(2024, 6, 30), 2, products5, quantities5, 2)
         );
     }
 }

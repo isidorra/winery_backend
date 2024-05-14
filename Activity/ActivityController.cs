@@ -92,7 +92,7 @@ namespace winery_backend.Activity
         {
             Parcel parcel = _parcelService.GetById(parcelId);
             long recommendedAmount = parcel.RecommendedFertilizerAmount();
-            Supply fertilizer = parcel.Grape.Fertilizer;
+            Supply.Supply fertilizer = parcel.Grape.Fertilizer;
             return Ok(new RecommendingSupplyDto(recommendedAmount, fertilizer));
         }
 
@@ -116,7 +116,7 @@ namespace winery_backend.Activity
         {
             Parcel parcel = _parcelService.GetById(parcelId);
             long recommendedAmount = parcel.RecommendedPesticideAmount();
-            Supply pesticide = parcel.Grape.Pesticide;
+            Supply.Supply pesticide = parcel.Grape.Pesticide;
             return Ok(new RecommendingSupplyDto(recommendedAmount, pesticide));
         }
 

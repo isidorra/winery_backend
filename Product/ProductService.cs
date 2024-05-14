@@ -128,4 +128,16 @@ public class ProductService : IProductService
     {
         return _productRepository.FindProductsBySectorId(sectorId);
     }
+
+    public string FindProductNameById(int productId)
+    {
+        return _productRepository.FindProductNameById(productId);
+    }
+
+    public void UpdateProductQuantity(int productId, int productQuantity)
+    {
+        Product product = _productRepository.GetById(productId);
+        product.Quantity = product.Quantity - productQuantity;
+        _productRepository.UpdateProductQuantity(product);
+    }
 }

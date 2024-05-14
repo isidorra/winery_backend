@@ -9,13 +9,14 @@
         public List<int> PackingRequestQuantities { get; set; }
         public int CustomerOrderId { get; set; }
         public int SectorId { get; set; }
+        public bool Packed {  get; set; }
 
         public PackingRequest()
         {
 
         }
 
-        public PackingRequest(int packingRequestId, DateTime packingRequestDeadlineDate, DateTime packingRequestCreationDate, List<int> packingRequestProductIds, List<int> packingRequestQuantities, int customerOrderId, int sectorId)
+        public PackingRequest(int packingRequestId, DateTime packingRequestDeadlineDate, DateTime packingRequestCreationDate, List<int> packingRequestProductIds, List<int> packingRequestQuantities, int customerOrderId, int sectorId, bool packed)
         {
             PackingRequestId = packingRequestId;
             PackingRequestDeadlineDate = packingRequestDeadlineDate;
@@ -24,6 +25,7 @@
             PackingRequestQuantities = packingRequestQuantities;
             CustomerOrderId = customerOrderId;
             SectorId = sectorId;
+            Packed = packed;
         }
     }
 }

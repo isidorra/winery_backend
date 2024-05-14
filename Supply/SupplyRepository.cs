@@ -11,23 +11,23 @@ namespace winery_backend.Invetory
             _context = context;
         }
 
-        public bool Create(Supply supply)
+        public bool Create(Supply.Supply supply)
         {
             _context.Add(supply);
             return Save();
         }
 
-        public ICollection<Supply> GetAll()
+        public ICollection<Supply.Supply> GetAll()
         {
             return _context.Supplies.OrderBy(s => s.Id).ToList();
         }
 
-        public Supply GetById(int id)
+        public Supply.Supply GetById(int id)
         {
             return _context.Supplies.Where(s => s.Id.Equals(id)).FirstOrDefault();
         }
 
-        public Supply GetByName(string name)
+        public Supply.Supply GetByName(string name)
         {
             return _context.Supplies.Where(s => s.Name.Equals(name)).FirstOrDefault();
         }
@@ -38,7 +38,7 @@ namespace winery_backend.Invetory
             return saved > 0 ? true : false;
         }
 
-        public void Update(Supply supply)
+        public void Update(Supply.Supply supply)
         {
             var editedSupply = _context.Supplies.FirstOrDefault(s => s.Id == supply.Id);
             if (editedSupply == null)

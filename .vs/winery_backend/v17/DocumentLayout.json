@@ -1,44 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianmanufacturingorder\\models\\supplierproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianmanufacturingorder\\models\\supplierproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\logisticianmanufacturingorder\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:logisticianmanufacturingorder\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\supply\\supplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:supply\\supplyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\machine\\machineorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\machineorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\machine\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\supply\\supply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:supply\\supply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Migrations\\20240513174324_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240513174324_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -46,129 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
-              "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAIwEUAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T20:22:40.052Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20240513174324_initial.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Migrations\\20240513174324_initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240513174324_initial.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Migrations\\20240513174324_initial.cs",
-              "RelativeToolTip": "Migrations\\20240513174324_initial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T17:43:24.237Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAowGMAAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T17:02:25.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SupplierProduct.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianManufacturingOrder\\Models\\SupplierProduct.cs",
-              "RelativeDocumentMoniker": "LogisticianManufacturingOrder\\Models\\SupplierProduct.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianManufacturingOrder\\Models\\SupplierProduct.cs",
-              "RelativeToolTip": "LogisticianManufacturingOrder\\Models\\SupplierProduct.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:59:33.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianManufacturingOrder\\Models\\Supplier.cs",
-              "RelativeDocumentMoniker": "LogisticianManufacturingOrder\\Models\\Supplier.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\LogisticianManufacturingOrder\\Models\\Supplier.cs",
-              "RelativeToolTip": "LogisticianManufacturingOrder\\Models\\Supplier.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:55:55.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SupplyOrder.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Supply\\SupplyOrder.cs",
-              "RelativeDocumentMoniker": "Supply\\SupplyOrder.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Supply\\SupplyOrder.cs",
-              "RelativeToolTip": "Supply\\SupplyOrder.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAA1wA0AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:50:54.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MachineOrder.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Machine\\MachineOrder.cs",
-              "RelativeDocumentMoniker": "Machine\\MachineOrder.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Machine\\MachineOrder.cs",
-              "RelativeToolTip": "Machine\\MachineOrder.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T12:37:40.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Machine.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Machine\\Machine.cs",
-              "RelativeDocumentMoniker": "Machine\\Machine.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Machine\\Machine.cs",
-              "RelativeToolTip": "Machine\\Machine.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:51:06.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Supply.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Supply\\Supply.cs",
-              "RelativeDocumentMoniker": "Supply\\Supply.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Supply\\Supply.cs",
-              "RelativeToolTip": "Supply\\Supply.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:51:00.849Z",
-              "EditorCaption": ""
             }
           ]
         }

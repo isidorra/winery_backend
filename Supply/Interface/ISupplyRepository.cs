@@ -2,14 +2,14 @@
 {
     public interface ISupplyRepository
     {
-        ICollection<Supply> GetAll();
-        Supply GetById(int id);
-        Supply GetByName(string name);
+        ICollection<Supply.Supply> GetAll();
+        Supply.Supply GetById(int id);
+        Supply.Supply GetByName(string name);
 
-        bool Create(Supply supply);
+        bool Create(Supply.Supply supply);
 
         bool Save();
 
-        void Update(Supply supply);
+        void Update(Supply.Supply supply);
     }
 }

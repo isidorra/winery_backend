@@ -26,6 +26,5 @@ namespace winery_backend.LogisticianViewCustomerOrder.Service
         {
             _customerOrderRepository.ChangeOrderStatus(customerOrderId, newStatusId);
         }
-
     }
 }

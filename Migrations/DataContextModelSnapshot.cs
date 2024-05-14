@@ -724,33 +724,6 @@ namespace winery_backend.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Supply", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<long>("Amount")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Manufacturer")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("SupplyType")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Supplies", (string)null);
-                });
-
             modelBuilder.Entity("winery_backend.Activity.Activity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -954,7 +927,7 @@ namespace winery_backend.Migrations
                             CustomerOrderDeliveryDeadline = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CustomerOrderPrice = 9000m,
                             OrderTrackingStatusId = 2,
-                            ProductIds = "[2]",
+                            ProductIds = "[1,4]",
                             Quantities = "[4,10]"
                         });
                 });
@@ -989,21 +962,26 @@ namespace winery_backend.Migrations
                         new
                         {
                             RealTimeOrderTrackingStatusId = 3,
-                            OrderTrackingStatus = "ready for pick up"
+                            OrderTrackingStatus = "packed"
                         },
                         new
                         {
                             RealTimeOrderTrackingStatusId = 4,
-                            OrderTrackingStatus = "picked up"
+                            OrderTrackingStatus = "ready for pick up"
                         },
                         new
                         {
                             RealTimeOrderTrackingStatusId = 5,
-                            OrderTrackingStatus = "in transport"
+                            OrderTrackingStatus = "picked up"
                         },
                         new
                         {
                             RealTimeOrderTrackingStatusId = 6,
+                            OrderTrackingStatus = "in transport"
+                        },
+                        new
+                        {
+                            RealTimeOrderTrackingStatusId = 7,
                             OrderTrackingStatus = "delivered"
                         });
                 });
@@ -1076,6 +1054,9 @@ namespace winery_backend.Migrations
                     b.Property<int>("CustomerOrderId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Packed")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<DateTime>("PackingRequestCreationDate")
                         .HasColumnType("datetime(6)");
 
@@ -1102,6 +1083,7 @@ namespace winery_backend.Migrations
                         {
                             PackingRequestId = 1,
                             CustomerOrderId = 5,
+                            Packed = false,
                             PackingRequestCreationDate = new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PackingRequestProductIds = "[1]",
@@ -1112,12 +1094,40 @@ namespace winery_backend.Migrations
                         {
                             PackingRequestId = 2,
                             CustomerOrderId = 5,
+                            Packed = false,
                             PackingRequestCreationDate = new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PackingRequestDeadlineDate = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PackingRequestProductIds = "[4]",
                             PackingRequestQuantities = "[10]",
                             SectorId = 2
                         });
+                });
+
+            modelBuilder.Entity("winery_backend.Supply.Supply", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Manufacturer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("SupplyType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Supplies", (string)null);
                 });
 
             modelBuilder.Entity("winery_backend.TransportRequest.Models.TransportRequest", b =>
@@ -1491,11 +1501,11 @@ namespace winery_backend.Migrations
 
             modelBuilder.Entity("winery_backend.Vineyard.Grape", b =>
                 {
-                    b.HasOne("Supply", "Fertilizer")
+                    b.HasOne("winery_backend.Supply.Supply", "Fertilizer")
                         .WithMany()
                         .HasForeignKey("FertilizerId");
 
-                    b.HasOne("Supply", "Pesticide")
+                    b.HasOne("winery_backend.Supply.Supply", "Pesticide")
                         .WithMany()
                         .HasForeignKey("PesticideId");
 
@@ -1598,7 +1608,7 @@ namespace winery_backend.Migrations
 
             modelBuilder.Entity("winery_backend.Activity.Fertilization", b =>
                 {
-                    b.HasOne("Supply", "Fertilizer")
+                    b.HasOne("winery_backend.Supply.Supply", "Fertilizer")
                         .WithMany()
                         .HasForeignKey("FertilizerId")
                         .OnDelete(DeleteBehavior.Cascade)
