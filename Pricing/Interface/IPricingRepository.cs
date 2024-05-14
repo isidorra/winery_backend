@@ -7,4 +7,5 @@ public interface IPricingRepository {
     bool Create(Pricing pricing);
     bool Save();
     void Update(Pricing pricing);
+    double? FindById(int? pricingId);
 }

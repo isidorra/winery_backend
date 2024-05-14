@@ -50,7 +50,6 @@
     <Folder Include="WarehousemanPackingRequest\Models\" />
     <Folder Include="WarehousemanPackingRequest\Service\" />
     <Folder Include="WarehousemanPackingRequest\Repository\" />
-    <Folder Include="WarehousemanSectorView\Dto\" />
     <Folder Include="WarehousemanSectorView\Models\" />
     <Folder Include="WarehousemanSectorView\Interface\" />
     <Folder Include="WarehousemanSectorView\Service\" />

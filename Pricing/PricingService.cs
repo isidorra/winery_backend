@@ -48,4 +48,9 @@ public class PricingService : IPricingService
                 throw new Exception("Error while trying to edit pricing", ex);
             }
     }
+
+    public double? FindById(int? pricingId)
+    {
+        return _pricingRepository.FindById(pricingId);
+    }
 }

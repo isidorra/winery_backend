@@ -86,4 +86,9 @@ public class ProductRepository : IProductRepository
         _context.Products.Update(product);
         _context.SaveChanges();
     }
+
+    public Product FindProductByProductName(string productName)
+    {
+        return _context.Products.First(x => x.Name.Equals(productName));
+    }
 }

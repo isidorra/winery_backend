@@ -140,4 +140,9 @@ public class ProductService : IProductService
         product.Quantity = product.Quantity - productQuantity;
         _productRepository.UpdateProductQuantity(product);
     }
+
+    public Product FindProductByProductName(string productName)
+    {
+        return _productRepository.FindProductByProductName(productName);
+    }
 }
