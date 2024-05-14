@@ -870,11 +870,12 @@ namespace winery_backend.Migrations
                 {
                     { 1, "in processing" },
                     { 2, "distributed" },
-                    { 3, "packed" },
+                    { 3, "waiting for pick up" },
                     { 4, "ready for pick up" },
                     { 5, "picked up" },
                     { 6, "in transport" },
-                    { 7, "delivered" }
+                    { 7, "delivered" },
+                    { 8, "cancelled" }
                 });
 
             migrationBuilder.InsertData(
@@ -978,26 +979,26 @@ namespace winery_backend.Migrations
                 columns: new[] { "Id", "ActivityType", "EndDate", "IsCompleted", "ParcelId", "StartDate" },
                 values: new object[,]
                 {
-                    { new Guid("06d8ea3f-d582-4a45-905d-4f2c1b4d5b5a"), 3, new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("08ab3460-3804-4cae-80ca-35cfe6b655f8"), 2, new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("1b9e54a3-759b-4eca-9791-9af563bad48a"), 3, new DateTime(2024, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("29803478-a567-4a00-9d69-9601394114fb"), 0, new DateTime(2024, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("327e7291-4d84-472b-8903-b5651224a532"), 2, new DateTime(2024, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("34c53120-46f4-469c-b2e9-b4f26c701c66"), 1, new DateTime(2024, 5, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 5, 1, 8, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("4ad71e0d-5ab0-4b72-85f3-facafaeb5fe2"), 1, new DateTime(2024, 5, 5, 10, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 5, 5, 9, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("532be3e7-6213-48ec-b445-92e9321b11a1"), 3, new DateTime(2024, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("613dc169-51a1-4437-a7e8-e1333658d97c"), 0, new DateTime(2024, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("680076f6-534c-4dd2-ac64-023cfac980d2"), 3, new DateTime(2024, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("6895d15b-146b-454d-976d-abbd92178d45"), 0, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("718b5503-7b23-400e-9d7c-6cdca1423f18"), 1, new DateTime(2024, 5, 10, 11, 30, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 5, 10, 10, 30, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("7689dbcf-d71c-40d3-8fdd-693c56cbc9bf"), 2, new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("80c287f5-215c-4043-b7fc-18c568741ec4"), 2, new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("8bc09441-a17e-4744-8575-cdf3365a4036"), 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("aeab047f-36ee-43e2-8046-9fdb242c0a94"), 0, new DateTime(2024, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("b71ebd38-bdab-4c07-af5b-f1804e31eed8"), 0, new DateTime(2024, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("b8389f73-f859-498f-8fec-c4394aa5f835"), 1, new DateTime(2024, 5, 15, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 8, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("c184cb5b-249b-4e79-970a-f0728715246b"), 1, new DateTime(2024, 5, 20, 12, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 5, 20, 11, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("d7bae084-936e-4cee-92d3-f13abc3493fa"), 3, new DateTime(2024, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("00bab949-caa3-44cc-83a4-c313e0eba256"), 0, new DateTime(2024, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("0a1b5e6f-285e-4368-83c8-97f101f23e9d"), 3, new DateTime(2024, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("1344c4fc-c20a-4678-bd3c-ec6051134eb5"), 1, new DateTime(2024, 5, 10, 11, 30, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 5, 10, 10, 30, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("23623aba-ac2f-4370-ac73-7612ca25985f"), 1, new DateTime(2024, 5, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 5, 1, 8, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("2ca136ab-a861-464a-acda-0619dc750441"), 2, new DateTime(2024, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("379e7531-6c22-42fb-81fe-df32911dc84a"), 0, new DateTime(2024, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("38f873fa-3264-49b9-9f7f-b7c10e3ff794"), 0, new DateTime(2024, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("731eda83-049f-4cf4-96cc-6f6b5b854c32"), 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("80b1e4c9-38b3-4158-aed1-2a13e950b09c"), 2, new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("83d65cdd-845f-4db6-88b6-908943a22355"), 0, new DateTime(2024, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("8cc3fc42-0238-4145-b570-095842f165f7"), 1, new DateTime(2024, 5, 15, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 8, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("a254a12b-ca42-4be4-adce-44db6f8224ab"), 2, new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("b81e5124-c7f2-49f1-a5c2-3df12b200018"), 1, new DateTime(2024, 5, 20, 12, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 5, 20, 11, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("bbb8de91-c93d-4052-a453-655a883d7e07"), 3, new DateTime(2024, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("c2cc6bfc-d3a5-4db4-b07a-20eea99e13ff"), 3, new DateTime(2024, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("d8de35ff-a7f7-4267-94eb-46b50ee95f37"), 3, new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("dabe4a1a-7e76-459f-a188-1add59741e5d"), 0, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("f48954de-ef33-464f-a315-ba6321ec7f21"), 1, new DateTime(2024, 5, 5, 10, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 5, 5, 9, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("f4b0c124-8362-41ad-b384-e510d8c1b868"), 3, new DateTime(2024, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("fac83d4a-b3a7-4b18-b372-afd8b17184b6"), 2, new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1005,11 +1006,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "Id", "Amount", "FertilizerId" },
                 values: new object[,]
                 {
-                    { new Guid("08ab3460-3804-4cae-80ca-35cfe6b655f8"), 800L, 2 },
-                    { new Guid("327e7291-4d84-472b-8903-b5651224a532"), 2000L, 2 },
-                    { new Guid("7689dbcf-d71c-40d3-8fdd-693c56cbc9bf"), 1000L, 1 },
-                    { new Guid("80c287f5-215c-4043-b7fc-18c568741ec4"), 1200L, 3 },
-                    { new Guid("8bc09441-a17e-4744-8575-cdf3365a4036"), 1500L, 1 }
+                    { new Guid("2ca136ab-a861-464a-acda-0619dc750441"), 2000L, 2 },
+                    { new Guid("731eda83-049f-4cf4-96cc-6f6b5b854c32"), 1500L, 1 },
+                    { new Guid("80b1e4c9-38b3-4158-aed1-2a13e950b09c"), 1000L, 1 },
+                    { new Guid("a254a12b-ca42-4be4-adce-44db6f8224ab"), 800L, 2 },
+                    { new Guid("fac83d4a-b3a7-4b18-b372-afd8b17184b6"), 1200L, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -1017,11 +1018,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "Id", "Amount" },
                 values: new object[,]
                 {
-                    { new Guid("29803478-a567-4a00-9d69-9601394114fb"), 12000L },
-                    { new Guid("613dc169-51a1-4437-a7e8-e1333658d97c"), 13500L },
-                    { new Guid("6895d15b-146b-454d-976d-abbd92178d45"), 9000L },
-                    { new Guid("aeab047f-36ee-43e2-8046-9fdb242c0a94"), 10500L },
-                    { new Guid("b71ebd38-bdab-4c07-af5b-f1804e31eed8"), 15000L }
+                    { new Guid("00bab949-caa3-44cc-83a4-c313e0eba256"), 15000L },
+                    { new Guid("379e7531-6c22-42fb-81fe-df32911dc84a"), 10500L },
+                    { new Guid("38f873fa-3264-49b9-9f7f-b7c10e3ff794"), 13500L },
+                    { new Guid("83d65cdd-845f-4db6-88b6-908943a22355"), 12000L },
+                    { new Guid("dabe4a1a-7e76-459f-a188-1add59741e5d"), 9000L }
                 });
 
             migrationBuilder.InsertData(
@@ -1029,11 +1030,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "Id", "Amount", "PesticideId" },
                 values: new object[,]
                 {
-                    { new Guid("06d8ea3f-d582-4a45-905d-4f2c1b4d5b5a"), 1200L, 1 },
-                    { new Guid("1b9e54a3-759b-4eca-9791-9af563bad48a"), 1000L, 3 },
-                    { new Guid("532be3e7-6213-48ec-b445-92e9321b11a1"), 700L, 2 },
-                    { new Guid("680076f6-534c-4dd2-ac64-023cfac980d2"), 1500L, 2 },
-                    { new Guid("d7bae084-936e-4cee-92d3-f13abc3493fa"), 500L, 1 }
+                    { new Guid("0a1b5e6f-285e-4368-83c8-97f101f23e9d"), 1000L, 3 },
+                    { new Guid("bbb8de91-c93d-4052-a453-655a883d7e07"), 700L, 2 },
+                    { new Guid("c2cc6bfc-d3a5-4db4-b07a-20eea99e13ff"), 500L, 1 },
+                    { new Guid("d8de35ff-a7f7-4267-94eb-46b50ee95f37"), 1200L, 1 },
+                    { new Guid("f4b0c124-8362-41ad-b384-e510d8c1b868"), 1500L, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -1041,11 +1042,11 @@ namespace winery_backend.Migrations
                 columns: new[] { "Id", "Amount" },
                 values: new object[,]
                 {
-                    { new Guid("34c53120-46f4-469c-b2e9-b4f26c701c66"), 5000L },
-                    { new Guid("4ad71e0d-5ab0-4b72-85f3-facafaeb5fe2"), 7000L },
-                    { new Guid("718b5503-7b23-400e-9d7c-6cdca1423f18"), 6000L },
-                    { new Guid("b8389f73-f859-498f-8fec-c4394aa5f835"), 5500L },
-                    { new Guid("c184cb5b-249b-4e79-970a-f0728715246b"), 4500L }
+                    { new Guid("1344c4fc-c20a-4678-bd3c-ec6051134eb5"), 6000L },
+                    { new Guid("23623aba-ac2f-4370-ac73-7612ca25985f"), 5000L },
+                    { new Guid("8cc3fc42-0238-4145-b570-095842f165f7"), 5500L },
+                    { new Guid("b81e5124-c7f2-49f1-a5c2-3df12b200018"), 4500L },
+                    { new Guid("f48954de-ef33-464f-a315-ba6321ec7f21"), 7000L }
                 });
 
             migrationBuilder.CreateIndex(

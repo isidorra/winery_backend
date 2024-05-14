@@ -109,7 +109,7 @@
             }
             else
             {
-                int newStatusId = _realTimeOrderTrackingStatusService.FindIdByStatusName("packed");
+                int newStatusId = _realTimeOrderTrackingStatusService.FindIdByStatusName("waiting for pick up");
                 _customerOrderService.ChangeOrderStatus(customerOrderId, newStatusId);
             }
 

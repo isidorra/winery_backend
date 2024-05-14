@@ -4,7 +4,7 @@
     {
         public string CustomerUsername { get; set; }
         public string DeliveryAddress { get; set; }
-        List<string> SectorNames { get; set; }
+        public List<string> SectorNames { get; set; }
 
         public ReadyForPickUpDto()
         {

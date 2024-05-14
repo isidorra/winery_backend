@@ -1,6 +1,7 @@
 ﻿namespace winery_backend.VanDriverTransportRequest.Controller
 {
     using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
     using winery_backend.LogisticianViewCustomerOrder.Interface;
     using winery_backend.LogisticianViewCustomerOrder.Models;
     using winery_backend.TransportRequest.Interface;
@@ -58,15 +59,15 @@
 
             TransportRequest.Models.TransportRequest transportRequest = _transportRequestService.FindById(id);
 
-            // treba da se promeni kada warehouseman odradi zahtev za pakovanje, da bude waiting for pick up, a ne packed, i onda ovde obrises packed
-            if(orderTrackingStatus.Equals("waiting for pick up") || orderTrackingStatus.Equals("packed"))
+            if(orderTrackingStatus.Equals("waiting for pick up"))
             {
                 WaitingForPickUpDto waitingForPickUpDto = new WaitingForPickUpDto(transportRequest.CustomerUsername, transportRequest.CustomerDeliveryAddress);
                 return Ok(waitingForPickUpDto);
             }
             else if(orderTrackingStatus.Equals("ready for pick up"))
             {
-                List<string> sectorNames = _sectorService.FindSectorsName(transportRequest.SectorIdsForPickUp);
+                List<string> sectorNames = new List<string>();
+                sectorNames = _sectorService.FindSectorsName(transportRequest.SectorIdsForPickUp);
                 ReadyForPickUpDto readyForPickUpDto = new ReadyForPickUpDto(transportRequest.CustomerUsername, transportRequest.CustomerDeliveryAddress, sectorNames);
 
                 return Ok(readyForPickUpDto);
@@ -78,11 +79,11 @@
             }
             else if(orderTrackingStatus.Equals("in transport"))
             {
-                // ovde sam stao
-                // kada ovo zavrsis, onda treba da proveris ispocetka svaki korak redom da li rade ovi if-ovi, tj. da li vracaju prave poruke, kada odradis migracije
+                InTransportDto inTransportDto = new InTransportDto(transportRequest.CustomerUsername, transportRequest.CustomerDeliveryAddress);
+                return Ok(inTransportDto);
             }
 
-            return Ok("a");
+            return BadRequest("Greska");
         }
 
         [HttpPost("pickUpPackages")]
@@ -113,6 +114,21 @@
             _customerOrderService.ChangeOrderStatus(transportRequest.CustomerOrderId, newStatusId);
 
             return Ok("THE TRANSPORT HAS STARTED");
+        }
+
+        [HttpPost("deliverPackages")]
+        public IActionResult DeliverPackages(int id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            TransportRequest.Models.TransportRequest transportRequest = _transportRequestService.FindById(id);
+
+            int newStatusId = _realTimeOrderTrackingStatusService.FindIdByStatusName("delivered");
+
+            _customerOrderService.ChangeOrderStatus(transportRequest.CustomerOrderId, newStatusId);
+
+            return Ok("THE ORDER HAS BEEN SUCCESSFULLY DELIVERED TO THE CUSTOMER");
         }
     }
 }

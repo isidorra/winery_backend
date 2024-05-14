@@ -108,11 +108,12 @@ public class DataContext : DbContext
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().HasData(
             new RealTimeOrderTrackingStatus(1, "in processing"),
             new RealTimeOrderTrackingStatus(2, "distributed"),
-            new RealTimeOrderTrackingStatus(3, "packed"),
+            new RealTimeOrderTrackingStatus(3, "waiting for pick up"),
             new RealTimeOrderTrackingStatus(4, "ready for pick up"),
             new RealTimeOrderTrackingStatus(5, "picked up"),
             new RealTimeOrderTrackingStatus(6, "in transport"),
-            new RealTimeOrderTrackingStatus(7, "delivered")
+            new RealTimeOrderTrackingStatus(7, "delivered"),
+            new RealTimeOrderTrackingStatus(8, "cancelled")
         );
 
         modelBuilder.Entity<Supply>().HasData(

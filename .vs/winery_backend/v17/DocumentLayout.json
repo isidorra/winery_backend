@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\vandrivertransportrequest\\controller\\vandrivertransportrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vandrivertransportrequest\\controller\\vandrivertransportrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\transportrequest\\models\\transportrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:transportrequest\\models\\transportrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\vandrivertransportrequest\\dto\\pickedupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vandrivertransportrequest\\dto\\pickedupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\packingrequest\\controller\\packingrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:packingrequest\\controller\\packingrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\vandrivertransportrequest\\dto\\intransportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vandrivertransportrequest\\dto\\intransportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\milospc\\git_projekti\\winery_backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,89 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PackingRequestController.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\PackingRequest\\Controller\\PackingRequestController.cs",
-              "RelativeDocumentMoniker": "PackingRequest\\Controller\\PackingRequestController.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\PackingRequest\\Controller\\PackingRequestController.cs",
-              "RelativeToolTip": "PackingRequest\\Controller\\PackingRequestController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAAAE4AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T14:33:54.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InTransportDto.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Dto\\InTransportDto.cs",
-              "RelativeDocumentMoniker": "VanDriverTransportRequest\\Dto\\InTransportDto.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Dto\\InTransportDto.cs",
-              "RelativeToolTip": "VanDriverTransportRequest\\Dto\\InTransportDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T13:55:45.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PickedUpDto.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Dto\\PickedUpDto.cs",
-              "RelativeDocumentMoniker": "VanDriverTransportRequest\\Dto\\PickedUpDto.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Dto\\PickedUpDto.cs",
-              "RelativeToolTip": "VanDriverTransportRequest\\Dto\\PickedUpDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T13:54:42.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VanDriverTransportRequestController.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Controller\\VanDriverTransportRequestController.cs",
-              "RelativeDocumentMoniker": "VanDriverTransportRequest\\Controller\\VanDriverTransportRequestController.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\VanDriverTransportRequest\\Controller\\VanDriverTransportRequestController.cs",
-              "RelativeToolTip": "VanDriverTransportRequest\\Controller\\VanDriverTransportRequestController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAIwFQAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T12:46:46.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransportRequest.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\TransportRequest\\Models\\TransportRequest.cs",
-              "RelativeDocumentMoniker": "TransportRequest\\Models\\TransportRequest.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\TransportRequest\\Models\\TransportRequest.cs",
-              "RelativeToolTip": "TransportRequest\\Models\\TransportRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T12:48:16.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\MilosPC\\git_projekti\\winery_backend\\Data\\DataContext.cs",
-              "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAAAkDAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T13:23:35.051Z",
-              "EditorCaption": ""
             }
           ]
         }
