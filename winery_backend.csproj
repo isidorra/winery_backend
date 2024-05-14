@@ -37,7 +37,6 @@
     <Folder Include="Machine\Dto\" />
     <Folder Include="PackingRequest\Dto\" />
     <Folder Include="TransportRequest\Dto\" />
-    <Folder Include="VanDriverTransportRequest\Dto\" />
     <Folder Include="VanDriverTransportRequest\Models\" />
     <Folder Include="VanDriverTransportRequest\Interface\" />
     <Folder Include="VanDriverTransportRequest\Service\" />
