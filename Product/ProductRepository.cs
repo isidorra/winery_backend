@@ -75,4 +75,20 @@ public class ProductRepository : IProductRepository
     {
         return _context.Products.Where(x => x.SectorId == sectorId).ToList();
     }
+
+    public string FindProductNameById(int productId)
+    {
+        return _context.Products.First(x => x.Id == productId).Name;
+    }
+
+    public void UpdateProductQuantity(Product product)
+    {
+        _context.Products.Update(product);
+        _context.SaveChanges();
+    }
+
+    public Product FindProductByProductName(string productName)
+    {
+        return _context.Products.First(x => x.Name.Equals(productName));
+    }
 }

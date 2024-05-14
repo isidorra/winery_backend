@@ -8,4 +8,7 @@ public interface IProductRepository {
     List<Product> FindProductsByCustomerOrderId(List<int> productIds);
     int FindProductSectorIdByProductId(int id);
     List<Product> FindProductsBySectorId(int sectorId);
+    string FindProductNameById(int productId);
+    void UpdateProductQuantity(Product product);
+    Product FindProductByProductName(string productName);
 }

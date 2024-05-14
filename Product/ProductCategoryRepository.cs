@@ -19,4 +19,9 @@ public class ProductCategoryRepository : IProductCategoryRepository {
     {
         return _context.ProductCategories.Where(pc => pc.Id == id).FirstOrDefault();
     }
+
+    public string FindById(int? productCategoryId)
+    {
+        return _context.ProductCategories.First(x => x.Id == productCategoryId).Name;
+    }
 }

@@ -1,7 +1,7 @@
 ﻿using winery_backend.LogisticianManufacturingOrder.Interface;
 using winery_backend.LogisticianViewCustomerOrder.Interface;
 
-namespace winery_backend.LogisticianManufacturingOrder.Repository
+namespace winery_backend.LogisticianManufacturingOrder.Service
 {
     public class SupplierService : ISupplierService
     {

@@ -19,4 +19,9 @@ public class ProductCategoryService : IProductCategoryService {
     {
         return _productCategoryRepository.GetById(id);
     }
+
+    public string FindById(int? productCategoryId)
+    {
+        return _productCategoryRepository.FindById(productCategoryId);
+    }
 }

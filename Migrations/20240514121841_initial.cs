@@ -151,7 +151,8 @@ namespace winery_backend.Migrations
                     PackingRequestQuantities = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CustomerOrderId = table.Column<int>(type: "int", nullable: false),
-                    SectorId = table.Column<int>(type: "int", nullable: false)
+                    SectorId = table.Column<int>(type: "int", nullable: false),
+                    Packed = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -728,7 +729,7 @@ namespace winery_backend.Migrations
                     { 2, 1, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 12000m, 1, "[2]", "[6]" },
                     { 3, 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 13500m, 1, "[2,5]", "[6,1]" },
                     { 4, 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 9000m, 1, "[2,3,5]", "[2,3,4]" },
-                    { 5, 2, new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 9000m, 2, "[2]", "[4,10]" }
+                    { 5, 2, new DateTime(2024, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), 9000m, 2, "[1,4]", "[4,10]" }
                 });
 
             migrationBuilder.InsertData(
@@ -760,11 +761,11 @@ namespace winery_backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "PackingRequests",
-                columns: new[] { "PackingRequestId", "CustomerOrderId", "PackingRequestCreationDate", "PackingRequestDeadlineDate", "PackingRequestProductIds", "PackingRequestQuantities", "SectorId" },
+                columns: new[] { "PackingRequestId", "CustomerOrderId", "Packed", "PackingRequestCreationDate", "PackingRequestDeadlineDate", "PackingRequestProductIds", "PackingRequestQuantities", "SectorId" },
                 values: new object[,]
                 {
-                    { 1, 5, new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[1]", "[4]", 1 },
-                    { 2, 5, new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[4]", "[10]", 2 }
+                    { 1, 5, false, new DateTime(2024, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[1]", "[4]", 1 },
+                    { 2, 5, false, new DateTime(2024, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "[4]", "[10]", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -794,10 +795,11 @@ namespace winery_backend.Migrations
                 {
                     { 1, "in processing" },
                     { 2, "distributed" },
-                    { 3, "ready for pick up" },
-                    { 4, "picked up" },
-                    { 5, "in transport" },
-                    { 6, "delivered" }
+                    { 3, "packed" },
+                    { 4, "ready for pick up" },
+                    { 5, "picked up" },
+                    { 6, "in transport" },
+                    { 7, "delivered" }
                 });
 
             migrationBuilder.InsertData(

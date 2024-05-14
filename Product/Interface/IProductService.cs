@@ -14,4 +14,7 @@ public interface IProductService {
     List<Product> FindProductsByCustomerOrderId(List<int> productIds);
     int FindProductSectorIdByProductId(int id);
     List<Product> FindProductsBySectorId(int sectorId);
+    string FindProductNameById(int productId);
+    void UpdateProductQuantity(int productId, int productQuantity);
+    Product FindProductByProductName(string productName);
 }

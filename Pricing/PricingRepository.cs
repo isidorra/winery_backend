@@ -49,4 +49,9 @@ public class PricingRepository : IPricingRepository {
                 throw new Exception("Error while trying to edit price", ex);
             }
     }
+
+    public double? FindById(int? pricingId)
+    {
+        return _context.Pricing.First(x => x.Id == pricingId).Price;
+    }
 }

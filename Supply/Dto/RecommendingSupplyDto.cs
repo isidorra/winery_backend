@@ -3,9 +3,8 @@
     public class RecommendingSupplyDto
     {
         public double amount { get; set; }
-        public Supply fertilizer { get; set; }
-
-        public RecommendingSupplyDto(double amount, Supply fertilizer)
+        public Supply.Supply fertilizer { get; set; }
+        public RecommendingSupplyDto(long amount, Supply.Supply fertilizer)
         {
             this.amount = amount;
             this.fertilizer = fertilizer;
