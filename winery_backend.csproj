@@ -23,15 +23,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CompletedAndCancelledOrder\Dto\" />
+    <Folder Include="CompletedAndCancelledOrder\Models\" />
+    <Folder Include="CompletedAndCancelledOrder\Interface\" />
+    <Folder Include="CompletedAndCancelledOrder\Service\" />
+    <Folder Include="CompletedAndCancelledOrder\Repository\" />
     <Folder Include="LogisticianManufacturingOrder\Dto\" />
-    <Folder Include="LogisticianManufacturingOrder\Service\" />
+    <Folder Include="LogisticianReport\Dto\" />
+    <Folder Include="LogisticianReport\Interface\" />
+    <Folder Include="LogisticianReport\Models\" />
+    <Folder Include="LogisticianReport\Repository\" />
+    <Folder Include="LogisticianReport\Service\" />
     <Folder Include="Machine\Dto\" />
     <Folder Include="PackingRequest\Dto\" />
     <Folder Include="TransportRequest\Dto\" />
+    <Folder Include="VanDriverTransportRequest\Models\" />
+    <Folder Include="VanDriverTransportRequest\Interface\" />
+    <Folder Include="VanDriverTransportRequest\Service\" />
+    <Folder Include="VanDriverTransportRequest\Repository\" />
     <Folder Include="ViewLogisticsEmployees\Interface\" />
     <Folder Include="ViewLogisticsEmployees\Models\" />
     <Folder Include="ViewLogisticsEmployees\Service\" />
     <Folder Include="ViewLogisticsEmployees\Repository\" />
+    <Folder Include="WarehousemanPackingRequest\Interface\" />
+    <Folder Include="WarehousemanPackingRequest\Models\" />
+    <Folder Include="WarehousemanPackingRequest\Service\" />
+    <Folder Include="WarehousemanPackingRequest\Repository\" />
+    <Folder Include="WarehousemanSectorView\Models\" />
+    <Folder Include="WarehousemanSectorView\Interface\" />
+    <Folder Include="WarehousemanSectorView\Service\" />
+    <Folder Include="WarehousemanSectorView\Repository\" />
   </ItemGroup>
 
 </Project>

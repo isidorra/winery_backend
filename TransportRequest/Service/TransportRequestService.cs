@@ -31,5 +31,15 @@ namespace winery_backend.TransportRequest.Service
         {
             _transportRequestRepository.Delete(customerOrderId);
         }
+
+        public List<TransportRequest.Models.TransportRequest> FindByVanDriverId(int vanDriverId)
+        {
+            return _transportRequestRepository.FindByVanDriverId(vanDriverId);
+        }
+
+        public TransportRequest.Models.TransportRequest FindById(int transportRequestId)
+        {
+            return _transportRequestRepository.FindById(transportRequestId);
+        }
     }
 }

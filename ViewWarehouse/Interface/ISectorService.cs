@@ -11,5 +11,7 @@ namespace winery_backend.ViewWarehouse.Interface
         string FindSectorNameByWarehousemanId(int warehousemanId);
         List<Sector> FindAllSectors(int warehouseId);
         Sector FindSectorBySectorName(string sectorName);
+        int FindSectorIdByWarehousemanId(int warehousemanId);
+        Sector FindByWarehousemanId(int warehousemanId);
     }
 }

@@ -44,7 +44,7 @@ namespace winery_backend.Activity
             }
 
             Fertilization newFertilization = new Fertilization(fertilizationDto.startDate, fertilizationDto.parcelId, fertilizationDto.amount, fertilizationDto.supplyId);
-            Supply usedFertilizer = _supplyRepository.GetById(fertilizationDto.supplyId);
+            Supply.Supply usedFertilizer = _supplyRepository.GetById(fertilizationDto.supplyId);
             usedFertilizer.Amount -= fertilizationDto.amount;
             _supplyRepository.Update(usedFertilizer);
             return _activityRepository.Create(newFertilization);
@@ -78,7 +78,7 @@ namespace winery_backend.Activity
             }
 
             PesticideControl newPesticideControl = new PesticideControl(pesticideDto.startDate, pesticideDto.parcelId, pesticideDto.amount, pesticideDto.supplyId);
-            Supply usedPesticide = _supplyRepository.GetById(pesticideDto.supplyId);
+            Supply.Supply usedPesticide = _supplyRepository.GetById(pesticideDto.supplyId);
             usedPesticide.Amount -= pesticideDto.amount;
             _supplyRepository.Update(usedPesticide);
             return _activityRepository.Create(newPesticideControl);

@@ -91,8 +91,10 @@ namespace winery_backend.Activity
         public IActionResult RecommendFertilizer(int parcelId)
         {
             Parcel parcel = _parcelService.GetById(parcelId);
+
             double recommendedAmount = parcel.RecommendedFertilizerAmount();
-            Supply fertilizer = parcel.Grape.Fertilizer;
+            Supply.Supply fertilizer = parcel.Grape.Fertilizer;
+
             return Ok(new RecommendingSupplyDto(recommendedAmount, fertilizer));
         }
 
@@ -115,8 +117,10 @@ namespace winery_backend.Activity
         public IActionResult RecommendPesticide(int parcelId)
         {
             Parcel parcel = _parcelService.GetById(parcelId);
+
             double recommendedAmount = parcel.RecommendedPesticideAmount();
-            Supply pesticide = parcel.Grape.Pesticide;
+            Supply.Supply pesticide = parcel.Grape.Pesticide;
+
             return Ok(new RecommendingSupplyDto(recommendedAmount, pesticide));
         }
 

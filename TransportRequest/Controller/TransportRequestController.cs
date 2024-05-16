@@ -92,7 +92,7 @@
 
             CustomerOrder customerOrder = _customerOrderService.FindCustomerOrderById(customerOrderId);
 
-            if ((customerOrder.CustomerOrderDeliveryDeadline - pickUpPackagesDeadlineDate).TotalDays < 3 || !validDate(customerOrderId, pickUpPackagesDeadlineDate))
+            if((customerOrder.CustomerOrderDeliveryDeadline - pickUpPackagesDeadlineDate).TotalDays < 3 || !validDate(customerOrderId, pickUpPackagesDeadlineDate))
             {
                 return BadRequest("Transport mora da se zakaze najkasnije 3 dana do isporuke porudzbine");
             }

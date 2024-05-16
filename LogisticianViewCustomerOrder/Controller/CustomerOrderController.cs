@@ -39,8 +39,13 @@
 
             foreach (var customerOrder in allActiveCustomerOrders)
             {
-                LogisticianCustomerOrdersViewDto logisticianCustomerOrdersView = new LogisticianCustomerOrdersViewDto(customerOrder.CustomerOrderId, _realTimeOrderTrackingStatusService.FindStatusNameById(customerOrder.OrderTrackingStatusId), customerOrder.CustomerOrderDeliveryDeadline);
-                allActiveCustomerOrdersDto.Add(logisticianCustomerOrdersView);
+                string statusName = _realTimeOrderTrackingStatusService.FindStatusNameById(customerOrder.OrderTrackingStatusId);
+
+                if(!(statusName.Equals("delivered") || statusName.Equals("cancelled")))
+                {
+                    LogisticianCustomerOrdersViewDto logisticianCustomerOrdersView = new LogisticianCustomerOrdersViewDto(customerOrder.CustomerOrderId, _realTimeOrderTrackingStatusService.FindStatusNameById(customerOrder.OrderTrackingStatusId), customerOrder.CustomerOrderDeliveryDeadline);
+                    allActiveCustomerOrdersDto.Add(logisticianCustomerOrdersView);
+                }
             }
  
             return Ok(allActiveCustomerOrdersDto);

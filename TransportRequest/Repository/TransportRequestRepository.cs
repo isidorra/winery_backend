@@ -53,5 +53,15 @@ namespace winery_backend.TransportRequest.Repository
             _context.TransportRequests.Remove(FindByCustomerOrderId(customerOrderId));
             _context.SaveChanges();
         }
+
+        public List<TransportRequest.Models.TransportRequest> FindByVanDriverId(int vanDriverId)
+        {
+            return _context.TransportRequests.Where(x => x.VanDriverId == vanDriverId).ToList();
+        }
+
+        public TransportRequest.Models.TransportRequest FindById(int transportRequestId)
+        {
+            return _context.TransportRequests.First(x => x.TransportRequestId == transportRequestId);
+        }
     }
 }

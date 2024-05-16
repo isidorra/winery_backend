@@ -21,7 +21,7 @@
         }
 
         [HttpGet]
-        public IActionResult GetInformationAllSectors(string sectorName, string warehousemanName)
+        public IActionResult GetInformationOfSector(string sectorName, string warehousemanName)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

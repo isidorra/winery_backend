@@ -5,7 +5,7 @@ namespace winery_backend.Activity
     {
         public long Amount { get; set; }
         public int FertilizerId { get; set; }
-        public Supply Fertilizer { get; set; }
+        public Supply.Supply Fertilizer { get; set; }
 
         public Fertilization()
         {
