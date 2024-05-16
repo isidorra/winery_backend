@@ -1,5 +1,6 @@
-﻿
-public class Supply
+﻿namespace Supplies
+{
+    public class Supply
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,6 +17,7 @@ public class Supply
             Manufacturer = manufacturer;
         }
 
-        
+
     }
 
+}

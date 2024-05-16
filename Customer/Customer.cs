@@ -7,7 +7,7 @@ public class Customer : User
     public int? CityId { get; set; }
     
     // Navigation property
-    public City City { get; set; }
+    public virtual City City { get; set; }
 
     public Customer() { }
 

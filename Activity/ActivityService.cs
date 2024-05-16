@@ -3,6 +3,9 @@ using winery_backend.Activity.Dto;
 using winery_backend.Activity.Interface;
 using winery_backend.Invetory.Interface;
 using winery_backend.Vineyard;
+using winery_backend.Supplies;
+using Supplies;
+
 
 namespace winery_backend.Activity
 {
@@ -37,7 +40,7 @@ namespace winery_backend.Activity
             ICollection<Activity> allActivities = _activityRepository.GetAll();
             foreach (Activity activity in allActivities)
             {
-                if (fertilizationDto.startDate >= activity.StartDate && fertilizationDto.startDate <= activity.EndDate)
+                if (fertilizationDto.startDate >= activity.StartDate && fertilizationDto.startDate <= activity.EndDate && activity.Parcel.Id == fertilizationDto.parcelId)
                 {
                     return false;
                 }
@@ -56,7 +59,7 @@ namespace winery_backend.Activity
             ICollection<Activity> allActivities = _activityRepository.GetAll();
             foreach (Activity activity in allActivities)
             {
-                if (harvestingDto.startDate >= activity.StartDate && harvestingDto.startDate <= activity.EndDate)
+                if (harvestingDto.startDate >= activity.StartDate && harvestingDto.startDate <= activity.EndDate && activity.Parcel.Id == harvestingDto.parcelId)
                 {
                     return false;
                 }
@@ -71,7 +74,7 @@ namespace winery_backend.Activity
             ICollection<Activity> allActivities = _activityRepository.GetAll();
             foreach (Activity activity in allActivities)
             {
-                if (pesticideDto.startDate >= activity.StartDate && pesticideDto.startDate <= activity.EndDate)
+                if (pesticideDto.startDate >= activity.StartDate && pesticideDto.startDate <= activity.EndDate && activity.Parcel.Id == pesticideDto.parcelId)
                 {
                     return false;
                 }
@@ -89,7 +92,7 @@ namespace winery_backend.Activity
             ICollection<Activity> allActivities = _activityRepository.GetAll();
             foreach (Activity activity in allActivities)
             {
-                if (wateringDto.startDate >= activity.StartDate && wateringDto.startDate <= activity.EndDate)
+                if (wateringDto.startDate >= activity.StartDate && wateringDto.startDate <= activity.EndDate && activity.Parcel.Id == int.Parse(wateringDto.parcelId))
                 {
                     return false;
                 }

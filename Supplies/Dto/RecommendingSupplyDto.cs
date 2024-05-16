@@ -1,4 +1,6 @@
-﻿namespace winery_backend.Invetory.Dto
+﻿using Supplies;
+
+namespace winery_backend.Invetory.Dto
 {
     public class RecommendingSupplyDto
     {

@@ -2,6 +2,7 @@
 // using winery_backend.Activity;
 // using winery_backend.Vineyard;
 using Microsoft.EntityFrameworkCore;
+using Supplies;
 using winery_backend.Activity;
 using winery_backend.Invetory;
 using winery_backend.LogisticianManufacturingOrder.Models;
@@ -63,7 +64,6 @@ public class DataContext : DbContext
     public DbSet<Supplier> Suppliers { get; set; }
     public DbSet<SupplierProduct> SupplierProducts { get; set; }
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -79,15 +79,14 @@ public class DataContext : DbContext
         modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
-        modelBuilder.Entity<Activity>().ToTable("Activities");
+        modelBuilder.Entity<Activity>().ToTable("activities");
         modelBuilder.Entity<Fertilization>().ToTable("Fertelizations");
-        modelBuilder.Entity<Parcel>().ToTable("Parcels");
+        modelBuilder.Entity<Parcel>().ToTable("parcels");
         modelBuilder.Entity<Supply>().ToTable("Supplies");
         modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<Pricing>().ToTable("Pricing");
         modelBuilder.Entity<ProductCategory>().ToTable("ProductCategories");
         modelBuilder.Entity<Discount>().ToTable("Discounts");
-
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
@@ -186,7 +185,13 @@ public class DataContext : DbContext
             }
            );
 
-        modelBuilder.Entity<Parcel>().HasData(
+        modelBuilder.Entity<Parcel>()
+        .HasOne(p => p.Grape)
+        .WithMany()
+        .HasForeignKey(p => p.GrapeId);
+
+        modelBuilder.Entity<Parcel>()
+            .HasData(
             new Parcel
             {
                 Id = 1,
@@ -807,5 +812,10 @@ public class DataContext : DbContext
             new CustomerOrder(4, new Decimal(9000), new DateTime(2024, 5, 16), new DateTime(2024, 6, 24), 1, products4, quantities4, 2),
             new CustomerOrder(5, new Decimal(9000), new DateTime(2024, 5, 12), new DateTime(2024, 6, 30), 2, products2, quantities5, 2)
         );
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies();
     }
 }

@@ -1,4 +1,5 @@
-﻿using winery_backend.Invetory.Interface;
+﻿using Supplies;
+using winery_backend.Invetory.Interface;
 
 namespace winery_backend.Invetory
 {

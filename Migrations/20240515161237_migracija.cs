@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace winery_backend.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class migracija : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -626,20 +626,20 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Parcels",
+                name: "parcels",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     GrapeId = table.Column<int>(type: "int", nullable: false),
-                    Amount = table.Column<long>(type: "bigint", nullable: false),
-                    Size = table.Column<long>(type: "bigint", nullable: false)
+                    Amount = table.Column<double>(type: "double", nullable: false),
+                    Size = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Parcels", x => x.Id);
+                    table.PrimaryKey("PK_parcels", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Parcels_Grape_GrapeId",
+                        name: "FK_parcels_Grape_GrapeId",
                         column: x => x.GrapeId,
                         principalTable: "Grape",
                         principalColumn: "Id",
@@ -648,7 +648,7 @@ namespace winery_backend.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Activities",
+                name: "activities",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
@@ -660,11 +660,11 @@ namespace winery_backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Activities", x => x.Id);
+                    table.PrimaryKey("PK_activities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Activities_Parcels_ParcelId",
+                        name: "FK_activities_parcels_ParcelId",
                         column: x => x.ParcelId,
-                        principalTable: "Parcels",
+                        principalTable: "parcels",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -682,15 +682,79 @@ namespace winery_backend.Migrations
                 {
                     table.PrimaryKey("PK_Fertelizations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Fertelizations_Activities_Id",
-                        column: x => x.Id,
-                        principalTable: "Activities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Fertelizations_Supplies_FertilizerId",
                         column: x => x.FertilizerId,
                         principalTable: "Supplies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Fertelizations_activities_Id",
+                        column: x => x.Id,
+                        principalTable: "activities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Harvestings",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Amount = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Harvestings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Harvestings_activities_Id",
+                        column: x => x.Id,
+                        principalTable: "activities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "PesticideControls",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Amount = table.Column<long>(type: "bigint", nullable: false),
+                    PesticideId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PesticideControls", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PesticideControls_Supplies_PesticideId",
+                        column: x => x.PesticideId,
+                        principalTable: "Supplies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PesticideControls_activities_Id",
+                        column: x => x.Id,
+                        principalTable: "activities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Waterings",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Amount = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Waterings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Waterings_activities_Id",
+                        column: x => x.Id,
+                        principalTable: "activities",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -759,6 +823,17 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Machines",
+                columns: new[] { "Id", "Amount", "MachineState", "Manufacturer", "Name" },
+                values: new object[,]
+                {
+                    { 1, 150000L, true, "FarmTech Industries", "Harvesting Machine 2000" },
+                    { 2, 80000L, false, "WineTech Solutions", "Pressing Machine XL" },
+                    { 3, 120000L, true, "GrapeMaster Machinery", "Sorting Machine Pro" },
+                    { 4, 250000L, true, "VinoTech Innovations", "Fermentation Tank V2" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "PackingRequests",
                 columns: new[] { "PackingRequestId", "CustomerOrderId", "PackingRequestCreationDate", "PackingRequestDeadlineDate", "PackingRequestProductIds", "PackingRequestQuantities", "SectorId" },
                 values: new object[,]
@@ -816,6 +891,25 @@ namespace winery_backend.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Supplies",
+                columns: new[] { "Id", "Amount", "Manufacturer", "Name", "SupplyType" },
+                values: new object[,]
+                {
+                    { 1, 256L, "Gomex", "Grape Fertilizer 10-10-10", 0 },
+                    { 2, 752L, "Gomex", "Grape Fertilizer 72456", 0 },
+                    { 3, 96L, "VinoGrow Enterprises", "Vine Vitalizer 12-6-18", 0 },
+                    { 4, 457L, "Harvest AgroTech", "GrapePro Nutrient Mix 16-10-14", 0 },
+                    { 5, 18L, "VinoGrow Enterprises", "VineLife Essentials 10-12-18", 0 },
+                    { 6, 985L, "Gomex", "GrapeGrower's Blend 8-12-20", 0 },
+                    { 7, 182L, "Gomex", "Vineyard Armor Spray", 1 },
+                    { 8, 445L, "VinoWarden Agrochemicals", "GrapeProtect Insecticide", 1 },
+                    { 9, 32L, "VinoWarden Agrochemicals", "VineShield Pest Repellent", 1 },
+                    { 10, 771L, "Harvest AgroTech", "GrapeSafe Fungicide", 1 },
+                    { 11, 12L, "VinoGrow Enterprises", "VinePro Shield", 1 },
+                    { 12, 658L, "Gomex", "GrapeGuardian Pest Management", 1 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Warehouses",
                 columns: new[] { "WarehouseId", "NumberOfSectors", "NumberOfVanDrivers", "NumberOfWarehouseWorkers", "WarehouseArea", "WarehouseImage", "WarehouseLocation", "WarehouseName" },
                 values: new object[] { 1, 8, 5, 8, 5000.5m, "photo_warehouse.png", "Nova lokacija 123, Novi Sad", "Warehouse 1" });
@@ -827,6 +921,18 @@ namespace winery_backend.Migrations
                 {
                     { 1, new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, "john.doe@example.com", "John", null, 1, "Doe", "101", "hashedpassword", "1234567890", 9, "123 Main St", "johndoe" },
                     { 2, new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "3", "jane.doe@example.com", "Jane", "2", 0, "Doe", "202", "hashedpassword", "9876543210", 9, "456 Elm St", "janedoe" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Grape",
+                columns: new[] { "Id", "FertilizerId", "IsRipe", "Name", "PesticideId", "PlantingDate", "Quality", "Type" },
+                values: new object[,]
+                {
+                    { 1, 1, false, "Merlot", 7, new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 85, true },
+                    { 2, 3, true, "Chardonnay", 10, new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 92, false },
+                    { 3, 2, false, "Cabernet Sauvignon", 8, new DateTime(2018, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 88, true },
+                    { 4, 5, true, "Sauvignon Blanc", 11, new DateTime(2019, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 90, false },
+                    { 5, 6, true, "Syrah", 12, new DateTime(2021, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 87, true }
                 });
 
             migrationBuilder.InsertData(
@@ -847,9 +953,98 @@ namespace winery_backend.Migrations
                     { 1, 5m, "Indulge in the rich, velvety depths of Scarlet Elixir Red Wine. Crafted from the finest handpicked grapes, this robust red wine boasts a symphony of flavors, including notes of ripe berries, dark chocolate, and a hint of spice. Perfect for cozy evenings by the fireplace or elegant dinner parties, this wine tantalizes the palate with its smooth texture and lingering finish.", true, "Scarlet Elixir Red Wine", 1.5m, "wine1.png", 1, 1, 35, 1 }
                 });
 
+            migrationBuilder.InsertData(
+                table: "parcels",
+                columns: new[] { "Id", "Amount", "GrapeId", "Size" },
+                values: new object[,]
+                {
+                    { 1, 5000.0, 1, 2.0 },
+                    { 2, 3000.0, 2, 1.0 },
+                    { 3, 7000.0, 3, 3.0 },
+                    { 4, 4500.0, 4, 1.5 },
+                    { 5, 6000.0, 5, 2.5 },
+                    { 6, 4000.0, 1, 2.0 },
+                    { 7, 5500.0, 2, 2.2999999999999998 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "activities",
+                columns: new[] { "Id", "ActivityType", "EndDate", "IsCompleted", "ParcelId", "StartDate" },
+                values: new object[,]
+                {
+                    { new Guid("097b8815-f302-41ff-8c67-a5ccff7d2c2c"), 3, new DateTime(2024, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("1b099f2c-9f91-4549-8f1b-8ba8f89ad91e"), 2, new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 3, new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("2303cd5d-ffb3-4097-a6b7-c01db9a43c1f"), 3, new DateTime(2024, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("27d3b384-eb8f-43ab-a04b-e07753c4d591"), 2, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("31d4727f-5ecb-4e8f-9173-40554f132b37"), 0, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("429ab3b9-6531-4f8f-895c-c2ce3ba5b79e"), 2, new DateTime(2024, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("46377bef-f271-4328-94e5-4f0806b17f79"), 0, new DateTime(2024, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("481d5a07-4c10-4a91-9aff-151c8b4e6c2d"), 3, new DateTime(2024, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("931f714e-8e69-4f73-81a7-45558c4716a0"), 2, new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 2, new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("9592a7e9-699d-4cfa-8bee-b5b7a2116c44"), 1, new DateTime(2024, 5, 20, 12, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 5, 20, 11, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("9c101fe7-b931-4046-9c66-f122981e9c72"), 1, new DateTime(2024, 5, 1, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 5, 1, 8, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("a0808656-3b31-42b4-b471-160b5e12232a"), 0, new DateTime(2024, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 1, new DateTime(2024, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("a3a9644f-1ff0-46db-b3e4-0d84aadaa318"), 1, new DateTime(2024, 5, 10, 11, 30, 0, 0, DateTimeKind.Unspecified), false, 3, new DateTime(2024, 5, 10, 10, 30, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("ad277b56-92f0-4151-a22f-e59155f3a9cc"), 1, new DateTime(2024, 5, 5, 10, 0, 0, 0, DateTimeKind.Unspecified), false, 2, new DateTime(2024, 5, 5, 9, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("ba87ea17-bb99-47ce-94ca-05866f348d57"), 2, new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("c86b036c-7e83-4ab4-9110-62754bad07bc"), 0, new DateTime(2024, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 5, new DateTime(2024, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("ceb16f9b-6508-4560-9545-93ba24a321f7"), 3, new DateTime(2024, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), true, 1, new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("e3c56ae1-1eea-4fd1-88ae-5ff17266f11c"), 1, new DateTime(2024, 5, 15, 9, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 15, 8, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("e6d73e54-85af-41a7-9c42-ebeedec5c15c"), 0, new DateTime(2024, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("f092eb43-a88b-4d5c-b980-edc478f937e9"), 3, new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), false, 4, new DateTime(2024, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Fertelizations",
+                columns: new[] { "Id", "Amount", "FertilizerId" },
+                values: new object[,]
+                {
+                    { new Guid("1b099f2c-9f91-4549-8f1b-8ba8f89ad91e"), 1200L, 3 },
+                    { new Guid("27d3b384-eb8f-43ab-a04b-e07753c4d591"), 1500L, 1 },
+                    { new Guid("429ab3b9-6531-4f8f-895c-c2ce3ba5b79e"), 2000L, 2 },
+                    { new Guid("931f714e-8e69-4f73-81a7-45558c4716a0"), 800L, 2 },
+                    { new Guid("ba87ea17-bb99-47ce-94ca-05866f348d57"), 1000L, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Harvestings",
+                columns: new[] { "Id", "Amount" },
+                values: new object[,]
+                {
+                    { new Guid("31d4727f-5ecb-4e8f-9173-40554f132b37"), 9000L },
+                    { new Guid("46377bef-f271-4328-94e5-4f0806b17f79"), 15000L },
+                    { new Guid("a0808656-3b31-42b4-b471-160b5e12232a"), 12000L },
+                    { new Guid("c86b036c-7e83-4ab4-9110-62754bad07bc"), 13500L },
+                    { new Guid("e6d73e54-85af-41a7-9c42-ebeedec5c15c"), 10500L }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PesticideControls",
+                columns: new[] { "Id", "Amount", "PesticideId" },
+                values: new object[,]
+                {
+                    { new Guid("097b8815-f302-41ff-8c67-a5ccff7d2c2c"), 1000L, 3 },
+                    { new Guid("2303cd5d-ffb3-4097-a6b7-c01db9a43c1f"), 700L, 2 },
+                    { new Guid("481d5a07-4c10-4a91-9aff-151c8b4e6c2d"), 1500L, 2 },
+                    { new Guid("ceb16f9b-6508-4560-9545-93ba24a321f7"), 500L, 1 },
+                    { new Guid("f092eb43-a88b-4d5c-b980-edc478f937e9"), 1200L, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Waterings",
+                columns: new[] { "Id", "Amount" },
+                values: new object[,]
+                {
+                    { new Guid("9592a7e9-699d-4cfa-8bee-b5b7a2116c44"), 4500L },
+                    { new Guid("9c101fe7-b931-4046-9c66-f122981e9c72"), 5000L },
+                    { new Guid("a3a9644f-1ff0-46db-b3e4-0d84aadaa318"), 6000L },
+                    { new Guid("ad277b56-92f0-4151-a22f-e59155f3a9cc"), 7000L },
+                    { new Guid("e3c56ae1-1eea-4fd1-88ae-5ff17266f11c"), 5500L }
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Activities_ParcelId",
-                table: "Activities",
+                name: "IX_activities_ParcelId",
+                table: "activities",
                 column: "ParcelId");
 
             migrationBuilder.CreateIndex(
@@ -873,9 +1068,14 @@ namespace winery_backend.Migrations
                 column: "PesticideId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Parcels_GrapeId",
-                table: "Parcels",
+                name: "IX_parcels_GrapeId",
+                table: "parcels",
                 column: "GrapeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PesticideControls_PesticideId",
+                table: "PesticideControls",
+                column: "PesticideId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pricing_DiscountId",
@@ -909,6 +1109,9 @@ namespace winery_backend.Migrations
                 name: "Fertelizations");
 
             migrationBuilder.DropTable(
+                name: "Harvestings");
+
+            migrationBuilder.DropTable(
                 name: "Logisticians");
 
             migrationBuilder.DropTable(
@@ -925,6 +1128,9 @@ namespace winery_backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "PackingRequests");
+
+            migrationBuilder.DropTable(
+                name: "PesticideControls");
 
             migrationBuilder.DropTable(
                 name: "Products");
@@ -966,10 +1172,10 @@ namespace winery_backend.Migrations
                 name: "Warehouses");
 
             migrationBuilder.DropTable(
-                name: "Cities");
+                name: "Waterings");
 
             migrationBuilder.DropTable(
-                name: "Activities");
+                name: "Cities");
 
             migrationBuilder.DropTable(
                 name: "Pricing");
@@ -981,10 +1187,13 @@ namespace winery_backend.Migrations
                 name: "Employees");
 
             migrationBuilder.DropTable(
-                name: "Parcels");
+                name: "activities");
 
             migrationBuilder.DropTable(
                 name: "Discounts");
+
+            migrationBuilder.DropTable(
+                name: "parcels");
 
             migrationBuilder.DropTable(
                 name: "Grape");

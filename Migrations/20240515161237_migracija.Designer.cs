@@ -11,15 +11,18 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace winery_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240513174324_initial")]
-    partial class initial
+    [Migration("20240515161237_migracija")]
+    partial class migracija
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.5")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -752,6 +755,104 @@ namespace winery_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Supplies", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 256L,
+                            Manufacturer = "Gomex",
+                            Name = "Grape Fertilizer 10-10-10",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 752L,
+                            Manufacturer = "Gomex",
+                            Name = "Grape Fertilizer 72456",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 96L,
+                            Manufacturer = "VinoGrow Enterprises",
+                            Name = "Vine Vitalizer 12-6-18",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 457L,
+                            Manufacturer = "Harvest AgroTech",
+                            Name = "GrapePro Nutrient Mix 16-10-14",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = 18L,
+                            Manufacturer = "VinoGrow Enterprises",
+                            Name = "VineLife Essentials 10-12-18",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Amount = 985L,
+                            Manufacturer = "Gomex",
+                            Name = "GrapeGrower's Blend 8-12-20",
+                            SupplyType = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Amount = 182L,
+                            Manufacturer = "Gomex",
+                            Name = "Vineyard Armor Spray",
+                            SupplyType = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Amount = 445L,
+                            Manufacturer = "VinoWarden Agrochemicals",
+                            Name = "GrapeProtect Insecticide",
+                            SupplyType = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Amount = 32L,
+                            Manufacturer = "VinoWarden Agrochemicals",
+                            Name = "VineShield Pest Repellent",
+                            SupplyType = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Amount = 771L,
+                            Manufacturer = "Harvest AgroTech",
+                            Name = "GrapeSafe Fungicide",
+                            SupplyType = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Amount = 12L,
+                            Manufacturer = "VinoGrow Enterprises",
+                            Name = "VinePro Shield",
+                            SupplyType = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Amount = 658L,
+                            Manufacturer = "Gomex",
+                            Name = "GrapeGuardian Pest Management",
+                            SupplyType = 1
+                        });
                 });
 
             modelBuilder.Entity("winery_backend.Activity.Activity", b =>
@@ -779,7 +880,7 @@ namespace winery_backend.Migrations
 
                     b.HasIndex("ParcelId");
 
-                    b.ToTable("Activities", (string)null);
+                    b.ToTable("activities", (string)null);
 
                     b.UseTptMappingStrategy();
                 });
@@ -1036,6 +1137,40 @@ namespace winery_backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Machines", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 150000L,
+                            MachineState = true,
+                            Manufacturer = "FarmTech Industries",
+                            Name = "Harvesting Machine 2000"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 80000L,
+                            MachineState = false,
+                            Manufacturer = "WineTech Solutions",
+                            Name = "Pressing Machine XL"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 120000L,
+                            MachineState = true,
+                            Manufacturer = "GrapeMaster Machinery",
+                            Name = "Sorting Machine Pro"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 250000L,
+                            MachineState = true,
+                            Manufacturer = "VinoTech Innovations",
+                            Name = "Fermentation Tank V2"
+                        });
                 });
 
             modelBuilder.Entity("winery_backend.Machine.MachineOrder", b =>
@@ -1341,6 +1476,63 @@ namespace winery_backend.Migrations
                     b.HasIndex("PesticideId");
 
                     b.ToTable("Grape");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FertilizerId = 1,
+                            IsRipe = false,
+                            Name = "Merlot",
+                            PesticideId = 7,
+                            PlantingDate = new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quality = 85,
+                            Type = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FertilizerId = 3,
+                            IsRipe = true,
+                            Name = "Chardonnay",
+                            PesticideId = 10,
+                            PlantingDate = new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quality = 92,
+                            Type = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FertilizerId = 2,
+                            IsRipe = false,
+                            Name = "Cabernet Sauvignon",
+                            PesticideId = 8,
+                            PlantingDate = new DateTime(2018, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quality = 88,
+                            Type = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FertilizerId = 5,
+                            IsRipe = true,
+                            Name = "Sauvignon Blanc",
+                            PesticideId = 11,
+                            PlantingDate = new DateTime(2019, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quality = 90,
+                            Type = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            FertilizerId = 6,
+                            IsRipe = true,
+                            Name = "Syrah",
+                            PesticideId = 12,
+                            PlantingDate = new DateTime(2021, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Quality = 87,
+                            Type = true
+                        });
                 });
 
             modelBuilder.Entity("winery_backend.Vineyard.Parcel", b =>
@@ -1351,20 +1543,71 @@ namespace winery_backend.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("Amount")
-                        .HasColumnType("bigint");
+                    b.Property<double>("Amount")
+                        .HasColumnType("double");
 
                     b.Property<int>("GrapeId")
                         .HasColumnType("int");
 
-                    b.Property<long>("Size")
-                        .HasColumnType("bigint");
+                    b.Property<double>("Size")
+                        .HasColumnType("double");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GrapeId");
 
-                    b.ToTable("Parcels", (string)null);
+                    b.ToTable("parcels", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 5000.0,
+                            GrapeId = 1,
+                            Size = 2.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 3000.0,
+                            GrapeId = 2,
+                            Size = 1.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 7000.0,
+                            GrapeId = 3,
+                            Size = 3.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 4500.0,
+                            GrapeId = 4,
+                            Size = 1.5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = 6000.0,
+                            GrapeId = 5,
+                            Size = 2.5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Amount = 4000.0,
+                            GrapeId = 1,
+                            Size = 2.0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Amount = 5500.0,
+                            GrapeId = 2,
+                            Size = 2.2999999999999998
+                        });
                 });
 
             modelBuilder.Entity("Administrator", b =>
@@ -1446,6 +1689,259 @@ namespace winery_backend.Migrations
                     b.HasIndex("FertilizerId");
 
                     b.ToTable("Fertelizations", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ba87ea17-bb99-47ce-94ca-05866f348d57"),
+                            ActivityType = 2,
+                            EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 1,
+                            StartDate = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1000L,
+                            FertilizerId = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("931f714e-8e69-4f73-81a7-45558c4716a0"),
+                            ActivityType = 2,
+                            EndDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 2,
+                            StartDate = new DateTime(2024, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 800L,
+                            FertilizerId = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("1b099f2c-9f91-4549-8f1b-8ba8f89ad91e"),
+                            ActivityType = 2,
+                            EndDate = new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 3,
+                            StartDate = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1200L,
+                            FertilizerId = 3
+                        },
+                        new
+                        {
+                            Id = new Guid("27d3b384-eb8f-43ab-a04b-e07753c4d591"),
+                            ActivityType = 2,
+                            EndDate = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 4,
+                            StartDate = new DateTime(2024, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1500L,
+                            FertilizerId = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("429ab3b9-6531-4f8f-895c-c2ce3ba5b79e"),
+                            ActivityType = 2,
+                            EndDate = new DateTime(2024, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 5,
+                            StartDate = new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 2000L,
+                            FertilizerId = 2
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Harvesting", b =>
+                {
+                    b.HasBaseType("winery_backend.Activity.Activity");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.ToTable("Harvestings", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a0808656-3b31-42b4-b471-160b5e12232a"),
+                            ActivityType = 0,
+                            EndDate = new DateTime(2024, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 1,
+                            StartDate = new DateTime(2024, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 12000L
+                        },
+                        new
+                        {
+                            Id = new Guid("31d4727f-5ecb-4e8f-9173-40554f132b37"),
+                            ActivityType = 0,
+                            EndDate = new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 2,
+                            StartDate = new DateTime(2024, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 9000L
+                        },
+                        new
+                        {
+                            Id = new Guid("46377bef-f271-4328-94e5-4f0806b17f79"),
+                            ActivityType = 0,
+                            EndDate = new DateTime(2024, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 3,
+                            StartDate = new DateTime(2024, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 15000L
+                        },
+                        new
+                        {
+                            Id = new Guid("e6d73e54-85af-41a7-9c42-ebeedec5c15c"),
+                            ActivityType = 0,
+                            EndDate = new DateTime(2024, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 4,
+                            StartDate = new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 10500L
+                        },
+                        new
+                        {
+                            Id = new Guid("c86b036c-7e83-4ab4-9110-62754bad07bc"),
+                            ActivityType = 0,
+                            EndDate = new DateTime(2024, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 5,
+                            StartDate = new DateTime(2024, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 13500L
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.PesticideControl", b =>
+                {
+                    b.HasBaseType("winery_backend.Activity.Activity");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("PesticideId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PesticideId");
+
+                    b.ToTable("PesticideControls", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ceb16f9b-6508-4560-9545-93ba24a321f7"),
+                            ActivityType = 3,
+                            EndDate = new DateTime(2024, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 1,
+                            StartDate = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 500L,
+                            PesticideId = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("2303cd5d-ffb3-4097-a6b7-c01db9a43c1f"),
+                            ActivityType = 3,
+                            EndDate = new DateTime(2024, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 2,
+                            StartDate = new DateTime(2024, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 700L,
+                            PesticideId = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("097b8815-f302-41ff-8c67-a5ccff7d2c2c"),
+                            ActivityType = 3,
+                            EndDate = new DateTime(2024, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = true,
+                            ParcelId = 3,
+                            StartDate = new DateTime(2024, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1000L,
+                            PesticideId = 3
+                        },
+                        new
+                        {
+                            Id = new Guid("f092eb43-a88b-4d5c-b980-edc478f937e9"),
+                            ActivityType = 3,
+                            EndDate = new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 4,
+                            StartDate = new DateTime(2024, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1200L,
+                            PesticideId = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("481d5a07-4c10-4a91-9aff-151c8b4e6c2d"),
+                            ActivityType = 3,
+                            EndDate = new DateTime(2024, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 5,
+                            StartDate = new DateTime(2024, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 1500L,
+                            PesticideId = 2
+                        });
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Watering", b =>
+                {
+                    b.HasBaseType("winery_backend.Activity.Activity");
+
+                    b.Property<long>("Amount")
+                        .HasColumnType("bigint");
+
+                    b.ToTable("Waterings", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("9c101fe7-b931-4046-9c66-f122981e9c72"),
+                            ActivityType = 1,
+                            EndDate = new DateTime(2024, 5, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 1,
+                            StartDate = new DateTime(2024, 5, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 5000L
+                        },
+                        new
+                        {
+                            Id = new Guid("ad277b56-92f0-4151-a22f-e59155f3a9cc"),
+                            ActivityType = 1,
+                            EndDate = new DateTime(2024, 5, 5, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 2,
+                            StartDate = new DateTime(2024, 5, 5, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 7000L
+                        },
+                        new
+                        {
+                            Id = new Guid("a3a9644f-1ff0-46db-b3e4-0d84aadaa318"),
+                            ActivityType = 1,
+                            EndDate = new DateTime(2024, 5, 10, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 3,
+                            StartDate = new DateTime(2024, 5, 10, 10, 30, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 6000L
+                        },
+                        new
+                        {
+                            Id = new Guid("e3c56ae1-1eea-4fd1-88ae-5ff17266f11c"),
+                            ActivityType = 1,
+                            EndDate = new DateTime(2024, 5, 15, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 4,
+                            StartDate = new DateTime(2024, 5, 15, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 5500L
+                        },
+                        new
+                        {
+                            Id = new Guid("9592a7e9-699d-4cfa-8bee-b5b7a2116c44"),
+                            ActivityType = 1,
+                            EndDate = new DateTime(2024, 5, 20, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsCompleted = false,
+                            ParcelId = 5,
+                            StartDate = new DateTime(2024, 5, 20, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            Amount = 4500L
+                        });
                 });
 
             modelBuilder.Entity("Customer", b =>
@@ -1614,6 +2110,41 @@ namespace winery_backend.Migrations
                         .IsRequired();
 
                     b.Navigation("Fertilizer");
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Harvesting", b =>
+                {
+                    b.HasOne("winery_backend.Activity.Activity", null)
+                        .WithOne()
+                        .HasForeignKey("winery_backend.Activity.Harvesting", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.PesticideControl", b =>
+                {
+                    b.HasOne("winery_backend.Activity.Activity", null)
+                        .WithOne()
+                        .HasForeignKey("winery_backend.Activity.PesticideControl", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Supply", "Pesticide")
+                        .WithMany()
+                        .HasForeignKey("PesticideId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pesticide");
+                });
+
+            modelBuilder.Entity("winery_backend.Activity.Watering", b =>
+                {
+                    b.HasOne("winery_backend.Activity.Activity", null)
+                        .WithOne()
+                        .HasForeignKey("winery_backend.Activity.Watering", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

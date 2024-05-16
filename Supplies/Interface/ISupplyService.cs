@@ -1,4 +1,6 @@
-﻿namespace winery_backend.Invetory.Interface
+﻿using Supplies;
+
+namespace winery_backend.Invetory.Interface
 {
     public interface ISupplyService
     {

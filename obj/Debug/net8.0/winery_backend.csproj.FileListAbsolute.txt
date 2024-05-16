@@ -773,3 +773,5 @@ C:\Users\MilosPC\git_projekti\winery_backend\obj\Debug\net8.0\refint\winery_back
 C:\Users\MilosPC\git_projekti\winery_backend\obj\Debug\net8.0\winery_backend.pdb
 C:\Users\MilosPC\git_projekti\winery_backend\obj\Debug\net8.0\winery_backend.genruntimeconfig.cache
 C:\Users\MilosPC\git_projekti\winery_backend\obj\Debug\net8.0\ref\winery_backend.dll
+C:\Users\Antonela\Desktop\Fakuktet\4\Inženjerstvo informacionih sistema\Projekat\Backend\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Antonela\Desktop\Fakuktet\4\Inženjerstvo informacionih sistema\Projekat\Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll

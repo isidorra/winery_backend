@@ -1,11 +1,13 @@
 ﻿
+using Supplies;
+
 namespace winery_backend.Activity
 {
     public class Fertilization : Activity
     {
         public long Amount { get; set; }
         public int FertilizerId { get; set; }
-        public Supply Fertilizer { get; set; }
+        public virtual Supply Fertilizer { get; set; }
 
         public Fertilization()
         {

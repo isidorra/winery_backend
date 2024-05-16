@@ -1,10 +1,12 @@
-﻿namespace winery_backend.Activity
+﻿using Supplies;
+
+namespace winery_backend.Activity
 {
     public class PesticideControl : Activity
     {
         public long Amount { get; set; }
         public int PesticideId { get; set; }
-        public Supply Pesticide { get; set; }
+        public virtual Supply Pesticide { get; set; }
 
         public PesticideControl()
         {
