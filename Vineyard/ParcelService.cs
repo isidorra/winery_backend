@@ -24,7 +24,7 @@ namespace winery_backend.Vineyard
 
             foreach (Parcel parcel in allParcels)
             {
-                if (parcel.Grape.Name.Equals(grape))
+                if (parcel.Grape.Id == int.Parse(grape))
                 {
                     fillteredParcels.Add(parcel);
                 }

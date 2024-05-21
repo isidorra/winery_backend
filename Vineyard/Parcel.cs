@@ -5,8 +5,8 @@ namespace winery_backend.Vineyard
     public class Parcel
     {
         public int Id { get; set; }
-        public Grape Grape { get; set; }
         public int GrapeId { get; set; }
+        public virtual Grape Grape { get; set; }
         public double Amount { get; set; } //in kg
         public double Size { get; set; } //in ha
 
@@ -71,7 +71,7 @@ namespace winery_backend.Vineyard
                 coef = 0.7; //younger grapes need less pesticide
             }
 
-            return 1 * this.Size * (1 / Grape.Quality) * coef; //1kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape
+            return 1 * this.Size * ((double)1.0 / Grape.Quality) * coef; //1kg per ha, inverse proportional to the quality of grapes and having in mind the age of the grape
         }
     }
 }

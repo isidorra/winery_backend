@@ -1,4 +1,5 @@
-﻿using winery_backend.Invetory.Interface;
+﻿using Supplies;
+using winery_backend.Supplies.Interface;
 
 namespace winery_backend.Invetory
 {
@@ -11,23 +12,23 @@ namespace winery_backend.Invetory
             _context = context;
         }
 
-        public bool Create(Supply.Supply supply)
+        public bool Create(Supply supply)
         {
             _context.Add(supply);
             return Save();
         }
 
-        public ICollection<Supply.Supply> GetAll()
+        public ICollection<Supply> GetAll()
         {
             return _context.Supplies.OrderBy(s => s.Id).ToList();
         }
 
-        public Supply.Supply GetById(int id)
+        public Supply GetById(int id)
         {
             return _context.Supplies.Where(s => s.Id.Equals(id)).FirstOrDefault();
         }
 
-        public Supply.Supply GetByName(string name)
+        public Supply GetByName(string name)
         {
             return _context.Supplies.Where(s => s.Name.Equals(name)).FirstOrDefault();
         }
@@ -38,7 +39,7 @@ namespace winery_backend.Invetory
             return saved > 0 ? true : false;
         }
 
-        public void Update(Supply.Supply supply)
+        public void Update(Supply supply)
         {
             var editedSupply = _context.Supplies.FirstOrDefault(s => s.Id == supply.Id);
             if (editedSupply == null)

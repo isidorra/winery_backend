@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using Supplies;
+using System.Numerics;
 
 namespace winery_backend.Vineyard
 {
@@ -11,9 +12,10 @@ namespace winery_backend.Vineyard
         public int Quality { get; set; }
         public DateTime PlantingDate { get; set; }
         public int? FertilizerId { get; set; }
-        public Supply.Supply? Fertilizer { get; set; }
+        public virtual Supply? Fertilizer { get; set; }
         public int? PesticideId { get; set; }
-        public Supply.Supply? Pesticide { get; set; }
+        public virtual Supply? Pesticide { get; set; }
+        
         public Grape() { }
 
         public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate)

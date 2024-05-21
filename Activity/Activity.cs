@@ -10,7 +10,7 @@ namespace winery_backend.Activity
         public bool IsCompleted { get; set; }
         public ActivityType ActivityType { get; set; }
         public int ParcelId { get; set; }
-        public Parcel Parcel { get; set; }
+        public virtual Parcel Parcel { get; set; }
 
         public Activity()
         {

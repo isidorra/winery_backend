@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Connections.Features;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using winery_backend.Supplies;
 using winery_backend.Activity.Dto;
 using winery_backend.Activity.Interface;
 using winery_backend.Invetory.Dto;
 using winery_backend.Vineyard;
 using winery_backend.Vineyard.Interface;
+using Supplies;
 
 namespace winery_backend.Activity
 {
@@ -92,9 +95,14 @@ namespace winery_backend.Activity
         {
             Parcel parcel = _parcelService.GetById(parcelId);
 
-            double recommendedAmount = parcel.RecommendedFertilizerAmount();
-            Supply.Supply fertilizer = parcel.Grape.Fertilizer;
+            double coef = 1;
+            if (parcel.Grape.PlantingDate.AddYears(3) > DateTime.Now) //young grape 
+            {
+                coef = 0.7; //younger grapes need less fertilizer
+            }
 
+            double recommendedAmount = 10000 * parcel.Size * ((double)1.0 / parcel.Grape.Quality) * coef;
+            Supply fertilizer = parcel.Grape.Fertilizer;
             return Ok(new RecommendingSupplyDto(recommendedAmount, fertilizer));
         }
 
@@ -119,7 +127,7 @@ namespace winery_backend.Activity
             Parcel parcel = _parcelService.GetById(parcelId);
 
             double recommendedAmount = parcel.RecommendedPesticideAmount();
-            Supply.Supply pesticide = parcel.Grape.Pesticide;
+            Supply pesticide = parcel.Grape.Pesticide;
 
             return Ok(new RecommendingSupplyDto(recommendedAmount, pesticide));
         }

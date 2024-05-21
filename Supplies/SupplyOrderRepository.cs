@@ -1,7 +1,6 @@
-﻿using winery_backend.Supply.Interface;
+﻿using winery_backend.Supplies.Interface;
 
-namespace winery_backend.Supply
-{
+
     public class SupplyOrderRepository : ISupplyOrderRepository
     {
         private readonly DataContext _context;
@@ -10,4 +9,4 @@ namespace winery_backend.Supply
             _context = context;
         }
     }
-}
+

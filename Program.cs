@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using winery_backend.Activity;
+using winery_backend.Activity.Interface;
+using winery_backend.Invetory;
+using winery_backend.Supplies.Interface;
 using winery_backend.LogisticianManufacturingOrder.Interface;
 using winery_backend.LogisticianManufacturingOrder.Repository;
 using winery_backend.LogisticianManufacturingOrder.Service;
@@ -13,14 +17,14 @@ using winery_backend.PackingRequest.Repository;
 using winery_backend.PackingRequest.Service;
 using winery_backend.Repository;
 using winery_backend.Services;
-using winery_backend.Supply;
-using winery_backend.Supply.Interface;
 using winery_backend.TransportRequest.Interface;
 using winery_backend.TransportRequest.Repository;
 using winery_backend.TransportRequest.Service;
 using winery_backend.ViewWarehouse.Interface;
 using winery_backend.ViewWarehouse.Repository;
 using winery_backend.ViewWarehouse.Service;
+using winery_backend.Vineyard;
+using winery_backend.Vineyard.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,6 +69,12 @@ builder.Services.AddDbContext<DataContext>(options => {
 });
 
 //Dependency Injection
+builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
+builder.Services.AddScoped<ISupplyService, SupplyService>();
+builder.Services.AddScoped<ISupplyRepository, SupplyRepository>();
+builder.Services.AddScoped<IParcelService, ParcelService>();
+builder.Services.AddScoped<IParcelRepository, ParcelRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();

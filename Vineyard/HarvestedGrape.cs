@@ -4,6 +4,10 @@
     {
         public int Id { get; set; }
         public int GrapeId { get; set; }
-        public Grape? Grape { get; set; }
+        public virtual Grape? Grape { get; set; }
+
+        public HarvestedGrape()
+        {
+        }
     }
 }

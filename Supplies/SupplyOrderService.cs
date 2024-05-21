@@ -1,8 +1,8 @@
-﻿using winery_backend.Supply.Interface;
+﻿
 
-namespace winery_backend.Supply
-{
-    public class SupplyOrderService : ISupplyOrderService
+using winery_backend.Supplies.Interface;
+
+public class SupplyOrderService : ISupplyOrderService
     {
         private readonly ISupplyOrderRepository _supplyOrderRepository;
         public SupplyOrderService(ISupplyOrderRepository supplyOrderRepository)
@@ -10,4 +10,4 @@ namespace winery_backend.Supply
             _supplyOrderRepository = supplyOrderRepository;
         }
     }
-}
+

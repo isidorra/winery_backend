@@ -7,9 +7,9 @@ public class Product
     public int? Quantity { get; set; }
     public bool? IsApproved { get; set; }
     public int? PricingId { get; set; }
-    public Pricing? Pricing { get; set; }
+    public virtual Pricing? Pricing { get; set; }
     public int? ProductCategoryId { get; set; }
-    public ProductCategory? ProductCategory { get; set; }
+    public virtual ProductCategory? ProductCategory { get; set; }
     public decimal PackagingSize { get; set; }
     public decimal AlcoholPercentage { get; set; }
     public int SectorId { get; set; }

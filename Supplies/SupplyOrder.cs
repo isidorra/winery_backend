@@ -1,5 +1,4 @@
-﻿namespace winery_backend.Invetory
-{
+﻿
     public class SupplyOrder
     {
         public Guid Id { get; set; }
@@ -26,4 +25,4 @@
             SupplierId = supplierId;
         }
     }
-}
+

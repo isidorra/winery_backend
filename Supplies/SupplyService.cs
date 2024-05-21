@@ -1,5 +1,6 @@
-﻿using winery_backend.Invetory.Interface;
-using winery_backend.Supply;
+﻿using winery_backend.Supplies.Interface;
+
+﻿using Supplies;
 
 namespace winery_backend.Invetory
 {
@@ -12,12 +13,12 @@ namespace winery_backend.Invetory
             _supplyRepository = supplyRepository;
         }
 
-        public ICollection<Supply.Supply> GetAll()
+        public ICollection<Supply> GetAll()
         {
-            throw new NotImplementedException();
+           return _supplyRepository.GetAll();
         }
 
-        public Supply.Supply GetById(int id)
+        public Supply GetById(int id)
         {
             throw new NotImplementedException();
         }

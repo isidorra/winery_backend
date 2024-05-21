@@ -1,4 +1,5 @@
-﻿namespace winery_backend.Supply
+
+﻿namespace Supplies
 {
     public class Supply
     {
