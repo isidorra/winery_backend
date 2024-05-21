@@ -45,6 +45,10 @@ public class DataContext : DbContext
     public DbSet<ProductCategory> ProductCategories { get; set; }
     public DbSet<Discount> Discounts { get; set; }
 
+    //-----------CART AND PRODUCT ORDERS-------------------------------------------
+    public DbSet<Cart> Carts { get; set; }
+    public DbSet<CartProduct> CartProducts { get; set; }
+
     //-----------LOGISTICS---------------------------------------------------------
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
     public DbSet<RealTimeOrderTrackingStatus> RealTimeOrderTrackingStatuses { get; set; }
@@ -88,7 +92,8 @@ public class DataContext : DbContext
         modelBuilder.Entity<Pricing>().ToTable("Pricing");
         modelBuilder.Entity<ProductCategory>().ToTable("ProductCategories");
         modelBuilder.Entity<Discount>().ToTable("Discounts");
-
+        modelBuilder.Entity<Cart>().ToTable("Carts");
+        modelBuilder.Entity<CartProduct>().ToTable("CartProducts");
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
@@ -117,7 +122,7 @@ public class DataContext : DbContext
         );
 
         modelBuilder.Entity<Supply>().HasData(
-            new Supply { Id = 1, Name = "Grape Fertilizer 10-10-10", SupplyType = SupplyType.Fertilizer, Amount = 256, Manufacturer = "Gomex"},
+            new Supply { Id = 1, Name = "Grape Fertilizer 10-10-10", SupplyType = SupplyType.Fertilizer, Amount = 256, Manufacturer = "Gomex" },
             new Supply { Id = 2, Name = "Grape Fertilizer 72456", SupplyType = SupplyType.Fertilizer, Amount = 752, Manufacturer = "Gomex" },
             new Supply { Id = 3, Name = "Vine Vitalizer 12-6-18", SupplyType = SupplyType.Fertilizer, Amount = 96, Manufacturer = "VinoGrow Enterprises" },
             new Supply { Id = 4, Name = "GrapePro Nutrient Mix 16-10-14", SupplyType = SupplyType.Fertilizer, Amount = 457, Manufacturer = "Harvest AgroTech" },
@@ -572,6 +577,43 @@ public class DataContext : DbContext
             }
         );
 
+        modelBuilder.Entity<Cart>().HasData(
+            new Cart
+            {
+                Id = 1,
+                CustomerId = 1
+            },
+            new Cart
+            {
+                Id = 2,
+                CustomerId = 2
+            }
+        );
+
+        modelBuilder.Entity<CartProduct>().HasData(
+            new CartProduct
+            {
+                Id = 1,
+                CartId = 1,
+                ProductId = 1,
+                Quantity = 5
+            },
+            new CartProduct
+            {
+                Id = 2,
+                CartId = 1,
+                ProductId = 2,
+                Quantity = 3
+            },
+            new CartProduct
+            {
+                Id = 3,
+                CartId = 2,
+                ProductId = 2,
+                Quantity = 2
+            }
+        );
+
         modelBuilder.Entity<Employee>().HasData(
             new Employee
             {
@@ -677,9 +719,9 @@ public class DataContext : DbContext
                 Price = 72
             }
         );
-        
 
-        
+
+
         modelBuilder.Entity<Product>().HasData(
             new Product
             {

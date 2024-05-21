@@ -10,14 +10,16 @@ public class AuthController : Controller
     private readonly IAuthService _authService;
     private readonly ICustomerService _customerService;
     private readonly IEmployeeService _employeeService;
+    private readonly ICartService _cartService;
 
     public JwtSecurityToken globalToken = null;
 
-    public AuthController(IAuthService authService, ICustomerService customerService, IEmployeeService employeeService)
+    public AuthController(IAuthService authService, ICustomerService customerService, IEmployeeService employeeService, ICartService cartService)
     {
         _authService = authService;
         _customerService = customerService;
         _employeeService = employeeService;
+        _cartService = cartService;
     }
 
     [HttpPost("register")]
@@ -36,7 +38,12 @@ public class AuthController : Controller
         {
             return BadRequest(ModelState);
         }
-
+        
+        Cart cart = new Cart(customer.Id);
+        if (!_cartService.Create(cart))
+        {
+            return BadRequest(ModelState);
+        }
 
         return Ok(new { Username = customer.Username, Role = customer.Role });
     }
