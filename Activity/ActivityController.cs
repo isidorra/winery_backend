@@ -21,6 +21,7 @@ namespace winery_backend.Activity
         public ActivityController(IActivityService activityService, IParcelService parcelService)
         {
             _activityService = activityService;
+            _activityService.UpdateFinishedActivities();
             _parcelService = parcelService;
         }
 

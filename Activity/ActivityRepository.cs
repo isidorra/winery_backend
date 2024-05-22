@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Supplies;
+using System.Collections.ObjectModel;
 using winery_backend.Activity.Interface;
 
 namespace winery_backend.Activity
@@ -45,6 +46,30 @@ namespace winery_backend.Activity
             }
 
             return activitiesForParcel;
+        }
+
+        public void Update(Activity activity)
+        {
+            var editedActivity = _context.Activities.FirstOrDefault(a => a.Id == activity.Id);
+            if (editedActivity == null)
+            {
+                throw new ArgumentException("Activity not found");
+            }
+
+            try
+            {
+                _context.Update(activity);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while trying to edit activity", ex);
+            }
+        }
+
+        public ICollection<Harvesting> GetAllHarvestings()
+        {
+            return _context.Harvestings.OrderBy(a => a.Id).ToList();
         }
     }
 }

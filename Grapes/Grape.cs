@@ -1,7 +1,7 @@
 ﻿using Supplies;
 using System.Numerics;
 
-namespace winery_backend.Vineyard
+namespace winery_backend.Grapes
 {
     public class Grape
     {
@@ -15,10 +15,11 @@ namespace winery_backend.Vineyard
         public virtual Supply? Fertilizer { get; set; }
         public int? PesticideId { get; set; }
         public virtual Supply? Pesticide { get; set; }
-        
+        public double HarvestedAmount { get; set; }
+
         public Grape() { }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate)
+        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, double harvestedAmount)
         {
             Id = id;
             Name = name;
@@ -26,9 +27,10 @@ namespace winery_backend.Vineyard
             IsRipe = isRipe;
             Quality = quality;
             PlantingDate = plantingDate;
+            HarvestedAmount = harvestedAmount;
         }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId)
+        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId, double harvestedAmount)
         {
             Id = id;
             Name = name;
@@ -38,6 +40,7 @@ namespace winery_backend.Vineyard
             PlantingDate = plantingDate;
             FertilizerId = fertilizerId;
             PesticideId = pesticideId;
+            HarvestedAmount = harvestedAmount;
         }
 
     }

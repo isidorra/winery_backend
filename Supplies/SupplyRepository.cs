@@ -1,4 +1,6 @@
-﻿using Supplies;
+﻿using Microsoft.AspNetCore.Mvc.TagHelpers;
+using Supplies;
+using System.Collections.ObjectModel;
 using winery_backend.Supplies.Interface;
 
 namespace winery_backend.Invetory
@@ -31,6 +33,20 @@ namespace winery_backend.Invetory
         public Supply GetByName(string name)
         {
             return _context.Supplies.Where(s => s.Name.Equals(name)).FirstOrDefault();
+        }
+
+        public ICollection<Supply> GetBySupplyType(SupplyType type)
+        {
+            ICollection<Supply> allSupplies = GetAll();
+            ICollection<Supply> filteredSupplies = new Collection<Supply> ();
+            foreach(Supply supply in allSupplies)
+            {
+                if(supply.SupplyType == type)
+                {
+                    filteredSupplies.Add(supply);
+                }
+            }
+            return filteredSupplies;
         }
 
         public bool Save()

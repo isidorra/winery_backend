@@ -1,4 +1,4 @@
-﻿namespace winery_backend.Machine
+﻿namespace winery_backend.Machines
 {
     public class MachineOrder
     {

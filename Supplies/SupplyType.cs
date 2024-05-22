@@ -2,6 +2,8 @@
     public enum SupplyType
     {
         Fertilizer,
-        Pesticide
+        Pesticide,
+        Sugar,
+        Yeast
     }
 

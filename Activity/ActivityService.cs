@@ -5,6 +5,8 @@ using winery_backend.Vineyard;
 using winery_backend.Supplies;
 using Supplies;
 using winery_backend.Supplies.Interface;
+using winery_backend.Vineyard.Interface;
+using winery_backend.Grapes.Interface;
 
 
 namespace winery_backend.Activity
@@ -13,11 +15,49 @@ namespace winery_backend.Activity
     {
         private readonly IActivityRepository _activityRepository;
         private readonly ISupplyRepository _supplyRepository;
+        private readonly IGrapeService _grapeService;
+        private readonly IParcelService _parcelService;
 
-        public ActivityService(IActivityRepository activityRepository, ISupplyRepository supplyRepository)
+        public ActivityService(IActivityRepository activityRepository, ISupplyRepository supplyRepository, IGrapeService grapeService, IParcelService parcelService)
         {
             _activityRepository = activityRepository;
             _supplyRepository = supplyRepository;
+            _grapeService = grapeService;
+            _parcelService = parcelService;
+        }
+
+        public bool UpdateFinishedActivities()
+        {
+            ICollection<Activity> allActivities = _activityRepository.GetAll();
+            foreach (Activity activity in allActivities)
+            {
+
+                if (activity.EndDate <= DateTime.Now)
+                {
+                    activity.IsCompleted = true;
+                    _activityRepository.Update(activity);
+                    if(activity.ActivityType == ActivityType.Harvest)
+                    {
+                        UpdateHarvestings(activity.Id);
+                    }
+
+                }
+
+            }
+
+            return true;
+        }
+
+        private void UpdateHarvestings(Guid id)
+        {
+            ICollection<Harvesting> allHarvestings = _activityRepository.GetAllHarvestings();
+            foreach (Harvesting harvesting in allHarvestings)
+            {
+                if(harvesting.Id == id)
+                {
+                    _grapeService.AddHarvestedGrape(harvesting.Parcel.Grape.Id, harvesting.Amount);
+                }
+            }
         }
 
         public ICollection<Activity> GetAll()
@@ -63,6 +103,11 @@ namespace winery_backend.Activity
                 {
                     return false;
                 }
+            }
+
+            if (!_parcelService.GetById(harvestingDto.parcelId).Grape.IsRipe) //if we can harvest the grape
+            {
+                return false;
             }
 
             Harvesting newHarvesting = new Harvesting(harvestingDto.startDate, harvestingDto.parcelId, harvestingDto.amount);

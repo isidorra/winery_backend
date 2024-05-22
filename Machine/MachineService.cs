@@ -1,6 +1,6 @@
-﻿using winery_backend.Machine.Interface;
+﻿using winery_backend.Machines.Interface;
 
-namespace winery_backend.Machine
+namespace winery_backend.Machines
 {
     public class MachineService : IMachineService
     {
@@ -19,6 +19,11 @@ namespace winery_backend.Machine
         public Machine GetById(int id)
         {
             return _machineRepository.GetById(id);
+        }
+
+        public Machine GetByName(string name)
+        {
+            return _machineRepository.GetByName(name);
         }
     }
 }

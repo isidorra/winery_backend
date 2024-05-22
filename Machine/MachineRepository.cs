@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Supplies;
-using winery_backend.Machine.Interface;
+using winery_backend.Machines.Interface;
 
-namespace winery_backend.Machine
+namespace winery_backend.Machines
 {
     public class MachineRepository : IMachineRepository
     {
@@ -21,6 +21,11 @@ namespace winery_backend.Machine
         public Machine GetById(int id)
         {
             return _context.Machines.Where(s => s.Id.Equals(id)).FirstOrDefault();
+        }
+
+        public Machine GetByName(string name)
+        {
+            return _context.Machines.Where(s => s.Name.Equals(name)).FirstOrDefault();
         }
     }
 }

@@ -7,5 +7,7 @@ namespace winery_backend.Supplies.Interface
     {
         ICollection<Supply> GetAll();
         Supply GetById(int id);
+        ICollection<Supply> GetBySupplyType(SupplyType type);
+
     }
 }

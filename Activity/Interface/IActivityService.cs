@@ -11,5 +11,6 @@ namespace winery_backend.Activity.Interface
         bool ScheduleHarvesting(HarvestingDto harvestingDto);
         bool ScheduleFertilization(SupplyingDto fertilizationDto);
         bool SchedulePesticideControl(SupplyingDto pesticideDto);
+        bool UpdateFinishedActivities();
     }
 }

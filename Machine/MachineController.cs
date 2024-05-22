@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Connections.Features;
-using winery_backend.Machine.Interface;
+using winery_backend.Machines.Interface;
 
-namespace winery_backend.Machine
+namespace winery_backend.Machines
 {
     [Route("api/machines")]
     [ApiController]

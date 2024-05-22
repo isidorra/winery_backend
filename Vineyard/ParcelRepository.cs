@@ -1,4 +1,5 @@
-﻿using winery_backend.Vineyard.Interface;
+﻿using winery_backend.Grapes;
+using winery_backend.Vineyard.Interface;
 
 namespace winery_backend.Vineyard
 {
@@ -14,6 +15,11 @@ namespace winery_backend.Vineyard
         public ICollection<Parcel> GetAll()
         {
             return _context.Parcels.OrderBy(p => p.Id).ToList();
+        }
+
+        public HarvestedGrape GetHarvestedGrape(int grapeId)
+        {
+            return _context.HarvestedGrapes.Where(h => h.GrapeId == grapeId).FirstOrDefault();
         }
 
         public Parcel GetById(int id)

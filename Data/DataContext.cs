@@ -4,15 +4,17 @@
 using Microsoft.EntityFrameworkCore;
 using Supplies;
 using winery_backend.Activity;
+using winery_backend.Grapes;
 using winery_backend.Invetory;
 using winery_backend.LogisticianManufacturingOrder.Models;
 using winery_backend.LogisticianViewCustomerOrder.Models;
-using winery_backend.Machine;
+using winery_backend.Machines;
 using winery_backend.PackingRequest.Models;
 using winery_backend.Supplies;
 using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
 using winery_backend.Vineyard;
+using winery_backend.WineProduction;
 
 
 public class DataContext : DbContext
@@ -35,10 +37,6 @@ public class DataContext : DbContext
     public DbSet<VanDriver> VanDrivers { get; set; }
     public DbSet<Warehouseman> Warehousemen { get; set; }
     public DbSet<City> Cities { get; set; }
-    public DbSet<Activity> Activities { get; set; }
-    public DbSet<Fertilization> Fertilizations { get; set; }
-    public DbSet<Parcel> Parcels { get; set; }
-    public DbSet<Supply> Supplies { get; set; }
 
     //-----------PRODUCTS----------------------------------------------------------
     public DbSet<Product> Products { get; set; }
@@ -54,9 +52,18 @@ public class DataContext : DbContext
     public DbSet<Warehouse> Warehouses { get; set; }
     public DbSet<TransportRequest> TransportRequests { get; set; }
     public DbSet<Machine> Machines { get; set; }
+
+    //-----------VINEYARD---------------------------------------------------------------------
+
+    public DbSet<Activity> Activities { get; set; }
+    public DbSet<Fertilization> Fertilizations { get; set; }
+    public DbSet<Grape> Grapes { get; set; }
+    public DbSet<Parcel> Parcels { get; set; }
+    public DbSet<Supply> Supplies { get; set; }
     public DbSet<Watering> Waterings { get; set; }
     public DbSet<Harvesting> Harvestings { get; set; }
     public DbSet<PesticideControl> PesticideControls { get; set; }
+    public DbSet<Fermentation> Fermentations { get; set; }
 
     //-----------ORDERS FOR PRODUCTION---------------------------------------------------------
 
@@ -80,10 +87,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<TourGuide>().ToTable("TourGuides");
         modelBuilder.Entity<VanDriver>().ToTable("VanDrivers");
         modelBuilder.Entity<Warehouseman>().ToTable("Warehousemen");
-        modelBuilder.Entity<Activity>().ToTable("activities");
-        modelBuilder.Entity<Fertilization>().ToTable("Fertelizations");
-        modelBuilder.Entity<Parcel>().ToTable("parcels");
-        modelBuilder.Entity<Supply>().ToTable("Supplies");
+        
         modelBuilder.Entity<Product>().ToTable("Products");
         modelBuilder.Entity<Pricing>().ToTable("Pricing");
         modelBuilder.Entity<ProductCategory>().ToTable("ProductCategories");
@@ -94,9 +98,16 @@ public class DataContext : DbContext
         modelBuilder.Entity<Sector>().ToTable("Sectors");
         modelBuilder.Entity<Warehouse>().ToTable("Warehouses");
         modelBuilder.Entity<TransportRequest>().ToTable("TransportRequests");
+
+        modelBuilder.Entity<Activity>().ToTable("Activities");
+        modelBuilder.Entity<Fertilization>().ToTable("Fertilizations");
+        modelBuilder.Entity<Parcel>().ToTable("Parcels");
+        modelBuilder.Entity<Supply>().ToTable("Supplies");
         modelBuilder.Entity<Watering>().ToTable("Waterings");
         modelBuilder.Entity<Harvesting>().ToTable("Harvestings");
         modelBuilder.Entity<PesticideControl>().ToTable("PesticideControls");
+        modelBuilder.Entity<Grape>().ToTable("Grapes");
+        modelBuilder.Entity<Fermentation>().ToTable("Fermentations");
 
         modelBuilder.Entity<Machine>().ToTable("Machines");
         modelBuilder.Entity<MachineOrder>().ToTable("MachineOrders");
@@ -127,7 +138,11 @@ public class DataContext : DbContext
             new Supply { Id = 9, Name = "VineShield Pest Repellent", SupplyType = SupplyType.Pesticide, Amount = 32, Manufacturer = "VinoWarden Agrochemicals" },
             new Supply { Id = 10, Name = "GrapeSafe Fungicide", SupplyType = SupplyType.Pesticide, Amount = 771, Manufacturer = "Harvest AgroTech" },
             new Supply { Id = 11, Name = "VinePro Shield", SupplyType = SupplyType.Pesticide, Amount = 12, Manufacturer = "VinoGrow Enterprises" },
-            new Supply { Id = 12, Name = "GrapeGuardian Pest Management", SupplyType = SupplyType.Pesticide, Amount = 658, Manufacturer = "Gomex" }
+            new Supply { Id = 12, Name = "GrapeGuardian Pest Management", SupplyType = SupplyType.Pesticide, Amount = 658, Manufacturer = "Gomex" },
+            new Supply { Id = 13, Name = "Zucker", SupplyType = SupplyType.Sugar, Amount = 10044, Manufacturer = "Gomex" },
+            new Supply { Id = 14, Name = "Ethanol", SupplyType = SupplyType.Yeast, Amount = 444, Manufacturer = "Navala" }
+
+
             );
 
         modelBuilder.Entity<Grape>().HasData(
@@ -141,6 +156,7 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2020, 5, 1),
                 FertilizerId = 1, // Grape Fertilizer 10-10-10
                 PesticideId = 7, // Vineyard Armor Spray
+                HarvestedAmount = 51515
             },
             new Grape
             {
@@ -152,6 +168,7 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2019, 4, 15),
                 FertilizerId = 3, // Vine Vitalizer 12-6-18
                 PesticideId = 10, // GrapeSafe Fungicide
+                HarvestedAmount = 125
             },
             new Grape
             {
@@ -163,6 +180,7 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2018, 3, 20),
                 FertilizerId = 2, // Grape Fertilizer 72456
                 PesticideId = 8, // GrapeProtect Insecticide
+                HarvestedAmount = 0
             },
             new Grape
             {
@@ -174,6 +192,7 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2019, 4, 5),
                 FertilizerId = 5, // VineLife Essentials 10-12-18
                 PesticideId = 11, // VinePro Shield
+                HarvestedAmount = 11
             },
             new Grape
             {
@@ -185,8 +204,10 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2021, 5, 10),
                 FertilizerId = 6, // GrapeGrower's Blend 8-12-20
                 PesticideId = 12, // GrapeGuardian Pest Management
+                HarvestedAmount = 2666
             }
            );
+
 
         modelBuilder.Entity<Parcel>()
         .HasOne(p => p.Grape)
@@ -250,10 +271,12 @@ public class DataContext : DbContext
             new Machine
             {
                 Id = 1,
-                Name = "Harvesting Machine 2000",
+                Name = "Fermentation container",
                 Amount = 150000, // $150,000
                 MachineState = true, // Working
-                Manufacturer = "FarmTech Industries"
+                Manufacturer = "FarmTech Industries",
+                Total = 5,
+                Free = 3
             },
             new Machine
             {
@@ -261,7 +284,9 @@ public class DataContext : DbContext
                 Name = "Pressing Machine XL",
                 Amount = 80000, // $80,000
                 MachineState = false, // Broken
-                Manufacturer = "WineTech Solutions"
+                Manufacturer = "WineTech Solutions",
+                Total = 12,
+                Free = 7
             },
             new Machine
             {
@@ -269,7 +294,9 @@ public class DataContext : DbContext
                 Name = "Sorting Machine Pro",
                 Amount = 120000, // $120,000
                 MachineState = true, // Working
-                Manufacturer = "GrapeMaster Machinery"
+                Manufacturer = "GrapeMaster Machinery",
+                Total = 54,
+                Free = 22
             },
             new Machine
             {
@@ -277,7 +304,9 @@ public class DataContext : DbContext
                 Name = "Fermentation Tank V2",
                 Amount = 250000, // $250,000
                 MachineState = true, // Working
-                Manufacturer = "VinoTech Innovations"
+                Manufacturer = "VinoTech Innovations",
+                Total = 5,
+                Free = 0
             }
         );
 

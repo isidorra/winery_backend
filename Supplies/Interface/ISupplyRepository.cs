@@ -13,5 +13,6 @@ namespace winery_backend.Supplies.Interface
         bool Save();
 
         void Update(Supply supply);
+        ICollection<Supply> GetBySupplyType(SupplyType type);
     }
 }

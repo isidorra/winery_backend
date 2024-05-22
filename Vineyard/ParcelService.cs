@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using winery_backend.Grapes;
 using winery_backend.Vineyard.Interface;
 
 namespace winery_backend.Vineyard
@@ -39,11 +40,21 @@ namespace winery_backend.Vineyard
             return _parcelRepository.GetById(id);
         }
 
+        public double GetHarvestedGrapes(int grapeId)
+        {
+            return _parcelRepository.GetHarvestedGrape(grapeId).Amount;
+        }
+
         public double RecommendWateringAmount(int parcelId)
         {
             Parcel parcel = GetById(parcelId);
             return parcel.RecommendedWateringAmount();
         }
+
+       
+
+        //public bool UpdateHarvestedGrapes(int grapeId, double amount);
+
 
     }
 

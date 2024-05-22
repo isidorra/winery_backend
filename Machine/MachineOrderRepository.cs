@@ -1,6 +1,6 @@
-﻿using winery_backend.Machine.Interface;
+﻿using winery_backend.Machines.Interface;
 
-namespace winery_backend.Machine
+namespace winery_backend.Machines
 {
     public class MachineOrderRepository : IMachineOrderRepository
     {

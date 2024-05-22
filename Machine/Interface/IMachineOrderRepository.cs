@@ -1,4 +1,4 @@
-﻿namespace winery_backend.Machine.Interface
+﻿namespace winery_backend.Machines.Interface
 {
     public interface IMachineOrderRepository
     {

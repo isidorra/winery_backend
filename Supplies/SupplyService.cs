@@ -22,5 +22,10 @@ namespace winery_backend.Invetory
         {
             throw new NotImplementedException();
         }
+
+        public ICollection<Supply> GetBySupplyType(SupplyType type)
+        {
+            return _supplyRepository.GetBySupplyType(type);
+        }
     }
 }
