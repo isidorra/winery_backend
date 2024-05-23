@@ -5,4 +5,5 @@ public interface IPurchaseRepository {
     bool Exists(int id);
     bool Create(Purchase purchase);
     bool Save();
+    void Update(Purchase purchase);
 }

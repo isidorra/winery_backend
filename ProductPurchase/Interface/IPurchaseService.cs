@@ -6,4 +6,5 @@ public interface IPurchaseService {
     bool Create(Purchase purchase);
     bool Save();
     void GeneratePdfInvoice(int purchaseId);
+    void Cancel(int purchaseId);
 }

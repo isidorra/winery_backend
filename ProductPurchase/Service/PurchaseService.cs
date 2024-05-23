@@ -74,4 +74,22 @@ public class PurchaseService : IPurchaseService {
     {
         return _purchaseRepository.Save();
     }
+
+    public void Cancel(int purchaseId)
+    {
+        try
+        {
+            Purchase purchase = _purchaseRepository.GetById(purchaseId);
+            if (purchase.PurchaseStatus == PurchaseStatus.PROCESSING || purchase.PurchaseStatus == PurchaseStatus.CONFIRMED)
+            {
+                purchase.PurchaseStatus = PurchaseStatus.CANCELED;
+            }
+
+            _purchaseRepository.Update(purchase);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error while trying to cancel purchase", ex);
+        }
+    }
 }

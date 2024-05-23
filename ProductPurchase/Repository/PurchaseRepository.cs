@@ -39,4 +39,21 @@ public class PurchaseRepository : IPurchaseRepository {
         var saved = _context.SaveChanges();
         return saved > 0 ? true : false;
     }
+
+    public void Update(Purchase purchase)
+    {
+        var editedPurchase = _context.Purchases.FirstOrDefault(p => p.Id == purchase.Id);
+        if (editedPurchase == null)
+            throw new ArgumentException("Purchase not found");
+
+        try
+        {
+            _context.Update(purchase);
+            _context.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error while trying to edit purchase", ex);
+        }
+    }
 }
