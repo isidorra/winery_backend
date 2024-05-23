@@ -65,4 +65,13 @@ public class PurchaseController : Controller {
 
         return Ok("Successfully created purchase.");
     }
+
+    [HttpGet("invoice-pdf")]
+    public IActionResult GeneratePdfInvoice(int purchaseId) {
+        if(!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        _purchaseService.GeneratePdfInvoice(purchaseId);
+        return Ok("Successs");
+    }
 }

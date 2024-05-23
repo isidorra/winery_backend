@@ -1,4 +1,9 @@
 
+using Microsoft.VisualBasic;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+
 public class PurchaseService : IPurchaseService {
     private readonly IPurchaseRepository _purchaseRepository;
     public PurchaseService(IPurchaseRepository purchaseRepository) {
@@ -17,7 +22,37 @@ public class PurchaseService : IPurchaseService {
 
     public void GeneratePdfInvoice(int purchaseId)
     {
-        throw new NotImplementedException();
+        Purchase purchase = _purchaseRepository.GetById(purchaseId);
+        QuestPDF.Settings.License = LicenseType.Community;
+        Document.Create(container => {
+            container.Page(page => {
+                page.Size(PageSizes.A4);
+                page.Margin(2, Unit.Centimetre);
+                page.DefaultTextStyle(x => x.FontSize(20));
+
+                page.Header()
+                .Text("Invoice for purchase #" + purchaseId)
+                .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+
+                
+
+                page.Content()
+                    .PaddingVertical(1, Unit.Centimetre)
+                    .Column(x =>
+                    {
+                        x.Spacing(20);
+                        x.Item().Text("Total: $" + purchase.Total);
+                        x.Item().Text("Customer ID: " + purchase.CustomerId);
+                        x.Item().Text("Order created at: " + purchase.CreatedAt);
+                        x.Item().Text("Current order status: " + purchase.PurchaseStatus);
+
+                    });
+                
+                page.Footer()
+                    .AlignCenter()
+                    .Text("Invoice printed on: " + DateTime.Now);
+            });
+        }).GeneratePdf("invoice.pdf");
     }
 
     public ICollection<Purchase> GetAll()
