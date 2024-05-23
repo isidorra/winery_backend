@@ -11,6 +11,20 @@ public class CartProductRepository : ICartProductRepository {
         return Save();
     }
 
+    public bool Delete(int id)
+    {
+        var cartProductToDelete = _context.CartProducts.FirstOrDefault(d => d.Id == id);
+
+        if (cartProductToDelete != null)
+        {
+            _context.CartProducts.Remove(cartProductToDelete);
+            _context.SaveChanges();
+            return true; 
+        }
+
+        return false;
+    }
+
     public bool Exists(int id)
     {
         return _context.CartProducts.Any(c => c.Id == id);
@@ -24,7 +38,7 @@ public class CartProductRepository : ICartProductRepository {
     public ICollection<CartProduct> GetAllByCartId(int cartId)
     {
         return _context.CartProducts
-                .Where(c => c.CartId == cartId) // Filter by cartId
+                .Where(c => c.CartId == cartId)
                 .OrderBy(c => c.Id)
                 .ToList();            
     }
@@ -38,5 +52,22 @@ public class CartProductRepository : ICartProductRepository {
     {
         var saved = _context.SaveChanges();
         return saved > 0 ? true : false;
+    }
+
+    public void Update(CartProduct cartProduct)
+    {
+        var edited = _context.CartProducts.FirstOrDefault(p => p.Id == cartProduct.Id);
+        if (edited == null)
+            throw new ArgumentException("Cart product not found");
+
+        try
+        {
+            _context.Update(edited);
+            _context.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error while trying to edit cart product", ex);
+        }
     }
 }

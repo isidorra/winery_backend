@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ieyyz0MzUU0ZSMluRV5Pc92sqYhMRkd3/H+pZW+ptrhSZvnaSuCc5H1IAC2VWNRsmKYAdHPhZRnYtdd8eYSxtw==",
+  "dgSpecHash": "woQqwrcliVNP6UNGSkvWy4s1B0gpBca97Qp3xQoC76jxMyaMc0zK3Ah4tN/THZNVTTt/eWEK06Kb+UlgjM8Tzg==",
   "success": true,
   "projectFilePath": "/Users/isidorastanculovic/Desktop/winery_backend/winery_backend.csproj",
   "expectedPackageFiles": [
@@ -59,6 +59,7 @@
     "/Users/isidorastanculovic/.nuget/packages/mysql.entityframeworkcore/8.0.0/mysql.entityframeworkcore.8.0.0.nupkg.sha512",
     "/Users/isidorastanculovic/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
     "/Users/isidorastanculovic/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.2/pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
+    "/Users/isidorastanculovic/.nuget/packages/questpdf/2024.3.7/questpdf.2024.3.7.nupkg.sha512",
     "/Users/isidorastanculovic/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/isidorastanculovic/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/isidorastanculovic/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

@@ -41,4 +41,30 @@ public class CartController : Controller {
         var cart = _cartService.GetByCustomerId(customerId);
         return Ok(cart);
     }
+
+    [HttpGet("customer-username")]
+    public IActionResult GetByCustomerUsername(string username) {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        Customer customer = _customerService.GetByUsername(username);
+
+        if(!_customerService.Exists(customer.Id))
+            return BadRequest("Customer does not exist.");
+        
+        var cart = _cartService.GetByCustomerUsername(username);
+        return Ok(cart);
+    }
+
+    [HttpGet("total")]
+    public IActionResult Total(int cartId) {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        if(!_cartService.Exists(cartId))
+            return BadRequest("Cart does not exist.");
+
+        double total = _cartService.CalculateTotal(cartId);
+        return Ok(total);
+    }
 }

@@ -44,4 +44,30 @@ public class CartProductController : Controller {
 
         return Ok("Product successfully added to cart");
     }
+
+    [HttpPost("delete")]
+    public IActionResult RemoveFromCart(int id) {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        if(!_cartProductService.Delete(id))
+            return BadRequest("Product could not be removed from cart.");
+
+        return Ok("Product successfully removed from the cart.");
+    }
+
+    [HttpPost("edit-quantity")]
+    public IActionResult UpdateQuantity(int quantity, int id) {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        if(!_cartProductService.Exists(id))
+            return BadRequest("Cart product does not exist.");
+        
+        CartProduct cartProduct = _cartProductService.GetById(id);
+        cartProduct.Quantity = quantity;
+        _cartProductService.Update(cartProduct);
+        
+        return Ok("Successfully edited quantity.");
+    }
 }

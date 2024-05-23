@@ -48,6 +48,8 @@ public class DataContext : DbContext
     //-----------CART AND PRODUCT ORDERS-------------------------------------------
     public DbSet<Cart> Carts { get; set; }
     public DbSet<CartProduct> CartProducts { get; set; }
+    public DbSet<Purchase> Purchases { get; set; }
+    public DbSet<PurchasedProduct> PurchasedProducts { get; set; }
 
     //-----------LOGISTICS---------------------------------------------------------
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
@@ -94,6 +96,8 @@ public class DataContext : DbContext
         modelBuilder.Entity<Discount>().ToTable("Discounts");
         modelBuilder.Entity<Cart>().ToTable("Carts");
         modelBuilder.Entity<CartProduct>().ToTable("CartProducts");
+        modelBuilder.Entity<Purchase>().ToTable("Purchases");
+        modelBuilder.Entity<PurchasedProduct>().ToTable("PurchaseProducts");
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
@@ -614,6 +618,49 @@ public class DataContext : DbContext
             }
         );
 
+        modelBuilder.Entity<Purchase>().HasData(
+            new Purchase
+            {
+                Id = 1,
+                CustomerId = 1,
+                Total = 32.22,
+                CreatedAt = DateTime.Today,
+                Note = "fewfw",
+                PurchaseStatus = PurchaseStatus.PROCESSING
+            },
+            new Purchase
+            {
+                Id = 2,
+                CustomerId = 1,
+                Total = 52.22,
+                CreatedAt = DateTime.Today,
+                Note = "fewfw",
+                PurchaseStatus = PurchaseStatus.CONFIRMED
+            }
+        );
+        modelBuilder.Entity<PurchasedProduct>().HasData(
+            new PurchasedProduct
+            {
+                Id = 1,
+                PurchaseId = 1,
+                ProductId = 1,
+                Quantity = 3
+            },
+            new PurchasedProduct
+            {
+                Id = 2,
+                PurchaseId = 1,
+                ProductId = 2,
+                Quantity = 3
+            },
+            new PurchasedProduct
+            {
+                Id = 3,
+                PurchaseId = 2,
+                ProductId = 1,
+                Quantity = 17
+            }
+        );
         modelBuilder.Entity<Employee>().HasData(
             new Employee
             {
