@@ -50,6 +50,7 @@ public class DataContext : DbContext
     public DbSet<CartProduct> CartProducts { get; set; }
     public DbSet<Purchase> Purchases { get; set; }
     public DbSet<PurchasedProduct> PurchasedProducts { get; set; }
+    public DbSet<PurchaseReview> PurchaseReviews { get; set; }
 
     //-----------LOGISTICS---------------------------------------------------------
     public DbSet<CustomerOrder> CustomerOrders { get; set; }
@@ -98,6 +99,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<CartProduct>().ToTable("CartProducts");
         modelBuilder.Entity<Purchase>().ToTable("Purchases");
         modelBuilder.Entity<PurchasedProduct>().ToTable("PurchaseProducts");
+        modelBuilder.Entity<PurchaseReview>().ToTable("PurchaseReviews");
         modelBuilder.Entity<CustomerOrder>().ToTable("CustomerOrders");
         modelBuilder.Entity<RealTimeOrderTrackingStatus>().ToTable("RealTimeOrderTrackingStatuses");
         modelBuilder.Entity<PackingRequest>().ToTable("PackingRequests");
@@ -578,6 +580,24 @@ public class DataContext : DbContext
                 Floor = "2",
                 Door = "3",
                 CityId = 2,
+            },
+            new Customer
+            {
+                Id = 3,
+                Firstname = "Testko",
+                Lastname = "Testic",
+                Email = "testko@example.com",
+                Username = "testko123",
+                Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS",
+                PhoneNumber = "9876543210",
+                BirthDate = new DateTime(1992, 8, 20),
+                Gender = Gender.FEMALE,
+                Role = Role.CUSTOMER,
+                Street = "456 Elm St",
+                Number = "202",
+                Floor = "2",
+                Door = "3",
+                CityId = 2,
             }
         );
 
@@ -591,6 +611,11 @@ public class DataContext : DbContext
             {
                 Id = 2,
                 CustomerId = 2
+            },
+            new Cart
+            {
+                Id = 3,
+                CustomerId = 3
             }
         );
 
@@ -636,6 +661,33 @@ public class DataContext : DbContext
                 CreatedAt = DateTime.Today,
                 Note = "fewfw",
                 PurchaseStatus = PurchaseStatus.CONFIRMED
+            },
+            new Purchase
+            {
+                Id = 3,
+                CustomerId = 3,
+                Total = 532.22,
+                CreatedAt = DateTime.Today,
+                Note = "fewfw",
+                PurchaseStatus = PurchaseStatus.IN_TRANSPORT
+            },
+            new Purchase
+            {
+                Id = 4,
+                CustomerId = 3,
+                Total = 522.22,
+                CreatedAt = DateTime.Today,
+                Note = "fewfw",
+                PurchaseStatus = PurchaseStatus.DELIVERED
+            },
+            new Purchase
+            {
+                Id = 5,
+                CustomerId = 3,
+                Total = 652.22,
+                CreatedAt = DateTime.Today,
+                Note = "fewfw",
+                PurchaseStatus = PurchaseStatus.CONFIRMED
             }
         );
         modelBuilder.Entity<PurchasedProduct>().HasData(
@@ -659,6 +711,20 @@ public class DataContext : DbContext
                 PurchaseId = 2,
                 ProductId = 1,
                 Quantity = 17
+            }
+        );
+        modelBuilder.Entity<PurchaseReview>().HasData(
+            new PurchaseReview
+            {
+                Id = 1,
+                PurchaseId = 1,
+                Review = 3.5
+            },
+            new PurchaseReview
+            {
+                Id = 2,
+                PurchaseId = 2,
+                Review = 5.0
             }
         );
         modelBuilder.Entity<Employee>().HasData(

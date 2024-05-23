@@ -48,6 +48,11 @@ namespace winery_backend.Migrations
                         {
                             Id = 2,
                             CustomerId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CustomerId = 3
                         });
                 });
 
@@ -309,6 +314,24 @@ namespace winery_backend.Migrations
                             Role = 9,
                             Street = "456 Elm St",
                             Username = "janedoe"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(1992, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CityId = 2,
+                            Door = "3",
+                            Email = "testko@example.com",
+                            Firstname = "Testko",
+                            Floor = "2",
+                            Gender = 0,
+                            Lastname = "Testic",
+                            Number = "202",
+                            Password = "$2a$10$dVNZNTm8Ts9fGjM3M8QuE.LF0ZutYn1utYoeSdfZZXbB0ec9MjBUS",
+                            PhoneNumber = "9876543210",
+                            Role = 9,
+                            Street = "456 Elm St",
+                            Username = "testko123"
                         });
                 });
 
@@ -849,6 +872,66 @@ namespace winery_backend.Migrations
                             Note = "fewfw",
                             PurchaseStatus = 1,
                             Total = 52.219999999999999
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2024, 5, 23, 0, 0, 0, 0, DateTimeKind.Local),
+                            CustomerId = 3,
+                            Note = "fewfw",
+                            PurchaseStatus = 2,
+                            Total = 532.22000000000003
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2024, 5, 23, 0, 0, 0, 0, DateTimeKind.Local),
+                            CustomerId = 3,
+                            Note = "fewfw",
+                            PurchaseStatus = 3,
+                            Total = 522.22000000000003
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2024, 5, 23, 0, 0, 0, 0, DateTimeKind.Local),
+                            CustomerId = 3,
+                            Note = "fewfw",
+                            PurchaseStatus = 1,
+                            Total = 652.22000000000003
+                        });
+                });
+
+            modelBuilder.Entity("PurchaseReview", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PurchaseId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Review")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PurchaseReviews", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PurchaseId = 1,
+                            Review = 3.5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PurchaseId = 2,
+                            Review = 5.0
                         });
                 });
 
@@ -1875,7 +1958,7 @@ namespace winery_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c487bb3d-2be7-448e-9d21-b2f9fdeba3cb"),
+                            Id = new Guid("264424c5-295a-4b07-b453-ee1678c8f250"),
                             ActivityType = 2,
                             EndDate = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -1886,7 +1969,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0ef947a2-8ff7-474b-baff-56047e4eef17"),
+                            Id = new Guid("bf0fc5fd-f89c-4b14-a1cd-9f1889e7d98d"),
                             ActivityType = 2,
                             EndDate = new DateTime(2024, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -1897,7 +1980,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("395ff95b-3798-4e61-afe2-78bfbfbc273a"),
+                            Id = new Guid("402e3190-ebb6-4cd9-ba60-d028ac05dd70"),
                             ActivityType = 2,
                             EndDate = new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -1908,7 +1991,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e9bd4c22-f614-42a6-9d88-4af225166123"),
+                            Id = new Guid("2ca1bb39-2261-451b-9408-a38d28a6bd28"),
                             ActivityType = 2,
                             EndDate = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1919,7 +2002,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8a085709-fbee-486b-8a3c-caa624595504"),
+                            Id = new Guid("7ce5bc4a-e156-4d8f-8dd4-76b820fbd745"),
                             ActivityType = 2,
                             EndDate = new DateTime(2024, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1942,7 +2025,7 @@ namespace winery_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("56b5318c-172e-4ca2-b6ea-3e2cdd43f678"),
+                            Id = new Guid("5ca734c1-eeb2-4a83-9985-5194ade674e8"),
                             ActivityType = 0,
                             EndDate = new DateTime(2024, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1952,7 +2035,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("482ce4ff-552c-4048-8309-fa9388336e5e"),
+                            Id = new Guid("77b28f3e-25b4-43fd-beed-a114f6ee535d"),
                             ActivityType = 0,
                             EndDate = new DateTime(2024, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1962,7 +2045,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("061d26c4-6204-4371-9df4-5f8420a0d912"),
+                            Id = new Guid("5bca8dfb-4f3b-4be1-b6d7-440b1b7103a8"),
                             ActivityType = 0,
                             EndDate = new DateTime(2024, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1972,7 +2055,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("082f2e0f-5ef3-431a-bbd5-e4b229b36e3d"),
+                            Id = new Guid("3440b665-d264-44a9-92e0-3445d74b8c5c"),
                             ActivityType = 0,
                             EndDate = new DateTime(2024, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -1982,7 +2065,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("011ab339-36f0-4742-b61f-98ac0594ddcd"),
+                            Id = new Guid("a85b598d-0b33-4ab4-a3f8-d0f1c14be6dc"),
                             ActivityType = 0,
                             EndDate = new DateTime(2024, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2009,7 +2092,7 @@ namespace winery_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ce8f597a-8d0b-4d4c-a931-93e178fed224"),
+                            Id = new Guid("af605a51-4691-44a9-bf33-50a84b0fe148"),
                             ActivityType = 3,
                             EndDate = new DateTime(2024, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -2020,7 +2103,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4ff5862b-1068-4035-b280-71e383dd955e"),
+                            Id = new Guid("5f504715-f031-49d5-9221-8352d0f11ff4"),
                             ActivityType = 3,
                             EndDate = new DateTime(2024, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -2031,7 +2114,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("47f2264a-271c-406b-b516-e10f798ff065"),
+                            Id = new Guid("63decf6c-365b-461f-bba5-2c8f0bbc9ac3"),
                             ActivityType = 3,
                             EndDate = new DateTime(2024, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = true,
@@ -2042,7 +2125,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("723b756d-fec8-467b-be6a-c1427442d2e9"),
+                            Id = new Guid("cd868008-b964-4ea4-86b1-70a4df452095"),
                             ActivityType = 3,
                             EndDate = new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2053,7 +2136,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ccc7b458-7bbc-4f2c-bf73-91f2bb7d402f"),
+                            Id = new Guid("b98c4070-7372-4255-b237-f4c26a537b16"),
                             ActivityType = 3,
                             EndDate = new DateTime(2024, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2076,7 +2159,7 @@ namespace winery_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7c810301-60a5-4f5e-b59b-0f60aaa97027"),
+                            Id = new Guid("c79c6889-1ef3-43f4-a0ae-b01f4b1ddea2"),
                             ActivityType = 1,
                             EndDate = new DateTime(2024, 5, 1, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2086,7 +2169,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8d828aa9-5f77-40e1-b8f0-3d09ed25d9fc"),
+                            Id = new Guid("07391723-3f2d-4098-ae83-93240ffd86b2"),
                             ActivityType = 1,
                             EndDate = new DateTime(2024, 5, 5, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2096,7 +2179,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("974ab414-2ad9-4405-80a0-3114e31a11fa"),
+                            Id = new Guid("3191c9fa-6c18-413f-919c-0e355cde4560"),
                             ActivityType = 1,
                             EndDate = new DateTime(2024, 5, 10, 11, 30, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2106,7 +2189,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b21123b9-02ff-459f-9e1e-d14dbdb31f8d"),
+                            Id = new Guid("e17678ad-ac68-484b-83a0-3b975b432460"),
                             ActivityType = 1,
                             EndDate = new DateTime(2024, 5, 15, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,
@@ -2116,7 +2199,7 @@ namespace winery_backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("61a4b92f-e759-4f6d-880c-acd75fe3deb5"),
+                            Id = new Guid("66b19dea-d57d-4df2-8059-5d56133d89df"),
                             ActivityType = 1,
                             EndDate = new DateTime(2024, 5, 20, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             IsCompleted = false,

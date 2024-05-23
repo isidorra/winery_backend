@@ -81,6 +81,8 @@ builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 builder.Services.AddScoped<IPurchasedProductRepository, PurchasedProductRepository>();
 builder.Services.AddScoped<IPurchasedProductService, PurchasedProductService>();
+builder.Services.AddScoped<IPurchaseReviewRepository, PurchaseReviewRepository>();
+builder.Services.AddScoped<IPurchaseReviewService, PurchaseReviewService>();
 builder.Services.AddScoped<IPricingRepository, PricingRepository>();
 builder.Services.AddScoped<IPricingService, PricingService>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
