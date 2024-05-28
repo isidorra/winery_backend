@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using winery_backend.Activity.Dto;
-using winery_backend.WineProduction.Dto;
-using winery_backend.WineProduction.Interface;
+using winery_backend.WineProduction.Fermentations.Dto;
+using winery_backend.WineProduction.Fermentations.Interface;
 
-namespace winery_backend.WineProduction
+namespace winery_backend.WineProduction.Fermentations
 {
     [Route("api/fermentation")]
     [ApiController]
@@ -14,6 +14,7 @@ namespace winery_backend.WineProduction
         public FermentationController(IFermentationService fermentationService)
         {
             _fermentationService = fermentationService;
+            _fermentationService.UpdateFinishedFertilizations();
         }
 
         [HttpPost("add")]

@@ -40,10 +40,6 @@ namespace winery_backend.Vineyard
             return _parcelRepository.GetById(id);
         }
 
-        public double GetHarvestedGrapes(int grapeId)
-        {
-            return _parcelRepository.GetHarvestedGrape(grapeId).Amount;
-        }
 
         public double RecommendWateringAmount(int parcelId)
         {

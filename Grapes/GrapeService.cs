@@ -22,6 +22,11 @@ namespace winery_backend.Grapes
             return _grapeRepository.GetById(id);
         }
 
+        public Grape GetByName(string name)
+        {
+            return _grapeRepository.GetByName(name);
+        }
+
         public double GetHarvestedAmount(int id)
         {
             return _grapeRepository.GetById(id).HarvestedAmount;
@@ -31,6 +36,11 @@ namespace winery_backend.Grapes
         {
             Grape grape = GetById(id);
             grape.HarvestedAmount += amount;
+            _grapeRepository.Update(grape);
+        }
+
+        public void Update(Grape grape)
+        {
             _grapeRepository.Update(grape);
         }
     }

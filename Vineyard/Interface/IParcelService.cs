@@ -6,7 +6,6 @@
         ICollection<Parcel> GetByGrape(string grape);
         Parcel GetById(int id);
         double RecommendWateringAmount(int parcelId);
-        double GetHarvestedGrapes(int grapeId);
 
     }
 }

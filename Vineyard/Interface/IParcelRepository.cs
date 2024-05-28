@@ -6,6 +6,5 @@ namespace winery_backend.Vineyard.Interface
     {
         ICollection<Parcel> GetAll();
         Parcel GetById(int id);
-        HarvestedGrape GetHarvestedGrape(int grapeId);
     }
 }

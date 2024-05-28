@@ -1,6 +1,6 @@
-﻿using winery_backend.WineProduction.Interface;
+﻿using winery_backend.WineProduction.Fermentations.Interface;
 
-namespace winery_backend.WineProduction
+namespace winery_backend.WineProduction.Fermentations
 {
     public class FermentationRepository : IFermentationRepository
     {

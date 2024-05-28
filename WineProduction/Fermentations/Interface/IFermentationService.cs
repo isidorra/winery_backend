@@ -1,7 +1,7 @@
 ﻿using winery_backend.Activity;
-using winery_backend.WineProduction.Dto;
+using winery_backend.WineProduction.Fermentations.Dto;
 
-namespace winery_backend.WineProduction.Interface
+namespace winery_backend.WineProduction.Fermentations.Interface
 {
     public interface IFermentationService
     {
@@ -10,5 +10,7 @@ namespace winery_backend.WineProduction.Interface
         bool Create(FermentationDto fermentationDto);
         bool Save();
         void Update(Fermentation fermentation);
+
+        void UpdateFinishedFertilizations();
     }
 }

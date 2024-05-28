@@ -26,7 +26,6 @@ namespace winery_backend.Activity
         }
 
         [HttpGet]
-
         public IActionResult GetAll()
         {
             var activities = _activityService.GetAll();

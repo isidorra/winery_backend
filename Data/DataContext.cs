@@ -14,7 +14,8 @@ using winery_backend.Supplies;
 using winery_backend.TransportRequest.Models;
 using winery_backend.ViewWarehouse.Models;
 using winery_backend.Vineyard;
-using winery_backend.WineProduction;
+using winery_backend.WineProduction.Fermentations;
+using winery_backend.WineProduction.Pressings;
 
 
 public class DataContext : DbContext
@@ -64,6 +65,7 @@ public class DataContext : DbContext
     public DbSet<Harvesting> Harvestings { get; set; }
     public DbSet<PesticideControl> PesticideControls { get; set; }
     public DbSet<Fermentation> Fermentations { get; set; }
+    public DbSet<Pressing> Pressings { get; set; }
 
     //-----------ORDERS FOR PRODUCTION---------------------------------------------------------
 
@@ -108,6 +110,8 @@ public class DataContext : DbContext
         modelBuilder.Entity<PesticideControl>().ToTable("PesticideControls");
         modelBuilder.Entity<Grape>().ToTable("Grapes");
         modelBuilder.Entity<Fermentation>().ToTable("Fermentations");
+        modelBuilder.Entity<Pressing>().ToTable("Pressings");
+
 
         modelBuilder.Entity<Machine>().ToTable("Machines");
         modelBuilder.Entity<MachineOrder>().ToTable("MachineOrders");
@@ -647,6 +651,20 @@ public class DataContext : DbContext
                 BirthDate = new DateTime(1982, 8, 20),
                 Gender = Gender.MALE,
                 Role = Role.ADMINISTRATOR,
+                ProfilePhoto = "somepath"
+            },
+            new Employee
+            {
+                Id = 333,
+                Firstname = "ana",
+                Lastname = "parovic",
+                Email = "anaparovic@gmail.com",
+                Username = "anaparovic",
+                Password = "anabanana",
+                PhoneNumber = "061111111",
+                BirthDate = new DateTime(1982, 8, 20),
+                Gender = Gender.FEMALE,
+                Role = Role.OWNER,
                 ProfilePhoto = "somepath"
             },
             new Employee(11, "warehouseman_first_name_1", "warehouseman_last_name_1", "warehouseman_email_1@gmail.com", "warehouseman_1", "a", "061123123", new DateTime(1990, 5, 20), Gender.MALE, Role.WAREHOUSEMAN, "photo_warehouseman_1.png"),

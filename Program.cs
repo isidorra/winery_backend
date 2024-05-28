@@ -10,8 +10,8 @@ using winery_backend.LogisticianManufacturingOrder.Service;
 using winery_backend.LogisticianViewCustomerOrder.Interface;
 using winery_backend.LogisticianViewCustomerOrder.Repository;
 using winery_backend.LogisticianViewCustomerOrder.Service;
-using winery_backend.Machine;
-using winery_backend.Machine.Interface;
+using winery_backend.Machines;
+using winery_backend.Machines.Interface;
 using winery_backend.PackingRequest.Interface;
 using winery_backend.PackingRequest.Repository;
 using winery_backend.PackingRequest.Service;
@@ -25,6 +25,10 @@ using winery_backend.ViewWarehouse.Repository;
 using winery_backend.ViewWarehouse.Service;
 using winery_backend.Vineyard;
 using winery_backend.Vineyard.Interface;
+using winery_backend.Grapes.Interface;
+using winery_backend.Grapes;
+using winery_backend.WineProduction.Fermentations.Interface;
+using winery_backend.WineProduction.Fermentations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,6 +75,12 @@ builder.Services.AddDbContext<DataContext>(options => {
 //Dependency Injection
 builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
+builder.Services.AddScoped<IFermentationService, FermentationService>();
+builder.Services.AddScoped<IFermentationRepository, FermentationRepository>();
+builder.Services.AddScoped<IMachineService, MachineService>();
+builder.Services.AddScoped<IMachineRepository, MachineRepository>();
+builder.Services.AddScoped<IGrapeService, GrapeService>();
+builder.Services.AddScoped<IGrapeRepository, GrapeRepository>();
 builder.Services.AddScoped<ISupplyService, SupplyService>();
 builder.Services.AddScoped<ISupplyRepository, SupplyRepository>();
 builder.Services.AddScoped<IParcelService, ParcelService>();

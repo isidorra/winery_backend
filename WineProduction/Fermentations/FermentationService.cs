@@ -1,14 +1,15 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using winery_backend.Machines.Interface;
 using winery_backend.Machines;
-using winery_backend.WineProduction.Dto;
-using winery_backend.WineProduction.Interface;
 using winery_backend.Grapes.Interface;
 using winery_backend.Grapes;
 using winery_backend.Supplies.Interface;
 using Supplies;
+using winery_backend.WineProduction.Fermentations.Interface;
+using winery_backend.WineProduction.Fermentations.Dto;
+using winery_backend.Activity;
 
-namespace winery_backend.WineProduction
+namespace winery_backend.WineProduction.Fermentations
 {
     public class FermentationService : IFermentationService
     {
@@ -24,18 +25,37 @@ namespace winery_backend.WineProduction
             _supplyService = supplyService;
         }
 
-        public bool Create(FermentationDto fermentationDto)
+        public void UpdateFinishedFertilizations()
         {
+            ICollection<Fermentation> allFermentations = _fermentationRepository.GetAll();
+            foreach (Fermentation fermentation in allFermentations)
+            {
+
+                if (fermentation.EndDate <= DateTime.Now)
+                {
+                    Grape grape = _grapeService.GetById(fermentation.GrapeId);
+                    grape.FermentedAmount = grape.FermentedAmount + fermentation.Amount;
+                    _grapeService.Update(grape);
+
+                }
+
+            }
+
+        }
+
+            public bool Create(FermentationDto fermentationDto)
+        {
+            Grape grape = _grapeService.GetByName(fermentationDto.grapeId);
 
             //da li imamo slobodne kontejnere/bacve
             Machine machine = _machineService.GetByName("Fermentation container");
-            if (machine == null || machine.Amount == 0) 
+            if (machine == null || machine.Amount == 0)
             {
                 return false;
             }
 
             //da li imamo toliko grozdja
-            if (_grapeService.GetById(fermentationDto.grapeId).HarvestedAmount < fermentationDto.amount)
+            if (_grapeService.GetById(grape.Id).HarvestedAmount < fermentationDto.amount)
             {
                 return false;
             }
@@ -43,12 +63,12 @@ namespace winery_backend.WineProduction
             //da li imamo toliko supplies
             ICollection<Supply> necceserySugarSupplies = _supplyService.GetBySupplyType(SupplyType.Sugar);
             double sugarAmount = 0;
-            foreach(Supply supply in necceserySugarSupplies)
+            foreach (Supply supply in necceserySugarSupplies)
             {
                 sugarAmount += supply.Amount;
             }
 
-            if(sugarAmount < fermentationDto.sugar)
+            if (sugarAmount < fermentationDto.sugar)
             {
                 return false;
             }
@@ -65,7 +85,7 @@ namespace winery_backend.WineProduction
                 return false;
             }
 
-            Fermentation fermentation = new Fermentation(fermentationDto.grapeId, fermentationDto.amount, fermentationDto.startDate, fermentationDto.endDate, fermentationDto.yeast, fermentationDto.sugar, fermentationDto.temperature, fermentationDto.ph);
+            Fermentation fermentation = new Fermentation(grape.Id, fermentationDto.amount, fermentationDto.startDate, fermentationDto.endDate, fermentationDto.yeast, fermentationDto.sugar, fermentationDto.temperature, fermentationDto.ph);
             return _fermentationRepository.Create(fermentation);
 
         }

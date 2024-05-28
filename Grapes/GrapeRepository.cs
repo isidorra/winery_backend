@@ -22,6 +22,11 @@ namespace winery_backend.Grapes
             return _context.Grapes.Where(g => g.Id == id).FirstOrDefault();
         }
 
+        public Grape GetByName(string name)
+        {
+            return _context.Grapes.Where(g => g.Name.Equals(name)).FirstOrDefault();
+        }
+
         public void Update(Grape grape)
         {
             var editedGrape = _context.Grapes.FirstOrDefault(g => g.Id == grape.Id);

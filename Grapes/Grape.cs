@@ -16,10 +16,11 @@ namespace winery_backend.Grapes
         public int? PesticideId { get; set; }
         public virtual Supply? Pesticide { get; set; }
         public double HarvestedAmount { get; set; }
+        public double FermentedAmount { get; set; }
 
         public Grape() { }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, double harvestedAmount)
+        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, double harvestedAmount, double fermentedAmount)
         {
             Id = id;
             Name = name;
@@ -28,9 +29,10 @@ namespace winery_backend.Grapes
             Quality = quality;
             PlantingDate = plantingDate;
             HarvestedAmount = harvestedAmount;
+            FermentedAmount = fermentedAmount;
         }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId, double harvestedAmount)
+        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId)
         {
             Id = id;
             Name = name;
@@ -40,7 +42,8 @@ namespace winery_backend.Grapes
             PlantingDate = plantingDate;
             FertilizerId = fertilizerId;
             PesticideId = pesticideId;
-            HarvestedAmount = harvestedAmount;
+            HarvestedAmount = 0;
+            FermentedAmount = 0;
         }
 
     }

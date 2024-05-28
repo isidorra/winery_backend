@@ -1,6 +1,6 @@
 ﻿using winery_backend.Grapes;
 
-namespace winery_backend.WineProduction
+namespace winery_backend.WineProduction.Fermentations
 {
     public class Fermentation
     {

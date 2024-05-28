@@ -8,5 +8,7 @@ namespace winery_backend.Grapes.Interface
         Grape GetById(int id);
         double GetHarvestedAmount (int id);
         void AddHarvestedGrape(int id, double amount);
+        Grape GetByName(string name);
+        void Update(Grape grape);
     }
 }

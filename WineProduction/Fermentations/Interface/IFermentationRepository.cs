@@ -1,4 +1,4 @@
-﻿namespace winery_backend.WineProduction.Interface
+﻿namespace winery_backend.WineProduction.Fermentations.Interface
 {
     public interface IFermentationRepository
     {

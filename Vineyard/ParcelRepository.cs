@@ -17,10 +17,6 @@ namespace winery_backend.Vineyard
             return _context.Parcels.OrderBy(p => p.Id).ToList();
         }
 
-        public HarvestedGrape GetHarvestedGrape(int grapeId)
-        {
-            return _context.HarvestedGrapes.Where(h => h.GrapeId == grapeId).FirstOrDefault();
-        }
 
         public Parcel GetById(int id)
         {
