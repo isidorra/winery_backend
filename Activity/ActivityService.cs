@@ -7,6 +7,8 @@ using Supplies;
 using winery_backend.Supplies.Interface;
 using winery_backend.Vineyard.Interface;
 using winery_backend.Grapes.Interface;
+using Microsoft.AspNetCore.Connections.Features;
+using winery_backend.Grapes;
 
 
 namespace winery_backend.Activity
@@ -90,6 +92,31 @@ namespace winery_backend.Activity
             Supply usedFertilizer = _supplyRepository.GetById(fertilizationDto.supplyId);
             usedFertilizer.Amount -= fertilizationDto.amount;
             _supplyRepository.Update(usedFertilizer);
+
+            //izmena kvaliteta grozdja
+
+            Parcel parcel = _parcelService.GetById(fertilizationDto.parcelId);
+            Grape grape = parcel.Grape;
+            Random random = new Random();
+            double minValue = 0.1;
+            double maxValue = 0.75;
+
+            if (parcel.Grape.Fertilizer.Id == fertilizationDto.supplyId)
+            {
+                double randomDouble = minValue + (random.NextDouble() * (maxValue - minValue));
+                grape.Quality += randomDouble;
+
+
+            }
+            else
+            {
+                double randomDouble = minValue + (random.NextDouble() * (maxValue - minValue));
+                grape.Quality -= randomDouble;
+
+            }
+
+            _grapeService.Update(grape);
+
             return _activityRepository.Create(newFertilization);
 
         }
@@ -129,6 +156,27 @@ namespace winery_backend.Activity
             Supply usedPesticide = _supplyRepository.GetById(pesticideDto.supplyId);
             usedPesticide.Amount -= pesticideDto.amount;
             _supplyRepository.Update(usedPesticide);
+
+            Parcel parcel = _parcelService.GetById(pesticideDto.parcelId);
+            Grape grape = parcel.Grape;
+            Random random = new Random();
+            double minValue = 0.1;
+            double maxValue = 0.75;
+
+
+            if (parcel.Grape.Pesticide.Id == pesticideDto.supplyId)
+            {
+                double randomDouble = minValue + (random.NextDouble() * (maxValue - minValue));
+                grape.Quality += randomDouble;
+            }
+            else
+            {
+                double randomDouble = minValue + (random.NextDouble() * (maxValue - minValue));
+                grape.Quality -= randomDouble;
+
+            }
+
+            _grapeService.Update(grape);
             return _activityRepository.Create(newPesticideControl);
         }
 
@@ -144,6 +192,17 @@ namespace winery_backend.Activity
             }
 
             Watering newWatering = new Watering(wateringDto.startDate, int.Parse(wateringDto.parcelId), wateringDto.amount);
+
+            Parcel parcel = _parcelService.GetById(int.Parse(wateringDto.parcelId));
+            Grape grape = parcel.Grape;
+            Random random = new Random();
+            double minValue = 0.1;
+            double maxValue = 0.75;
+            double randomDouble = minValue + (random.NextDouble() * (maxValue - minValue));
+            grape.Quality += randomDouble; 
+            _grapeService.Update(grape);
+
+
             return _activityRepository.Create(newWatering);
 
         }

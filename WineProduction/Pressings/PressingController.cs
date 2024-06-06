@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using winery_backend.WineProduction.Fermentations.Dto;
 using winery_backend.WineProduction.Pressings.Dto;
+using winery_backend.WineProduction.Pressings.Interface;
 
 namespace winery_backend.WineProduction.Pressings
 {
-    [Route("api/fermentation")]
+    [Route("api/pressing")]
     [ApiController]
     public class PressingController : Controller
     {
-        private readonly PressingService _pressingService;
-        public PressingController(PressingService pressingService)
+        private readonly IPressingService _pressingService;
+        public PressingController(IPressingService pressingService)
         {
             _pressingService = pressingService;
         }

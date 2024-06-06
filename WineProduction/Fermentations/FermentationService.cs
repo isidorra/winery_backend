@@ -48,8 +48,8 @@ namespace winery_backend.WineProduction.Fermentations
             Grape grape = _grapeService.GetByName(fermentationDto.grapeId);
 
             //da li imamo slobodne kontejnere/bacve
-            Machine machine = _machineService.GetByName("Fermentation container");
-            if (machine == null || machine.Amount == 0)
+            ICollection<Machine> machines = _machineService.GetByName("Fermentation");
+            if (machines == null || machines.Count == 0)
             {
                 return false;
             }

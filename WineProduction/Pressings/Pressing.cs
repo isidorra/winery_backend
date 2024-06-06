@@ -26,5 +26,15 @@ namespace winery_backend.WineProduction.Pressings
             EndDate = endDate;
             PressingType = pressingType;
         }
+
+        public Pressing(int grapeId, double amount, DateTime startDate, DateTime endDate, PressingType pressingType)
+        {
+            Id = Guid.NewGuid();
+            GrapeId = grapeId;
+            Amount = amount;
+            StartDate = startDate;
+            EndDate = endDate;
+            PressingType = pressingType;
+        }
     }
 }

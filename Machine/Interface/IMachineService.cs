@@ -6,6 +6,6 @@ namespace winery_backend.Machines.Interface
     {
         ICollection<Machine> GetAll();
         Machine GetById(int id);
-        Machine GetByName (string name);
+        ICollection<Machine> GetByName (string name);
     }
 }

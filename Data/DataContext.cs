@@ -4,6 +4,7 @@
 using Microsoft.EntityFrameworkCore;
 using Supplies;
 using winery_backend.Activity;
+using winery_backend.GrapeQualityReport;
 using winery_backend.Grapes;
 using winery_backend.Invetory;
 using winery_backend.LogisticianManufacturingOrder.Models;
@@ -66,6 +67,7 @@ public class DataContext : DbContext
     public DbSet<PesticideControl> PesticideControls { get; set; }
     public DbSet<Fermentation> Fermentations { get; set; }
     public DbSet<Pressing> Pressings { get; set; }
+    public DbSet<GrapeQualityReport> GrapeQualityReports { get; set; }
 
     //-----------ORDERS FOR PRODUCTION---------------------------------------------------------
 
@@ -111,6 +113,8 @@ public class DataContext : DbContext
         modelBuilder.Entity<Grape>().ToTable("Grapes");
         modelBuilder.Entity<Fermentation>().ToTable("Fermentations");
         modelBuilder.Entity<Pressing>().ToTable("Pressings");
+        modelBuilder.Entity<GrapeQualityReport>().ToTable("GrapeQualityReports");
+
 
 
         modelBuilder.Entity<Machine>().ToTable("Machines");
@@ -160,7 +164,8 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2020, 5, 1),
                 FertilizerId = 1, // Grape Fertilizer 10-10-10
                 PesticideId = 7, // Vineyard Armor Spray
-                HarvestedAmount = 51515
+                HarvestedAmount = 51515,
+                FermentedAmount = 5555
             },
             new Grape
             {
@@ -172,7 +177,8 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2019, 4, 15),
                 FertilizerId = 3, // Vine Vitalizer 12-6-18
                 PesticideId = 10, // GrapeSafe Fungicide
-                HarvestedAmount = 125
+                HarvestedAmount = 125,
+                FermentedAmount = 444545
             },
             new Grape
             {
@@ -184,7 +190,8 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2018, 3, 20),
                 FertilizerId = 2, // Grape Fertilizer 72456
                 PesticideId = 8, // GrapeProtect Insecticide
-                HarvestedAmount = 0
+                HarvestedAmount = 0,
+                FermentedAmount = 4445
             },
             new Grape
             {
@@ -196,7 +203,8 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2019, 4, 5),
                 FertilizerId = 5, // VineLife Essentials 10-12-18
                 PesticideId = 11, // VinePro Shield
-                HarvestedAmount = 11
+                HarvestedAmount = 11,
+                FermentedAmount = 10000
             },
             new Grape
             {
@@ -208,7 +216,8 @@ public class DataContext : DbContext
                 PlantingDate = new DateTime(2021, 5, 10),
                 FertilizerId = 6, // GrapeGrower's Blend 8-12-20
                 PesticideId = 12, // GrapeGuardian Pest Management
-                HarvestedAmount = 2666
+                HarvestedAmount = 2666,
+                FermentedAmount = 12
             }
            );
 

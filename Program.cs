@@ -29,6 +29,8 @@ using winery_backend.Grapes.Interface;
 using winery_backend.Grapes;
 using winery_backend.WineProduction.Fermentations.Interface;
 using winery_backend.WineProduction.Fermentations;
+using winery_backend.WineProduction.Pressings.Interface;
+using winery_backend.WineProduction.Pressings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,6 +79,9 @@ builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
 builder.Services.AddScoped<IFermentationService, FermentationService>();
 builder.Services.AddScoped<IFermentationRepository, FermentationRepository>();
+builder.Services.AddScoped<IPressingService, PressingService>();
+builder.Services.AddScoped<IPressingRepository, PressingRepository>();
+
 builder.Services.AddScoped<IMachineService, MachineService>();
 builder.Services.AddScoped<IMachineRepository, MachineRepository>();
 builder.Services.AddScoped<IGrapeService, GrapeService>();

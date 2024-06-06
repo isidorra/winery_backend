@@ -3,28 +3,108 @@
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\pressings\\pressingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\pressings\\pressingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\grapequalityreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\grapequalityreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\interface\\igrapequalityreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\interface\\igrapequalityreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\grapequalityreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\grapequalityreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\interface\\igrapequalityreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\interface\\igrapequalityreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\grapequalityreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\grapequalityreportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\machinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\machinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapes\\interface\\igrapeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapes\\interface\\igrapeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapequalityreport\\grapequalityreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapequalityreport\\grapequalityreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapes\\grapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapes\\grapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapes\\grape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapes\\grape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\product\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:product\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\fermentations\\dto\\fermentationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\fermentations\\dto\\fermentationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\pressings\\pressingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\pressings\\pressingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\fermentations\\fermentationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\fermentations\\fermentationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\pressings\\dto\\pressingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\pressings\\dto\\pressingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\fermentations\\fermentationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\fermentations\\fermentationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\productioncotroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\productioncotroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\pressings\\pressingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\pressings\\pressingtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240529170444_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240529170444_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\interface\\imachinerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\interface\\imachinerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\interface\\imachineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\interface\\imachineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\machineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\machineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\machinerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\machinerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapes\\graperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapes\\graperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\pressings\\interface\\ipressingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,28 +115,8 @@
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\fermentations\\fermentation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\productioncotroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\productioncotroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\wineproduction\\fermentations\\dto\\fermentationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:wineproduction\\fermentations\\dto\\fermentationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\grapes\\grapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:grapes\\grapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240527002806_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240527002806_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:activity\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240522101748_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -76,10 +136,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\vineyard\\interface\\iparcelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:vineyard\\interface\\iparcelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|c:\\users\\korisnik\\desktop\\fakuktet\\4\\in\u017Eenjerstvo informacionih sistema\\projekat\\backend\\machine\\interface\\imachineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56B6AFD9-EACE-457D-B9F5-DCD69042FF2E}|winery_backend.csproj|solutionrelative:machine\\interface\\imachineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,17 +145,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Data\\DataContext.cs",
               "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Data\\DataContext.cs",
               "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAowHAAAAA6AAAA",
+              "ViewState": "AQIAAIUCAAAAAAAAAAAuwHMAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T10:08:38.778Z",
               "IsPinned": true,
@@ -108,92 +164,144 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PressingDto.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Dto\\PressingDto.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Pressings\\Dto\\PressingDto.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Dto\\PressingDto.cs",
-              "RelativeToolTip": "WineProduction\\Pressings\\Dto\\PressingDto.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBMAAAAFAAAA",
+              "Title": "GrapeQualityReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportService.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\GrapeQualityReportService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportService.cs",
+              "RelativeToolTip": "GrapeQualityReport\\GrapeQualityReportService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBUAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:45:37.188Z",
+              "WhenOpened": "2024-06-06T22:22:02.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FermentationController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\FermentationController.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\FermentationController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\FermentationController.cs",
-              "RelativeToolTip": "WineProduction\\Fermentations\\FermentationController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAzwB4AAAAJAAAA",
+              "Title": "IGrapeQualityReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\Interface\\IGrapeQualityReportRepository.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\Interface\\IGrapeQualityReportRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\Interface\\IGrapeQualityReportRepository.cs",
+              "RelativeToolTip": "GrapeQualityReport\\Interface\\IGrapeQualityReportRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:35:40.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PressingController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingController.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Pressings\\PressingController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingController.cs",
-              "RelativeToolTip": "WineProduction\\Pressings\\PressingController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAkwBMAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:35:26.981Z",
+              "WhenOpened": "2024-06-06T22:05:25.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PressingService.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingService.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Pressings\\PressingService.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingService.cs",
-              "RelativeToolTip": "WineProduction\\Pressings\\PressingService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAUAAAAzAAAA",
+              "Title": "GrapeQualityReportController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportController.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\GrapeQualityReportController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportController.cs",
+              "RelativeToolTip": "GrapeQualityReport\\GrapeQualityReportController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:29:59.037Z",
+              "WhenOpened": "2024-06-06T22:09:04.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActivityController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
+              "RelativeDocumentMoniker": "Activity\\ActivityController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
+              "RelativeToolTip": "Activity\\ActivityController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwB4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T23:38:45.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FermentationService.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\FermentationService.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\FermentationService.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\FermentationService.cs",
-              "RelativeToolTip": "WineProduction\\Fermentations\\FermentationService.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Title": "IGrapeQualityReportService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\Interface\\IGrapeQualityReportService.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\Interface\\IGrapeQualityReportService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\Interface\\IGrapeQualityReportService.cs",
+              "RelativeToolTip": "GrapeQualityReport\\Interface\\IGrapeQualityReportService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:35:56.989Z",
+              "WhenOpened": "2024-06-06T22:04:29.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IPressingRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
-              "RelativeToolTip": "WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "DocumentIndex": 5,
+              "Title": "GrapeQualityReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportRepository.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\GrapeQualityReportRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReportRepository.cs",
+              "RelativeToolTip": "GrapeQualityReport\\GrapeQualityReportRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:29:30.48Z",
+              "WhenOpened": "2024-06-06T22:23:02.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Fermentation.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Fermentation.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\Fermentation.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Fermentation.cs",
-              "RelativeToolTip": "WineProduction\\Fermentations\\Fermentation.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAtAAAA",
+              "Title": "MachineController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineController.cs",
+              "RelativeDocumentMoniker": "Machine\\MachineController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineController.cs",
+              "RelativeToolTip": "Machine\\MachineController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T02:22:44.019Z",
+              "WhenOpened": "2024-06-06T22:15:23.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IGrapeService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\Interface\\IGrapeService.cs",
+              "RelativeDocumentMoniker": "Grapes\\Interface\\IGrapeService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\Interface\\IGrapeService.cs",
+              "RelativeToolTip": "Grapes\\Interface\\IGrapeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T22:05:29.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GrapeQualityReport.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReport.cs",
+              "RelativeDocumentMoniker": "GrapeQualityReport\\GrapeQualityReport.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\GrapeQualityReport\\GrapeQualityReport.cs",
+              "RelativeToolTip": "GrapeQualityReport\\GrapeQualityReport.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAYwB0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T21:54:16.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ActivityService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityService.cs",
+              "RelativeDocumentMoniker": "Activity\\ActivityService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityService.cs",
+              "RelativeToolTip": "Activity\\ActivityService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMgAAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T21:26:56.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Grape.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\Grape.cs",
+              "RelativeDocumentMoniker": "Grapes\\Grape.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\Grape.cs",
+              "RelativeToolTip": "Grapes\\Grape.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA5wCgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T21:25:13.441Z",
               "EditorCaption": ""
             },
             {
@@ -204,14 +312,74 @@
               "RelativeDocumentMoniker": "Grapes\\GrapeController.cs",
               "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\GrapeController.cs",
               "RelativeToolTip": "Grapes\\GrapeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAeAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T10:21:46.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Product\\ProductController.cs",
+              "RelativeDocumentMoniker": "Product\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Product\\ProductController.cs",
+              "RelativeToolTip": "Product\\ProductController.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T00:18:06.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PressingController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingController.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Pressings\\PressingController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingController.cs",
+              "RelativeToolTip": "WineProduction\\Pressings\\PressingController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAYwAsAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:35:26.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FermentationDto.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
+              "RelativeToolTip": "WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T02:22:34.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAAFMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T10:13:25.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PressingDto.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Dto\\PressingDto.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Pressings\\Dto\\PressingDto.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Dto\\PressingDto.cs",
+              "RelativeToolTip": "WineProduction\\Pressings\\Dto\\PressingDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:45:37.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "ProductionCotroller.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\ProductionCotroller.cs",
               "RelativeDocumentMoniker": "WineProduction\\ProductionCotroller.cs",
@@ -219,25 +387,119 @@
               "RelativeToolTip": "WineProduction\\ProductionCotroller.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T01:49:50.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-23T01:49:50.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FermentationDto.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
-              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
-              "RelativeToolTip": "WineProduction\\Fermentations\\Dto\\FermentationDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAlAAAA",
+              "DocumentIndex": 19,
+              "Title": "PressingType.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingType.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Pressings\\PressingType.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\PressingType.cs",
+              "RelativeToolTip": "WineProduction\\Pressings\\PressingType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T02:22:34.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-29T17:20:28.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
+              "Title": "20240529170444_migracija.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240529170444_migracija.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240529170444_migracija.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240529170444_migracija.cs",
+              "RelativeToolTip": "Migrations\\20240529170444_migracija.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T17:04:44.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MachineService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineService.cs",
+              "RelativeDocumentMoniker": "Machine\\MachineService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineService.cs",
+              "RelativeToolTip": "Machine\\MachineService.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwBcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T16:20:20.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IMachineService.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineService.cs",
+              "RelativeDocumentMoniker": "Machine\\Interface\\IMachineService.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineService.cs",
+              "RelativeToolTip": "Machine\\Interface\\IMachineService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T00:08:14.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IMachineRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineRepository.cs",
+              "RelativeDocumentMoniker": "Machine\\Interface\\IMachineRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineRepository.cs",
+              "RelativeToolTip": "Machine\\Interface\\IMachineRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T16:46:13.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MachineRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineRepository.cs",
+              "RelativeDocumentMoniker": "Machine\\MachineRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\MachineRepository.cs",
+              "RelativeToolTip": "Machine\\MachineRepository.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAYwCcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T16:27:24.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GrapeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\GrapeRepository.cs",
+              "RelativeDocumentMoniker": "Grapes\\GrapeRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Grapes\\GrapeRepository.cs",
+              "RelativeToolTip": "Grapes\\GrapeRepository.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T16:40:35.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IPressingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
+              "RelativeToolTip": "WineProduction\\Pressings\\Interface\\IPressingRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T10:29:30.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Fermentation.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Fermentation.cs",
+              "RelativeDocumentMoniker": "WineProduction\\Fermentations\\Fermentation.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\WineProduction\\Fermentations\\Fermentation.cs",
+              "RelativeToolTip": "WineProduction\\Fermentations\\Fermentation.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T02:22:44.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "20240527002806_migracija.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240527002806_migracija.cs",
               "RelativeDocumentMoniker": "Migrations\\20240527002806_migracija.cs",
@@ -245,24 +507,11 @@
               "RelativeToolTip": "Migrations\\20240527002806_migracija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T00:28:06.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T00:28:06.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAvwE4AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:13:25.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 32,
               "Title": "ParcelRepository.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\ParcelRepository.cs",
               "RelativeDocumentMoniker": "Vineyard\\ParcelRepository.cs",
@@ -274,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 33,
               "Title": "IParcelRepository.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\Interface\\IParcelRepository.cs",
               "RelativeDocumentMoniker": "Vineyard\\Interface\\IParcelRepository.cs",
@@ -286,19 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ActivityController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
-              "RelativeDocumentMoniker": "Activity\\ActivityController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Activity\\ActivityController.cs",
-              "RelativeToolTip": "Activity\\ActivityController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwBsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:38:45.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 30,
               "Title": "IParcelService.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\Interface\\IParcelService.cs",
               "RelativeDocumentMoniker": "Vineyard\\Interface\\IParcelService.cs",
@@ -310,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 29,
               "Title": "20240522101748_migracija.cs",
               "DocumentMoniker": "C:\\Users\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240522101748_migracija.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Antonela\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Migrations\\20240522101748_migracija.cs",
@@ -322,19 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IMachineService.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineService.cs",
-              "RelativeDocumentMoniker": "Machine\\Interface\\IMachineService.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Machine\\Interface\\IMachineService.cs",
-              "RelativeToolTip": "Machine\\Interface\\IMachineService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T00:08:14.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 31,
               "Title": "ParcelService.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\Fakuktet\\4\\In\u017Eenjerstvo informacionih sistema\\Projekat\\Backend\\Vineyard\\ParcelService.cs",
               "RelativeDocumentMoniker": "Vineyard\\ParcelService.cs",

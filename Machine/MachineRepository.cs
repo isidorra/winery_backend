@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Supplies;
+using System.Collections.ObjectModel;
 using winery_backend.Machines.Interface;
 
 namespace winery_backend.Machines
@@ -23,9 +24,20 @@ namespace winery_backend.Machines
             return _context.Machines.Where(s => s.Id.Equals(id)).FirstOrDefault();
         }
 
-        public Machine GetByName(string name)
+        public ICollection<Machine> GetByName(string name)
         {
-            return _context.Machines.Where(s => s.Name.Equals(name)).FirstOrDefault();
+            ICollection<Machine> allMachines = GetAll();
+            ICollection<Machine> fillteredMachines = new Collection<Machine>();
+
+            foreach (var machine in allMachines)
+            {
+                if (machine.Name.Contains(name))
+                {
+                    fillteredMachines.Add(machine);
+                }
+            }
+
+            return fillteredMachines;
         }
     }
 }

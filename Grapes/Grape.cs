@@ -9,7 +9,7 @@ namespace winery_backend.Grapes
         public string Name { get; set; }
         public bool Type { get; set; } //1 red, 0 white
         public bool IsRipe { get; set; }
-        public int Quality { get; set; }
+        public double Quality { get; set; }
         public DateTime PlantingDate { get; set; }
         public int? FertilizerId { get; set; }
         public virtual Supply? Fertilizer { get; set; }
@@ -20,7 +20,7 @@ namespace winery_backend.Grapes
 
         public Grape() { }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, double harvestedAmount, double fermentedAmount)
+        public Grape(int id, string name, bool type, bool isRipe, double quality, DateTime plantingDate, double harvestedAmount, double fermentedAmount)
         {
             Id = id;
             Name = name;
@@ -32,7 +32,7 @@ namespace winery_backend.Grapes
             FermentedAmount = fermentedAmount;
         }
 
-        public Grape(int id, string name, bool type, bool isRipe, int quality, DateTime plantingDate, int fertilizerId, int pesticideId)
+        public Grape(int id, string name, bool type, bool isRipe, double quality, DateTime plantingDate, int fertilizerId, int pesticideId)
         {
             Id = id;
             Name = name;

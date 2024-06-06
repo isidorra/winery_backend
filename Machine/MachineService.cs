@@ -21,7 +21,7 @@ namespace winery_backend.Machines
             return _machineRepository.GetById(id);
         }
 
-        public Machine GetByName(string name)
+        public ICollection<Machine> GetByName(string name)
         {
             return _machineRepository.GetByName(name);
         }
